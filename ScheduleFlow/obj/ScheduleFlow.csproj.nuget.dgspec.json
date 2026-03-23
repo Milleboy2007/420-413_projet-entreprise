@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\Johnn\\Desktop\\Code\\Entreprise\\ProjetEntreprise\\ScheduleFlow\\ScheduleFlow.csproj": {}
   },
   "projects": {
@@ -15,6 +16,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Johnn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "D:\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\ScheduleFlow.csproj": {}
+  },
+  "projects": {
+    "D:\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\ScheduleFlow.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\ScheduleFlow.csproj",
+        "projectName": "ScheduleFlow",
+        "projectPath": "D:\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\ScheduleFlow.csproj",
+        "packagesPath": "C:\\Users\\Nitro\\.nuget\\packages\\",
+        "outputPath": "D:\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Nitro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> main
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,7 +57,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
+<<<<<<< HEAD
         "SdkAnalysisLevel": "10.0.100"
+=======
+        "SdkAnalysisLevel": "10.0.200"
+>>>>>>> main
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -82,7 +103,11 @@
               "privateAssets": "none"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
+>>>>>>> main
         }
       }
     }
