@@ -11,19 +11,13 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("ScheduleFlow")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Domaine")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d1e4b3c5bdc2f6754ae44e7626950038f9959d7")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+59366c1f220833760f828454c3df185bce45642f")]
->>>>>>> main
-[assembly: System.Reflection.AssemblyProductAttribute("ScheduleFlow")]
-[assembly: System.Reflection.AssemblyTitleAttribute("ScheduleFlow")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f0cf9b257781a5271d385a71855d34094e072261")]
+[assembly: System.Reflection.AssemblyProductAttribute("Domaine")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Domaine")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
-[assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
-[assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
 
 // Généré par la classe MSBuild WriteCodeFragment.
 
