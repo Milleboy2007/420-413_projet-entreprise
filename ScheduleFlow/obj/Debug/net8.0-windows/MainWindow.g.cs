@@ -47,7 +47,11 @@ namespace ScheduleFlow {
         /// InitializeComponent
         /// </summary>
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
+<<<<<<< HEAD
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.11.0")]
+=======
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "10.0.5.0")]
+>>>>>>> main
         public void InitializeComponent() {
             if (_contentLoaded) {
                 return;
@@ -63,7 +67,11 @@ namespace ScheduleFlow {
         }
         
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
+<<<<<<< HEAD
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.11.0")]
+=======
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "10.0.5.0")]
+>>>>>>> main
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
