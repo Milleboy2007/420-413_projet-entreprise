@@ -2421,19 +2421,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nitro\\.nuget\\packages\\": {}
+    "C:\\Users\\Johnn\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\420-413_projet-entreprise\\Domaine\\Domaine.csproj",
+      "projectUniqueName": "C:\\Users\\Johnn\\Desktop\\Code\\Entreprise\\ProjetEntreprise\\420-413_projet-entreprise\\420-413_projet-entreprise\\Domaine\\Domaine.csproj",
       "projectName": "Domaine",
-      "projectPath": "D:\\GitHub\\420-413_projet-entreprise\\Domaine\\Domaine.csproj",
-      "packagesPath": "C:\\Users\\Nitro\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\420-413_projet-entreprise\\Domaine\\obj\\",
+      "projectPath": "C:\\Users\\Johnn\\Desktop\\Code\\Entreprise\\ProjetEntreprise\\420-413_projet-entreprise\\420-413_projet-entreprise\\Domaine\\Domaine.csproj",
+      "packagesPath": "C:\\Users\\Johnn\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Johnn\\Desktop\\Code\\Entreprise\\ProjetEntreprise\\420-413_projet-entreprise\\420-413_projet-entreprise\\Domaine\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Nitro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Johnn\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2497,6 +2497,20 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.25, 8.0.25]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.25, 8.0.25]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.25, 8.0.25]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

@@ -1,20 +1,23 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "KIDEK3AckDM=",
+  "dgSpecHash": "3AFe25MjD2w=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Johnn\\Desktop\\Code\\Entreprise\\ProjetEntreprise\\ScheduleFlow\\ScheduleFlow.csproj",
+  "projectFilePath": "C:\\Users\\Johnn\\Desktop\\Code\\Entreprise\\ProjetEntreprise\\420-413_projet-entreprise\\420-413_projet-entreprise\\ScheduleFlow\\ScheduleFlow.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Johnn\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.24\\microsoft.windowsdesktop.app.ref.8.0.24.nupkg.sha512",
-    "C:\\Users\\Johnn\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.24\\microsoft.netcore.app.ref.8.0.24.nupkg.sha512",
-    "C:\\Users\\Johnn\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.24\\microsoft.aspnetcore.app.ref.8.0.24.nupkg.sha512",
-    "C:\\Users\\Johnn\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.24\\microsoft.netcore.app.host.win-x64.8.0.24.nupkg.sha512"
+    "C:\\Users\\Johnn\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.25\\microsoft.windowsdesktop.app.ref.8.0.25.nupkg.sha512",
+    "C:\\Users\\Johnn\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.25\\microsoft.netcore.app.ref.8.0.25.nupkg.sha512",
+    "C:\\Users\\Johnn\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.25\\microsoft.aspnetcore.app.ref.8.0.25.nupkg.sha512",
+    "C:\\Users\\Johnn\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.25\\microsoft.netcore.app.host.win-x64.8.0.25.nupkg.sha512"
   ],
-=======
-  "dgSpecHash": "vmVvWJdw+uQ=",
-  "success": true,
-  "projectFilePath": "D:\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\ScheduleFlow.csproj",
-  "expectedPackageFiles": [],
->>>>>>> main
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "message": "Problem reading the cache file C:\\Users\\Johnn\\Desktop\\Code\\Entreprise\\ProjetEntreprise\\420-413_projet-entreprise\\420-413_projet-entreprise\\ScheduleFlow\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0.",
+      "projectPath": "C:\\Users\\Johnn\\Desktop\\Code\\Entreprise\\ProjetEntreprise\\420-413_projet-entreprise\\420-413_projet-entreprise\\ScheduleFlow\\ScheduleFlow.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Johnn\\Desktop\\Code\\Entreprise\\ProjetEntreprise\\420-413_projet-entreprise\\420-413_projet-entreprise\\ScheduleFlow\\ScheduleFlow.csproj",
+      "targetGraphs": []
+    }
+  ]
 }

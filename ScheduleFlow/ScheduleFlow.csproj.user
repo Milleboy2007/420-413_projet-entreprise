@@ -7,7 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Dispo.xaml.cs">
+    <Compile Update="Pages\Dispo.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
