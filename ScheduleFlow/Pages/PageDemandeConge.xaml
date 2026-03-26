@@ -14,7 +14,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Background="#1C5084" Height="60">
+        <Grid Grid.Row="0" Background="#093C71" Height="60">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
@@ -40,7 +40,7 @@
 
         <StackPanel Grid.Row="1" 
                     Orientation="Horizontal" 
-                    Background="#1C5084" 
+                    Background="#093C71" 
                     Height="35">
 
             <TextBlock Text="Accueil" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
@@ -58,7 +58,7 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Column="0" Margin="0,0,10,0" Background="#2D3E50">
-                <TextBlock Text="Demande de Congé régulier" 
+                <TextBlock Text="Demande de Congé" 
                            FontSize="18" 
                            FontWeight="Bold" 
                            Foreground="White" 
@@ -113,7 +113,7 @@
                                FontWeight="SemiBold"/>
                 </StackPanel>
                 <Button Content="Soumettre la demande de congé régulier" 
-                        Background="#1561AF" 
+                        Background="#093C71" 
                         Foreground="White" 
                         FontWeight="SemiBold"
                         Padding="10,5" 
@@ -176,7 +176,7 @@
                                    FontWeight="SemiBold"/>
                 </StackPanel>
                 <Button Content="Soumettre la demande de congé de maladie" 
-                        Background="#1561AF" 
+                        Background="#093C71" 
                         Foreground="White" 
                         FontWeight="SemiBold"
                         Grid.Column="1"
