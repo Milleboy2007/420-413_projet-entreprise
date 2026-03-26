@@ -47,7 +47,7 @@
             <TextBlock Text="Compte" Foreground="White" FontWeight="Bold" Padding="15,8" Background="#1561AF"/>
             <TextBlock Text="Feuilles de disponibilité" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
             <TextBlock Text="Quart de Travail" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
-            <TextBlock Text="Annonces" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+            <TextBlock Text="Demande de Congé" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
             <TextBlock Text="Notifications" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
         </StackPanel>
 
