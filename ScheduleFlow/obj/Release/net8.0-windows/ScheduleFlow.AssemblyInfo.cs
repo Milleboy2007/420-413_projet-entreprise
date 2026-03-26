@@ -12,13 +12,9 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("ScheduleFlow")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4e6e0eab5132709f886b8ac66528ce90ca42dc6")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+59366c1f220833760f828454c3df185bce45642f")]
->>>>>>> main
 [assembly: System.Reflection.AssemblyProductAttribute("ScheduleFlow")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ScheduleFlow")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
