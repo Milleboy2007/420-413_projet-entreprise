@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\ScheduleFlow.csproj": {}
+    "C:\\Users\\Nathan\\Documents\\GitHub\\test\\420-413_projet-entreprise\\ScheduleFlow\\ScheduleFlow.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\ScheduleFlow.csproj": {
+    "C:\\Users\\Nathan\\Documents\\GitHub\\test\\420-413_projet-entreprise\\ScheduleFlow\\ScheduleFlow.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\ScheduleFlow.csproj",
+        "projectUniqueName": "C:\\Users\\Nathan\\Documents\\GitHub\\test\\420-413_projet-entreprise\\ScheduleFlow\\ScheduleFlow.csproj",
         "projectName": "ScheduleFlow",
-        "projectPath": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\ScheduleFlow.csproj",
+        "projectPath": "C:\\Users\\Nathan\\Documents\\GitHub\\test\\420-413_projet-entreprise\\ScheduleFlow\\ScheduleFlow.csproj",
         "packagesPath": "C:\\Users\\Nathan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\obj\\",
+        "outputPath": "C:\\Users\\Nathan\\Documents\\GitHub\\test\\420-413_projet-entreprise\\ScheduleFlow\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nathan\\AppData\\Roaming\\NuGet\\NuGet.Config",
