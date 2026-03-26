@@ -19,6 +19,18 @@ D:\GitHub\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\refint
 D:\GitHub\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\ScheduleFlow.pdb
 D:\GitHub\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\ScheduleFlow.genruntimeconfig.cache
 D:\GitHub\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\ref\ScheduleFlow.dll
+<<<<<<< HEAD
+C:\Users\Johnn\Desktop\Code\Entreprise\ProjetEntreprise\420-413_projet-entreprise\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\Pages\Dispo.baml
+C:\Users\Johnn\Desktop\Code\Entreprise\ProjetEntreprise\420-413_projet-entreprise\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\Johnn\Desktop\Code\Entreprise\ProjetEntreprise\420-413_projet-entreprise\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\Pages\Conge.g.cs
+C:\Users\Johnn\Desktop\Code\Entreprise\ProjetEntreprise\420-413_projet-entreprise\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\Pages\Dispo.g.cs
+C:\Users\Johnn\Desktop\Code\Entreprise\ProjetEntreprise\420-413_projet-entreprise\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\Johnn\Desktop\Code\Entreprise\ProjetEntreprise\420-413_projet-entreprise\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\ScheduleFlow_MarkupCompile.cache
+C:\Users\Johnn\Desktop\Code\Entreprise\ProjetEntreprise\420-413_projet-entreprise\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\ScheduleFlow_MarkupCompile.lref
+C:\Users\Johnn\Desktop\Code\Entreprise\ProjetEntreprise\420-413_projet-entreprise\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\ScheduleFlow.dll
+C:\Users\Johnn\Desktop\Code\Entreprise\ProjetEntreprise\420-413_projet-entreprise\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\refint\ScheduleFlow.dll
+C:\Users\Johnn\Desktop\Code\Entreprise\ProjetEntreprise\420-413_projet-entreprise\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\ScheduleFlow.pdb
+=======
 C:\Users\Nathan\Documents\GitHub\420-413_projet-entreprise\ScheduleFlow\bin\Debug\net8.0-windows\ScheduleFlow.exe
 C:\Users\Nathan\Documents\GitHub\420-413_projet-entreprise\ScheduleFlow\bin\Debug\net8.0-windows\ScheduleFlow.deps.json
 C:\Users\Nathan\Documents\GitHub\420-413_projet-entreprise\ScheduleFlow\bin\Debug\net8.0-windows\ScheduleFlow.runtimeconfig.json
@@ -44,3 +56,4 @@ C:\Users\Nathan\Documents\GitHub\420-413_projet-entreprise\ScheduleFlow\obj\Debu
 C:\Users\Nathan\Documents\GitHub\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\ScheduleFlow.pdb
 C:\Users\Nathan\Documents\GitHub\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\ScheduleFlow.genruntimeconfig.cache
 C:\Users\Nathan\Documents\GitHub\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\ref\ScheduleFlow.dll
+>>>>>>> main

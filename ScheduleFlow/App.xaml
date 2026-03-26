@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:ScheduleFlow"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        
     </Application.Resources>
 </Application>

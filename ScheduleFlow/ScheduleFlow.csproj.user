@@ -7,10 +7,17 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <Compile Update="Pages\Conge.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Dispo.xaml.cs">
+=======
     <Compile Update="Pages\Page_Quart_Employee.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\Page_Quart_Gerant.xaml.cs">
+>>>>>>> main
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
