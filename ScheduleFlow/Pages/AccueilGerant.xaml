@@ -9,11 +9,41 @@
       Title="AccueilGerant">
 
     <Grid Background="White">
-        <Border Padding="30" Margin="0,0,0,-54">
-            <StackPanel VerticalAlignment="Top" Margin="28,24,28,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#1F4B7C" Height="60">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="ScheduleFlow" FontSize="24" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" Margin="20,0,0,0"/>
+            <Border Width="40" Height="40" CornerRadius="20" Grid.Column="1" Margin="0,0,20,0" VerticalAlignment="Center">
+                <Border.Background>
+                    <ImageBrush ImageSource="pfp.png"/>
+                </Border.Background>
+            </Border>
+        </Grid>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="#1C5084" Height="35">
+            <TextBlock Text="Accueil" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+            <TextBlock Text="Compte" Foreground="White" FontWeight="Bold" Padding="15,8" Background="#1561AF"/>
+            <TextBlock Text="Création de Compte" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+            <TextBlock Text="Quart de Travail" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+            <TextBlock Text="Gestion de Demande de Congé" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+            <TextBlock Text="Annonces" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+            <TextBlock Text="Notifications" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+        </StackPanel>
+
+        <Border Grid.Row="2" Padding="30">
+            <StackPanel VerticalAlignment="Top">
                 <TextBlock Text="Bienvenue, Marie !" FontSize="24" FontWeight="Bold" Margin="0,0,0,10" Foreground="#333333" Width="221"/>
-                <TextBlock Text="Voici un aperçu de vos activités aujourd'hui" FontSize="14" Foreground="#666666" Width="268"/>
-                <StackPanel Orientation="Horizontal" Height="189" Width="666">
+                <TextBlock Text="Voici un aperçu de vos activités aujourd'hui" FontSize="14" Foreground="#666666" Width="268" Margin="0,0,0,30"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Border Background="White" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="8" Padding="20" Margin="0,0,20,0" Width="200" Height="168">
                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                             <TextBlock Text="👥" FontSize="40" HorizontalAlignment="Center" Margin="0,0,0,10"/>
@@ -26,9 +56,10 @@
                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                             <TextBlock Text="✓" FontSize="40" HorizontalAlignment="Center" Margin="0,0,0,10"/>
                             <TextBlock Text="5" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#333333"/>
-                            <TextBlock Text="Demandes d'approbation" FontSize="12" HorizontalAlignment="Center" Foreground="#666666" Height="32"/>
+                            <TextBlock Text="Demandes d'approbation" FontSize="12" HorizontalAlignment="Center" Foreground="#666666"/>
                         </StackPanel>
                     </Border>
+
                     <Border Background="White" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="8" Padding="20" Width="200" Height="168">
                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                             <TextBlock Text="💬" FontSize="40" HorizontalAlignment="Center" Margin="0,0,0,10"/>

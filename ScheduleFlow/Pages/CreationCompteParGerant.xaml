@@ -5,22 +5,47 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ScheduleFlow.pages"
       mc:Ignorable="d" d:DesignWidth="800"
-      Title="CreationCompteParGerant" Height="2086" Width="600">
+      Title="CreationCompteParGerant" Height="2195" Width="600">
 
     <Grid Background="#F5F5F7">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Border Grid.Row="0" Padding="30,20,30,20" >
-            <StackPanel Margin="142,0,142,0">
-                <TextBlock Text="Inscription de l'employé" FontSize="20" FontWeight="Bold" Margin="0,0,0,0" Foreground="#333333" Width="234"/>
-                <TextBlock Text="Veuillez remplir toutes les informations requises pour enregistrer un nouvel employé." FontSize="12" TextWrapping="Wrap" Foreground="#666666"/>
+        <Grid Grid.Row="0" Background="#1F4B7C" Height="60">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="ScheduleFlow" FontSize="24" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" Margin="20,0,0,0"/>
+            <Border Width="40" Height="40" CornerRadius="20" Grid.Column="1" Margin="0,0,20,0" VerticalAlignment="Center">
+                <Border.Background>
+                    <ImageBrush ImageSource="pfp.png"/>
+                </Border.Background>
+            </Border>
+        </Grid>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="#1C5084" Height="35">
+            <TextBlock Text="Accueil" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+            <TextBlock Text="Compte" Foreground="White" FontWeight="Bold" Padding="15,8" Background="#1561AF"/>
+            <TextBlock Text="Création de Compte" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+            <TextBlock Text="Quart de Travail" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+            <TextBlock Text="Gestion de Demande de Congé" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+            <TextBlock Text="Annonces" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+            <TextBlock Text="Notifications" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+        </StackPanel>
+
+        <Border Grid.Row="2" Padding="30,20,30,20">
+            <StackPanel>
+                <TextBlock Text="Inscription de l'employé" FontSize="20" FontWeight="Bold" Margin="0,0,0,0" Foreground="#333333"/>
+                <TextBlock Text="Veuillez remplir toutes les informations requises pour enregistrer un nouvel employé." FontSize="12" TextWrapping="Wrap" Foreground="#666666" Margin="0,0,0,20"/>
             </StackPanel>
         </Border>
 
-        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto">
             <Border Padding="30">
                 <StackPanel>
                     <Border Background="White" CornerRadius="8" Padding="20" Margin="0,0,0,20">
