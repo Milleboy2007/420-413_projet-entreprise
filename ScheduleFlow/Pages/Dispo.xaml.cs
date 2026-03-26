@@ -13,10 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ScheduleFlow
+namespace ScheduleFlow.Pages
 {
     /// <summary>
-    /// Interaction logic for Dispo.xaml
+    /// Logique d'interaction pour Dispo.xaml
     /// </summary>
     public partial class Dispo : Page
     {

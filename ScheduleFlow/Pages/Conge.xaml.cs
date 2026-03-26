@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ScheduleFlow.pages
+namespace ScheduleFlow.Pages
 {
     /// <summary>
-    /// Interaction logic for Conge.xaml
+    /// Logique d'interaction pour Conge.xaml
     /// </summary>
     public partial class Conge : Page
     {
         public Conge()
         {
             InitializeComponent();
-        }
-
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }

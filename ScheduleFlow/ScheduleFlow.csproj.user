@@ -2,28 +2,32 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <ApplicationDefinition Update="App.xaml">
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-  </ItemGroup>
-  <ItemGroup>
-<<<<<<< HEAD
+    <Compile Update="Pages\AccueilEmploye.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\AccueilGerant.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Conge.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\CreationCompteParGerant.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Dispo.xaml.cs">
-=======
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\PageDemandeConge.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\PageProfil.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Page_Quart_Employee.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\Page_Quart_Gerant.xaml.cs">
->>>>>>> main
       <SubType>Code</SubType>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="MainWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
   </ItemGroup>
 </Project>

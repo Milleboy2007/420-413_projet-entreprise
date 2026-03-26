@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace ScheduleFlow.Pages
 {
     /// <summary>
-    /// Logique d'interaction pour Page_Quart_Gerant.xaml
+    /// Logique d'interaction pour PageDemandeConge.xaml
     /// </summary>
-    public partial class Page_Quart_Gerant : Page
+    public partial class PageDemandeConge : Page
     {
-        public Page_Quart_Gerant()
+        public PageDemandeConge()
         {
             InitializeComponent();
         }

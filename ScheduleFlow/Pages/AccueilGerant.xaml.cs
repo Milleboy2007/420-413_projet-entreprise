@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ScheduleFlow.pages
+namespace ScheduleFlow.Pages
 {
     /// <summary>
     /// Logique d'interaction pour AccueilGerant.xaml

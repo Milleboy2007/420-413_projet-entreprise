@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ScheduleFlow.pages
+namespace ScheduleFlow.Pages
 {
     /// <summary>
     /// Logique d'interaction pour CreationCompteParGerant.xaml
@@ -25,14 +25,16 @@ namespace ScheduleFlow.pages
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            // Action minimale pour le bouton Téléverser
+            MessageBox.Show("Téléverser cliqué", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
 
+        private void BtnEnvoyer_Click(object sender, RoutedEventArgs e)
+        {
+            // Action minimale pour Envoyer
+            MessageBox.Show("Formulaire envoyé", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

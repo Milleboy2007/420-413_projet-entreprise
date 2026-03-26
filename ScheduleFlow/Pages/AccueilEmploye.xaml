@@ -1,8 +1,13 @@
-<Window x:Class="DashboardApp.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Dashboard" Height="650" Width="950"
-        Background="#FFF0F0F0">
+ï»¿<Page x:Class="ScheduleFlow.Pages.AccueilEmploye"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ScheduleFlow.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AccueilEmploye"
+      Background="#FFF0F0F0">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -34,9 +39,9 @@
             <StackPanel Grid.Row="1" Orientation="Horizontal" Background="#1C5084" Height="35">
                 <TextBlock Text="Accueil" Foreground="White" FontWeight="Bold" Padding="15,8" Background="#1561AF"/>
                 <TextBlock Text="Compte" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
-                <TextBlock Text="Feuilles de disponibilité" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+                <TextBlock Text="Feuilles de disponibilitÃ©" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
                 <TextBlock Text="Quart de Travail" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
-                <TextBlock Text="Demande de Congé" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+                <TextBlock Text="Demande de CongÃ©" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
                 <TextBlock Text="Notifications" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
             </StackPanel>
         </Grid>
@@ -76,8 +81,8 @@
                             <Ellipse Width="20" Height="20" Fill="LightGray" Margin="0,0,5,0" RenderTransformOrigin="0.5,-0.175" VerticalAlignment="Top"/>
                             <StackPanel>
                                 <TextBlock Text="Ted Thibeault" FontWeight="Bold" FontSize="14"/>
-                                <TextBlock Text="À: B.U. + 15 others…" FontSize="12"/>
-                                <TextBlock Text="Sujet: Quarts disponible entrepôt" FontSize="12" FontStyle="Italic"/>
+                                <TextBlock Text="Ã€: B.U. + 15 others..." FontSize="12"/>
+                                <TextBlock Text="Sujet: Quarts disponible entrepÃ´t" FontSize="12" FontStyle="Italic"/>
                             </StackPanel>
                         </StackPanel>
 
@@ -87,7 +92,7 @@
                             Beau travail tout le monde ! Ted Thibeault
                         </TextBlock>
 
-                        <TextBlock Text="Envoyé le: 27 février à 18h32" FontSize="10" Foreground="Gray"
+                        <TextBlock Text="Envoyï¿½ le: 27 fï¿½vrier ï¿½ 18h32" FontSize="10" Foreground="Gray"
                                    HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
 
                         <Grid HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Bottom">
@@ -112,20 +117,20 @@
                     <StackPanel>
                         <TextBlock Text="Tableau de bord" FontSize="16" FontWeight="Bold"/>
 
-                        <TextBlock Text="Détails du poste" FontWeight="Bold" Margin="0,10,0,0"/>
-                        <TextBlock Text="Poste occupé: Commis d'entrepot"/>
+                        <TextBlock Text="DÃ©tails du poste" FontWeight="Bold" Margin="0,10,0,0"/>
+                        <TextBlock Text="Poste occupÃ©: Commis d'entrepot"/>
                         <TextBlock Text="Depuis: Janvier 2026"/>
-                        <TextBlock Text="Nombre d'heures travaillées: 79h"/>
-                        <TextBlock Text="Argent reçu: 1296 $"/>
-                        <TextBlock Text="Argent dû: 126 $"/>
+                        <TextBlock Text="Nombre d'heures travaillÃ©es: 79h"/>
+                        <TextBlock Text="Argent reÃ§u: 1296 $"/>
+                        <TextBlock Text="Argent dÃ»: 126 $"/>
 
-                        <TextBlock Text="Détails de quarts" FontWeight="Bold" Margin="0,10,0,0"/>
+                        <TextBlock Text="DÃ©tails de quarts" FontWeight="Bold" Margin="0,10,0,0"/>
                         <TextBlock Text="Mon prochain quart:"/>
                         <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,5,0,0">
                             <TextBlock Text="Mar 24 mars, 9h-17h Entrepot"/>
                         </Border>
 
-                        <TextBlock Text="Mes quarts complétés:"/>
+                        <TextBlock Text="Mes quarts complÃ©tÃ©s:"/>
                         <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,5,0,0" Height="60">
                             <ScrollViewer VerticalScrollBarVisibility="Hidden">
                                 <StackPanel>
@@ -139,7 +144,7 @@
                 <Border Grid.Column="2" CornerRadius="15" Background="White" Padding="15">
                     <StackPanel>
                         <TextBlock Text="Mes quarts" FontSize="16" FontWeight="Bold"/>
-                        <TextBlock Text="Filtré:"/>
+                        <TextBlock Text="FiltrÃ©:"/>
                         <ComboBox IsEnabled="False" Margin="0,0,0,5"/>
                         <TextBlock Text="Trier:"/>
                         <ComboBox IsEnabled="False" Margin="0,0,0,10"/>
@@ -166,4 +171,4 @@
             </Grid>
         </Grid>
     </Grid>
-</Window>
+</Page>

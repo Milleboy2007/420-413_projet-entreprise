@@ -4,30 +4,17 @@
 winexe
 C#
 .cs
-<<<<<<< HEAD
-C:\Users\Johnn\Desktop\Code\Entreprise\ProjetEntreprise\420-413_projet-entreprise\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\
-=======
 C:\Users\Nathan\Documents\GitHub\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\
->>>>>>> main
 ScheduleFlow
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-<<<<<<< HEAD
-C:\Users\Johnn\Desktop\Code\Entreprise\ProjetEntreprise\420-413_projet-entreprise\420-413_projet-entreprise\ScheduleFlow\App.xaml
-3-1162714853
-
-6-1547920941
-1981496619113
-MainWindow.xaml;Pages\Conge.xaml;Pages\Dispo.xaml;
-=======
 C:\Users\Nathan\Documents\GitHub\420-413_projet-entreprise\ScheduleFlow\App.xaml
-3-1646922887
+101958407956
 
-6594500258
+13-756990453
 198185795992
-MainWindow.xaml;Pages\Page_Quart_Employee.xaml;Pages\Page_Quart_Gerant.xaml;
->>>>>>> main
+MainWindow.xaml;Pages\AccueilEmploye.xaml;Pages\AccueilGerant.xaml;Pages\Conge.xaml;Pages\CreationCompteParGerant.xaml;Pages\Dispo.xaml;Pages\PageDemandeConge.xaml;Pages\PageProfil.xaml;Pages\Page_Quart_Employee.xaml;Pages\Page_Quart_Gerant.xaml;
 
-True
+False
 
