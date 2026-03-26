@@ -4,138 +4,166 @@
         Title="Dashboard" Height="650" Width="950"
         Background="#FFF0F0F0">
 
-    <Grid Margin="20">
-        <!-- Row Definitions: top for profile, bottom for cards -->
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Profile Row -->
-        <Grid Grid.Row="0" RenderTransformOrigin="0.493,1.334" Margin="0,78,0,420" Grid.RowSpan="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Background="#424242">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-            <!-- Profile circle -->
-            <Ellipse Width="60" Height="60" Fill="LightGray"/>
-            <TextBlock Text="BU" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                       Foreground="White" FontSize="18"/>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
 
-            <!-- Welcome Text -->
-            <TextBlock Grid.Column="1" Text="Bonjour Billy Umma" FontSize="24" FontWeight="Bold"
-                       VerticalAlignment="Center" Margin="10,0,0,0"/>
+                <TextBlock Text="ScheduleFlow" FontSize="24" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" Margin="20,0,0,0"/>
+
+                <Border Width="40" Height="40" CornerRadius="20" Grid.Column="1" Margin="0,0,20,0" VerticalAlignment="Center">
+                    <Border.Background>
+                        <ImageBrush ImageSource="pfp.png"/>
+                    </Border.Background>
+                </Border>
+            </Grid>
+
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Background="#1C5084" Height="35">
+                <TextBlock Text="Accueil" Foreground="White" FontWeight="Bold" Padding="15,8" Background="#1561AF"/>
+                <TextBlock Text="Compte" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+                <TextBlock Text="Feuilles de disponibilité" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+                <TextBlock Text="Quart de Travail" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+                <TextBlock Text="Demande de Congé" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+                <TextBlock Text="Notifications" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+            </StackPanel>
         </Grid>
 
-        <!-- Cards Row -->
-        <Grid Grid.Row="1" Margin="0,205,0,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="2*"/>
-            </Grid.ColumnDefinitions>
+        <Grid Grid.Row="1" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-            <!-- Publications Card -->
-            <Border Grid.Column="0" CornerRadius="15" Background="White" Padding="15" Margin="0,0,10,0">
-                <StackPanel Margin="0,-5,0,-5">
-                    <TextBlock Text="Publications" FontSize="20" FontWeight="Bold" Margin="0,0,0,10" Width="116"/>
+            <Grid Grid.Row="0" RenderTransformOrigin="0.493,1.334" Margin="0,10,0,30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-                    <!-- Single publication example -->
-                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                        <Ellipse Width="20" Height="20" Fill="LightGray" Margin="0,0,5,0" RenderTransformOrigin="0.5,-0.175" VerticalAlignment="Top"/>
+                <Ellipse Width="60" Height="60" Fill="LightGray"/>
+                <TextBlock Text="BU" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                           Foreground="White" FontSize="18"/>
+
+                <TextBlock Grid.Column="1" Text="Bonjour Billy Umma" FontSize="24" FontWeight="Bold"
+                           VerticalAlignment="Center" Margin="10,0,0,0"/>
+            </Grid>
+
+            <Grid Grid.Row="1" Margin="0,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0" CornerRadius="15" Background="White" Padding="15" Margin="0,0,10,0">
+                    <StackPanel Margin="0,-5,0,-5">
+                        <TextBlock Text="Publications" FontSize="20" FontWeight="Bold" Margin="0,0,0,10" Width="116"/>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <Ellipse Width="20" Height="20" Fill="LightGray" Margin="0,0,5,0" RenderTransformOrigin="0.5,-0.175" VerticalAlignment="Top"/>
+                            <StackPanel>
+                                <TextBlock Text="Ted Thibeault" FontWeight="Bold" FontSize="14"/>
+                                <TextBlock Text="À: B.U. + 15 others…" FontSize="12"/>
+                                <TextBlock Text="Sujet: Quarts disponible entrepôt" FontSize="12" FontStyle="Italic"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,5" Height="154">
+                            Bonjour tout le monde,
+                            Je viens de rendre les quarts disponibles de cette semaine. Veuillez vous diriger vers votre horaire pour les regarder.
+                            Beau travail tout le monde ! Ted Thibeault
+                        </TextBlock>
+
+                        <TextBlock Text="Envoyé le: 27 février à 18h32" FontSize="10" Foreground="Gray"
+                                   HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+
+                        <Grid HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Bottom">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="105*"/>
+                                <ColumnDefinition Width="67*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Content="Voir toutes mes publications" Padding="10,5"
+                                    Background="#FFAAAAAA" Foreground="White" BorderBrush="Transparent" Grid.ColumnSpan="2"/>
+
+                            <Grid Width="20" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center"
+                                  Margin="57,0,0,0" Grid.Column="1">
+                                <Ellipse Fill="Red"/>
+                                <TextBlock Text="3" Foreground="White" FontWeight="Bold" FontSize="12"
+                                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="1" CornerRadius="15" Background="White" Padding="15" Margin="0,0,10,0">
+                    <StackPanel>
+                        <TextBlock Text="Tableau de bord" FontSize="16" FontWeight="Bold"/>
+
+                        <TextBlock Text="Détails du poste" FontWeight="Bold" Margin="0,10,0,0"/>
+                        <TextBlock Text="Poste occupé: Commis d'entrepot"/>
+                        <TextBlock Text="Depuis: Janvier 2026"/>
+                        <TextBlock Text="Nombre d'heures travaillées: 79h"/>
+                        <TextBlock Text="Argent reçu: 1296 $"/>
+                        <TextBlock Text="Argent dû: 126 $"/>
+
+                        <TextBlock Text="Détails de quarts" FontWeight="Bold" Margin="0,10,0,0"/>
+                        <TextBlock Text="Mon prochain quart:"/>
+                        <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,5,0,0">
+                            <TextBlock Text="Mar 24 mars, 9h-17h Entrepot"/>
+                        </Border>
+
+                        <TextBlock Text="Mes quarts complétés:"/>
+                        <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,5,0,0" Height="60">
+                            <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                                <StackPanel>
+                                    <TextBlock Text="Mar 24 mars, 9h-17h Entrepot"/>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </Border>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="2" CornerRadius="15" Background="White" Padding="15">
+                    <StackPanel>
+                        <TextBlock Text="Mes quarts" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="Filtré:"/>
+                        <ComboBox IsEnabled="False" Margin="0,0,0,5"/>
+                        <TextBlock Text="Trier:"/>
+                        <ComboBox IsEnabled="False" Margin="0,0,0,10"/>
+
                         <StackPanel>
-                            <TextBlock Text="Ted Thibeault" FontWeight="Bold" FontSize="14"/>
-                            <TextBlock Text="À: B.U. + 15 others…" FontSize="12"/>
-                            <TextBlock Text="Sujet: Quarts disponible entrepôt" FontSize="12" FontStyle="Italic"/>
+                            <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,0,0,5">
+                                <TextBlock Text="Mar 24 mars, 9h-17 Entrepot"/>
+                            </Border>
+                            <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,0,0,5">
+                                <TextBlock Text="Mar 31 mars, 8h-18 Vente"/>
+                            </Border>
+                            <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,0,0,5">
+                                <TextBlock Text="Ven 27 mars, 13h-19 Caisse"/>
+                            </Border>
+                            <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,0,0,5">
+                                <TextBlock Text="Mer 1 avril, 8h-20 Entrepot"/>
+                            </Border>
+                            <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5">
+                                <TextBlock Text="Mer 30 mars, 14h-20 Section informatique"/>
+                            </Border>
                         </StackPanel>
                     </StackPanel>
-
-                    <TextBlock TextWrapping="Wrap" Margin="0,0,0,5" Height="154">
-                        Bonjour tout le monde,
-                        Je viens de rendre les quarts disponibles de cette semaine. Veuillez vous diriger vers votre horaire pour les regarder.
-                        Beau travail tout le monde ! Ted Thibeault
-                    </TextBlock>
-
-                    <TextBlock Text="Envoyé le: 27 février à 18h32" FontSize="10" Foreground="Gray"
-                               HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
-
-                    <!-- Button publications -->
-                    <Grid HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Bottom">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="105*"/>
-                            <ColumnDefinition Width="67*"/>
-                        </Grid.ColumnDefinitions>
-                        <Button Content="Voir toutes mes publications" Padding="10,5"
-                                Background="#FFAAAAAA" Foreground="White" BorderBrush="Transparent" Grid.ColumnSpan="2"/>
-
-                        <Grid Width="20" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center"
-                              Margin="57,0,0,0" Grid.Column="1">
-                            <Ellipse Fill="Red"/>
-                            <TextBlock Text="3" Foreground="White" FontWeight="Bold" FontSize="12"
-                                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Grid>
-                    </Grid>
-                </StackPanel>
-            </Border>
-
-            <!-- Tableau de bord Card -->
-            <Border Grid.Column="1" CornerRadius="15" Background="White" Padding="15" Margin="0,0,10,0">
-                <StackPanel>
-                    <TextBlock Text="Tableau de bord" FontSize="16" FontWeight="Bold"/>
-
-                    <TextBlock Text="Détails du poste" FontWeight="Bold" Margin="0,10,0,0"/>
-                    <TextBlock Text="Poste occupé: Commis d'entrepot"/>
-                    <TextBlock Text="Depuis: Janvier 2026"/>
-                    <TextBlock Text="Nombre d'heures travaillées: 79h"/>
-                    <TextBlock Text="Argent reçu: 1296 $"/>
-                    <TextBlock Text="Argent dû: 126 $"/>
-
-                    <TextBlock Text="Détails de quarts" FontWeight="Bold" Margin="0,10,0,0"/>
-                    <TextBlock Text="Mon prochain quart:"/>
-                    <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,5,0,0">
-                        <TextBlock Text="Mar 24 mars, 9h-17h Entrepot"/>
-                    </Border>
-
-                    <TextBlock Text="Mes quarts complétés:"/>
-                    <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,5,0,0" Height="60">
-                        <ScrollViewer VerticalScrollBarVisibility="Hidden">
-                            <StackPanel>
-                                <TextBlock Text="Mar 24 mars, 9h-17h Entrepot"/>
-                            </StackPanel>
-                        </ScrollViewer>
-                    </Border>
-                </StackPanel>
-            </Border>
-
-            <!-- Mes quarts Card -->
-            <Border Grid.Column="2" CornerRadius="15" Background="White" Padding="15">
-                <StackPanel>
-                    <TextBlock Text="Mes quarts" FontSize="16" FontWeight="Bold"/>
-                    <TextBlock Text="Filtré:"/>
-                    <ComboBox IsEnabled="False" Margin="0,0,0,5"/>
-                    <TextBlock Text="Trier:"/>
-                    <ComboBox IsEnabled="False" Margin="0,0,0,10"/>
-
-                    <StackPanel>
-                        <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,0,0,5">
-                            <TextBlock Text="Mar 24 mars, 9h-17 Entrepot"/>
-                        </Border>
-                        <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,0,0,5">
-                            <TextBlock Text="Mar 31 mars, 8h-18 Vente"/>
-                        </Border>
-                        <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,0,0,5">
-                            <TextBlock Text="Ven 27 mars, 13h-19 Caisse"/>
-                        </Border>
-                        <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,0,0,5">
-                            <TextBlock Text="Mer 1 avril, 8h-20 Entrepot"/>
-                        </Border>
-                        <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5">
-                            <TextBlock Text="Mer 30 mars, 14h-20 Section informatique"/>
-                        </Border>
-                    </StackPanel>
-                </StackPanel>
-            </Border>
+                </Border>
+            </Grid>
         </Grid>
     </Grid>
 </Window>
