@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\Nitro\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Nitro\\.nuget\\packages"
+      "C:\\Users\\Nathan\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Nathan\\.nuget\\packages"
     ],
     "configProperties": {
       "CSWINRT_USE_WINDOWS_UI_XAML_PROJECTIONS": false,
