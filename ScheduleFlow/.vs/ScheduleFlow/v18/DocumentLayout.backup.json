@@ -3,19 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\",
   "Documents": [
     {
-<<<<<<< HEAD
+      "AbsoluteMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|c:\\users\\nathan\\documents\\github\\420-413_projet-entreprise\\scheduleflow\\pages\\pageprofil.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|solutionrelative:pages\\pageprofil.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|c:\\users\\nathan\\documents\\github\\420-413_projet-entreprise\\scheduleflow\\pages\\page_quart_employee.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|solutionrelative:pages\\page_quart_employee.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|c:\\users\\nathan\\documents\\github\\420-413_projet-entreprise\\scheduleflow\\pages\\accueilemploye.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|solutionrelative:pages\\accueilemploye.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|c:\\users\\nathan\\documents\\github\\420-413_projet-entreprise\\scheduleflow\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|c:\\users\\nathan\\documents\\github\\420-413_projet-entreprise\\scheduleflow\\pages\\conge.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|solutionrelative:pages\\conge.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\pages\\temp.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-=======
-      "AbsoluteMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|c:\\users\\nathan\\documents\\github\\420-413_projet-entreprise\\scheduleflow\\pages\\pageprofil.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|solutionrelative:pages\\pageprofil.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|c:\\users\\nathan\\documents\\github\\420-413_projet-entreprise\\scheduleflow\\pages\\dispo.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|solutionrelative:pages\\dispo.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|c:\\users\\nathan\\documents\\github\\420-413_projet-entreprise\\scheduleflow\\pages\\pagedemandeconge.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -26,24 +31,21 @@
       "RelativeMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|solutionrelative:pages\\page_quart_gerant.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|c:\\users\\nathan\\documents\\github\\420-413_projet-entreprise\\scheduleflow\\pages\\page_quart_employee.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|solutionrelative:pages\\page_quart_employee.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|c:\\users\\nathan\\documents\\github\\420-413_projet-entreprise\\scheduleflow\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|c:\\users\\nathan\\documents\\github\\420-413_projet-entreprise\\scheduleflow\\pages\\dispo.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|solutionrelative:pages\\dispo.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|c:\\users\\nathan\\documents\\github\\420-413_projet-entreprise\\scheduleflow\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|c:\\users\\nathan\\documents\\github\\420-413_projet-entreprise\\scheduleflow\\pages\\conge.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|solutionrelative:pages\\conge.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
->>>>>>> main
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\pages\\temp.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|c:\\users\\nathan\\documents\\github\\420-413_projet-entreprise\\scheduleflow\\scheduleflow.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|solutionrelative:scheduleflow.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|c:\\users\\nathan\\documents\\github\\420-413_projet-entreprise\\scheduleflow\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -53,18 +55,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\GitHub\\420-413_projet-entreprise\\Domaine\\Class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-      "AbsoluteMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|c:\\users\\nathan\\documents\\github\\420-413_projet-entreprise\\scheduleflow\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|c:\\users\\nathan\\documents\\github\\420-413_projet-entreprise\\scheduleflow\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|c:\\users\\nathan\\documents\\github\\420-413_projet-entreprise\\scheduleflow\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A036912F-525C-4AAB-AE84-37372FFBFFAB}|ScheduleFlow.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> main
     }
   ],
   "DocumentGroupContainers": [
@@ -74,7 +64,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -82,147 +72,62 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-<<<<<<< HEAD
-              "Title": "AccueilEmploye.xaml",
-              "DocumentMoniker": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\Pages\\AccueilEmploye.xaml",
-              "RelativeDocumentMoniker": "Pages\\AccueilEmploye.xaml",
-              "ToolTip": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\Pages\\AccueilEmploye.xaml",
-              "RelativeToolTip": "Pages\\AccueilEmploye.xaml",
+              "DocumentIndex": 7,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\App.xaml",
+              "RelativeDocumentMoniker": "App.xaml",
+              "ToolTip": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\App.xaml",
+              "RelativeToolTip": "App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-26T05:16:54.822Z",
-=======
+              "WhenOpened": "2026-03-26T18:31:09.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "PageProfil.xaml",
               "DocumentMoniker": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\Pages\\PageProfil.xaml",
               "RelativeDocumentMoniker": "Pages\\PageProfil.xaml",
               "ToolTip": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\Pages\\PageProfil.xaml",
               "RelativeToolTip": "Pages\\PageProfil.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-26T18:25:35.048Z",
->>>>>>> main
+              "WhenOpened": "2026-03-26T18:31:08.578Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 2,
-              "Title": "temp.txt",
-              "DocumentMoniker": "D:\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\pages\\temp.txt",
-              "ToolTip": "D:\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\pages\\temp.txt",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2026-03-23T20:28:16.183Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ScheduleFlow.csproj",
-              "DocumentMoniker": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\ScheduleFlow.csproj",
-              "RelativeDocumentMoniker": "ScheduleFlow.csproj",
-              "ToolTip": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\ScheduleFlow.csproj",
-              "RelativeToolTip": "ScheduleFlow.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-03-23T20:16:43.749Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "D:\\GitHub\\420-413_projet-entreprise\\Domaine\\Class1.cs",
-              "ToolTip": "D:\\GitHub\\420-413_projet-entreprise\\Domaine\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T20:01:57.354Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\MainWindow.xaml",
-              "RelativeToolTip": "MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-23T18:24:02.68Z",
-=======
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "PageDemandeConge.xaml",
               "DocumentMoniker": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\Pages\\PageDemandeConge.xaml",
               "RelativeDocumentMoniker": "Pages\\PageDemandeConge.xaml",
               "ToolTip": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\Pages\\PageDemandeConge.xaml",
               "RelativeToolTip": "Pages\\PageDemandeConge.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-26T18:25:34.117Z",
+              "WhenOpened": "2026-03-26T18:31:07.866Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Page_Quart_Gerant.xaml",
               "DocumentMoniker": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\Pages\\Page_Quart_Gerant.xaml",
               "RelativeDocumentMoniker": "Pages\\Page_Quart_Gerant.xaml",
               "ToolTip": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\Pages\\Page_Quart_Gerant.xaml",
               "RelativeToolTip": "Pages\\Page_Quart_Gerant.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-26T18:25:33.029Z",
->>>>>>> main
+              "WhenOpened": "2026-03-26T18:31:07.079Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 4,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAABkPRIAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T18:24:02.686Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\App.xaml.cs",
-              "RelativeDocumentMoniker": "App.xaml.cs",
-              "ToolTip": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\App.xaml.cs",
-              "RelativeToolTip": "App.xaml.cs",
-=======
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Page_Quart_Employee.xaml",
               "DocumentMoniker": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\Pages\\Page_Quart_Employee.xaml",
               "RelativeDocumentMoniker": "Pages\\Page_Quart_Employee.xaml",
               "ToolTip": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\Pages\\Page_Quart_Employee.xaml",
               "RelativeToolTip": "Pages\\Page_Quart_Employee.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-26T18:25:32.229Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ScheduleFlow.csproj",
-              "DocumentMoniker": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\ScheduleFlow.csproj",
-              "RelativeDocumentMoniker": "ScheduleFlow.csproj",
-              "ToolTip": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\ScheduleFlow.csproj",
-              "RelativeToolTip": "ScheduleFlow.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-03-26T18:24:39.704Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Conge.xaml",
-              "DocumentMoniker": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\Pages\\Conge.xaml",
-              "RelativeDocumentMoniker": "Pages\\Conge.xaml",
-              "ToolTip": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\Pages\\Conge.xaml*",
-              "RelativeToolTip": "Pages\\Conge.xaml*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-26T18:24:39.737Z",
+              "WhenOpened": "2026-03-26T18:31:06.395Z",
               "EditorCaption": ""
             },
             {
@@ -234,44 +139,98 @@
               "ToolTip": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\Pages\\Dispo.xaml",
               "RelativeToolTip": "Pages\\Dispo.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-26T18:24:39.739Z",
+              "WhenOpened": "2026-03-26T18:31:05.475Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Conge.xaml",
+              "DocumentMoniker": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\Pages\\Conge.xaml",
+              "RelativeDocumentMoniker": "Pages\\Conge.xaml",
+              "ToolTip": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\Pages\\Conge.xaml",
+              "RelativeToolTip": "Pages\\Conge.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-26T18:31:04.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccueilEmploye.xaml",
+              "DocumentMoniker": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\Pages\\AccueilEmploye.xaml",
+              "RelativeDocumentMoniker": "Pages\\AccueilEmploye.xaml",
+              "ToolTip": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\Pages\\AccueilEmploye.xaml",
+              "RelativeToolTip": "Pages\\AccueilEmploye.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-26T18:30:57.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "temp.txt",
+              "DocumentMoniker": "D:\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\pages\\temp.txt",
+              "ToolTip": "D:\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\pages\\temp.txt",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-26T18:30:57.229Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ScheduleFlow.csproj",
+              "DocumentMoniker": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\ScheduleFlow.csproj",
+              "RelativeDocumentMoniker": "ScheduleFlow.csproj",
+              "ToolTip": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\ScheduleFlow.csproj",
+              "RelativeToolTip": "ScheduleFlow.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-26T18:30:57.231Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\GitHub\\420-413_projet-entreprise\\Domaine\\Class1.cs",
+              "ToolTip": "D:\\GitHub\\420-413_projet-entreprise\\Domaine\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T18:30:57.249Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\App.xaml",
-              "RelativeDocumentMoniker": "App.xaml",
-              "ToolTip": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\App.xaml",
-              "RelativeToolTip": "App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-26T18:24:39.743Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
               "ToolTip": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-26T18:24:39.745Z"
+              "WhenOpened": "2026-03-26T18:30:57.251Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
->>>>>>> main
+              "ViewState": "AgIAAAMAAAAAAAAAAABkPRIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T18:30:57.252Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\App.xaml.cs",
+              "RelativeDocumentMoniker": "App.xaml.cs",
+              "ToolTip": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\ScheduleFlow\\App.xaml.cs",
+              "RelativeToolTip": "App.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T18:24:39.746Z"
+              "WhenOpened": "2026-03-26T18:30:57.254Z"
             }
           ]
         }
