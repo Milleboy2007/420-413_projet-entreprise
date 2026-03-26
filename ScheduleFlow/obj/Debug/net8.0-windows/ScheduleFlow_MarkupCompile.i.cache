@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Johnn\Desktop\Code\Entreprise\ProjetEntreprise\420-413_projet-entreprise\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\
+C:\Users\Nathan\Documents\GitHub\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\
 ScheduleFlow
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\Johnn\Desktop\Code\Entreprise\ProjetEntreprise\420-413_projet-entreprise\420-413_projet-entreprise\ScheduleFlow\App.xaml
+C:\Users\Nathan\Documents\GitHub\420-413_projet-entreprise\ScheduleFlow\App.xaml
 3-1162714853
 
 81737552350
-1981496619113
+198185795992
 MainWindow.xaml;Pages\Conge.xaml;Pages\Dispo.xaml;
 
-True
+False
 
