@@ -187,4 +187,5 @@
             </StackPanel>
         </Grid>
     </Grid>
-</Page>
+
+</Window>
