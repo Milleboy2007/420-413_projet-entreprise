@@ -48,7 +48,11 @@ namespace ScheduleFlow {
 <<<<<<< HEAD
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.11.0")]
 =======
+<<<<<<< HEAD
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.11.0")]
+=======
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "10.0.5.0")]
+>>>>>>> main
 >>>>>>> main
         public void InitializeComponent() {
             
@@ -67,7 +71,11 @@ namespace ScheduleFlow {
 <<<<<<< HEAD
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.11.0")]
 =======
+<<<<<<< HEAD
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.11.0")]
+=======
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "10.0.5.0")]
+>>>>>>> main
 >>>>>>> main
         public static void Main() {
             ScheduleFlow.App app = new ScheduleFlow.App();
