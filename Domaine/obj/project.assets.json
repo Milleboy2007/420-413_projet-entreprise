@@ -2421,19 +2421,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nitro\\.nuget\\packages\\": {}
+    "C:\\Users\\rym40\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\420-413_projet-entreprise\\Domaine\\Domaine.csproj",
+      "projectUniqueName": "C:\\Users\\rym40\\OneDrive\\Bureau\\420-413_projet-entreprise\\Domaine\\Domaine.csproj",
       "projectName": "Domaine",
-      "projectPath": "D:\\GitHub\\420-413_projet-entreprise\\Domaine\\Domaine.csproj",
-      "packagesPath": "C:\\Users\\Nitro\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\420-413_projet-entreprise\\Domaine\\obj\\",
+      "projectPath": "C:\\Users\\rym40\\OneDrive\\Bureau\\420-413_projet-entreprise\\Domaine\\Domaine.csproj",
+      "packagesPath": "C:\\Users\\rym40\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rym40\\OneDrive\\Bureau\\420-413_projet-entreprise\\Domaine\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Nitro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rym40\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

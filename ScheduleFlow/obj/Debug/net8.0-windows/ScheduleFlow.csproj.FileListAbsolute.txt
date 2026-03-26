@@ -19,3 +19,6 @@ D:\GitHub\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\refint
 D:\GitHub\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\ScheduleFlow.pdb
 D:\GitHub\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\ScheduleFlow.genruntimeconfig.cache
 D:\GitHub\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\ref\ScheduleFlow.dll
+C:\Users\rym40\OneDrive\Bureau\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\ScheduleFlow.dll
+C:\Users\rym40\OneDrive\Bureau\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\refint\ScheduleFlow.dll
+C:\Users\rym40\OneDrive\Bureau\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\ScheduleFlow.pdb
