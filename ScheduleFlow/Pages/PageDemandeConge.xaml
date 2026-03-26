@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ScheduleFlow"
         mc:Ignorable="d"
         Title="PageDemandeConge" Height="450" Width="800"
-        Background="#093C71">
+        Background="#ffffff">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -57,7 +57,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Column="0" Margin="0,0,10,0" Background="#2D3E50">
+            <StackPanel Grid.Column="0" Margin="0,0,10,0" Background="#1561AF">
                 <TextBlock Text="Demande de Congé" 
                            FontSize="18" 
                            FontWeight="Bold" 
@@ -120,7 +120,7 @@
                         Width="262" Height="37" />
             </StackPanel>
 
-            <StackPanel Grid.Column="1" Margin="0,0,10,0" Background="#2D3E50">
+            <StackPanel Grid.Column="1" Margin="0,0,10,0" Background="#1561AF">
                 <TextBlock Text="Demande de Congé de Maladie" 
                            FontSize="18" 
                            FontWeight="Bold" 
