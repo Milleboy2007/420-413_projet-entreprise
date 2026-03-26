@@ -36,11 +36,12 @@
                 </Border>
             </Grid>
 
-            <StackPanel Grid.Row="1" Orientation="Horizontal" Background="#1565C0" Height="35">
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Background="#1C5084" Height="35">
                 <TextBlock Text="Accueil" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
-                <TextBlock Text="Compte" Foreground="White" FontWeight="Bold" Padding="15,8"/>
-                <TextBlock Text="Feuilles de disponibilité" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
-                <TextBlock Text="Quart de Travail" Foreground="White" FontWeight="SemiBold" Padding="15,8" Background="#0D47A1"/>
+                <TextBlock Text="Compte" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+                <TextBlock Text="Création de Compte" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+                <TextBlock Text="Quart de Travail" Foreground="White" FontWeight="Bold" Padding="15,8" Background="#1561AF"/>
+                <TextBlock Text="Gestion de Demande de Congé" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
                 <TextBlock Text="Annonces" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
                 <TextBlock Text="Notifications" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
             </StackPanel>
