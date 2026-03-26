@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../Domaine/Domaine.csproj" Id="05db7509-6a4a-4a9b-a659-f6ac38c848dd" />
+  <Project Path="ScheduleFlow.csproj" />
+</Solution>

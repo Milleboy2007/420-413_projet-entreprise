@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\420-413_projet-entreprise\\Domaine\\Domaine.csproj": {}
+    "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\Domaine\\Domaine.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\420-413_projet-entreprise\\Domaine\\Domaine.csproj": {
+    "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\Domaine\\Domaine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\420-413_projet-entreprise\\Domaine\\Domaine.csproj",
+        "projectUniqueName": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\Domaine\\Domaine.csproj",
         "projectName": "Domaine",
-        "projectPath": "D:\\GitHub\\420-413_projet-entreprise\\Domaine\\Domaine.csproj",
-        "packagesPath": "C:\\Users\\Nitro\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\420-413_projet-entreprise\\Domaine\\obj\\",
+        "projectPath": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\Domaine\\Domaine.csproj",
+        "packagesPath": "C:\\Users\\Nathan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\Domaine\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nitro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nathan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +26,7 @@
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {}
           }
@@ -44,6 +45,7 @@
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
