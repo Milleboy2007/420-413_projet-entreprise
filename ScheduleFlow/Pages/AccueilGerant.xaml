@@ -8,7 +8,36 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AccueilGerant">
 
-    <Grid>
-        
+    <Grid Background="White">
+        <Border Padding="30" Margin="0,0,0,-54">
+            <StackPanel VerticalAlignment="Top" Margin="28,24,28,0">
+                <TextBlock Text="Bienvenue, Marie !" FontSize="24" FontWeight="Bold" Margin="0,0,0,10" Foreground="#333333" Width="221"/>
+                <TextBlock Text="Voici un aperçu de vos activités aujourd'hui" FontSize="14" Foreground="#666666" Width="268"/>
+                <StackPanel Orientation="Horizontal" Height="189" Width="666">
+                    <Border Background="White" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="8" Padding="20" Margin="0,0,20,0" Width="200" Height="168">
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock Text="👥" FontSize="40" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                            <TextBlock Text="24" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#333333"/>
+                            <TextBlock Text="Membres de l'équipe" FontSize="12" HorizontalAlignment="Center" Foreground="#666666"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="White" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="8" Padding="20" Margin="0,0,20,0" Width="210" Height="169">
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock Text="✓" FontSize="40" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                            <TextBlock Text="5" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#333333"/>
+                            <TextBlock Text="Demandes d'approbation" FontSize="12" HorizontalAlignment="Center" Foreground="#666666" Height="32"/>
+                        </StackPanel>
+                    </Border>
+                    <Border Background="White" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="8" Padding="20" Width="200" Height="168">
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock Text="💬" FontSize="40" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                            <TextBlock Text="3" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#333333"/>
+                            <TextBlock Text="Nouveaux messages" FontSize="12" HorizontalAlignment="Center" Foreground="#666666"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+        </Border>
     </Grid>
 </Page>
