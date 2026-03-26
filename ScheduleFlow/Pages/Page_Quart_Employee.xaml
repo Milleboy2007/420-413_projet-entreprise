@@ -11,12 +11,25 @@
 
     <Grid Margin="20">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="13*"/>
-            <ColumnDefinition Width="831*"/>
-            <ColumnDefinition Width="216*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="422*"/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="87*"/>
         </Grid.ColumnDefinitions>
 
-        <Border Grid.Column="0" Background="#0A3663" CornerRadius="10" Padding="15" Grid.ColumnSpan="2" Margin="0,61,18,0">
+        <DockPanel Grid.ColumnSpan="4" VerticalAlignment="Top" LastChildFill="False">
+            <TextBlock Text="ScheduleFlow" FontSize="20" FontWeight="Bold" Foreground="White" Margin="10" DockPanel.Dock="Top"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10,2,2,2" DockPanel.Dock="Top">
+                <TextBlock Text="Accueil" Foreground="White" FontWeight="SemiBold" Width="45" Height="20" Margin="0,0,15,0"/>
+                <TextBlock Text="Compte" Foreground="White" FontWeight="SemiBold" Width="52" Height="20" Margin="0,0,15,0"/>
+                <TextBlock Text="Feuilles de disponibilité" Foreground="White" FontWeight="SemiBold" Width="133" Height="20" Margin="0,0,15,0"/>
+                <TextBlock Text="Quart de Travail" Foreground="White" FontWeight="Bold" Width="93" Height="20" Margin="0,0,15,0"/>
+                <TextBlock Text="Annonces" Foreground="White" FontWeight="SemiBold" Width="57" Height="20" Margin="0,0,15,0"/>
+                <TextBlock Text="Notifications" Foreground="White" FontWeight="SemiBold" Width="74" Height="20"/>
+            </StackPanel>
+        </DockPanel>
+
+        <Border Grid.Column="0" Background="#0A3663" CornerRadius="10" Padding="15" Grid.ColumnSpan="2" Margin="0,75,18,0">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -60,9 +73,9 @@
                     <Rectangle Grid.Row="1" Grid.RowSpan="15" Grid.Column="5" Fill="#9E9E9E" Opacity="0.8"/>
                     <Rectangle Grid.Row="1" Grid.RowSpan="15" Grid.Column="7" Fill="#9E9E9E" Opacity="0.8"/>
 
-                    <Rectangle Grid.Row="1" Grid.RowSpan="15" Grid.Column="2" Fill="White" Opacity="0.8"/>
-                    <Rectangle Grid.Row="1" Grid.RowSpan="15" Grid.Column="4" Fill="White" Opacity="0.8"/>
-                    <Rectangle Grid.Row="1" Grid.RowSpan="15" Grid.Column="6" Fill="White" Opacity="0.8"/>
+                    <Rectangle Grid.Row="1" Grid.RowSpan="15" Grid.Column="2" Fill="White"/>
+                    <Rectangle Grid.Row="1" Grid.RowSpan="15" Grid.Column="4" Fill="White"/>
+                    <Rectangle Grid.Row="1" Grid.RowSpan="15" Grid.Column="6" Fill="White"/>
 
                     <Border Grid.Row="1" Grid.ColumnSpan="8" BorderBrush="Black" BorderThickness="0,1,0,1"/>
                     <Border Grid.Row="2" Grid.ColumnSpan="8" BorderBrush="Black" BorderThickness="0,0,0,1"/>
@@ -116,7 +129,7 @@
             </Grid>
         </Border>
 
-        <Border Grid.Column="2" Background="#0A3663" CornerRadius="10" Padding="15" Margin="0,61,0,0">
+        <Border Grid.Column="2" Background="#0A3663" CornerRadius="10" Padding="15" Grid.ColumnSpan="2" Margin="0,75,0,0">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -138,6 +151,7 @@
 
                     <TextBlock Grid.Row="0" Grid.Column="0" Text="Filtrer:" VerticalAlignment="Center" Margin="0,0,5,5" Foreground="White"/>
                     <ComboBox Grid.Row="0" Grid.Column="1" SelectedIndex="0" Margin="0,0,0,5" Background="WhiteSmoke">
+                        <ComboBoxItem Content="Aucun"/>
                         <ComboBoxItem Content="Aucun"/>
                     </ComboBox>
 
