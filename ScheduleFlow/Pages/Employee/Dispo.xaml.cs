@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ScheduleFlow.Pages
+namespace ScheduleFlow.Pages.Employee
 {
     /// <summary>
     /// Logique d'interaction pour Dispo.xaml

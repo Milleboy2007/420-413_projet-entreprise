@@ -34,12 +34,12 @@
             </Grid>
 
             <StackPanel Grid.Row="1" Orientation="Horizontal" Background="#1C5084" Height="35">
-                <TextBlock Text="Accueil" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
-                <TextBlock Text="Compte" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
-                <TextBlock Text="Feuilles de disponibilité" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
-                <TextBlock Text="Quart de Travail" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
-                <TextBlock Text="Demande de Congé" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
-                <TextBlock Text="Notifications" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+                <TextBlock x:Name="PageAccueil" MouseLeftButtonDown="PageAccueil_Click" Text="Accueil" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+                <TextBlock x:Name="PageCompte" MouseLeftButtonDown="PageCompte_Click" Text="Compte" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+                <TextBlock x:Name="PageDispo" MouseLeftButtonDown="PageDispo_Click" Text="Feuilles de disponibilité" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+                <TextBlock x:Name="PageQuart" MouseLeftButtonDown="PageQuart_Click" Text="Quart de Travail" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+                <TextBlock x:Name="PageConge" MouseLeftButtonDown="PageConge_Click" Text="Demande de Congé" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
+                <TextBlock x:Name="PageNotif" MouseLeftButtonDown="PageNotif_Click" Text="Notifications" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
             </StackPanel>
         </Grid>
 
