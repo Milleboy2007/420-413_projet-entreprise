@@ -1,4 +1,4 @@
-﻿<Page x:Class="ScheduleFlow.Pages.Conge"
+﻿<UserControl x:Class="ScheduleFlow.Pages.Conge"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,112 +6,103 @@
       xmlns:local="clr-namespace:ScheduleFlow.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Conge"
       Background="#c2c2c2">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1.2*"/>
+        </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="1.2*"/>
-            </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Margin="10">
 
-            <StackPanel Grid.Column="0" Margin="10">
-
-                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                    <TextBlock Text="Filtres:" VerticalAlignment="Center"/>
-                    <DatePicker Margin="10,0" Width="180"/>
-                    <ComboBox Width="150" Margin="10,0">
-                        <ComboBoxItem Content="Employé"/>
-                    </ComboBox>
-                    <ComboBox Width="150">
-                        <ComboBoxItem Content="Type Absence"/>
-                    </ComboBox>
-                </StackPanel>
-                <DataGrid
-                          Height="337">
-
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Employé" Width="*"/>
-                        <DataGridTextColumn Header="Poste" Width="*"/>
-                        <DataGridTextColumn Header="Date Début" Width="*"/>
-                        <DataGridTextColumn Header="Date Fin" Width="*"/>
-                        <DataGridTextColumn Header="Nbre Jours" Width="*"/>
-                        <DataGridTextColumn Header="Type Abs." Width="*"/>
-                        <DataGridTextColumn Header="Motif/Notes" Width="2*"/>
-                        <DataGridTextColumn Header="Status" Width="*"/>
-
-                        <DataGridTemplateColumn Header="Actions" Width="2*">
-                        </DataGridTemplateColumn>
-                    </DataGrid.Columns>
-                </DataGrid>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Filtres:" VerticalAlignment="Center"/>
+                <DatePicker Margin="10,0" Width="180"/>
+                <ComboBox Width="150" Margin="10,0">
+                    <ComboBoxItem Content="Employé"/>
+                </ComboBox>
+                <ComboBox Width="150">
+                    <ComboBoxItem Content="Type Absence"/>
+                </ComboBox>
             </StackPanel>
 
-            <Border Grid.Column="1"
-                    Background="White"
-                    Margin="10"
-                    Padding="10"
-                    BorderBrush="#CCC"
-                    BorderThickness="1">
+            <DataGrid Height="337">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Employé" Width="*"/>
+                    <DataGridTextColumn Header="Poste" Width="*"/>
+                    <DataGridTextColumn Header="Date Début" Width="*"/>
+                    <DataGridTextColumn Header="Date Fin" Width="*"/>
+                    <DataGridTextColumn Header="Nbre Jours" Width="*"/>
+                    <DataGridTextColumn Header="Type Abs." Width="*"/>
+                    <DataGridTextColumn Header="Motif/Notes" Width="2*"/>
+                    <DataGridTextColumn Header="Status" Width="*"/>
 
-                <StackPanel>
-                    <TextBlock Text="Détails de l'Absence"
-                               FontWeight="Bold"
-                               Margin="0,0,0,10"/>
+                    <DataGridTemplateColumn Header="Actions" Width="2*">
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
 
-                    <TextBlock Text="Date Début"/>
-                    <DatePicker Margin="0,5"/>
+        <Border Grid.Column="1"
+                Background="White"
+                Margin="10"
+                Padding="10"
+                BorderBrush="#CCC"
+                BorderThickness="1">
 
-                    <TextBlock Text="Date Fin"/>
-                    <DatePicker Margin="0,5"/>
+            <StackPanel>
+                <TextBlock Text="Détails de l'Absence"
+                           FontWeight="Bold"
+                           Margin="0,0,0,10"/>
 
-                    <TextBlock Text="Employé"/>
-                    <ComboBox Margin="0,5"/>
+                <TextBlock Text="Date Début"/>
+                <DatePicker Margin="0,5"/>
 
-                    <TextBlock Text="Type Abs."/>
-                    <StackPanel Orientation="Horizontal">
-                        <ComboBox Width="100" Margin="0,5">
-                            <ComboBoxItem Content="Congé"/>
-                        </ComboBox>
-                        <ComboBox Width="70" Margin="5,5">
-                            <ComboBoxItem Content="Maladie"/>
-                        </ComboBox>
-                    </StackPanel>
+                <TextBlock Text="Date Fin"/>
+                <DatePicker Margin="0,5"/>
 
-                    <TextBlock Text="Motif/Notes"/>
-                    <TextBox Height="60" Margin="0,5"/>
+                <TextBlock Text="Employé"/>
+                <ComboBox Margin="0,5"/>
 
-                    <TextBlock Text="Status"/>
-                    <ComboBox Margin="0,5">
-                        <ComboBoxItem Content="En attente"/>
-                        <ComboBoxItem Content="Approuvé"/>
-                        <ComboBoxItem Content="Refusé"/>
+                <TextBlock Text="Type Abs."/>
+                <StackPanel Orientation="Horizontal">
+                    <ComboBox Width="100" Margin="0,5">
+                        <ComboBoxItem Content="Congé"/>
                     </ComboBox>
-
-                    <Button Content="Mettre à jour"
-                            Background="#28A745"
-                            Foreground="White"
-                            Margin="0,10,0,5"/>
-
-                    <Button Content="Refuser"
-                            Background="#DC3545"
-                            Foreground="White"
-                            Margin="0,5"/>
-
-                    <Button Content="Approuver"
-                            Background="#28A745"
-                            Foreground="White"
-                            Margin="0,5"/>
-
-                    <Button Content="Annuler"
-                            Margin="0,10,0,0"/>
+                    <ComboBox Width="70" Margin="5,5">
+                        <ComboBoxItem Content="Maladie"/>
+                    </ComboBox>
                 </StackPanel>
-            </Border>
-        </Grid>
+
+                <TextBlock Text="Motif/Notes"/>
+                <TextBox Height="60" Margin="0,5"/>
+
+                <TextBlock Text="Status"/>
+                <ComboBox Margin="0,5">
+                    <ComboBoxItem Content="En attente"/>
+                    <ComboBoxItem Content="Approuvé"/>
+                    <ComboBoxItem Content="Refusé"/>
+                </ComboBox>
+
+                <Button Content="Mettre à jour"
+                        Background="#28A745"
+                        Foreground="White"
+                        Margin="0,10,0,5"/>
+
+                <Button Content="Refuser"
+                        Background="#DC3545"
+                        Foreground="White"
+                        Margin="0,5"/>
+
+                <Button Content="Approuver"
+                        Background="#28A745"
+                        Foreground="White"
+                        Margin="0,5"/>
+
+                <Button Content="Annuler"
+                        Margin="0,10,0,0"/>
+            </StackPanel>
+        </Border>
     </Grid>
-</Page>
+</UserControl>
