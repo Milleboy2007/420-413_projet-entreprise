@@ -1,4 +1,4 @@
-﻿<Page x:Class="ScheduleFlow.Pages.PageProfil"
+﻿<UserControl x:Class="ScheduleFlow.Pages.PageProfil"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,135 +6,126 @@
       xmlns:local="clr-namespace:ScheduleFlow.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PageProfil"
       Background="#093C71">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <Grid Margin="20,20,20,10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="2" Margin="20,20,20,10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <StackPanel Grid.Column="0" Margin="0,0,10,0">
-                <TextBlock Text="Informations personnelles" 
-                           FontSize="18" 
-                           FontWeight="Bold" 
+        <StackPanel Grid.Column="0" Margin="0,0,10,0">
+            <TextBlock Text="Informations personnelles" 
+                       FontSize="18" 
+                       FontWeight="Bold" 
+                       Foreground="White" 
+                       Margin="0,0,0,15"/>
+            <StackPanel Margin="0,0,0,10">
+                <TextBlock Text="Prénom Nom" 
+                           Foreground="LightGray" 
+                           FontSize="12"/>
+                <TextBlock Text="Jane Doe" 
                            Foreground="White" 
-                           Margin="0,0,0,15"/>
-                <StackPanel Margin="0,0,0,10">
-                    <TextBlock Text="Prénom Nom" 
-                               Foreground="LightGray" 
-                               FontSize="12"/>
-                    <TextBlock Text="Jane Doe" 
-                               Foreground="White" 
-                               FontSize="15" 
-                               FontWeight="SemiBold"/>
-                </StackPanel>
-                <StackPanel Margin="0,0,0,10">
-                    <TextBlock Text="Genre" 
-                               Foreground="LightGray" 
-                               FontSize="12"/>
-                    <TextBlock Text="Féminin" 
-                               Foreground="White" 
-                               FontSize="15" 
-                               FontWeight="SemiBold"/>
-                </StackPanel>
-
-                <StackPanel Margin="0,0,0,10">
-                    <TextBlock Text="Date d'anniversaire" 
-                               Foreground="LightGray" 
-                               FontSize="12"/>
-                    <TextBlock Text="15 mars 1995" 
-                               Foreground="White" 
-                               FontSize="15" 
-                               FontWeight="SemiBold"/>
-                </StackPanel>
-
-                <StackPanel Margin="0,0,0,10">
-                    <TextBlock Text="Numéro de téléphone personnel" 
-                               Foreground="LightGray" 
-                               FontSize="12"/>
-                    <TextBlock Text="(514) 555-1234" 
-                               Foreground="White" 
-                               FontSize="15" 
-                               FontWeight="SemiBold"/>
-                </StackPanel>
-
-                <StackPanel Margin="0,0,0,10">
-                    <TextBlock Text="Adresse" 
-                               Foreground="LightGray" 
-                               FontSize="12"/>
-                    <TextBlock Text="123 Rue Example, Montréal, QC" 
-                               Foreground="White" 
-                               FontSize="15" 
-                               FontWeight="SemiBold"/>
-                </StackPanel>
-
-                <StackPanel Margin="0,0,0,10">
-                    <TextBlock Text="Courriel personnel" 
-                               Foreground="LightGray" 
-                               FontSize="12"/>
-                    <TextBlock Text="exemple@gmail.com" 
-                               Foreground="White" 
-                               FontSize="15" 
-                               FontWeight="SemiBold"/>
-                </StackPanel>
+                           FontSize="15" 
+                           FontWeight="SemiBold"/>
+            </StackPanel>
+            <StackPanel Margin="0,0,0,10">
+                <TextBlock Text="Genre" 
+                           Foreground="LightGray" 
+                           FontSize="12"/>
+                <TextBlock Text="Féminin" 
+                           Foreground="White" 
+                           FontSize="15" 
+                           FontWeight="SemiBold"/>
             </StackPanel>
 
-            <StackPanel Grid.Column="1" Margin="10,0,0,0">
-                <TextBlock Text="Informations professionnelles" 
-                           FontSize="18" 
-                           FontWeight="Bold" 
+            <StackPanel Margin="0,0,0,10">
+                <TextBlock Text="Date d'anniversaire" 
+                           Foreground="LightGray" 
+                           FontSize="12"/>
+                <TextBlock Text="15 mars 1995" 
                            Foreground="White" 
-                           Margin="0,0,0,15"/>
-
-                <StackPanel Margin="0,0,0,10">
-                    <TextBlock Text="Numéro de téléphone professionnel" 
-                               Foreground="LightGray" 
-                               FontSize="12"/>
-                    <TextBlock Text="(514) 555-5678" 
-                               Foreground="White" 
-                               FontSize="15" 
-                               FontWeight="SemiBold"/>
-                </StackPanel>
-
-                <StackPanel Margin="0,0,0,10">
-                    <TextBlock Text="Courriel d'entreprise" 
-                               Foreground="LightGray" 
-                               FontSize="12"/>
-                    <TextBlock Text="exemple@entreprise.com" 
-                               Foreground="White" 
-                               FontSize="15" 
-                               FontWeight="SemiBold"/>
-                </StackPanel>
-
-                <StackPanel Margin="0,0,0,10">
-                    <TextBlock Text="Employeur" 
-                               Foreground="LightGray" 
-                               FontSize="12"/>
-                    <TextBlock Text="ABC Corporation" 
-                               Foreground="White" 
-                               FontSize="15" 
-                               FontWeight="SemiBold"/>
-                </StackPanel>
-
-                <StackPanel Margin="0,0,0,10">
-                    <TextBlock Text="Poste" 
-                               Foreground="LightGray" 
-                               FontSize="12"/>
-                    <TextBlock Text="Développeur Full Stack" 
-                               Foreground="White" 
-                               FontSize="15" 
-                               FontWeight="SemiBold"/>
-                </StackPanel>
+                           FontSize="15" 
+                           FontWeight="SemiBold"/>
             </StackPanel>
-        </Grid>
+
+            <StackPanel Margin="0,0,0,10">
+                <TextBlock Text="Numéro de téléphone personnel" 
+                           Foreground="LightGray" 
+                           FontSize="12"/>
+                <TextBlock Text="(514) 555-1234" 
+                           Foreground="White" 
+                           FontSize="15" 
+                           FontWeight="SemiBold"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,0,0,10">
+                <TextBlock Text="Adresse" 
+                           Foreground="LightGray" 
+                           FontSize="12"/>
+                <TextBlock Text="123 Rue Example, Montréal, QC" 
+                           Foreground="White" 
+                           FontSize="15" 
+                           FontWeight="SemiBold"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,0,0,10">
+                <TextBlock Text="Courriel personnel" 
+                           Foreground="LightGray" 
+                           FontSize="12"/>
+                <TextBlock Text="exemple@gmail.com" 
+                           Foreground="White" 
+                           FontSize="15" 
+                           FontWeight="SemiBold"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="10,0,0,0">
+            <TextBlock Text="Informations professionnelles" 
+                       FontSize="18" 
+                       FontWeight="Bold" 
+                       Foreground="White" 
+                       Margin="0,0,0,15"/>
+
+            <StackPanel Margin="0,0,0,10">
+                <TextBlock Text="Numéro de téléphone professionnel" 
+                           Foreground="LightGray" 
+                           FontSize="12"/>
+                <TextBlock Text="(514) 555-5678" 
+                           Foreground="White" 
+                           FontSize="15" 
+                           FontWeight="SemiBold"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,0,0,10">
+                <TextBlock Text="Courriel d'entreprise" 
+                           Foreground="LightGray" 
+                           FontSize="12"/>
+                <TextBlock Text="exemple@entreprise.com" 
+                           Foreground="White" 
+                           FontSize="15" 
+                           FontWeight="SemiBold"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,0,0,10">
+                <TextBlock Text="Employeur" 
+                           Foreground="LightGray" 
+                           FontSize="12"/>
+                <TextBlock Text="ABC Corporation" 
+                           Foreground="White" 
+                           FontSize="15" 
+                           FontWeight="SemiBold"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,0,0,10">
+                <TextBlock Text="Poste" 
+                           Foreground="LightGray" 
+                           FontSize="12"/>
+                <TextBlock Text="Développeur Full Stack" 
+                           Foreground="White" 
+                           FontSize="15" 
+                           FontWeight="SemiBold"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
-</Page>
+</UserControl>
