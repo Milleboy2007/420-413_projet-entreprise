@@ -53,7 +53,7 @@ namespace ScheduleFlow.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ScheduleFlow;V1.0.0.0;component/pages/page_quart_employee.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ScheduleFlow;component/pages/page_quart_employee.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\Page_Quart_Employee.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -15,42 +15,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Background="#093C71" Height="60">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <TextBlock Text="ScheduleFlow" 
-                       FontSize="24" 
-                       FontWeight="Bold" 
-                       Foreground="White" 
-                       VerticalAlignment="Center"
-                       Margin="20,0,0,0"/>
 
-            <Border Width="40" 
-                    Height="40" 
-                    CornerRadius="20"
-                    Grid.Column="1"
-                    Margin="0,0,20,0"
-                    VerticalAlignment="Center">
-                <Border.Background>
-                    <ImageBrush ImageSource="pfp.png"/>
-                </Border.Background>
-            </Border>
-        </Grid>
-
-        <StackPanel Grid.Row="1" 
-                    Orientation="Horizontal" 
-                    Background="#093C71" 
-                    Height="35">
-
-            <TextBlock Text="Accueil" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
-            <TextBlock Text="Compte" Foreground="White" FontWeight="Bold" Padding="15,8"/>
-            <TextBlock Text="Feuilles de disponibilité" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
-            <TextBlock Text="Quart de Travail" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
-            <TextBlock Text="Demande de Congé" Foreground="White" FontWeight="SemiBold" Padding="15,8" Background="#1561AF"/>
-            <TextBlock Text="Notifications" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
-        </StackPanel>
 
         <Grid Grid.Row="2" Margin="20,20,20,10">
             <Grid.ColumnDefinitions>

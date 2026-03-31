@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Nathan\Documents\GitHub\test\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\
+D:\GitHub\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\
 ScheduleFlow
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\Nathan\Documents\GitHub\test\420-413_projet-entreprise\ScheduleFlow\App.xaml
+D:\GitHub\420-413_projet-entreprise\ScheduleFlow\App.xaml
 101958407956
 
 13-756990453
 198185795992
 MainWindow.xaml;Pages\AccueilEmploye.xaml;Pages\AccueilGerant.xaml;Pages\Conge.xaml;Pages\CreationCompteParGerant.xaml;Pages\Dispo.xaml;Pages\PageDemandeConge.xaml;Pages\PageProfil.xaml;Pages\Page_Quart_Employee.xaml;Pages\Page_Quart_Gerant.xaml;
 
-False
+True
 
