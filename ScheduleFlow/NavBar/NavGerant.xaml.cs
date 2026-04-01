@@ -26,6 +26,7 @@ namespace ScheduleFlow.NavBar
         private CreationCompteParGerant creationCompteParGerant = new CreationCompteParGerant();
         private Page_Quart_Gerant quart = new Page_Quart_Gerant();
         private PageProfil compte = new PageProfil();
+        private PubAnnonceGerant pubAnnonce = new PubAnnonceGerant();
 
         private SolidColorBrush backColorCurPage = (SolidColorBrush)(new BrushConverter().ConvertFrom("#1561AF"));
         private SolidColorBrush backColorOtherPage = new SolidColorBrush(Colors.Transparent);
@@ -85,7 +86,9 @@ namespace ScheduleFlow.NavBar
         
         private void PageAnnonces_Click(Object sender, MouseButtonEventArgs e)
         {
-            
+            GerantArea.Content = pubAnnonce;
+            ResetColor();
+            PageAnnonces.Background = backColorCurPage;
         }
         
         private void PageNotifications_Click(Object sender, MouseButtonEventArgs e)
