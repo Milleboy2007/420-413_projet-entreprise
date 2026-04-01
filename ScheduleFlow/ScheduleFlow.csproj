@@ -12,4 +12,8 @@
     <Folder Include="Services\Employe\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Domaine\Domaine.csproj" />
+  </ItemGroup>
+
 </Project>
