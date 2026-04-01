@@ -19,7 +19,7 @@ namespace ScheduleFlow
         public MainWindow()
         {
             InitializeComponent();
-            MainArea.Content = new NavBar.NavEmploye();
+            MainArea.Content = new NavBar.NavGerant();
         }
     }
 }

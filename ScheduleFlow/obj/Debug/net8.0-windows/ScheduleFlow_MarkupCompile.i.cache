@@ -16,5 +16,5 @@ C:\Users\Nathan\Documents\GitHub\420-413_projet-entreprise\ScheduleFlow\App.xaml
 198185795992
 MainWindow.xaml;NavBar\NavEmploye.xaml;NavBar\NavEmployeur.xaml;NavBar\NavGerant.xaml;Pages\Employee\AccueilEmploye.xaml;Pages\Employee\Dispo.xaml;Pages\Employee\PageDemandeConge.xaml;Pages\Employee\Page_Quart_Employee.xaml;Pages\Employeur\CreationCompteParEmployeur.xaml;Pages\Gerant\AccueilGerant.xaml;Pages\Gerant\Conge.xaml;Pages\Gerant\CreationCompteParGerant.xaml;Pages\Gerant\Page_Quart_Gerant.xaml;Pages\Global\PageProfil.xaml;
 
-False
+True
 

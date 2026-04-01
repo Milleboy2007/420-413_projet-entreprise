@@ -17,9 +17,6 @@ using ScheduleFlow.Pages.Global;
 
 namespace ScheduleFlow.NavBar
 {
-    /// <summary>
-    /// Logique d'interaction pour NavEmploye.xaml
-    /// </summary>
     public partial class NavEmploye : UserControl
     {
         private AccueilEmploye accueilEmploye = new AccueilEmploye();
