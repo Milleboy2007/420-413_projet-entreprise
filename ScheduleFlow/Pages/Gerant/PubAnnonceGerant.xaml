@@ -5,18 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ScheduleFlow.Pages.Gerant"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="#ccc">
     <Grid>
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
-            <Border Background="White" CornerRadius="8" Padding="20" Margin="0,0,0,20">
+            <Border Background="White" CornerRadius="8" Padding="20" Margin="20,20,20,20">
                 <StackPanel>
-                    <TextBlock Text="Publication d'Annonce" FontSize="14" FontWeight="Bold" Margin="0,0,0,15" Foreground="#333333"/>
+                    <TextBlock Text="Publication d'Annonce" FontSize="25" FontWeight="Bold" Margin="0,0,0,15" Foreground="#333333"/>
 
-                    <TextBlock Text="À *" FontSize="12" Margin="0,0,0,8" Foreground="#333333"/>
-                    <TextBox Height="40" Padding="12" Margin="0,0,0,15" Background="White" BorderThickness="1" BorderBrush="#CCCCCC" Foreground="#333333"/>
+                    <TextBlock Text="À *" FontSize="20" Margin="0,0,0,8" Foreground="#333333"/>
+                    <TextBox Height="50" FontSize="16" Padding="12" Margin="0,0,0,15" Background="White" BorderThickness="1" BorderBrush="#CCCCCC" Foreground="#333333"/>
 
-                    <TextBlock Text="Message *" FontSize="12" Margin="0,0,0,8" Foreground="#333333"/>
-                    <TextBox Height="200" Padding="12" Margin="0,0,0,15" Background="White" BorderThickness="1" BorderBrush="#CCCCCC" Foreground="#333333"/>
+                    <TextBlock Text="Message *" FontSize="20" Margin="0,0,0,8" Foreground="#333333"/>
+                    <TextBox Height="200" FontSize="16" Padding="12" Margin="0,0,0,15" Background="White" BorderThickness="1" BorderBrush="#CCCCCC" Foreground="#333333"/>
                     <Button Content="Envoyer" Background="#28A745" Foreground="White" Width="100" Margin="0,10,0,5"/>
                 </StackPanel>
             </Border>
