@@ -161,3 +161,5 @@ C:\Users\Nathan\Documents\GitHub\420-413_projet-entreprise\ScheduleFlow\obj\Debu
 C:\Users\Nathan\Documents\GitHub\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\Pages\Gerant\CreationCompteParGerant.baml
 C:\Users\Nathan\Documents\GitHub\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\Pages\Gerant\Page_Quart_Gerant.baml
 C:\Users\Nathan\Documents\GitHub\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\Pages\Global\PageProfil.baml
+C:\Users\Nathan\Documents\GitHub\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\Pages\Global\Connexion.g.cs
+C:\Users\Nathan\Documents\GitHub\420-413_projet-entreprise\ScheduleFlow\obj\Debug\net8.0-windows\Pages\Global\Connexion.baml

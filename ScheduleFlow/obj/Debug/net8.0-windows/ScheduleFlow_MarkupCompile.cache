@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 C:\Users\Nathan\Documents\GitHub\420-413_projet-entreprise\ScheduleFlow\App.xaml
-141782164116
+15354886996
 
-17-100253662
+18339996840
 198185795992
-MainWindow.xaml;NavBar\NavEmploye.xaml;NavBar\NavEmployeur.xaml;NavBar\NavGerant.xaml;Pages\Employee\AccueilEmploye.xaml;Pages\Employee\Dispo.xaml;Pages\Employee\PageDemandeConge.xaml;Pages\Employee\Page_Quart_Employee.xaml;Pages\Employeur\CreationCompteParEmployeur.xaml;Pages\Gerant\AccueilGerant.xaml;Pages\Gerant\Conge.xaml;Pages\Gerant\CreationCompteParGerant.xaml;Pages\Gerant\Page_Quart_Gerant.xaml;Pages\Global\PageProfil.xaml;
+MainWindow.xaml;NavBar\NavEmploye.xaml;NavBar\NavEmployeur.xaml;NavBar\NavGerant.xaml;Pages\Employee\AccueilEmploye.xaml;Pages\Employee\Dispo.xaml;Pages\Employee\PageDemandeConge.xaml;Pages\Employee\Page_Quart_Employee.xaml;Pages\Employeur\CreationCompteParEmployeur.xaml;Pages\Gerant\AccueilGerant.xaml;Pages\Gerant\Conge.xaml;Pages\Gerant\CreationCompteParGerant.xaml;Pages\Gerant\Page_Quart_Gerant.xaml;Pages\Global\Connexion.xaml;Pages\Global\PageProfil.xaml;
 
 False
 
