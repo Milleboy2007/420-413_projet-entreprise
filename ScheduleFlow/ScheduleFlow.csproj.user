@@ -32,6 +32,9 @@
     <Compile Update="Pages\Employee\PageDemandeConge.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Gerant\PubAnnonceGerant.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Global\Connexion.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

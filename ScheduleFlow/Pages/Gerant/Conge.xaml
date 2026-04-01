@@ -76,7 +76,7 @@
                 </StackPanel>
 
                 <TextBlock Text="Motif/Notes"/>
-                <TextBox Height="60" Margin="0,5"/>
+                <TextBox Height="46" Margin="0,5"/>
 
                 <TextBlock Text="Status"/>
                 <ComboBox Margin="0,5">
