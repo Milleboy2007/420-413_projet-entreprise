@@ -1,0 +1,122 @@
+﻿<UserControl x:Class="ScheduleFlow.Pages.Gerant.CreationCompteParGerant"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ScheduleFlow.Pages.Gerant"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="#F5F5F7">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Padding="30,20,30,20">
+            <StackPanel>
+                <TextBlock Text="Inscription de l'employé" FontSize="20" FontWeight="Bold" Margin="0,0,0,0" Foreground="#333333"/>
+                <TextBlock Text="Veuillez remplir toutes les informations requises pour enregistrer un nouvel employé." FontSize="12" TextWrapping="Wrap" Foreground="#666666" Margin="0,0,0,20"/>
+            </StackPanel>
+        </Border>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <Border Padding="30">
+                <StackPanel>
+                    <Border Background="White" CornerRadius="8" Padding="20" Margin="0,0,0,20">
+                        <StackPanel>
+                            <TextBlock FontSize="16" FontWeight="Bold" Margin="0,0,0,15" Foreground="#333333"><Run Text="P"/><Run Text="hoto"/><Run Text=" d"/><Run Language="fr-ca" Text="e"/><Run Text=" profil"/></TextBlock>
+                            <StackPanel Orientation="Horizontal">
+                                <Border Width="60" Height="60" CornerRadius="30" Background="#E0E0E0" Margin="0,0,15,0">
+                                    <TextBlock Text="👤" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+                                <Button Content="Téléverser" Padding="15,10" Background="#333333" Foreground="White" FontSize="12" VerticalAlignment="Center" Click="Button_Click"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="White" CornerRadius="8" Padding="20" Margin="0,0,0,20">
+                        <StackPanel>
+                            <TextBlock Text="Informations personnelles" FontSize="14" FontWeight="Bold" Margin="0,0,0,15" Foreground="#333333"/>
+
+                            <TextBlock Text="Prénom *" FontSize="12" Margin="0,0,0,8" Foreground="#333333"/>
+                            <TextBox Height="40" Padding="12" Margin="0,0,0,15" Background="White" BorderThickness="1" BorderBrush="#CCCCCC" Foreground="#333333"/>
+
+                            <TextBlock Text="Nom *" FontSize="12" Margin="0,0,0,8" Foreground="#333333"/>
+                            <TextBox Height="40" Padding="12" Margin="0,0,0,15" Background="White" BorderThickness="1" BorderBrush="#CCCCCC" Foreground="#333333"/>
+
+                            <TextBlock Text="Adresse e-mail *" FontSize="12" Margin="0,0,0,8" Foreground="#333333"/>
+                            <TextBox Height="40" Padding="12" Margin="0,0,0,15" Background="White" BorderThickness="1" BorderBrush="#CCCCCC" Foreground="#333333"/>
+                            <TextBlock FontSize="12" Foreground="#333333" Margin="0,0,0,8"><Run Language="fr-ca" Text="Mot de passe"/><Run Text=" *"/></TextBlock>
+                            <TextBox Height="40" Padding="12" Margin="0,0,0,15" Background="White" BorderThickness="1" BorderBrush="#CCCCCC" Foreground="#333333"/>
+
+                            <TextBlock Text="Numéro de téléphone *" FontSize="12" Margin="0,0,0,8" Foreground="#333333"/>
+                            <TextBox Height="40" Padding="12" Margin="0,0,0,15" Background="White" BorderThickness="1" BorderBrush="#CCCCCC" Foreground="#333333"/>
+
+                            <TextBlock Text="Date de naissance *" FontSize="12" Margin="0,0,0,8" Foreground="#333333"/>
+                            <TextBox Height="40" Padding="12" Margin="0,0,0,0" Background="White" BorderThickness="1" BorderBrush="#CCCCCC" Foreground="#333333"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="White" CornerRadius="8" Padding="20" Margin="0,0,0,20">
+                        <StackPanel>
+                            <TextBlock Text="Détails du poste" FontSize="14" FontWeight="Bold" Margin="0,0,0,15" Foreground="#333333"/>
+
+                            <TextBlock Text="Poste *" FontSize="12" Margin="0,0,0,8" Foreground="#333333"/>
+                            <TextBox Height="40" Padding="12" Margin="0,0,0,15" Background="White" BorderThickness="1" BorderBrush="#CCCCCC" Foreground="#333333"/>
+
+                            <TextBlock FontSize="12" Margin="0,0,0,8" Foreground="#333333"><Run Text="D"/><Run Language="fr-ca" Text="é"/><Run Text="partement *"/></TextBlock>
+                            <TextBox Height="40" Padding="12" Margin="0,0,0,15" Background="White" BorderThickness="1" BorderBrush="#CCCCCC" Foreground="#333333"/>
+
+                            <TextBlock FontSize="12" Margin="0,0,0,8" Foreground="#333333"><Run Text="Date d"/><Run Language="fr-ca" Text="'embauche"/><Run Text=" *"/></TextBlock>
+                            <TextBox Height="40" Padding="12" Margin="0,0,0,15" Background="White" BorderThickness="1" BorderBrush="#CCCCCC" Foreground="#333333"/>
+
+                            <TextBlock FontSize="12" Margin="0,0,0,8" Foreground="#333333"><Run Language="fr-ca" Text="Type de contrat"/><Run Text=" *"/></TextBlock>
+                            <TextBox Height="40" Padding="12" Margin="0,0,0,0" Background="White" BorderThickness="1" BorderBrush="#CCCCCC" Foreground="#333333"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="White" CornerRadius="8" Padding="20" Margin="0,0,0,20">
+                        <StackPanel>
+                            <TextBlock Text="Informations d'adresse" FontSize="14" FontWeight="Bold" Margin="0,0,0,15" Foreground="#333333"/>
+
+                            <TextBlock FontSize="12" Margin="0,0,0,8" Foreground="#333333"><Run Text="Adresse "/><Run Language="fr-ca" Text="postale"/><Run Text=" *"/></TextBlock>
+                            <TextBox Height="40" Padding="12" Margin="0,0,0,15" Background="White" BorderThickness="1" BorderBrush="#CCCCCC" Foreground="#333333"/>
+                            <TextBlock FontSize="12" Foreground="#333333" Margin="0,0,0,8"><Run Language="fr-ca" Text="Pays"/><Run Text=" *"/></TextBlock>
+                            <TextBox Height="40" Padding="12" Margin="0,0,0,15" Background="White" BorderThickness="1" BorderBrush="#CCCCCC" Foreground="#333333"/>
+
+                            <TextBlock Text="Ville *" FontSize="12" Margin="0,0,0,8" Foreground="#333333"/>
+                            <TextBox Height="40" Padding="12" Margin="0,0,0,15" Background="White" BorderThickness="1" BorderBrush="#CCCCCC" Foreground="#333333"/>
+
+                            <TextBlock FontSize="12" Margin="0,0,0,8" Foreground="#333333"><Run Text="Région/Province *"/><Run Language="fr-ca" Text=" (ou État)"/></TextBlock>
+                            <TextBox Height="40" Padding="12" Margin="0,0,0,15" Background="White" BorderThickness="1" BorderBrush="#CCCCCC" Foreground="#333333"/>
+
+                            <TextBlock Text="Code postal *" FontSize="12" Margin="0,0,0,8" Foreground="#333333"/>
+                            <TextBox Height="40" Padding="12" Margin="0,0,0,0" Background="White" BorderThickness="1" BorderBrush="#CCCCCC" Foreground="#333333"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="White" CornerRadius="8" Padding="20" Margin="0,0,0,20">
+                        <StackPanel>
+                            <TextBlock Text="Contact d'urgence" FontSize="14" FontWeight="Bold" Margin="0,0,0,15" Foreground="#333333"/>
+
+                            <TextBlock Text="Nom de contact *" FontSize="12" Margin="0,0,0,8" Foreground="#333333"/>
+                            <TextBox Height="40" Padding="12" Margin="0,0,0,15" Background="White" BorderThickness="1" BorderBrush="#CCCCCC" Foreground="#333333"/>
+
+                            <TextBlock Text="Téléphone du contact *" FontSize="12" Margin="0,0,0,8" Foreground="#333333"/>
+                            <TextBox Height="40" Padding="12" Margin="0,0,0,15" Background="White" BorderThickness="1" BorderBrush="#CCCCCC" Foreground="#333333"/>
+
+                            <TextBlock Text="Lien de parenté *" FontSize="12" Margin="0,0,0,8" Foreground="#333333"/>
+                            <TextBox Height="40" Padding="12" Margin="0,0,0,0" Background="White" BorderThickness="1" BorderBrush="#CCCCCC" Foreground="#333333"/>
+                        </StackPanel>
+                    </Border>
+
+                    <StackPanel HorizontalAlignment="Right" Margin="0,20,0,20">
+                        <Button x:Name="btnEnvoyer" Content="Envoyer" Height="45" Width="120" Padding="20,12" Background="#333333" Foreground="White" FontSize="14" FontWeight="Bold" Click="BtnEnvoyer_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

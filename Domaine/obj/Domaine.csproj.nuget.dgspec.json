@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nathan\\Documents\\GitHub\\test\\420-413_projet-entreprise\\Domaine\\Domaine.csproj": {}
+    "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\Domaine\\Domaine.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nathan\\Documents\\GitHub\\test\\420-413_projet-entreprise\\Domaine\\Domaine.csproj": {
+    "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\Domaine\\Domaine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nathan\\Documents\\GitHub\\test\\420-413_projet-entreprise\\Domaine\\Domaine.csproj",
+        "projectUniqueName": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\Domaine\\Domaine.csproj",
         "projectName": "Domaine",
-        "projectPath": "C:\\Users\\Nathan\\Documents\\GitHub\\test\\420-413_projet-entreprise\\Domaine\\Domaine.csproj",
+        "projectPath": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\Domaine\\Domaine.csproj",
         "packagesPath": "C:\\Users\\Nathan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nathan\\Documents\\GitHub\\test\\420-413_projet-entreprise\\Domaine\\obj\\",
+        "outputPath": "C:\\Users\\Nathan\\Documents\\GitHub\\420-413_projet-entreprise\\Domaine\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nathan\\AppData\\Roaming\\NuGet\\NuGet.Config",

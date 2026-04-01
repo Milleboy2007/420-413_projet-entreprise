@@ -19,6 +19,7 @@ namespace ScheduleFlow
         public MainWindow()
         {
             InitializeComponent();
+            MainArea.Content = new Pages.Global.Connexion();
         }
     }
 }

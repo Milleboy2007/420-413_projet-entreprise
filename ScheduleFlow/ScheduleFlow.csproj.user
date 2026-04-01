@@ -2,31 +2,46 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="Pages\AccueilEmploye.xaml.cs">
+    <Compile Update="NavBar\NavEmploye.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\AccueilGerant.xaml.cs">
+    <Compile Update="NavBar\NavEmployeur.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\Conge.xaml.cs">
+    <Compile Update="NavBar\NavGerant.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\CreationCompteParGerant.xaml.cs">
+    <Compile Update="Pages\Employee\AccueilEmploye.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\Dispo.xaml.cs">
+    <Compile Update="Pages\Employeur\CreationCompteParEmployeur.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\PageDemandeConge.xaml.cs">
+    <Compile Update="Pages\Gerant\AccueilGerant.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\PageProfil.xaml.cs">
+    <Compile Update="Pages\Gerant\Conge.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\Page_Quart_Employee.xaml.cs">
+    <Compile Update="Pages\Gerant\CreationCompteParGerant.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\Page_Quart_Gerant.xaml.cs">
+    <Compile Update="Pages\Employee\Dispo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Employee\PageDemandeConge.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Global\Connexion.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Global\PageProfil.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Employee\Page_Quart_Employee.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Gerant\Page_Quart_Gerant.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
