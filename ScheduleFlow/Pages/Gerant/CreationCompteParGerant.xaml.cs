@@ -18,7 +18,7 @@ namespace ScheduleFlow.Pages
     /// <summary>
     /// Logique d'interaction pour CreationCompteParGerant.xaml
     /// </summary>
-    public partial class CreationCompteParGerant : Page
+    public partial class CreationCompteParGerant : UserControl
     {
         public CreationCompteParGerant()
         {

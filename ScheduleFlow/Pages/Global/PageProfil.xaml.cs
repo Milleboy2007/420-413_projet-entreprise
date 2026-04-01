@@ -13,12 +13,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ScheduleFlow.Pages
+namespace ScheduleFlow.Pages.Global
 {
     /// <summary>
     /// Logique d'interaction pour PageProfil.xaml
     /// </summary>
-    public partial class PageProfil : Page
+    public partial class PageProfil : UserControl
     {
         public PageProfil()
         {

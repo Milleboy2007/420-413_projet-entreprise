@@ -18,7 +18,7 @@ namespace ScheduleFlow.Pages
     /// <summary>
     /// Logique d'interaction pour Page_Quart_Gerant.xaml
     /// </summary>
-    public partial class Page_Quart_Gerant : Page
+    public partial class Page_Quart_Gerant : UserControl
     {
         public Page_Quart_Gerant()
         {

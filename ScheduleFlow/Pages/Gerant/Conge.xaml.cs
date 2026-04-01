@@ -18,7 +18,7 @@ namespace ScheduleFlow.Pages
     /// <summary>
     /// Logique d'interaction pour Conge.xaml
     /// </summary>
-    public partial class Conge : Page
+    public partial class Conge : UserControl
     {
         public Conge()
         {

@@ -18,7 +18,7 @@ namespace ScheduleFlow.Pages.Employee
     /// <summary>
     /// Logique d'interaction pour PageDemandeConge.xaml
     /// </summary>
-    public partial class PageDemandeConge : Page
+    public partial class PageDemandeConge : UserControl
     {
         public PageDemandeConge()
         {

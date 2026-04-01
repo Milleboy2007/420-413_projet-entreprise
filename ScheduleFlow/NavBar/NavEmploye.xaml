@@ -26,11 +26,11 @@
 
                 <TextBlock Text="ScheduleFlow" FontSize="24" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" Margin="20,0,0,0"/>
 
-                <Border Width="40" Height="40" CornerRadius="20" Grid.Column="1" Margin="0,0,20,0" VerticalAlignment="Center">
+                <!--<Border Width="40" Height="40" CornerRadius="20" Grid.Column="1" Margin="0,0,20,0" VerticalAlignment="Center">
                     <Border.Background>
                         <ImageBrush ImageSource="pfp.png"/>
                     </Border.Background>
-                </Border>
+                </Border>-->
             </Grid>
 
             <StackPanel Grid.Row="1" Orientation="Horizontal" Background="#1C5084" Height="35">

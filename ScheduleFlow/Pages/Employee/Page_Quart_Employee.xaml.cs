@@ -18,7 +18,7 @@ namespace ScheduleFlow.Pages.Employee
     /// <summary>
     /// Logique d'interaction pour Page_Quart_Employee.xaml
     /// </summary>
-    public partial class Page_Quart_Employee : Page
+    public partial class Page_Quart_Employee : UserControl
     {
         public Page_Quart_Employee()
         {

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ScheduleFlow.Pages.Employee;
+using ScheduleFlow.Pages.Global;
 
 namespace ScheduleFlow.NavBar
 {
@@ -25,39 +26,64 @@ namespace ScheduleFlow.NavBar
         private Dispo dispo = new Dispo();
         private Page_Quart_Employee quart = new Page_Quart_Employee();
         private PageDemandeConge conge = new PageDemandeConge();
+        private PageProfil compte = new PageProfil();
+
+        private SolidColorBrush backColorCurPage = (SolidColorBrush)(new BrushConverter().ConvertFrom("#1561AF"));
+        private SolidColorBrush backColorOtherPage = new SolidColorBrush(Colors.Transparent);
+
 
         public NavEmploye()
         {
             InitializeComponent();
             EmployeArea.Content = accueilEmploye;
+            PageAccueil.Background = backColorCurPage;
         }
 
-        private void PageAccueil_Click()
+        private void ResetColor()
         {
-
+            PageAccueil.Background = backColorOtherPage;
+            PageDispo.Background = backColorOtherPage;
+            PageQuart.Background = backColorOtherPage;
+            PageConge.Background = backColorOtherPage;
+            PageCompte.Background = backColorOtherPage;
         }
 
-        private void PageCompte_Click() 
+        private void PageAccueil_Click(Object sender, MouseButtonEventArgs e)
         {
-            
+            EmployeArea.Content = accueilEmploye;
+            ResetColor();
+            PageAccueil.Background = backColorCurPage;
+        }
+
+        private void PageCompte_Click(Object sender, MouseButtonEventArgs e) 
+        {
+            EmployeArea.Content = compte;
+            ResetColor();
+            PageCompte.Background = backColorCurPage;
         }
         
-        private void PageDispo_Click()
+        private void PageDispo_Click(Object sender, MouseButtonEventArgs e)
         {
-
+            EmployeArea.Content = dispo;
+            ResetColor();
+            PageDispo.Background = backColorCurPage;
         }
 
-        private void PageQuart_Click() 
+        private void PageQuart_Click(Object sender, MouseButtonEventArgs e) 
         {
-
+            EmployeArea.Content = quart;
+            ResetColor();
+            PageQuart.Background = backColorCurPage;
         }
         
-        private void PageConge_Click()
+        private void PageConge_Click(Object sender, MouseButtonEventArgs e)
         {
-
+            EmployeArea.Content = conge;
+            ResetColor();
+            PageConge.Background = backColorCurPage;
         }
         
-        private void PageNotif_Click()
+        private void PageNotif_Click(Object sender, MouseButtonEventArgs e)
         {
 
         }

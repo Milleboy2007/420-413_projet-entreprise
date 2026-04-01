@@ -18,7 +18,7 @@ namespace ScheduleFlow.Pages
     /// <summary>
     /// Logique d'interaction pour AccueilGerant.xaml
     /// </summary>
-    public partial class AccueilGerant : Page
+    public partial class AccueilGerant : UserControl
     {
         public AccueilGerant()
         {

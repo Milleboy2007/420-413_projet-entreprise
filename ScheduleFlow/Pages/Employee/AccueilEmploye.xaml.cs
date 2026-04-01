@@ -13,12 +13,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ScheduleFlow.Pages
+namespace ScheduleFlow.Pages.Employee
 {
     /// <summary>
     /// Logique d'interaction pour AccueilEmploye.xaml
     /// </summary>
-    public partial class AccueilEmploye : Page
+    public partial class AccueilEmploye : UserControl
     {
         public AccueilEmploye()
         {

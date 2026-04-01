@@ -18,7 +18,7 @@ namespace ScheduleFlow.Pages.Employee
     /// <summary>
     /// Logique d'interaction pour Dispo.xaml
     /// </summary>
-    public partial class Dispo : Page
+    public partial class Dispo : UserControl
     {
         public Dispo()
         {
