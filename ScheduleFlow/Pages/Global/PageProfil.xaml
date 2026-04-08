@@ -12,14 +12,15 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0" Margin="0,0,10,0">
+        <StackPanel Grid.Column="0" Margin="0,0,20,0">
             <TextBlock Text="Informations personnelles" 
                        FontSize="18" 
                        FontWeight="Bold" 
                        Foreground="White" 
-                       Margin="0,0,0,15"/>
+                       Margin="0,0,0,10"/>
             <StackPanel Margin="0,0,0,10">
                 <TextBlock Text="Prénom Nom" 
                            Foreground="LightGray" 
@@ -80,7 +81,7 @@
             </StackPanel>
         </StackPanel>
 
-        <StackPanel Grid.Column="1" Margin="10,0,0,0">
+        <StackPanel Margin="0,0,20,0" Grid.Column="1">
             <TextBlock Text="Informations professionnelles" 
                        FontSize="18" 
                        FontWeight="Bold" 
@@ -126,6 +127,64 @@
                            FontSize="15" 
                            FontWeight="SemiBold"/>
             </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Column="2" Margin="0,0,20,0">
+            <TextBlock Text="Modifier mon profil" 
+                FontSize="18" 
+                FontWeight="Bold" 
+                Foreground="White" 
+                Margin="0,0,0,15"
+                HorizontalAlignment="Center"/>
+
+            <StackPanel Margin="0,0,20,0">
+                <TextBlock Text="Sélectionner l'élement à modifier" 
+                    Foreground="LightGray" 
+                    FontSize="14"
+                    HorizontalAlignment="Center"/>
+            </StackPanel>
+
+            <ComboBox Margin="0,5,0,0" 
+                    Background="#1E1E1E" 
+                    Foreground="Black" 
+                    FontSize="14" 
+                    FontWeight="SemiBold">
+                <ComboBoxItem Content="Prénom"/>
+                <ComboBoxItem Content="Nom"/>
+                <ComboBoxItem Content="Genre"/>
+                <ComboBoxItem Content="Date d'anniversaire"/>
+                <ComboBoxItem Content="Numéro de téléphone personnel"/>
+                <ComboBoxItem Content="Adresse"/>
+                <ComboBoxItem Content="Courriel personnel"/>
+                <ComboBoxItem Content="Numéro de téléphone professionnel"/>
+                <ComboBoxItem Content="Courriel d'entreprise"/>
+                <ComboBoxItem Content="Employeur"/>
+                <ComboBoxItem Content="Poste"/>
+            </ComboBox>
+            <StackPanel Margin="20,5,0,0">
+                <TextBlock Text="Nouvelle valeur"
+                           Margin="0, 20,0,0"
+                           Foreground="LightGray" 
+                           FontSize="14"
+                           HorizontalAlignment="Center"/>
+
+                <TextBox Margin="0,5,0,0" 
+                        Background="lightgray" 
+                        Foreground="Black" 
+                        FontSize="14" 
+                        FontWeight="SemiBold"
+                        Height="25"
+                        MaxLength="80"
+                        HorizontalAlignment="Center"/>
+            </StackPanel>
+            <Button Content="Enregistrer les modifications" 
+                    Height="40"
+                    Margin="0, 40, 0,0"
+                    Background="#093C71"
+                    Foreground="White"
+                    VerticalAlignment="Bottom"
+                    FontWeight="Bold"/>
+
+
         </StackPanel>
     </Grid>
 </UserControl>
