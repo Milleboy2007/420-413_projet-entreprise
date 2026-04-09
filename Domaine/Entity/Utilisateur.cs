@@ -20,7 +20,29 @@ namespace Domaine.Entity
         [Required]
         public string MotDePasse { get; set; }
 
+        public string NumeroTelephone { get; set; }
+
+        public string dateNaissance { get; set; }
+
+        public string adresse { get; set; }
+
+        public string ville { get; set; }
+
+        public string regionProvince { get; set; }
+
+        public string codePostal { get; set; }
+
+        public string pays { get; set; }
+
+        public string nomContactUrgence { get; set; }
+
+        public string numeroContactUrgence { get; set; }
+
+        public string lienParente { get; set; }
+
         public DateTime DateCreation { get; set; }
+
+
 
         public Utilisateur()
         {
