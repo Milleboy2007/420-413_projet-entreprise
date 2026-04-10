@@ -14,6 +14,9 @@
     <Compile Update="Pages\Employee\AccueilEmploye.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Employee\AccueilEmployeFix.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Employeur\CreationCompteParEmployeur.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -47,5 +50,10 @@
     <Compile Update="Pages\Gerant\Page_Quart_Gerant.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Pages\Employee\AccueilEmployeFix.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 </Project>
