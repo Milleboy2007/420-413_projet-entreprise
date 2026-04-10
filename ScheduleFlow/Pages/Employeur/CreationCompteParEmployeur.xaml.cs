@@ -23,6 +23,25 @@ namespace ScheduleFlow.Pages.Employeur
         public CreationCompteParEmployeur()
         {
             InitializeComponent();
+            string Prenom = prenom.Text;
+            string Nom = nom.Text;
+            string Email = email.Text;
+            string Pass = pass.Text;
+            string Tel = tel.Text;
+            string Naissance = naissance.Text;
+            string Poste = poste.Text;
+            string DateEmb = dateEmb.Text;
+            string Depart = depart.Text;
+            string TypeContrat = typeContrat.Text;
+            string AdrPost = adrPost.Text;
+            string Pays = pays.Text;
+            string Prov = prov.Text;
+            string Ville = ville.Text;
+            string CodePost = codePost.Text;
+            string NomContUrg = nomContUrg.Text;
+            string NumContUrg = numContUrg.Text;
+            string LienContUrg = lienContUrg.Text;
+            string FormSupp = formSupp.Text;
         }
     }
 }
