@@ -12,9 +12,9 @@ namespace Domaine.Context
     {
         public DbSet<Quart> Quarts { get; set; }
         
-        public ScheduleFlowDBContexte(DbContextOptions<ScheduleFlowDBContexte> options) : base(options)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-
+            optionsBuilder.UseSqlite("Data Source=ScheduleFlowDB.db");
         }
     }
 }
