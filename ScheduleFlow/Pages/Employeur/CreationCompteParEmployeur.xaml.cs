@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using ScheduleFlow.ViewModels.Employer;
 
 namespace ScheduleFlow.Pages.Employeur
 {
@@ -20,6 +9,8 @@ namespace ScheduleFlow.Pages.Employeur
     /// </summary>
     public partial class CreationCompteParEmployeur : UserControl
     {
+
+        private readonly EmployerViewModel _vm;
         public CreationCompteParEmployeur()
         {
             InitializeComponent();
@@ -30,7 +21,6 @@ namespace ScheduleFlow.Pages.Employeur
             string Tel = tel.Text;
             string Naissance = naissance.Text;
             string Poste = poste.Text;
-            string DateEmb = dateEmb.Text;
             string Depart = depart.Text;
             string TypeContrat = typeContrat.Text;
             string AdrPost = adrPost.Text;
