@@ -199,5 +199,33 @@ namespace Domaine.Tests
             Assert.Single(tabQuartPub);
             Assert.True(tabQuartPub[0].IsPub);
         }
+
+        /*
+         * Test la possibilité de récupérer tous les quarts pour une date précise
+         */
+        [Fact]
+        public async Task Test_GetAllQuartByDate()
+        {
+            var dbContext = await GetDbContextAsync();
+            var repository = new QuartRepository(dbContext);
+
+            var dateCible = new DateOnly(2026, 5, 20);
+
+            var quartCible1 = GetValideQuart();
+            var quartCible2 = GetValideQuart();
+
+            var quartAutreDate = GetValideQuart();
+            quartAutreDate.Date = new DateOnly(2026, 12, 25);
+
+            await dbContext.Quarts.AddAsync(quartCible1);
+            await dbContext.Quarts.AddAsync(quartCible2);
+            await dbContext.Quarts.AddAsync(quartAutreDate);
+            await dbContext.SaveChangesAsync();
+
+            var resultats = await repository.GetAllQuartByDate(dateCible);
+
+            Assert.Equal(2, resultats.Length);
+            Assert.All(resultats, quart => Assert.Equal(dateCible, quart.Date));
+        }
     }
 }
