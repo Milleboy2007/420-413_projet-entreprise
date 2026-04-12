@@ -17,13 +17,11 @@ namespace Domaine.Repo
             _dbContext = new UtilisateurDbContexte();
         }
 
-        public void ajouterUtilisateur(Utilisateur usr)
+        public void AjouterUtilisateur(Utilisateur nouvelUtilisateur)
         {
-            _dbContext.Utilisateurs.Add(usr);
+            _dbContext.Utilisateurs.Add(nouvelUtilisateur);
             _dbContext.SaveChanges();
         }
-
-        
 
 
     }

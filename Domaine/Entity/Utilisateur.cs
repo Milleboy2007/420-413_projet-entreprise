@@ -7,40 +7,56 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Domaine.Entity
 {
+    public enum RoleUtilisateur
+    {
+        Employeur,
+        Gerant,
+        Employe
+
+    }
     public class Utilisateur
     {
         [Key]
-        public int Id { get; set; }
+        public int IdUtilisateur { get; set; }
+        public RoleUtilisateur Role { get; set; }
+
         public string Nom { get; set; }
+
         public string Prenom { get; set; }
 
         [Required]
-        public string Email { get; set; }
+        public string Courriel { get; set; } = string.Empty;
+
+        public string CourrielEntreprise { get; set; }
+
+        public string Genre { get; set; }
+
+        public string NumeroTelephoneProfessionnel { get; set; }
 
         [Required]
         public string MotDePasse { get; set; }
 
-        public string NumeroTelephone { get; set; }
+        public string NumeroTelephonePersonnel { get; set; }
 
-        public string dateNaissance { get; set; }
+        public string DateNaissance { get; set; }
 
-        public string adresse { get; set; }
+        public string Adresse { get; set; }
 
-        public string ville { get; set; }
+        public string Ville { get; set; }
+        public string RegionProvince { get; set; }
 
-        public string regionProvince { get; set; }
+        public string CodePostal { get; set; }
 
-        public string codePostal { get; set; }
+        public string Pays { get; set; }
 
-        public string pays { get; set; }
+        public string NomContactUrgence { get; set; }
 
-        public string nomContactUrgence { get; set; }
+        public string TelephoneContactUrgence { get; set; }
 
-        public string numeroContactUrgence { get; set; }
-
-        public string lienParente { get; set; }
+        public string LienParente { get; set; }
 
         public DateTime DateCreation { get; set; }
+
 
 
 

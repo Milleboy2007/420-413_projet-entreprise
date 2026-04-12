@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Domaine.Interface
 {
-    internal interface IUtilisateurRepository
+    public interface IUtilisateurRepository
     {
-        void ajouterUtilisateur(Utilisateur usr);
-
+        void AjouterUtilisateur(Utilisateur nouvelUtilisateur);
     }
 }
