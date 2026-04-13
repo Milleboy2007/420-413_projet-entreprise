@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domaine.Interface
 {
-    public interface IRepository
+    public interface IQuartRepository
     {
     }
 }

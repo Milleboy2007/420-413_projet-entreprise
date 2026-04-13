@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Domaine.Context
 {
-    enum Role
+    public enum Role
     {
         Employeur,
         Gerant

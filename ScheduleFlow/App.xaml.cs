@@ -41,11 +41,11 @@ namespace ScheduleFlow
 
             //4 - Ajouter les repository dans les services ainsi que son implémentation
             //Scoped ou Singleton ou Trascient?
-            services.AddScoped<IRepository, UtilisateurRepository>();
-            services.AddScoped<IRepository, QuartRepository>();
-            services.AddScoped<IRepository, DispoRepository>();
-            services.AddScoped<IRepository, CreneauRepository>();
-            services.AddScoped<IRepository, DemandeCongeRepository>();
+            services.AddScoped<IUtilisateurRepository, UtilisateurRepository>();
+            services.AddScoped<IQuartRepository, QuartRepository>();
+            services.AddScoped<IDispoRepository, DispoRepository>();
+            services.AddScoped<ICreneauRepository, CreneauRepository>();
+            services.AddScoped<IDemandeCongeRepository, DemandeCongeRepository>();
 
             // 5 - Ajouter les viewModels repository dans les services
             //Scoped ou Singleton ou Trascient?

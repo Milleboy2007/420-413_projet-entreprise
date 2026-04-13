@@ -9,7 +9,7 @@ using Domaine.Context;
 
 namespace Domaine.Repo
 {
-    public class UtilisateurRepository : IRepository
+    public class UtilisateurRepository : IUtilisateurRepository
     {
         private ScheduleFlowDBContexte _dbContext;
         public UtilisateurRepository(ScheduleFlowDBContexte contexte)

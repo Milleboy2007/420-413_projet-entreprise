@@ -20,10 +20,10 @@ namespace ScheduleFlow.Pages.Gerant
     /// </summary>
     public partial class CreationCompteParGerant : UserControl
     {
-        public CreationCompteParGerant()
+        public CreationCompteParGerant(CreationCompteParGerantViewModel monView)
         {
             InitializeComponent();
-            DataContext = new CreationCompteParGerantViewModel();
+            DataContext = monView;
         }
 
 

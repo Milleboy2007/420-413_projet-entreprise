@@ -11,8 +11,7 @@ namespace Domaine.Entity
     {
         [Key]
         public int IdFeuille { get; set; }
-        [Key]
         public int IdEmploye { get; set; }
-        public CreneauDispo creneauDispo { get; set; }
+        public CreneauDispo[] creneauDispo { get; set; }
     }
 }

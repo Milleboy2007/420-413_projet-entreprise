@@ -1,7 +1,6 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Domaine.Interface;
-using Domaine.Repo;
 using Domaine.Entity;
 using System.Windows;
 
@@ -65,9 +64,9 @@ namespace ScheduleFlow.Pages.Gerant
         [ObservableProperty]
         private string lienParente = string.Empty;
 
-        public CreationCompteParGerantViewModel()
+        public CreationCompteParGerantViewModel(IUtilisateurRepository usrRepo)
         {
-            _utilisateurRepository = new UtilisateurRepository();
+            _utilisateurRepository = usrRepo;
         }
 
         [RelayCommand]

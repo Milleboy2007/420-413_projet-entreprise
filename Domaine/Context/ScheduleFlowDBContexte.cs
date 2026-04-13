@@ -19,30 +19,5 @@ namespace Domaine.Context
         public ScheduleFlowDBContexte(DbContextOptions<ScheduleFlowDBContexte> options) : base(options)
         {
         }
-
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlite("Data Source=ScheduleFlowDB.db");
-        //}
-
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    string folderPath = Path.Combine(AppContext.BaseDirectory, "Data");
-
-        //    if (!Directory.Exists(folderPath))
-        //    {
-        //        Directory.CreateDirectory(folderPath);
-        //    }
-
-        //    string dbPath = Path.Combine(folderPath, "ScheduleFlow.db");
-        //    optionsBuilder.UseSqlite($"Data Source={dbPath}");
-        //}
-
-        //public override int SaveChanges()
-        //{
-        //    // Crée la BD si elle n'existe pas
-        //    Database.EnsureCreated();
-        //    return base.SaveChanges();
-        //}
     }
 }

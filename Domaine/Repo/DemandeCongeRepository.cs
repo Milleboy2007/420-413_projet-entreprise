@@ -8,7 +8,7 @@ using Domaine.Interface;
 
 namespace Domaine.Repo
 {
-    internal class DemandeCongeRepository: IDemandeCongeRepository
+    public class DemandeCongeRepository: IDemandeCongeRepository
     {
         private ScheduleFlowDBContexte _db;
 
