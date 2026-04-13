@@ -7,140 +7,94 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Background="#ffffff">
-
-    <Grid>
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
         <Grid Margin="20,20,20,10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Column="0" Margin="0,0,10,0" Background="#1561AF">
-                <TextBlock Text="Demande de Congé" 
+            <Border CornerRadius="10" Background="#1561AF">
+                <StackPanel Grid.Column="1" Margin="0,0,10,0">
+                    <TextBlock Text="Demande de Congé" 
                            FontSize="18" 
                            FontWeight="Bold" 
                            Foreground="White" 
-                           Margin="0,0,0,15"
+                           Margin="0,20,0,15"
                            HorizontalAlignment="Center"/>
-                <StackPanel Margin="20,0,0,10">
-                    <TextBlock Text="Poste occupé" 
-                               Foreground="LightGray" 
-                               FontSize="12"/>
-                    <TextBlock Text="Designer UI" 
-                               Foreground="White" 
-                               FontSize="15" 
-                               FontWeight="SemiBold"/>
-                </StackPanel>
-                <StackPanel Margin="20,0,0,10">
-                    <TextBlock Text="Date du début du congé" 
-                               Foreground="LightGray" 
-                               FontSize="12"/>
-                    <TextBlock Text="30 mars 2026" 
-                               Foreground="White" 
-                               FontSize="15" 
-                               FontWeight="SemiBold"/>
-                </StackPanel>
 
-                <StackPanel Margin="20,0,0,10">
-                    <TextBlock Text="Date de la fin du congé" 
-                               Foreground="LightGray" 
-                               FontSize="12"/>
-                    <TextBlock Text="1 avril 2026" 
-                               Foreground="White" 
-                               FontSize="15" 
-                               FontWeight="SemiBold"/>
-                </StackPanel>
-
-                <StackPanel Margin="20,0,0,10">
-                    <TextBlock Text="Raisons du congé" 
-                               Foreground="LightGray" 
-                               FontSize="12"/>
-                    <TextBlock Text="Deuil" 
-                               Foreground="White" 
-                               FontSize="15" 
-                               FontWeight="SemiBold"/>
-                </StackPanel>
-
-                <StackPanel Margin="20,0,0,10">
-                    <TextBlock Text="Notes Importantes" 
-                               Foreground="LightGray" 
-                               FontSize="12"/>
-                    <TextBlock Text="Disponible pour des questions" 
-                               Foreground="White" 
-                               FontSize="15" 
-                               FontWeight="SemiBold"/>
-                </StackPanel>
-                <Button Content="Soumettre la demande de congé régulier" 
-                        Background="#093C71" 
-                        Foreground="White" 
-                        FontWeight="SemiBold"
-                        Padding="10,5" 
-                        Width="262" Height="37" />
-            </StackPanel>
-
-            <StackPanel Grid.Column="1" Margin="0,0,10,0" Background="#1561AF">
-                <TextBlock Text="Demande de Congé de Maladie" 
-                           FontSize="18" 
-                           FontWeight="Bold" 
-                           Foreground="White" 
-                           Margin="0,0,0,15"
-                           HorizontalAlignment="Center"/>
-                <StackPanel Margin="20,0,0,10">
-                    <TextBlock Text="Poste occupé" 
+                    <StackPanel>
+                        <StackPanel Margin="20,0,20,10" >
+                            <TextBlock Text="Type de congé" 
                                    Foreground="LightGray" 
                                    FontSize="12"/>
-                    <TextBlock Text="Designer UI" 
-                                   Foreground="White" 
-                                   FontSize="15" 
-                                   FontWeight="SemiBold"/>
-                </StackPanel>
-                <StackPanel Margin="20,0,0,10">
-                    <TextBlock Text="Date du début du congé" 
+                            <TextBox Text="{Binding TypeConge}" 
+                                    Foreground="Black" 
+                                    FontSize="15" 
+                                    FontWeight="SemiBold"
+                                    Height="25"
+                                    Margin=" 0,5,0,0"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="20,0,20,10">
+                            <TextBlock Text="Date du début du congé" 
                                    Foreground="LightGray" 
                                    FontSize="12"/>
-                    <TextBlock Text="30 mars 2026" 
-                                   Foreground="White" 
-                                   FontSize="15" 
-                                   FontWeight="SemiBold"/>
-                </StackPanel>
+                            <DatePicker SelectedDate="{Binding DateDebutConge}" 
+                                    Foreground="Black" 
+                                    FontSize="15" 
+                                    FontWeight="SemiBold"/>
+                        </StackPanel>
 
-                <StackPanel Margin="20,0,0,10">
-                    <TextBlock Text="Date de la fin du congé" 
+                        <StackPanel Margin="20,0,20,10">
+                            <TextBlock Text="Date de la fin du congé" 
                                    Foreground="LightGray" 
                                    FontSize="12"/>
-                    <TextBlock Text="Durée indéterminée" 
-                                   Foreground="White" 
-                                   FontSize="15" 
-                                   FontWeight="SemiBold"/>
-                </StackPanel>
+                            <DatePicker SelectedDate="{Binding DateFinConge}" 
+                                    Foreground="Black" 
+                                    FontSize="15" 
+                                    FontWeight="SemiBold"/>
+                        </StackPanel>
 
-                <StackPanel Margin="20,0,0,10">
-                    <TextBlock Text="Raisons du congé" 
+                        <StackPanel Margin="20,0,20,10">
+                            <TextBlock Text="Raison du congé" 
                                    Foreground="LightGray" 
                                    FontSize="12"/>
-                    <TextBlock Text="Maladie" 
-                                   Foreground="White" 
+                            <TextBox Text="{Binding RaisonConge}" 
+                                   Foreground="Black"
                                    FontSize="15" 
-                                   FontWeight="SemiBold"/>
-                </StackPanel>
+                                   FontWeight="SemiBold"
+                                   Height="25"
+                                   Margin=" 0,5,0,0"/>
+                        </StackPanel>
 
-                <StackPanel Margin="20,0,0,10">
-                    <TextBlock Text="Notes Importantes" 
-                                   Foreground="LightGray" 
-                                   FontSize="12"/>
-                    <TextBlock Text="Aucune notes disponible" 
-                                   Foreground="White" 
-                                   FontSize="15" 
-                                   FontWeight="SemiBold"/>
+                        <StackPanel Margin="20,0,20,10">
+                            <TextBlock Text="Statut" 
+                            Foreground="LightGray" 
+                            FontSize="12"/>
+                            <TextBlock Text="{Binding Statut}" 
+                            Foreground="Black"
+                            Background="White"
+                            FontSize="15" 
+                            FontWeight="SemiBold"
+                            Height="25"
+                            Margin=" 0,5,0,0"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <Button Background="Transparent" BorderThickness="0" Margin="0,15,0,0">
+                        <Border BorderThickness="0,1,0,0" 
+                                CornerRadius="10"
+                                Background="#093C71"
+                                Width="262"
+                                Height="45">
+                            <TextBlock Text="Soumettre la demande" 
+                                       Foreground="White" 
+                                       VerticalAlignment="Center" 
+                                       HorizontalAlignment="Center" 
+                                       FontWeight="Bold"/>
+                        </Border>
+                    </Button>
                 </StackPanel>
-
-                <Button Content="Soumettre la demande de congé de maladie" 
-                        Background="#093C71" 
-                        Foreground="White" 
-                        FontWeight="SemiBold"
-                        Padding="10,5" 
-                        Width="262" Height="37" />
-            </StackPanel>
+            </Border>
         </Grid>
-    </Grid>
+    </ScrollViewer>
 </UserControl>

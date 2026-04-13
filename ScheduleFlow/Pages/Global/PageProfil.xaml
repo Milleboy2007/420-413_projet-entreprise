@@ -7,14 +7,17 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Background="#093C71">
-
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
     <Grid Margin="20,20,20,10">
-        <Grid.ColumnDefinitions>
+        
+            <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
+        
+            
+        
         <StackPanel Grid.Column="0" Margin="0,0,20,0">
             <TextBlock Text="Informations personnelles" 
                        FontSize="18" 
@@ -128,7 +131,7 @@
                            FontWeight="SemiBold"/>
             </StackPanel>
         </StackPanel>
-        <StackPanel Grid.Column="2" Margin="0,0,20,0">
+        <StackPanel Grid.Column="2">
             <TextBlock Text="Modifier mon profil" 
                 FontSize="18" 
                 FontWeight="Bold" 
@@ -136,18 +139,28 @@
                 Margin="0,0,0,15"
                 HorizontalAlignment="Center"/>
 
-            <StackPanel Margin="0,0,20,0">
+            <StackPanel Margin="10,0,10,5">
                 <TextBlock Text="Sélectionner l'élement à modifier" 
                     Foreground="LightGray" 
-                    FontSize="14"
-                    HorizontalAlignment="Center"/>
+                    FontSize="14" 
+                    Width="206"
+                    HorizontalAlignment="Center"
+                    />
             </StackPanel>
 
-            <ComboBox Margin="0,5,0,0" 
+            <ComboBox Margin="0,5,0,20" 
                     Background="#1E1E1E" 
                     Foreground="Black" 
                     FontSize="14" 
-                    FontWeight="SemiBold">
+                    FontWeight="SemiBold" Width="188" Height="30" RenderTransformOrigin="0.5,0.5">
+                <ComboBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="1.528"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="0.373"/>
+                    </TransformGroup>
+                </ComboBox.RenderTransform>
                 <ComboBoxItem Content="Prénom"/>
                 <ComboBoxItem Content="Nom"/>
                 <ComboBoxItem Content="Genre"/>
@@ -160,9 +173,9 @@
                 <ComboBoxItem Content="Employeur"/>
                 <ComboBoxItem Content="Poste"/>
             </ComboBox>
-            <StackPanel Margin="20,5,0,0">
+            <StackPanel Margin="20,5,20,10">
                 <TextBlock Text="Nouvelle valeur"
-                           Margin="0, 20,0,0"
+                           Margin="0, 20,0,5"
                            Foreground="LightGray" 
                            FontSize="14"
                            HorizontalAlignment="Center"/>
@@ -173,13 +186,13 @@
                         FontSize="14" 
                         FontWeight="SemiBold"
                         Height="25"
-                        MaxLength="80"
+                        MinWidth="200"
                         HorizontalAlignment="Center"/>
             </StackPanel>
             <Button Content="Enregistrer les modifications" 
                     Height="40"
                     Margin="0, 40, 0,0"
-                    Background="#093C71"
+                    Background="#424242"
                     Foreground="White"
                     VerticalAlignment="Bottom"
                     FontWeight="Bold"/>
@@ -187,4 +200,5 @@
 
         </StackPanel>
     </Grid>
+    </ScrollViewer>
 </UserControl>
