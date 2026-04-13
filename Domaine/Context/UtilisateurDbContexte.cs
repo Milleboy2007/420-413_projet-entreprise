@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Domaine.Context
 {
@@ -13,8 +14,7 @@ namespace Domaine.Context
         public DbSet<Utilisateur> Utilisateurs { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string folderPath = @"C:\Users\rym40\OneDrive\Bureau\420-413_projet-entreprise\ScheduleFlow\Data";
-
+            string folderPath = Path.Combine(AppContext.BaseDirectory, "Data");
 
             if (!Directory.Exists(folderPath))
             {
@@ -22,8 +22,14 @@ namespace Domaine.Context
             }
 
             string dbPath = Path.Combine(folderPath, "ScheduleFlow.db");
-
             optionsBuilder.UseSqlite($"Data Source={dbPath}");
+        }
+
+        public override int SaveChanges()
+        {
+            // Crée la BD si elle n'existe pas
+            Database.EnsureCreated();
+            return base.SaveChanges();
         }
     }
 }
