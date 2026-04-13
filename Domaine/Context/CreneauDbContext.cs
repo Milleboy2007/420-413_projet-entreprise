@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Domaine.Context
 {
-    internal class DemandeCongeDbContext : DbContext
+    public class CreneauDbContext : DbContext
     {
-        public DemandeCongeDbContext(DbContextOptions<DemandeCongeDbContext> options) 
-            : base(options)
+        internal DbSet<CreneauDispo> CreneauDispos { get; set; }
+
+        public CreneauDbContext(DbContextOptions<CreneauDbContext> options)
+        : base(options)
         {
         }
-        //public DbSet<DemandeConge> DemandeConges { get; set; }
-
     }
 }
