@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Domaine.Repo
 {
-    public class QuartRepository: IRepository
+    public class QuartRepository: IQuartRepository
     {
         private readonly ScheduleFlowDBContexte _db;
 

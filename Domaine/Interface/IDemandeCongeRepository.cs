@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Domaine.Interface
 {
-    internal interface IDemandeCongeRepository
+    public interface IDemandeCongeRepository
     {
         Task AjouterDemandeCongeAsync(DemandeConge demandeConge);
 

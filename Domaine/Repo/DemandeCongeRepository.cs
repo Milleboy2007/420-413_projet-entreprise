@@ -8,11 +8,11 @@ using Domaine.Interface;
 
 namespace Domaine.Repo
 {
-    internal class DemandeCongeRepository: IDemandeCongeRepository
+    public class DemandeCongeRepository: IDemandeCongeRepository
     {
-        private DemandeCongeDbContext _db;
+        private ScheduleFlowDBContexte _db;
 
-        public DemandeCongeRepository(DemandeCongeDbContext dbContext)
+        public DemandeCongeRepository(ScheduleFlowDBContexte dbContext)
         {
             _db = dbContext;
         }
@@ -21,7 +21,7 @@ namespace Domaine.Repo
         public async Task AjouterDemandeCongeAsync(DemandeConge demandeConge)
         {
             await _db.DemandeConges.AddAsync(demandeConge);
-            _db.SaveChangesAsync();
+            await _db.SaveChangesAsync();
         }
     }
 }

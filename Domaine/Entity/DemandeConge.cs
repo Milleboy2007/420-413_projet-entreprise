@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Domaine.Context
 {
-    enum Role
+    public enum Role
     {
         Employeur,
         Gerant
@@ -20,7 +20,7 @@ namespace Domaine.Context
         Approuve,
         Refuse
     }
-    internal class DemandeConge
+    public class DemandeConge
     {
         [Key]
         [Required]

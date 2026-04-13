@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using Microsoft.Extensions.DependencyInjection;
 using ScheduleFlow.Pages.Gerant;
 using ScheduleFlow.Pages.Global;
 
@@ -23,7 +23,7 @@ namespace ScheduleFlow.NavBar
 
         private AccueilGerant accueilGerant = new AccueilGerant();
         private Conge conge = new Conge();
-        private CreationCompteParGerant creationCompteParGerant = new CreationCompteParGerant();
+        private CreationCompteParGerant creationCompteParGerant = new CreationCompteParGerant(App.ServiceProvider.GetRequiredService<CreationCompteParGerantViewModel>());
         private Page_Quart_Gerant quart = new Page_Quart_Gerant();
         private PageProfil compte = new PageProfil();
         private PubAnnonceGerant pubAnnonce = new PubAnnonceGerant();

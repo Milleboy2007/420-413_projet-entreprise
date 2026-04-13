@@ -10,15 +10,14 @@ namespace Domaine.Context
 {
     public class ScheduleFlowDBContexte: DbContext
     {
+        public DbSet<Utilisateur> Utilisateurs { get; set; }
         public DbSet<Quart> Quarts { get; set; }
+        internal DbSet<FeuilleDispo> FeuilleDispos { get; set; }
+        internal DbSet<CreneauDispo> CreneauDispos { get; set; }
+        public DbSet<DemandeConge> DemandeConges { get; set; }
 
         public ScheduleFlowDBContexte(DbContextOptions<ScheduleFlowDBContexte> options) : base(options)
         {
         }
-
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlite("Data Source=ScheduleFlowDB.db");
-        //}
     }
 }

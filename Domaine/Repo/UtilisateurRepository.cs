@@ -11,10 +11,10 @@ namespace Domaine.Repo
 {
     public class UtilisateurRepository : IUtilisateurRepository
     {
-        private UtilisateurDbContexte _dbContext;
-        public UtilisateurRepository()
+        private ScheduleFlowDBContexte _dbContext;
+        public UtilisateurRepository(ScheduleFlowDBContexte contexte)
         {
-            _dbContext = new UtilisateurDbContexte();
+            _dbContext = contexte;
         }
 
         public void AjouterUtilisateur(Utilisateur nouvelUtilisateur)

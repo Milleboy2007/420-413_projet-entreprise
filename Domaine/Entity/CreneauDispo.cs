@@ -11,7 +11,6 @@ namespace Domaine.Entity
     {
         [Key]
         public int IdCreneau { get; set; }
-        [Key]
         public int IdFeuille { get; set; }
         [Required]
         public string HeureDebut { get; set; }
