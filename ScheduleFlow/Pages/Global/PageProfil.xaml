@@ -148,7 +148,7 @@
 
                 <ComboBox Margin="0,5,0,20" 
                     Background="#1E1E1E" 
-                    Foreground="White" 
+                    Foreground="Black" 
                     FontSize="14" 
                     FontWeight="SemiBold" Width="188" Height="30">
                     <ComboBoxItem Content="Prénom"/>
