@@ -14,7 +14,7 @@ namespace Domaine.Context
             : base(options)
         {
         }
-        public DbSet<DemandeConge> DemandeConges { get; set; }
+        //public DbSet<DemandeConge> DemandeConges { get; set; }
 
     }
 }
