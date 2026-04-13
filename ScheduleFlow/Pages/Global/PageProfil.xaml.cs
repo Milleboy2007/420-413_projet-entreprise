@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domaine.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ScheduleFlow.ViewModels.Employe;
 
 namespace ScheduleFlow.Pages.Global
 {
@@ -23,6 +25,17 @@ namespace ScheduleFlow.Pages.Global
         public PageProfil()
         {
             InitializeComponent();
+            var userTest = new Utilisateur
+            {
+                Nom = "Doe",
+                Prenom = "Jane",
+                Genre = "Féminin",
+                Courriel = "jane.doe@example.com",
+
+
+            };
+
+            this.DataContext = new UtilisateurViewModel(userTest);
         }
     }
 }
