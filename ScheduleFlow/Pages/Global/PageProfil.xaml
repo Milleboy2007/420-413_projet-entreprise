@@ -8,179 +8,170 @@
              d:DesignHeight="450" d:DesignWidth="800"
              Background="#093C71">
     <ScrollViewer VerticalScrollBarVisibility="Auto">
-    <Grid Margin="20,20,20,10">
-        
+        <Grid Margin="20,20,20,10">
+
             <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        
-            
-        
-        <StackPanel Grid.Column="0" Margin="0,0,20,0">
-            <TextBlock Text="Informations personnelles" 
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Margin="0,0,20,0">
+                <TextBlock Text="Informations personnelles" 
                        FontSize="18" 
                        FontWeight="Bold" 
                        Foreground="White" 
                        Margin="0,0,0,10"/>
-            <StackPanel Margin="0,0,0,10">
-                <TextBlock Text="Prénom Nom" 
+                <StackPanel Margin="0,0,0,10">
+                    <TextBlock Text="Prénom Nom" 
                            Foreground="LightGray" 
                            FontSize="12"/>
-                <TextBlock Text="Jane Doe" 
+                    <TextBlock Text="{Binding NomComplet}" 
                            Foreground="White" 
                            FontSize="15" 
                            FontWeight="SemiBold"/>
-            </StackPanel>
-            <StackPanel Margin="0,0,0,10">
-                <TextBlock Text="Genre" 
+                </StackPanel>
+                <StackPanel Margin="0,0,0,10">
+                    <TextBlock Text="Genre" 
                            Foreground="LightGray" 
                            FontSize="12"/>
-                <TextBlock Text="Féminin" 
+                    <TextBlock Text="{Binding Genre}" 
                            Foreground="White" 
                            FontSize="15" 
                            FontWeight="SemiBold"/>
+                </StackPanel>
+
+                <StackPanel Margin="0,0,0,10">
+                    <TextBlock Text="Date de Naissance" 
+                           Foreground="LightGray" 
+                           FontSize="12"/>
+                    <TextBlock Text="{Binding DateNaissance}" 
+                           Foreground="White" 
+                           FontSize="15" 
+                           FontWeight="SemiBold"/>
+                </StackPanel>
+
+                <StackPanel Margin="0,0,0,10">
+                    <TextBlock Text="Numéro de téléphone personnel" 
+                           Foreground="LightGray" 
+                           FontSize="12"/>
+                    <TextBlock Text="{Binding TelephonePersonnel}" 
+                           Foreground="White" 
+                           FontSize="15" 
+                           FontWeight="SemiBold"/>
+                </StackPanel>
+
+                <StackPanel Margin="0,0,0,10">
+                    <TextBlock Text="Adresse" 
+                           Foreground="LightGray" 
+                           FontSize="12"/>
+                    <TextBlock Text="{Binding Adresse}" 
+                           Foreground="White" 
+                           FontSize="15" 
+                           FontWeight="SemiBold"/>
+                </StackPanel>
+
+                <StackPanel Margin="0,0,0,10">
+                    <TextBlock Text="Courriel personnel" 
+                           Foreground="LightGray" 
+                           FontSize="12"/>
+                    <TextBlock Text="{Binding Courriel}" 
+                           Foreground="White" 
+                           FontSize="15" 
+                           FontWeight="SemiBold"/>
+                </StackPanel>
             </StackPanel>
 
-            <StackPanel Margin="0,0,0,10">
-                <TextBlock Text="Date d'anniversaire" 
-                           Foreground="LightGray" 
-                           FontSize="12"/>
-                <TextBlock Text="15 mars 1995" 
-                           Foreground="White" 
-                           FontSize="15" 
-                           FontWeight="SemiBold"/>
-            </StackPanel>
-
-            <StackPanel Margin="0,0,0,10">
-                <TextBlock Text="Numéro de téléphone personnel" 
-                           Foreground="LightGray" 
-                           FontSize="12"/>
-                <TextBlock Text="(514) 555-1234" 
-                           Foreground="White" 
-                           FontSize="15" 
-                           FontWeight="SemiBold"/>
-            </StackPanel>
-
-            <StackPanel Margin="0,0,0,10">
-                <TextBlock Text="Adresse" 
-                           Foreground="LightGray" 
-                           FontSize="12"/>
-                <TextBlock Text="123 Rue Example, Montréal, QC" 
-                           Foreground="White" 
-                           FontSize="15" 
-                           FontWeight="SemiBold"/>
-            </StackPanel>
-
-            <StackPanel Margin="0,0,0,10">
-                <TextBlock Text="Courriel personnel" 
-                           Foreground="LightGray" 
-                           FontSize="12"/>
-                <TextBlock Text="exemple@gmail.com" 
-                           Foreground="White" 
-                           FontSize="15" 
-                           FontWeight="SemiBold"/>
-            </StackPanel>
-        </StackPanel>
-
-        <StackPanel Margin="0,0,20,0" Grid.Column="1">
-            <TextBlock Text="Informations professionnelles" 
+            <StackPanel Margin="0,0,20,0" Grid.Column="1">
+                <TextBlock Text="Informations professionnelles" 
                        FontSize="18" 
                        FontWeight="Bold" 
                        Foreground="White" 
                        Margin="0,0,0,15"/>
 
-            <StackPanel Margin="0,0,0,10">
-                <TextBlock Text="Numéro de téléphone professionnel" 
+                <StackPanel Margin="0,0,0,10">
+                    <TextBlock Text="Numéro de téléphone professionnel" 
                            Foreground="LightGray" 
                            FontSize="12"/>
-                <TextBlock Text="(514) 555-5678" 
+                    <TextBlock Text="{Binding TelephoneProfessionnel}" 
                            Foreground="White" 
                            FontSize="15" 
                            FontWeight="SemiBold"/>
-            </StackPanel>
+                </StackPanel>
 
-            <StackPanel Margin="0,0,0,10">
-                <TextBlock Text="Courriel d'entreprise" 
+                <StackPanel Margin="0,0,0,10">
+                    <TextBlock Text="Courriel d'entreprise" 
                            Foreground="LightGray" 
                            FontSize="12"/>
-                <TextBlock Text="exemple@entreprise.com" 
+                    <TextBlock Text="{Binding CourrielEntreprise}" 
                            Foreground="White" 
                            FontSize="15" 
                            FontWeight="SemiBold"/>
-            </StackPanel>
+                </StackPanel>
 
-            <StackPanel Margin="0,0,0,10">
-                <TextBlock Text="Employeur" 
+                <StackPanel Margin="0,0,0,10">
+                    <TextBlock Text="Employeur" 
                            Foreground="LightGray" 
                            FontSize="12"/>
-                <TextBlock Text="ABC Corporation" 
+                    <TextBlock Text="{Binding Role}" 
                            Foreground="White" 
                            FontSize="15" 
                            FontWeight="SemiBold"/>
-            </StackPanel>
+                </StackPanel>
 
-            <StackPanel Margin="0,0,0,10">
-                <TextBlock Text="Poste" 
+                <StackPanel Margin="0,0,0,10">
+                    <TextBlock Text="Poste" 
                            Foreground="LightGray" 
                            FontSize="12"/>
-                <TextBlock Text="Développeur Full Stack" 
+                    <TextBlock Text="{Binding Ville}" 
                            Foreground="White" 
                            FontSize="15" 
                            FontWeight="SemiBold"/>
+                </StackPanel>
             </StackPanel>
-        </StackPanel>
-        <StackPanel Grid.Column="2">
-            <TextBlock Text="Modifier mon profil" 
+            <StackPanel Grid.Column="2">
+                <TextBlock Text="Modifier mon profil" 
                 FontSize="18" 
                 FontWeight="Bold" 
                 Foreground="White" 
                 Margin="0,0,0,15"
                 HorizontalAlignment="Center"/>
 
-            <StackPanel Margin="10,0,10,5">
-                <TextBlock Text="Sélectionner l'élement à modifier" 
+                <StackPanel Margin="10,0,10,5">
+                    <TextBlock Text="Sélectionner l'élement à modifier" 
                     Foreground="LightGray" 
                     FontSize="14" 
                     Width="206"
                     HorizontalAlignment="Center"
                     />
-            </StackPanel>
+                </StackPanel>
 
-            <ComboBox Margin="0,5,0,20" 
+                <ComboBox Margin="0,5,0,20" 
                     Background="#1E1E1E" 
-                    Foreground="Black" 
+                    Foreground="White" 
                     FontSize="14" 
-                    FontWeight="SemiBold" Width="188" Height="30" RenderTransformOrigin="0.5,0.5">
-                <ComboBox.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleX="1.528"/>
-                        <RotateTransform/>
-                        <TranslateTransform X="0.373"/>
-                    </TransformGroup>
-                </ComboBox.RenderTransform>
-                <ComboBoxItem Content="Prénom"/>
-                <ComboBoxItem Content="Nom"/>
-                <ComboBoxItem Content="Genre"/>
-                <ComboBoxItem Content="Date d'anniversaire"/>
-                <ComboBoxItem Content="Numéro de téléphone personnel"/>
-                <ComboBoxItem Content="Adresse"/>
-                <ComboBoxItem Content="Courriel personnel"/>
-                <ComboBoxItem Content="Numéro de téléphone professionnel"/>
-                <ComboBoxItem Content="Courriel d'entreprise"/>
-                <ComboBoxItem Content="Employeur"/>
-                <ComboBoxItem Content="Poste"/>
-            </ComboBox>
-            <StackPanel Margin="20,5,20,10">
-                <TextBlock Text="Nouvelle valeur"
+                    FontWeight="SemiBold" Width="188" Height="30">
+                    <ComboBoxItem Content="Prénom"/>
+                    <ComboBoxItem Content="Nom"/>
+                    <ComboBoxItem Content="Genre"/>
+                    <ComboBoxItem Content="Date d'anniversaire"/>
+                    <ComboBoxItem Content="Numéro de téléphone personnel"/>
+                    <ComboBoxItem Content="Adresse"/>
+                    <ComboBoxItem Content="Courriel personnel"/>
+                    <ComboBoxItem Content="Numéro de téléphone professionnel"/>
+                    <ComboBoxItem Content="Courriel d'entreprise"/>
+                    <ComboBoxItem Content="Employeur"/>
+                    <ComboBoxItem Content="Poste"/>
+                </ComboBox>
+
+                <StackPanel Margin="20,5,20,10">
+                    <TextBlock Text="Nouvelle valeur"
                            Margin="0, 20,0,5"
                            Foreground="LightGray" 
                            FontSize="14"
                            HorizontalAlignment="Center"/>
 
-                <TextBox Margin="0,5,0,0" 
+                    <TextBox Margin="0,5,0,0" 
                         Background="lightgray" 
                         Foreground="Black" 
                         FontSize="14" 
@@ -188,17 +179,16 @@
                         Height="25"
                         MinWidth="200"
                         HorizontalAlignment="Center"/>
-            </StackPanel>
-            <Button Content="Enregistrer les modifications" 
+                </StackPanel>
+
+                <Button Content="Enregistrer les modifications" 
                     Height="40"
                     Margin="0, 40, 0,0"
                     Background="#424242"
                     Foreground="White"
                     VerticalAlignment="Bottom"
                     FontWeight="Bold"/>
-
-
-        </StackPanel>
-    </Grid>
+            </StackPanel>
+        </Grid>
     </ScrollViewer>
 </UserControl>
