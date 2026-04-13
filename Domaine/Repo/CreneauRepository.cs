@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Domaine.Repo
 {
-    public class CreneauRepository : ICreneauRepository
+    public class CreneauRepository : IRepository
     {
         private readonly ScheduleFlowDBContexte _db;
 
