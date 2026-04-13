@@ -29,7 +29,10 @@ namespace ScheduleFlow.Pages.Global
             {
                 Nom = "Doe",
                 Prenom = "Jane",
-                Genre = "Féminin"
+                Genre = "Féminin",
+                Courriel = "jane.doe@example.com",
+
+
             };
 
             this.DataContext = new UtilisateurViewModel(userTest);

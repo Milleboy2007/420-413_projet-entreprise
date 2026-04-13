@@ -19,7 +19,6 @@ namespace ScheduleFlow.ViewModels.Employe
            _utilisateurMetier = utilisateurMetier;
         }
 
-
             public string Nom
         {
             get => _utilisateurMetier.Nom;
