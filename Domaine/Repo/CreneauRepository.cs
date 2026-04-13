@@ -11,9 +11,9 @@ namespace Domaine.Repo
 {
     public class CreneauRepository : ICreneauRepository
     {
-        private readonly CreneauDbContext _db;
+        private readonly ScheduleFlowDBContexte _db;
 
-        public CreneauRepository(CreneauDbContext dbContext)
+        public CreneauRepository(ScheduleFlowDBContexte dbContext)
         {
             _db = dbContext;
         }

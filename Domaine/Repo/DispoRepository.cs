@@ -12,9 +12,9 @@ namespace Domaine.Repo
 {
     public class DispoRepository : IDispoRepository
     {
-        private readonly DispoDbContext _db;
+        private readonly ScheduleFlowDBContexte _db;
 
-        public DispoRepository(DispoDbContext dbContext)
+        public DispoRepository(ScheduleFlowDBContexte dbContext)
         {
             _db = dbContext;
         }
@@ -39,7 +39,7 @@ namespace Domaine.Repo
 
         public async Task SupprimerDispo(int idFeuille)
         {
-            FeuilleDispo feuilleDispo = await _db.FeuilleDispos.FindAsync(idFeuille);
+            FeuilleDispo? feuilleDispo = await _db.FeuilleDispos.FindAsync(idFeuille);
             if (feuilleDispo != null)
             {
                 _db.FeuilleDispos.Remove(feuilleDispo);
