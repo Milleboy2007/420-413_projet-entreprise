@@ -10,8 +10,6 @@ namespace Domaine.Context
         {
             var optionsBuilder = new DbContextOptionsBuilder<ScheduleFlowDBContexte>();
 
-            // Indiquez ici le vrai moteur de base de données que vous comptez utiliser (ex: SQLite)
-            // La chaîne de connexion ici n'a pas besoin d'être complexe, elle sert juste pour la génération.
             optionsBuilder.UseSqlite(@"Data Source=ScheduleFlowDB.db");
 
             return new ScheduleFlowDBContexte(optionsBuilder.Options);
