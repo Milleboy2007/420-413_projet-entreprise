@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domaine.Context;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,14 +16,27 @@ using System.Windows.Shapes;
 
 namespace ScheduleFlow.Pages.Employee
 {
-    /// <summary>
-    /// Logique d'interaction pour Dispo.xaml
-    /// </summary>
     public partial class Dispo : UserControl
     {
+        
         public Dispo()
         {
             InitializeComponent();
+        }
+
+        private void OpenPopup_Click(object sender, RoutedEventArgs e)
+        {
+            PopupOverlay.Visibility = Visibility.Visible;
+        }
+
+        private void CancelPopup_Click(object sender, RoutedEventArgs e)
+        {
+            PopupOverlay.Visibility = Visibility.Collapsed;
+        }
+
+        private async void SaveDispo_Click(object sender, RoutedEventArgs e)
+        {
+            PopupOverlay.Visibility = Visibility.Collapsed;
         }
     }
 }
