@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <!-- TODO IL MANQUE LA LOGIQUE DU BACKEND BUT C DONE -->
-        <!-- <Grid.RowDefinitions>
+         <!--<Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>  
@@ -34,10 +34,11 @@
             Margin="20,0,0,0"
         />
 
-         <!--<Border Width="40" Height="40" CornerRadius="20" Grid.Column="1" Margin="0,0,20,0" VerticalAlignment="Center">
+         --><!--<Border Width="40" Height="40" CornerRadius="20" Grid.Column="1" Margin="0,0,20,0" VerticalAlignment="Center">
                     <Border.Background><ImageBrush ImageSource="pfp.png"/>
                     </Border.Background>
-                </Border>-->
+         </Border>--><!--
+            
         </Grid>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="#1C5084" Height="35">
                 <TextBlock x:Name="PageAccueil" MouseLeftButtonDown="PageAccueil_Click" Text="Accueil" Foreground="White" FontWeight="SemiBold" Padding="15,8"/>
@@ -48,7 +49,7 @@
             </StackPanel>
         </Grid>
 
-        <ContentControl x:Name="EmployeurArea" Grid.Row="1"/> -->
-            
+        <ContentControl x:Name="EmployeurArea" Grid.Row="1"/>-->
+
     </Grid>
 </UserControl>
