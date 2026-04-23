@@ -9,12 +9,10 @@ namespace ScheduleFlow.ViewModels.Gerant
 {
     public partial class PageQuartGerantViewModel : ObservableObject
     {
-        [ObservableProperty]
-        private object panneauActif;
 
         public PageQuartGerantViewModel()
         {
-            PanneauActif = new CreerQuartViewModel();
+            
         }
 
     }

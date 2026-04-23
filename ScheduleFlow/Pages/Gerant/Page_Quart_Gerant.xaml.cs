@@ -17,12 +17,10 @@ using System.Windows.Shapes;
 
 namespace ScheduleFlow.Pages.Gerant
 {
-    /// <summary>
-    /// Logique d'interaction pour Page_Quart_Gerant.xaml
-    /// </summary>
     public partial class Page_Quart_Gerant : UserControl
     {
-        public Page_Quart_Gerant(PageQuartGerantViewModel monView)
+        PageQuartGerantViewModel monView = new PageQuartGerantViewModel();
+        public Page_Quart_Gerant()
         {
             InitializeComponent();
 
