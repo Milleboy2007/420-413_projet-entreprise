@@ -3,7 +3,6 @@ using CommunityToolkit.Mvvm.Input;
 using Domaine.Interface;
 using Domaine.Entity;
 using System.Windows;
-using Domaine.Enum;
 
 namespace ScheduleFlow.Pages.Gerant
 {

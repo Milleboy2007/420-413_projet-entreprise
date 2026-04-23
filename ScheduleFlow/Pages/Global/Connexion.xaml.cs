@@ -37,5 +37,10 @@ namespace ScheduleFlow.Pages.Global
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow.MainArea.Content = new NavGerant();
         }
+
+        private void BtnEmployeur_Click(object sender, RoutedEventArgs e) {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.MainArea.Content = new NavEmployeur();
+        }
     }
 }
