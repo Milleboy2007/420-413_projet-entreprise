@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ScheduleFlow.Pages.Gerant;
+using ScheduleFlow.Pages.Gerant.Components;
+using ScheduleFlow.ViewModels.Gerant;
 using System.Configuration;
 using System.Data;
 using System.Windows;
@@ -50,6 +52,9 @@ namespace ScheduleFlow
             // 5 - Ajouter les viewModels repository dans les services
             //Scoped ou Singleton ou Trascient?
             services.AddTransient<CreationCompteParGerantViewModel>();
+            services.AddTransient<CreerQuartViewModel>();
+            services.AddTransient<DetailQuartViewModel>();
+            services.AddTransient<PageQuartGerantViewModel>();
 
             // 6 - Ajouter les vues repository dans les services
             //Scoped ou Singleton ou Trascient?

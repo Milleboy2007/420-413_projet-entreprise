@@ -24,7 +24,7 @@ namespace ScheduleFlow.NavBar
         private AccueilGerant accueilGerant = new AccueilGerant();
         private Conge conge = new Conge();
         private CreationCompteParGerant creationCompteParGerant = new CreationCompteParGerant(App.ServiceProvider.GetRequiredService<CreationCompteParGerantViewModel>());
-        private Page_Quart_Gerant quart = new Page_Quart_Gerant();
+        private Page_Quart_Gerant quart = new Page_Quart_Gerant(new ViewModels.Gerant.PageQuartGerantViewModel());
         private PageProfil compte = new PageProfil();
         private PubAnnonceGerant pubAnnonce = new PubAnnonceGerant();
 
