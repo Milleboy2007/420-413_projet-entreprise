@@ -28,7 +28,17 @@
 
                 <Button x:Name="BtnGerant" Content="Connexion Gérant" 
                         Click="BtnGerant_Click"
-                        Height="50" Background="#424242" Foreground="White" FontSize="16" FontWeight="Bold">
+                        Height="50" Background="#424242" Foreground="White" FontSize="16" FontWeight="Bold" Margin="0,0,0,15">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="8"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                
+                <Button x:Name="BtnEmployeur" Content="Connexion Employeur" 
+                    Click="BtnEmployeur_Click"
+                    Height="50" Background="red" Foreground="White" FontSize="16" FontWeight="Bold">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="8"/>
