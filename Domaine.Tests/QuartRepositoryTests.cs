@@ -43,7 +43,7 @@ namespace Domaine.Tests
          * Test qu'un quart est bien créer
          */
         [Fact]
-        public async Task Test_CreateQuartAsync()
+        public async Task CreateQuartAsync_CreerNouveauQuart_NouveauQuartDansDB()
         {
             var dbContext = await GetDbContextAsync();
             var repository = new QuartRepository(dbContext);
@@ -61,7 +61,7 @@ namespace Domaine.Tests
          * Test la possibiliter de supprimer un quart
          */
         [Fact]
-        public async Task Test_DeleteQuartAsync()
+        public async Task DeleteQuartAsync_QuartAjouterPuisSupprimer_QuartSupprimerDeLaDB()
         {
             var dbContext = await GetDbContextAsync();
             var repository = new QuartRepository(dbContext);
@@ -80,7 +80,7 @@ namespace Domaine.Tests
          * Test l'assignation d'un utilisateur (ne vérifie pas que l'utilisateur existe)
          */
         [Fact]
-        public async Task Test_AssignerUserAsync()
+        public async Task AssignerUserAsync_AssignerUserAUnQuart_UserAssignerAuQuart()
         {
             var dbContext = await GetDbContextAsync();
             var repository = new QuartRepository(dbContext);
@@ -99,7 +99,7 @@ namespace Domaine.Tests
          * Test la publication d'un quart
          */
         [Fact]
-        public async Task Test_PublierQuartAsync()
+        public async Task PublierQuartAsync_PublierUnQuartPourTous_QuartDispoPourToutLeMonde()
         {
             var dbContext = await GetDbContextAsync();
             var repository = new QuartRepository(dbContext);
@@ -118,7 +118,7 @@ namespace Domaine.Tests
          * Test la posibiliter de récupérer tout les quarts de la DB
          */
         [Fact]
-        public async Task Test_GetAllQuartAsync()
+        public async Task GetAllQuartAsync_GetToutLesQuartExistant_ListeCompleteDeQuart()
         {
             var dbContext = await GetDbContextAsync();
             var repository = new QuartRepository(dbContext);
@@ -136,7 +136,7 @@ namespace Domaine.Tests
          * Test la possibiliter d'obtenir un quart en particularité (avec son id)
          */
         [Fact]
-        public async Task Test_GetOneQuartAsync()
+        public async Task GetOneQuartAsync_GetUnSeulQuart_QuartDemanderRetourner()
         {
             var dbContext = await GetDbContextAsync();
             var repository = new QuartRepository(dbContext);
@@ -156,7 +156,7 @@ namespace Domaine.Tests
          * Test la possibiliter de récupérer tout les quarts qui ne sont pas encore assignée
          */
         [Fact]
-        public async Task Test_GetAllUnassignateQuartsAsync()
+        public async Task GetAllUnassignateQuartsAsync_GetToutLesQuartNonAssigner_ListeDeToutLesQuartDispo()
         {
             var dbContext = await GetDbContextAsync();
             var repository = new QuartRepository(dbContext);
@@ -180,7 +180,7 @@ namespace Domaine.Tests
          * Test la possibiliter d'obtenir tout les quarts publier
          */
         [Fact]
-        public async Task Test_GetAllPubQuartAsync()
+        public async Task GetAllPubQuartAsync_GetToutLesQuartPublier_ListeDeToutLesQuartPublier()
         {
             var dbContext = await GetDbContextAsync();
             var repository = new QuartRepository(dbContext);
@@ -204,7 +204,7 @@ namespace Domaine.Tests
          * Test la possibilité de récupérer tous les quarts pour une date précise
          */
         [Fact]
-        public async Task Test_GetAllQuartByDate()
+        public async Task GetAllQuartByDate_GetLesQuartDuneDate_ListeDeToutLesQuartDeLaDateDonner()
         {
             var dbContext = await GetDbContextAsync();
             var repository = new QuartRepository(dbContext);
