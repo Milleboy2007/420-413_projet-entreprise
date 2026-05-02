@@ -16,11 +16,11 @@ namespace ScheduleFlow.ViewModels.Gerant
     public class CreerQuartViewModel : INotifyPropertyChanged
     {
         private readonly IUtilisateurRepository _userRepo;
-        public ObservableCollection<string> HeuresDispo { get; set; }
+        public ObservableCollection<TimeOnly> HeuresDispo { get; set; }
         public ObservableCollection<Utilisateur> AllEmployes { get; set; }
 
-        private string _heureDebut;
-        public string HeureDebut
+        private TimeOnly _heureDebut;
+        public TimeOnly HeureDebut
         {
             get => _heureDebut;
             set
@@ -30,8 +30,8 @@ namespace ScheduleFlow.ViewModels.Gerant
             }
         }
 
-        private string _heureFin;
-        public string HeureFin
+        private TimeOnly _heureFin;
+        public TimeOnly HeureFin
         {
             get => _heureFin;
             set
@@ -58,8 +58,8 @@ namespace ScheduleFlow.ViewModels.Gerant
             GenererHeuresDispo();
             GetEmployeDeLaDB();
 
-            HeureDebut = "08:00";
-            HeureFin = "20:00";
+            HeureDebut = new TimeOnly(8, 0);
+            HeureFin = new TimeOnly(20, 0);
         }
 
         private void GetEmployeDeLaDB()
@@ -78,14 +78,14 @@ namespace ScheduleFlow.ViewModels.Gerant
 
         private void GenererHeuresDispo()
         {
-            var heures = new ObservableCollection<string>();
+            var heures = new ObservableCollection<TimeOnly>();
 
             for (int h = 0; h < 24; h++)
             {
-                heures.Add($"{h:D2}:00");
-                heures.Add($"{h:D2}:30");
+                heures.Add(new TimeOnly(h,0));
+                heures.Add(new TimeOnly(h, 30));
             }
-            heures.Add("24:00");
+            heures.Add(new TimeOnly(0, 0));
 
             HeuresDispo = heures;
         }

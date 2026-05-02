@@ -43,7 +43,7 @@
                                       BorderThickness="0"
                                       IsEditable="True"
                                       ItemsSource="{Binding HeuresDispo}"
-                                      Text="{Binding HeureDebut, UpdateSourceTrigger=PropertyChanged}"/>
+                                      ItemStringFormat="HH:mm"/>
                         </Border>
                         <TextBlock Grid.Column="2" Text="à" Foreground="white" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         <Border Grid.Column="3" Background="White" CornerRadius="8" Height="22">
@@ -52,7 +52,7 @@
                                       BorderThickness="0"
                                       IsEditable="True"
                                       ItemsSource="{Binding HeuresDispo}"
-                                      Text="{Binding HeureFin, UpdateSourceTrigger=PropertyChanged}"/>
+                                      ItemStringFormat="HH:mm"/>
                         </Border>
                     </Grid>
 
