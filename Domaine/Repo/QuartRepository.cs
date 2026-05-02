@@ -37,7 +37,7 @@ namespace Domaine.Repo
         }
 
         /*
-         * Ne vérifie pas encore que l'utilisateur est existe
+         * Ne vérifie pas encore que l'utilisateur est existent
          */
         public async Task AssignerUserAsync(int idQuart, int idUser)
         {

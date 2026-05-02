@@ -23,6 +23,9 @@ namespace Domaine.Repo
             _dbContext.SaveChanges();
         }
 
+        public IEnumerable<Utilisateur> ObtenirEmploye(){
+            return _dbContext.Utilisateurs.Where(u => u.Role == RoleUtilisateur.Employe);
+        }
 
     }
 }
