@@ -65,6 +65,15 @@ namespace ScheduleFlow.ViewModels.Gerant
         private void GetEmployeDeLaDB()
         {
             AllEmployes = new ObservableCollection<Utilisateur>(_userRepo.ObtenirEmploye());
+
+            var optionPub = new Utilisateur
+            {
+                IdUtilisateur = -1,
+                Prenom = "(Ce quart seras disponible pour tout le monde)",
+                Nom = "Aucun"
+            };
+
+            AllEmployes.Insert(0, optionPub);
         }
 
         private void GenererHeuresDispo()
@@ -81,7 +90,7 @@ namespace ScheduleFlow.ViewModels.Gerant
             HeuresDispo = heures;
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

@@ -25,7 +25,7 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="date:" Foreground="White" VerticalAlignment="Center"/>
                         <Border Grid.Column="1" Background="White" CornerRadius="8" Height="22" Padding="5,0,5,0">
-                            <DatePicker x:Name="Date" Background="Transparent" BorderThickness="0"/>
+                            <DatePicker x:Name="date" Background="Transparent" BorderThickness="0"/>
                         </Border>
                     </Grid>
 

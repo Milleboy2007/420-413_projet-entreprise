@@ -1,4 +1,5 @@
-﻿using ScheduleFlow.ViewModels.Gerant;
+﻿using Domaine.Entity;
+using ScheduleFlow.ViewModels.Gerant;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,14 @@ namespace ScheduleFlow.Pages.Gerant.Components
         }
         public void BtnCreer(object sender, RoutedEventArgs e)
         {
+            var _date = date.SelectedDate;
+            var _heureDebut = heureDebut.Text;
             var _heureFin = heureFin.Text;
+            var _poste = poste.Text;
+            var _assignation = assignation.SelectedItem as Utilisateur;
+            var _description = description.Text;
+
+
         }
     }
 }
