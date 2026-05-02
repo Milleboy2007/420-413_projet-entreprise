@@ -10,5 +10,6 @@ namespace Domaine.Interface
     public interface IUtilisateurRepository
     {
         void AjouterUtilisateur(Utilisateur nouvelUtilisateur);
+        IEnumerable<Utilisateur> ObtenirUtilisateurs();
     }
 }

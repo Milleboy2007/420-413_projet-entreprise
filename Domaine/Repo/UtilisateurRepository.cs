@@ -22,6 +22,13 @@ namespace Domaine.Repo
             _dbContext.Utilisateurs.Add(nouvelUtilisateur);
             _dbContext.SaveChanges();
         }
+        public IEnumerable<Utilisateur> ObtenirUtilisateurs()
+        {
+            return _dbContext.Utilisateurs.ToList();
+        }
+
+
+
 
 
     }
