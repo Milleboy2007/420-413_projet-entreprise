@@ -26,6 +26,13 @@ namespace ScheduleFlow.Pages.Global
             InitializeComponent();
         }
 
+
+        private void BtnConnexion_Click(object sender, RoutedEventArgs e)
+        {
+            // C'est ici que tu géreras la connexion plus tard
+        }
+
+
         private void BtnEmploye_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;

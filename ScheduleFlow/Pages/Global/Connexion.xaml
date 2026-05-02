@@ -5,37 +5,79 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ScheduleFlow.Pages.Global"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Border Background="White" CornerRadius="15" Padding="40" HorizontalAlignment="Center" VerticalAlignment="Center">
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid Background="#F0F2F5">
+        <Border Background="White" Width="400" VerticalAlignment="Center" HorizontalAlignment="Center" CornerRadius="10">
             <Border.Effect>
-                <DropShadowEffect BlurRadius="20" ShadowDepth="5" Opacity="0.1"/>
+                <DropShadowEffect BlurRadius="25" ShadowDepth="0" Opacity="0.15"/>
             </Border.Effect>
 
-            <StackPanel Width="300">
-                <TextBlock Text="ScheduleFlow" FontSize="32" FontWeight="Bold" Foreground="#1C5084" HorizontalAlignment="Center" Margin="0,0,0,10"/>
-                <TextBlock Text="Mode de développement" FontSize="14" Foreground="Gray" HorizontalAlignment="Center" Margin="0,0,0,30"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-                <Button x:Name="BtnEmploye" Content="Connexion Employé" 
-                        Click="BtnEmploye_Click"
-                        Height="50" Background="#1561AF" Foreground="White" FontSize="16" FontWeight="Bold" Margin="0,0,0,15">
-                    <Button.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="8"/>
-                        </Style>
-                    </Button.Resources>
-                </Button>
+                <Border Grid.Row="0" Background="#1A3E59" CornerRadius="10,10,0,0" Padding="15">
+                    <DockPanel>
+                        <TextBlock Text="ScheduleFlow" Foreground="White" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <Ellipse Width="6" Height="6" Fill="#4A6A82" Margin="2"/>
+                            <Ellipse Width="6" Height="6" Fill="#4A6A82" Margin="2"/>
+                            <Ellipse Width="6" Height="6" Fill="#4A6A82" Margin="2"/>
+                        </StackPanel>
+                    </DockPanel>
+                </Border>
 
-                <Button x:Name="BtnGerant" Content="Connexion Gérant" 
-                        Click="BtnGerant_Click"
-                        Height="50" Background="#424242" Foreground="White" FontSize="16" FontWeight="Bold">
-                    <Button.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="8"/>
-                        </Style>
-                    </Button.Resources>
-                </Button>
-            </StackPanel>
+                <Border Grid.Row="1" Padding="35,25">
+                    <StackPanel>
+                        <TextBlock Text="Connexion" FontSize="24" FontWeight="Bold" Foreground="#1A3E59" Margin="0,0,0,5"/>
+                        <TextBlock Text="Veuillez choisir votre portail pour continuer" FontSize="13" Foreground="Gray" TextWrapping="Wrap" Margin="0,0,0,25"/>
+
+                        <Button x:Name="BtnPortailEmploye" Content="Portail Employé" Click="BtnEmploye_Click" 
+                                Height="50" Background="#1561AF" Foreground="White" FontSize="16" FontWeight="Bold" Margin="0,0,0,15">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="8"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+
+                        <Button x:Name="BtnPortailGerant" Content="Portail Gérant" Click="BtnGerant_Click" 
+                                Height="50" Background="#424242" Foreground="White" FontSize="16" FontWeight="Bold" Margin="0,0,0,25">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="8"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+
+                        <TextBlock Text="COURRIEL" FontSize="10" FontWeight="Bold" Foreground="#666" Margin="0,0,0,5"/>
+                        <Border BorderBrush="#DDD" BorderThickness="1" CornerRadius="5" Background="#F9FBFB" Margin="0,0,0,15">
+                            <TextBox x:Name="TxtEmail" Margin="10,8" Text="nom@entreprise.com" Foreground="Gray" Background="Transparent" BorderThickness="0"/>
+                        </Border>
+
+                        <TextBlock Text="MOT DE PASSE" FontSize="10" FontWeight="Bold" Foreground="#666" Margin="0,0,0,5"/>
+                        <Border BorderBrush="#DDD" BorderThickness="1" CornerRadius="5" Background="#F9FBFB" Margin="0,0,0,25">
+                            <PasswordBox x:Name="TxtPassword" Margin="10,8" Password="**********" Background="Transparent" BorderThickness="0"/>
+                        </Border>
+
+                        <Button x:Name="BtnConnexion" Content="Se connecter" Click="BtnConnexion_Click" 
+                                Height="45" Background="#1A3E59" Foreground="White" FontWeight="Bold" BorderThickness="0">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Row="2" Background="#F0F2F1" CornerRadius="0,0,10,10" Padding="12">
+                    <TextBlock Text="2024 SCHEDULEFLOW VERSION 2.1.0" FontSize="9" Foreground="#999" HorizontalAlignment="Center"/>
+                </Border>
+            </Grid>
         </Border>
     </Grid>
 </UserControl>
