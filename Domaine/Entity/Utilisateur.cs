@@ -4,16 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Domaine.Enum;
 
 namespace Domaine.Entity
 {
-    public enum RoleUtilisateur
-    {
-        Employeur,
-        Gerant,
-        Employe
-
-    }
     public class Utilisateur
     {
         [Key]
