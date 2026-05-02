@@ -52,13 +52,16 @@ namespace ScheduleFlow
             // 5 - Ajouter les viewModels repository dans les services
             //Scoped ou Singleton ou Trascient?
             services.AddTransient<CreationCompteParGerantViewModel>();
+            services.AddTransient<PageQuartGerantViewModel>();
             services.AddTransient<CreerQuartViewModel>();
             services.AddTransient<DetailQuartViewModel>();
-            services.AddTransient<PageQuartGerantViewModel>();
 
             // 6 - Ajouter les vues repository dans les services
             //Scoped ou Singleton ou Trascient?
             services.AddTransient<MainWindow>();
+            services.AddTransient<Page_Quart_Gerant>();
+            services.AddTransient<CreationQuart>();
+            services.AddTransient<DetailQuart>();
 
             // 7 - Construit le service provider avec la méthode BuildServiceProvider
             ServiceProvider = services.BuildServiceProvider();

@@ -23,12 +23,9 @@
                             <ColumnDefinition Width="80"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="Date:" Foreground="White" VerticalAlignment="Center"/>
+                        <TextBlock Text="date:" Foreground="White" VerticalAlignment="Center"/>
                         <Border Grid.Column="1" Background="White" CornerRadius="8" Height="22" Padding="5,0,5,0">
-                            <DockPanel>
-                                <TextBlock Text="📅" DockPanel.Dock="Right" VerticalAlignment="Center" FontSize="10" Foreground="DimGray"/>
-                                <TextBox Background="Transparent" BorderThickness="0" VerticalContentAlignment="Center"/>
-                            </DockPanel>
+                            <DatePicker x:Name="Date" Background="Transparent" BorderThickness="0"/>
                         </Border>
                     </Grid>
 
@@ -36,15 +33,26 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="80"/>
                             <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="15"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Heure:" Foreground="White" VerticalAlignment="Center"/>
                         <Border Grid.Column="1" Background="White" CornerRadius="8" Height="22">
-                            <TextBox Background="Transparent" BorderThickness="0" VerticalContentAlignment="Center" Padding="5,0,0,0"/>
+                            <ComboBox x:Name="heureDebut"
+                                      Background="Transparent"
+                                      BorderThickness="0"
+                                      IsEditable="True"
+                                      ItemsSource="{Binding HeuresDispo}"
+                                      Text="{Binding HeureDebut, UpdateSourceTrigger=PropertyChanged}"/>
                         </Border>
+                        <TextBlock Grid.Column="2" Text="à" Foreground="white" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         <Border Grid.Column="3" Background="White" CornerRadius="8" Height="22">
-                            <TextBox Background="Transparent" BorderThickness="0" VerticalContentAlignment="Center" Padding="5,0,0,0"/>
+                            <ComboBox x:Name="heureFin"
+                                      Background="Transparent"
+                                      BorderThickness="0"
+                                      IsEditable="True"
+                                      ItemsSource="{Binding HeuresDispo}"
+                                      Text="{Binding HeureFin, UpdateSourceTrigger=PropertyChanged}"/>
                         </Border>
                     </Grid>
 
@@ -55,7 +63,11 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Poste:" Foreground="White" VerticalAlignment="Center"/>
                         <Border Grid.Column="1" Background="White" CornerRadius="8" Height="22">
-                            <TextBox Background="Transparent" BorderThickness="0" VerticalContentAlignment="Center" Padding="5,0,0,0"/>
+                            <TextBox x:Name="poste"
+                                     Background="Transparent"
+                                     BorderThickness="0"
+                                     VerticalContentAlignment="Center"
+                                     Padding="5,0,0,0"/>
                         </Border>
                     </Grid>
 
@@ -65,17 +77,47 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Assignation:" Foreground="White" VerticalAlignment="Center"/>
-                        <Border Grid.Column="1" Background="White" CornerRadius="8" Height="22">
-                            <TextBox Background="Transparent" BorderThickness="0" VerticalContentAlignment="Center" Padding="5,0,0,0"/>
-                        </Border>
+                        <ComboBox Height="22"
+                                  Grid.Column="1"
+                                  x:Name="assignation"
+                                  Background="Transparent"
+                                  BorderThickness="0"
+                                  VerticalAlignment="Center"
+                                  ItemsSource="{Binding AllEmployes}"
+                                  SelectedItem="{Binding EmployeSelec}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock>
+                                        <Run Text="{Binding Nom}"/>
+                                        <Run Text=", "/>
+                                        <Run Text="{Binding Prenom}"/>
+                                    </TextBlock>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
                     </Grid>
 
                     <StackPanel Margin="0,5,0,0">
                         <TextBlock Text="Description:" Foreground="White" Margin="0,0,0,5"/>
                         <Border Background="White" CornerRadius="10" Height="150" Padding="5">
-                            <TextBox Background="Transparent" BorderThickness="0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+                            <TextBox x:Name="description"
+                                     Background="Transparent"
+                                     BorderThickness="0"
+                                     AcceptsReturn="True"
+                                     TextWrapping="Wrap"
+                                     VerticalScrollBarVisibility="Auto"/>
                         </Border>
                     </StackPanel>
+
+                    <Button Margin="0, 5, 0, 0"
+                            Height="20"
+                            Width="100"
+                            Content="Créer"
+                            Background="green"
+                            Foreground="White"
+                            BorderThickness="0"
+                            x:Name="Creer"
+                            Click="BtnCreer"/>
 
                 </StackPanel>
             </Grid>

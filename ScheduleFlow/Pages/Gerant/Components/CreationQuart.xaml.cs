@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScheduleFlow.ViewModels.Gerant;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,14 @@ namespace ScheduleFlow.Pages.Gerant.Components
     /// </summary>
     public partial class CreationQuart : UserControl
     {
-        public CreationQuart()
+        public CreationQuart(CreerQuartViewModel monView)
         {
             InitializeComponent();
+            this.DataContext = monView;
+        }
+        public void BtnCreer(object sender, RoutedEventArgs e)
+        {
+            var _heureFin = heureFin.Text;
         }
     }
 }

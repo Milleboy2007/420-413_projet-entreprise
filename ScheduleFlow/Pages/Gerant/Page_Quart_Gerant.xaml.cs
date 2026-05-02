@@ -1,4 +1,5 @@
-﻿using ScheduleFlow.Pages.Gerant.Components;
+﻿using Microsoft.Extensions.DependencyInjection;
+using ScheduleFlow.Pages.Gerant.Components;
 using ScheduleFlow.ViewModels.Gerant;
 using System;
 using System.Collections.Generic;
@@ -19,13 +20,12 @@ namespace ScheduleFlow.Pages.Gerant
 {
     public partial class Page_Quart_Gerant : UserControl
     {
-        PageQuartGerantViewModel monView = new PageQuartGerantViewModel();
-        public Page_Quart_Gerant()
+        public Page_Quart_Gerant(PageQuartGerantViewModel monView)
         {
             InitializeComponent();
 
             this.DataContext = monView;
-            Panel.Content = new CreationQuart();
+            Panel.Content = App.ServiceProvider?.GetRequiredService<CreationQuart>();
         }
     }
 }
