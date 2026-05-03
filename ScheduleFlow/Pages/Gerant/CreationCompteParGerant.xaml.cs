@@ -20,16 +20,12 @@ namespace ScheduleFlow.Pages.Gerant
     /// </summary>
     public partial class CreationCompteParGerant : UserControl
     {
-        public CreationCompteParGerant()
+        public CreationCompteParGerant(CreationCompteParGerantViewModel monView)
         {
             InitializeComponent();
+            DataContext = monView;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            // Action minimale pour le bouton Téléverser
-            MessageBox.Show("Téléverser cliqué", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
-        }
 
         private void BtnEnvoyer_Click(object sender, RoutedEventArgs e)
         {

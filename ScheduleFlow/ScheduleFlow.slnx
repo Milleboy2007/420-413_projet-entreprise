@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="../Domaine.Tests/Domaine.Tests.csproj" Id="6260240b-66a0-457d-809f-050e9384e19a" />
   <Project Path="../Domaine/Domaine.csproj" Id="05db7509-6a4a-4a9b-a659-f6ac38c848dd" />
   <Project Path="ScheduleFlow.csproj" />
 </Solution>

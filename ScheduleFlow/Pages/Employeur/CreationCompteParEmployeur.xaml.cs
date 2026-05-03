@@ -1,4 +1,6 @@
 ﻿
+using ScheduleFlow.ViewModels.Employeur;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace ScheduleFlow.Pages.Employeur
@@ -9,6 +11,7 @@ namespace ScheduleFlow.Pages.Employeur
     public partial class CreationCompteParEmployeur : UserControl
     {
 
+        private readonly EmployeurViewModel _vm;
         public CreationCompteParEmployeur()
         {
             InitializeComponent();
@@ -30,6 +33,16 @@ namespace ScheduleFlow.Pages.Employeur
             string NumContUrg = numContUrg.Text;
             string LienContUrg = lienContUrg.Text;
             string FormSupp = formSupp.Text;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnEnvoyer_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
