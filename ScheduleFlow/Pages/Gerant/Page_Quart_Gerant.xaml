@@ -25,7 +25,16 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Border Grid.Row="0" Background="#38658E" CornerRadius="10,10,0,0" Height="35" Padding="10,0,10,0">
+                <Border Grid.Row="0" Padding="15,10,15,10">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Content="◀" Command="{Binding PrevCommand}" Background="Transparent" Foreground="White" BorderThickness="0" FontSize="16" Margin="0,0,15,0" Cursor="Hand"/>
+                        <TextBlock Text="{Binding TexteFiltre}" Foreground="White" VerticalAlignment="Center" FontSize="14" FontWeight="Bold"/>
+                        <Button Content="▶" Command="{Binding NextCommand}" Background="Transparent" Foreground="White" BorderThickness="0" FontSize="16" Margin="15,0,0,0" Cursor="Hand"/>
+                        <DatePicker SelectedDate="{Binding DateFiltre}" Width="25" Margin="10,0,0,0" BorderThickness="0" Background="Transparent"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Row="1" Background="#38658E" CornerRadius="10,10,0,0" Height="35" Padding="10,0,10,0">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="30"/>
@@ -45,7 +54,7 @@
                     </Grid>
                 </Border>
 
-                <StackPanel Grid.Row="1">
+                <StackPanel Grid.Row="2">
 
                     <Border Background="#3F6B95" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1" Height="30" Padding="10,0,10,0">
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
