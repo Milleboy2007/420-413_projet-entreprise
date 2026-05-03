@@ -14,6 +14,7 @@ namespace Domaine.dto
     }
     public class AffichageQuartGerant_DTO
     {
+        public DateOnly? Date { get; set; }
         public TimeOnly[] Heures { get; set; }
         public string Post { get; set; }
         public StatusQuart Status { get; set; }

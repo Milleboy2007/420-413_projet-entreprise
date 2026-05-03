@@ -1,17 +1,19 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Domaine.dto;
 using Domaine.Entity;
 using Domaine.Interface;
+using Microsoft.Extensions.DependencyInjection;
+using ScheduleFlow.Pages.Gerant.Components;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Collections.ObjectModel;
-using Domaine.dto;
 
 namespace ScheduleFlow.ViewModels.Gerant
 {
@@ -19,6 +21,11 @@ namespace ScheduleFlow.ViewModels.Gerant
     {
         private readonly IQuartRepository _quartRepo;
         private readonly IUtilisateurRepository _userRepo;
+
+        [ObservableProperty]
+        private object _panel;
+
+        private AffichageQuartGerant_DTO? _quartSelec;
 
         [ObservableProperty]
         private DateTime _dateFiltre = DateTime.Today;
@@ -54,6 +61,26 @@ namespace ScheduleFlow.ViewModels.Gerant
             _quartRepo = quartRepo;
             _userRepo = userRepo;
             TrouverSemaine(_dateFiltre);
+            Panel = App.ServiceProvider.GetRequiredService<CreationQuart>();
+        }
+
+        [RelayCommand]
+        public void SelecQuart(AffichageQuartGerant_DTO quart)
+        {
+            if (quart == _quartSelec)
+            {
+                _quartSelec = null;
+                Panel = App.ServiceProvider.GetRequiredService<CreationQuart>();
+            }
+            else
+            {
+                _quartSelec = quart;
+                var vueDetail = App.ServiceProvider.GetRequiredService<DetailQuart>();
+                var detailVM = (DetailQuartViewModel)vueDetail.DataContext;
+                detailVM.QuartSelec = quart;
+
+                Panel = vueDetail;
+            }
         }
 
         [RelayCommand]

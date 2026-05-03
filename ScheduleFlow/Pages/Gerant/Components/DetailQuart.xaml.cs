@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ScheduleFlow.ViewModels.Gerant;
 
 namespace ScheduleFlow.Pages.Gerant.Components
 {
@@ -20,9 +21,10 @@ namespace ScheduleFlow.Pages.Gerant.Components
     /// </summary>
     public partial class DetailQuart : UserControl
     {
-        public DetailQuart()
+        public DetailQuart(DetailQuartViewModel monView)
         {
             InitializeComponent();
+            DataContext = monView;
         }
     }
 }

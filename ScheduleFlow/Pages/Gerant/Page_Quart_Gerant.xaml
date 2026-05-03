@@ -13,27 +13,34 @@
     <!--Template Pour les Quarts-->
     <UserControl.Resources>
         <DataTemplate x:Key="JourneeQuartTemplate">
-            <Grid Margin="0,5,0,5">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="30"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+            <Border Background="Transparent" Cursor="Hand">
+                <Border.InputBindings>
+                    <MouseBinding MouseAction="LeftClick"
+                                  Command="{Binding DataContext.SelecQuartCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                  CommandParameter="{Binding}"/>
+                </Border.InputBindings>
+                <Grid Margin="0,5,0,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Column="2" Text="{Binding Heures[0], StringFormat=HH:mm}" Foreground="LightGray" VerticalAlignment="Center"/>
-                <TextBlock Grid.Column="3" Text="{Binding Heures[1], StringFormat=HH:mm}" Foreground="LightGray" VerticalAlignment="Center"/>
-                <TextBlock Grid.Column="4" Text="{Binding Post}" Foreground="LightGray" VerticalAlignment="Center"/>
-                <TextBlock Grid.Column="5" Foreground="LightGray" VerticalAlignment="Center">
-                                                    <Run Text="{Binding Nom}"/>
-                                                    <Run Text=", "/>
-                                                    <Run Text="{Binding Prenom}"/>
-                </TextBlock>
-                <TextBlock Grid.Column="6" Text="{Binding Status}" Foreground="LightGray" VerticalAlignment="Center"/>
-            </Grid>
+                    <TextBlock Grid.Column="2" Text="{Binding Heures[0], StringFormat=HH:mm}" Foreground="LightGray" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="3" Text="{Binding Heures[1], StringFormat=HH:mm}" Foreground="LightGray" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="4" Text="{Binding Post}" Foreground="LightGray" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="5" Foreground="LightGray" VerticalAlignment="Center">
+                                                                <Run Text="{Binding Nom}"/>
+                                                                <Run Text=", "/>
+                                                                <Run Text="{Binding Prenom}"/>
+                    </TextBlock>
+                    <TextBlock Grid.Column="6" Text="{Binding Status}" Foreground="LightGray" VerticalAlignment="Center"/>
+                </Grid>
+            </Border>
         </DataTemplate>
     </UserControl.Resources>
 
@@ -168,6 +175,6 @@
                 </ScrollViewer>
             </Grid>
         </Border>
-        <ContentControl x:Name="Panel" Grid.Column="2"/>
+        <ContentControl Content="{Binding Panel}" Grid.Column="2"/>
     </Grid>
 </UserControl>

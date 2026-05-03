@@ -4,8 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ScheduleFlow.Pages.Gerant.Components"
-             mc:Ignorable="d" 
-             >
+             mc:Ignorable="d">
     <Grid>
         <Border Background="#0A3663" CornerRadius="10" Padding="15">
             <Grid>
@@ -27,7 +26,7 @@
                         <Border Grid.Column="1" Background="White" CornerRadius="8" Height="22" Padding="5,0,5,0">
                             <DockPanel>
                                 <TextBlock Text="📅" DockPanel.Dock="Right" VerticalAlignment="Center" FontSize="10" Foreground="DimGray"/>
-                                <TextBox Background="Transparent" BorderThickness="0" VerticalContentAlignment="Center"/>
+                                <TextBlock Text="{Binding QuartSelec.Date, StringFormat=dd/MM/yyyy}" Background="Transparent" VerticalAlignment="Center" Padding="2,0,0,0"/>
                             </DockPanel>
                         </Border>
                     </Grid>
@@ -36,15 +35,18 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="80"/>
                             <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="8"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Heure:" Foreground="White" VerticalAlignment="Center"/>
                         <Border Grid.Column="1" Background="White" CornerRadius="8" Height="22">
-                            <TextBox Background="Transparent" BorderThickness="0" VerticalContentAlignment="Center" Padding="5,0,0,0"/>
+                            <TextBlock Text="{Binding QuartSelec.Heures[0], StringFormat=HH:mm}" Background="Transparent" VerticalAlignment="Center" Padding="5,0,0,0"/>
+                        </Border>
+                        <Border Grid.Column="2" Height="22">
+                            <TextBlock Text="à" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
                         <Border Grid.Column="3" Background="White" CornerRadius="8" Height="22">
-                            <TextBox Background="Transparent" BorderThickness="0" VerticalContentAlignment="Center" Padding="5,0,0,0"/>
+                            <TextBlock Text="{Binding QuartSelec.Heures[1], StringFormat=HH:mm}" Background="Transparent" VerticalAlignment="Center" Padding="5,0,0,0"/>
                         </Border>
                     </Grid>
 
@@ -55,7 +57,7 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Poste:" Foreground="White" VerticalAlignment="Center"/>
                         <Border Grid.Column="1" Background="White" CornerRadius="8" Height="22">
-                            <TextBox Background="Transparent" BorderThickness="0" VerticalContentAlignment="Center" Padding="5,0,0,0"/>
+                            <TextBlock Text="{Binding QuartSelec.Post}" Background="Transparent" VerticalAlignment="Center" Padding="5,0,0,0"/>
                         </Border>
                     </Grid>
 
@@ -66,14 +68,18 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Assignation:" Foreground="White" VerticalAlignment="Center"/>
                         <Border Grid.Column="1" Background="White" CornerRadius="8" Height="22">
-                            <TextBox Background="Transparent" BorderThickness="0" VerticalContentAlignment="Center" Padding="5,0,0,0"/>
+                            <TextBlock Background="Transparent" VerticalAlignment="Center" Padding="5,0,0,0">
+                                <Run Text="{Binding QuartSelec.Nom}"/>
+                                <Run Text=", "/>
+                                <Run Text="{Binding QuartSelec.Prenom}"/>
+                            </TextBlock>
                         </Border>
                     </Grid>
 
                     <StackPanel Margin="0,5,0,0">
                         <TextBlock Text="Description:" Foreground="White" Margin="0,0,0,5"/>
                         <Border Background="White" CornerRadius="10" Height="150" Padding="5">
-                            <TextBox Background="Transparent" BorderThickness="0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+                            <TextBox Text="{Binding QuartSelec.Description}" Background="Transparent" BorderThickness="0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" IsReadOnly="True"/>
                         </Border>
                     </StackPanel>
 
