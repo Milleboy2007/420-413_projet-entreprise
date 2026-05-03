@@ -7,101 +7,148 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Background="#FFF0F0F0">
-    <StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="10, 10, 0, 0">
+
+    <Grid Margin="10">
+        <!-- Rows -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
             <Ellipse Width="60" Height="60" Fill="LightGray"/>
-            <TextBlock Text="Bonjour Billy Umma" FontSize="24" FontWeight="Bold"
-        VerticalAlignment="Center" Margin="10,0,0,0"/>
+            <TextBlock Text="Bonjour Billy Umma"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       VerticalAlignment="Center"
+                       Margin="10,0,0,0"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="0, 20, 0, 0" Height="360">
-            <Border CornerRadius="15" Background="LightGray" Padding="0, 0, 0, 5" Margin="5,0,10,0" Height="350">
-                <StackPanel Width="315">
-                    <TextBlock Text="Publications" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Padding="10"/>
-                    <Border CornerRadius="15" Background="White" Padding="5, 5, 5, 0" Margin="5,0,10,0" Height="300">
-                        <StackPanel Orientation="Vertical" Margin="0,19,0,23">
-                            <StackPanel Orientation="Horizontal">
-                                <Ellipse Width="20" Height="20" Fill="LightGray" Margin="0,0,5,0" RenderTransformOrigin="0.5,-0.175" VerticalAlignment="Top"/>
-                                <StackPanel>
-                                    <TextBlock Text="Ted Thibeault" FontWeight="Bold" FontSize="14"/>
-                                    <TextBlock Text="À: B.U. + 15 others..." FontSize="12"/>
-                                    <TextBlock Text="Sujet: Quarts disponible entrepôt" FontSize="12" FontStyle="Italic"/>
-                                </StackPanel>
-                            </StackPanel>
-                            <TextBlock TextWrapping="Wrap" Margin="0,10,0,5" Height="154">
-                                    Bonjour tout le monde,
-                                    Je viens de rendre les quarts disponibles de cette semaine. Veuillez vous diriger vers votre horaire pour les regarder.
-                                    Beau travail tout le monde ! Ted Thibeault
-                            </TextBlock>
-                            <TextBlock Text="Envoyé le: 27 février à 18h32" FontSize="10" Foreground="Gray"
-                            HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0, 0,5, 0"/>
-                            <Button BorderThickness="0" Content="Afficher publications" HorizontalAlignment="Right" Padding="8, 0, 8, 1" Margin="0, 0, 5, 10" Background="#2F6690" Foreground="White">
-                                <Button.Style>
-                                    <Style TargetType="Button">
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Background" Value="#3A7CA5" />
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Button.Style>
-                            </Button>
-                        </StackPanel>
-                    </Border>
-                </StackPanel>
-            </Border>
-            <Border CornerRadius="15" Background="White" Padding="15" Margin="0,0,10,0" Width="222">
-                <StackPanel Margin="-5,0,-5,0">
-                <TextBlock Text="Tableau de bord" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold"/>
-                    <TextBlock Text="Détails du poste" FontWeight="Bold" Margin="0,10,0,0"/>
-                    <TextBlock Text="Poste occupé: Commis d'entrepot"/>
-                    <TextBlock Text="Depuis: Janvier 2026"/>
-                    <TextBlock Text="Nombre d'heures travaillées: 79h"/>
-                    <TextBlock Text="Argent reçu: 1296 $"/>
-                    <TextBlock Text="Argent dû: 126 $"/>
 
-                    <TextBlock Text="Détails de quarts" FontWeight="Bold" Margin="0,10,0,0"/>
-                    <TextBlock Text="Mon prochain quart:"/>
-                    <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,5,0,0">
-                        <TextBlock Text="Mar 24 mars, 9h-17h Entrepot"/>
-                    </Border>
+        <!-- Main Content -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-                    <TextBlock Text="Mes quarts complétés:"/>
-                    <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,5,0,0" Height="60">
-                        <ScrollViewer VerticalScrollBarVisibility="Hidden">
+            <!-- Publications -->
+            <Border Grid.Column="0" CornerRadius="15" Background="LightGray" Padding="10" Margin="5">
+                <StackPanel>
+                    <TextBlock Text="Publications" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
+
+                    <Border CornerRadius="15" Background="White" Padding="10">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto">
                             <StackPanel>
-                                <TextBlock Text="Mar 24 mars, 9h-17h Entrepot"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <Ellipse Width="20" Height="20" Fill="LightGray" Margin="0,0,5,0"/>
+                                    <StackPanel>
+                                        <TextBlock Text="Ted Thibeault" FontWeight="Bold" FontSize="14"/>
+                                        <TextBlock Text="À: B.U. + 15 others..." FontSize="12"/>
+                                        <TextBlock Text="Sujet: Quarts disponible entrepôt" FontSize="12" FontStyle="Italic"/>
+                                    </StackPanel>
+                                </StackPanel>
+
+                                <TextBlock TextWrapping="Wrap" Margin="0,10,0,5">
+Bonjour tout le monde,
+Je viens de rendre les quarts disponibles de cette semaine. Veuillez vous diriger vers votre horaire pour les regarder.
+Beau travail tout le monde !
+                                </TextBlock>
+
+                                <TextBlock Text="Envoyé le: 27 février à 18h32"
+                                           FontSize="10"
+                                           Foreground="Gray"
+                                           HorizontalAlignment="Right"/>
+
+                                <Button Content="Afficher publications"
+                                        HorizontalAlignment="Right"
+                                        Margin="0,10,0,0"
+                                        Padding="8,2"
+                                        Background="#2F6690"
+                                        Foreground="White"
+                                        BorderThickness="0">
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Background" Value="#2F6690"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="#3A7CA5"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
                             </StackPanel>
                         </ScrollViewer>
                     </Border>
                 </StackPanel>
             </Border>
-            <Border CornerRadius="15" Background="White" Padding="15" Margin="0,0,10,0" Width="228">
-                <StackPanel Margin="-5,0,-5,0">
-                    <TextBlock Text="Mes quarts de travail" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold"/>
-                    <TextBlock Text="Filtré:"/>
-                    <ComboBox IsEnabled="False" Margin="0,0,0,5"/>
-                    <TextBlock Text="Trier:"/>
-                    <ComboBox IsEnabled="False" Margin="0,0,0,10"/>
 
+            <!-- Dashboard -->
+            <Border Grid.Column="1" CornerRadius="15" Background="White" Padding="15" Margin="5">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <StackPanel>
-                        <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,0,0,5">
-                            <TextBlock Text="Mar 24 mars, 9h-17 Entrepot"/>
+                        <TextBlock Text="Tableau de bord" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold"/>
+
+                        <TextBlock Text="Détails du poste" FontWeight="Bold" Margin="0,10,0,0"/>
+                        <TextBlock Text="Poste occupé: Commis d'entrepot"/>
+                        <TextBlock Text="Depuis: Janvier 2026"/>
+                        <TextBlock Text="Nombre d'heures travaillées: 79h"/>
+                        <TextBlock Text="Argent reçu: 1296 $"/>
+                        <TextBlock Text="Argent dû: 126 $"/>
+
+                        <TextBlock Text="Détails de quarts" FontWeight="Bold" Margin="0,10,0,0"/>
+                        <TextBlock Text="Mon prochain quart:"/>
+
+                        <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,5,0,0">
+                            <TextBlock Text="Mar 24 mars, 9h-17h Entrepot"/>
                         </Border>
-                        <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,0,0,5">
-                            <TextBlock Text="Mar 31 mars, 8h-18 Vente"/>
-                        </Border>
-                        <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,0,0,5">
-                            <TextBlock Text="Ven 27 mars, 13h-19 Caisse"/>
-                        </Border>
-                        <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,0,0,5">
-                            <TextBlock Text="Mer 1 avril, 8h-20 Entrepot"/>
-                        </Border>
-                        <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5">
-                            <TextBlock Text="Mer 30 mars, 14h-20 Section informatique"/>
+
+                        <TextBlock Text="Mes quarts complétés:"/>
+
+                        <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,5,0,0">
+                            <StackPanel>
+                                <TextBlock Text="Mar 24 mars, 9h-17h Entrepot"/>
+                            </StackPanel>
                         </Border>
                     </StackPanel>
-                </StackPanel>
+                </ScrollViewer>
             </Border>
-        </StackPanel>
-    </StackPanel>
+
+            <!-- Shifts -->
+            <Border Grid.Column="2" CornerRadius="15" Background="White" Padding="15" Margin="5">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <TextBlock Text="Mes quarts de travail" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold"/>
+
+                        <TextBlock Text="Filtré:"/>
+                        <ComboBox IsEnabled="False" Margin="0,0,0,5"/>
+
+                        <TextBlock Text="Trier:"/>
+                        <ComboBox IsEnabled="False" Margin="0,0,0,10"/>
+
+                        <StackPanel>
+                            <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,0,0,5">
+                                <TextBlock Text="Mar 24 mars, 9h-17 Entrepot"/>
+                            </Border>
+                            <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,0,0,5">
+                                <TextBlock Text="Mar 31 mars, 8h-18 Vente"/>
+                            </Border>
+                            <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,0,0,5">
+                                <TextBlock Text="Ven 27 mars, 13h-19 Caisse"/>
+                            </Border>
+                            <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,0,0,5">
+                                <TextBlock Text="Mer 1 avril, 8h-20 Entrepot"/>
+                            </Border>
+                            <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5">
+                                <TextBlock Text="Mer 30 mars, 14h-20 Section informatique"/>
+                            </Border>
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+
+        </Grid>
+    </Grid>
 </UserControl>

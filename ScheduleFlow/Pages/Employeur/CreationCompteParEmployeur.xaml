@@ -28,7 +28,7 @@
                                 <Border Width="60" Height="60" CornerRadius="30" Background="#E0E0E0" Margin="0,0,15,0">
                                     <TextBlock Text="👤" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                 </Border>
-                                <Button Content="Téléverser" Padding="15,10" Background="#333333" Foreground="White" FontSize="12" VerticalAlignment="Center" Click="Button_Click"/>
+                                <Button Content="Téléverser" Padding="15,10" Background="#333333" Foreground="White" FontSize="12" VerticalAlignment="Center"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
@@ -115,7 +115,7 @@
                     </Border>
 
                     <StackPanel HorizontalAlignment="Right" Margin="0,20,0,20">
-                        <Button x:Name="btnEnvoyer" Content="Envoyer" Height="45" Width="120" Padding="20,12" Background="#333333" Foreground="White" FontSize="14" FontWeight="Bold" Click="BtnEnvoyer_Click"/>
+                        <Button x:Name="btnEnvoyer" Content="Envoyer" Height="45" Width="120" Padding="20,12" Background="#333333" Foreground="White" FontSize="14" FontWeight="Bold"/>
                     </StackPanel>
 
                     

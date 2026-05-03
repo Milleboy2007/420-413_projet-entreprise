@@ -1,6 +1,5 @@
 ﻿
 using System.Windows.Controls;
-using ScheduleFlow.ViewModels.Employer;
 
 namespace ScheduleFlow.Pages.Employeur
 {
@@ -10,7 +9,6 @@ namespace ScheduleFlow.Pages.Employeur
     public partial class CreationCompteParEmployeur : UserControl
     {
 
-        private readonly EmployerViewModel _vm;
         public CreationCompteParEmployeur()
         {
             InitializeComponent();
