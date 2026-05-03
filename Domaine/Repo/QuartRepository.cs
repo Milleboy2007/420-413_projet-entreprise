@@ -81,7 +81,7 @@ namespace Domaine.Repo
             return await _db.Quarts.Where(quart => quart.IsPub).ToArrayAsync();
         }
 
-        public async Task<Quart[]> GetAllQuartByDate(DateOnly date)
+        public async Task<Quart[]> GetAllQuartByDateAsync(DateOnly date)
         {
             return await _db.Quarts.Where(quart => quart.Date == date).ToArrayAsync();
         }

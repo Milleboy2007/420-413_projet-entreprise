@@ -28,7 +28,7 @@ namespace Domaine.Tests
             return new Quart
             {
                 Date = new DateOnly(2026, 5, 20),
-                Heure = [new TimeOnly(8, 0), new TimeOnly(16, 0)],
+                Heures = [new TimeOnly(8, 0), new TimeOnly(16, 0)],
                 Post = "Post Test",
                 Description = "Description Test"
                 
@@ -222,7 +222,7 @@ namespace Domaine.Tests
             await dbContext.Quarts.AddAsync(quartAutreDate);
             await dbContext.SaveChangesAsync();
 
-            var resultats = await repository.GetAllQuartByDate(dateCible);
+            var resultats = await repository.GetAllQuartByDateAsync(dateCible);
 
             Assert.Equal(2, resultats.Length);
             Assert.All(resultats, quart => Assert.Equal(dateCible, quart.Date));

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Domaine.Entity;
 using Domaine.Interface;
 using Domaine.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace Domaine.Repo
 {
@@ -27,5 +28,8 @@ namespace Domaine.Repo
             return _dbContext.Utilisateurs.Where(u => u.Role == RoleUtilisateur.Employe);
         }
 
+        public async Task<Utilisateur?> ObtenirParId(int id) {
+            return await _dbContext.Utilisateurs.FirstOrDefaultAsync(u => u.IdUtilisateur == id);
+        }
     }
 }

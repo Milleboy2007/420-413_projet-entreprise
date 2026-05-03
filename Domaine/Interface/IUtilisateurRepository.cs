@@ -11,5 +11,6 @@ namespace Domaine.Interface
     {
         void AjouterUtilisateur(Utilisateur nouvelUtilisateur);
         IEnumerable<Utilisateur> ObtenirEmploye();
+        Task<Utilisateur?> ObtenirParId(int id);
     }
 }

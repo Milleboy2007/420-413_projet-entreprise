@@ -65,7 +65,33 @@
                                 <TextBlock Text="Dimanche" FontSize="12" FontWeight="Bold" Margin="0,5,0,5"/>
                             </Expander.Header>
                             <StackPanel Background="#0A3663">
+                                <ItemsControl ItemsSource="{Binding QuartsDimanche}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid Margin="0,5,0,5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="30"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
 
+                                                <TextBlock Grid.Column="2" Text="{Binding Heures[0], StringFormat=HH:mm}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="3" Text="{Binding Heures[1], StringFormat=HH:mm}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="4" Text="{Binding Post}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="5" Foreground="LightGray" VerticalAlignment="Center">
+                                                    <Run Text="{Binding Nom}"/>
+                                                    <Run Text=", "/>
+                                                    <Run Text="{Binding Prenom}"/>
+                                                </TextBlock>
+                                                <TextBlock Grid.Column="6" Text="{Binding Status}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
                             </StackPanel>
                         </Expander>
 
@@ -74,7 +100,33 @@
                                 <TextBlock Text="Lundi" FontSize="12" FontWeight="Bold" Margin="0,5,0,5"/>
                             </Expander.Header>
                             <StackPanel Background="#0A3663">
+                                <ItemsControl ItemsSource="{Binding QuartsLundi}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid Margin="0,5,0,5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="30"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
 
+                                                <TextBlock Grid.Column="2" Text="{Binding Heures[0], StringFormat=HH:mm}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="3" Text="{Binding Heures[1], StringFormat=HH:mm}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="4" Text="{Binding Post}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="5" Foreground="LightGray" VerticalAlignment="Center">
+                                                    <Run Text="{Binding Nom}"/>
+                                                    <Run Text=", "/>
+                                                    <Run Text="{Binding Prenom}"/>
+                                                </TextBlock>
+                                                <TextBlock Grid.Column="6" Text="{Binding Status}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
                             </StackPanel>
                         </Expander>
 
@@ -83,7 +135,33 @@
                                 <TextBlock Text="Mardi" FontSize="12" FontWeight="Bold" Margin="0,5,0,5"/>
                             </Expander.Header>
                             <StackPanel Background="#0A3663">
+                                <ItemsControl ItemsSource="{Binding QuartsMardi}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid Margin="0,5,0,5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="30"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
 
+                                                <TextBlock Grid.Column="2" Text="{Binding Heures[0], StringFormat=HH:mm}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="3" Text="{Binding Heures[1], StringFormat=HH:mm}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="4" Text="{Binding Post}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="5" Foreground="LightGray" VerticalAlignment="Center">
+                                                    <Run Text="{Binding Nom}"/>
+                                                    <Run Text=", "/>
+                                                    <Run Text="{Binding Prenom}"/>
+                                                </TextBlock>
+                                                <TextBlock Grid.Column="6" Text="{Binding Status}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
                             </StackPanel>
                         </Expander>
 
@@ -92,7 +170,33 @@
                                 <TextBlock Text="Mercredi" FontSize="12" FontWeight="Bold" Margin="0,5,0,5"/>
                             </Expander.Header>
                             <StackPanel Background="#0A3663">
+                                <ItemsControl ItemsSource="{Binding QuartsMercredi}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid Margin="0,5,0,5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="30"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
 
+                                                <TextBlock Grid.Column="2" Text="{Binding Heures[0], StringFormat=HH:mm}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="3" Text="{Binding Heures[1], StringFormat=HH:mm}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="4" Text="{Binding Post}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="5" Foreground="LightGray" VerticalAlignment="Center">
+                                                    <Run Text="{Binding Nom}"/>
+                                                    <Run Text=", "/>
+                                                    <Run Text="{Binding Prenom}"/>
+                                                </TextBlock>
+                                                <TextBlock Grid.Column="6" Text="{Binding Status}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
                             </StackPanel>
                         </Expander>
 
@@ -101,7 +205,33 @@
                                 <TextBlock Text="Jeudi" FontSize="12" FontWeight="Bold" Margin="0,5,0,5"/>
                             </Expander.Header>
                             <StackPanel Background="#0A3663">
+                                <ItemsControl ItemsSource="{Binding QuartsJeudi}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid Margin="0,5,0,5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="30"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
 
+                                                <TextBlock Grid.Column="2" Text="{Binding Heures[0], StringFormat=HH:mm}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="3" Text="{Binding Heures[1], StringFormat=HH:mm}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="4" Text="{Binding Post}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="5" Foreground="LightGray" VerticalAlignment="Center">
+                                                    <Run Text="{Binding Nom}"/>
+                                                    <Run Text=", "/>
+                                                    <Run Text="{Binding Prenom}"/>
+                                                </TextBlock>
+                                                <TextBlock Grid.Column="6" Text="{Binding Status}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
                             </StackPanel>
                         </Expander>
 
@@ -110,7 +240,33 @@
                                 <TextBlock Text="Vendredi" FontSize="12" FontWeight="Bold" Margin="0,5,0,5"/>
                             </Expander.Header>
                             <StackPanel Background="#0A3663">
+                                <ItemsControl ItemsSource="{Binding QuartsVendredi}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid Margin="0,5,0,5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="30"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
 
+                                                <TextBlock Grid.Column="2" Text="{Binding Heures[0], StringFormat=HH:mm}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="3" Text="{Binding Heures[1], StringFormat=HH:mm}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="4" Text="{Binding Post}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="5" Foreground="LightGray" VerticalAlignment="Center">
+                                                    <Run Text="{Binding Nom}"/>
+                                                    <Run Text=", "/>
+                                                    <Run Text="{Binding Prenom}"/>
+                                                </TextBlock>
+                                                <TextBlock Grid.Column="6" Text="{Binding Status}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
                             </StackPanel>
                         </Expander>
 
@@ -119,7 +275,33 @@
                                 <TextBlock Text="Samedi" FontSize="12" FontWeight="Bold" Margin="0,5,0,5"/>
                             </Expander.Header>
                             <StackPanel Background="#0A3663">
+                                <ItemsControl ItemsSource="{Binding QuartsSamedi}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid Margin="0,5,0,5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="30"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
 
+                                                <TextBlock Grid.Column="2" Text="{Binding Heures[0], StringFormat=HH:mm}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="3" Text="{Binding Heures[1], StringFormat=HH:mm}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="4" Text="{Binding Post}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="5" Foreground="LightGray" VerticalAlignment="Center">
+                                                    <Run Text="{Binding Nom}"/>
+                                                    <Run Text=", "/>
+                                                    <Run Text="{Binding Prenom}"/>
+                                                </TextBlock>
+                                                <TextBlock Grid.Column="6" Text="{Binding Status}" Foreground="LightGray" VerticalAlignment="Center"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
                             </StackPanel>
                         </Expander>
                         

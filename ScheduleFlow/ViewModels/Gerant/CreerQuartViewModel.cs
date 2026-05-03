@@ -105,7 +105,7 @@ namespace ScheduleFlow.ViewModels.Gerant
             Quart nouveauQuart = new Quart
             {
                 Date = date,
-                Heure = [heurDebut, heureFin],
+                Heures = [heurDebut, heureFin],
                 Post = poste,
                 UserId = assignation?.IdUtilisateur == -1? null: assignation?.IdUtilisateur,
                 Description = description,

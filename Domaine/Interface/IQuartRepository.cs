@@ -25,6 +25,6 @@ namespace Domaine.Interface
 
         Task<Quart[]> GetAllPubQuartAsync();
 
-        Task<Quart[]> GetAllQuartByDate(DateOnly date);
+        Task<Quart[]> GetAllQuartByDateAsync(DateOnly date);
     }
 }
