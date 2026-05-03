@@ -33,38 +33,25 @@
                 <Border Grid.Row="1" Padding="35,25">
                     <StackPanel>
                         <TextBlock Text="Connexion" FontSize="24" FontWeight="Bold" Foreground="#1A3E59" Margin="0,0,0,5"/>
-                        <TextBlock Text="Veuillez choisir votre portail pour continuer" FontSize="13" Foreground="Gray" TextWrapping="Wrap" Margin="0,0,0,25"/>
+                        <TextBlock Text="Veuillez choisir votre portail : " FontSize="13" Foreground="Gray" TextWrapping="Wrap" Margin="0,0,0,15"/>
 
-                        <Button x:Name="BtnPortailEmploye" Content="Portail Employé" Click="BtnEmploye_Click" 
-                                Height="50" Background="#1561AF" Foreground="White" FontSize="16" FontWeight="Bold" Margin="0,0,0,15">
-                            <Button.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="CornerRadius" Value="8"/>
-                                </Style>
-                            </Button.Resources>
-                        </Button>
-
-                        <Button x:Name="BtnPortailGerant" Content="Portail Gérant" Click="BtnGerant_Click" 
-                                Height="50" Background="#424242" Foreground="White" FontSize="16" FontWeight="Bold" Margin="0,0,0,25">
-                            <Button.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="CornerRadius" Value="8"/>
-                                </Style>
-                            </Button.Resources>
-                        </Button>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
+                            <RadioButton x:Name="RbGerant" Content="Portail Gérant" GroupName="PortalType" IsChecked="True" Margin="0,0,20,0" Cursor="Hand"/>
+                            <RadioButton x:Name="RbEmploye" Content="Portail Employé" GroupName="PortalType" Cursor="Hand"/>
+                        </StackPanel>
 
                         <TextBlock Text="COURRIEL" FontSize="10" FontWeight="Bold" Foreground="#666" Margin="0,0,0,5"/>
                         <Border BorderBrush="#DDD" BorderThickness="1" CornerRadius="5" Background="#F9FBFB" Margin="0,0,0,15">
-                            <TextBox x:Name="TxtEmail" Margin="10,8" Text="nom@entreprise.com" Foreground="Gray" Background="Transparent" BorderThickness="0"/>
+                            <TextBox x:Name="TxtEmail" Margin="10,8" VerticalContentAlignment="Center" Foreground="Black" Background="Transparent" BorderThickness="0"/>
                         </Border>
 
                         <TextBlock Text="MOT DE PASSE" FontSize="10" FontWeight="Bold" Foreground="#666" Margin="0,0,0,5"/>
                         <Border BorderBrush="#DDD" BorderThickness="1" CornerRadius="5" Background="#F9FBFB" Margin="0,0,0,25">
-                            <PasswordBox x:Name="TxtPassword" Margin="10,8" Password="**********" Background="Transparent" BorderThickness="0"/>
+                            <PasswordBox x:Name="TxtPassword" Margin="10,8" Background="Transparent" BorderThickness="0"/>
                         </Border>
 
                         <Button x:Name="BtnConnexion" Content="Se connecter" Click="BtnConnexion_Click" 
-                                Height="45" Background="#1A3E59" Foreground="White" FontWeight="Bold" BorderThickness="0">
+                                Height="45" Background="#1A3E59" Foreground="White" FontWeight="Bold" BorderThickness="0" Cursor="Hand">
                             <Button.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="5"/>
@@ -75,7 +62,7 @@
                 </Border>
 
                 <Border Grid.Row="2" Background="#F0F2F1" CornerRadius="0,0,10,10" Padding="12">
-                    <TextBlock Text="2024 SCHEDULEFLOW VERSION 2.1.0" FontSize="9" Foreground="#999" HorizontalAlignment="Center"/>
+                    <TextBlock Text="2026 SCHEDULEFLOW VERSION 2.1.0" FontSize="9" Foreground="#999" HorizontalAlignment="Center"/>
                 </Border>
             </Grid>
         </Border>
