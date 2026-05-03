@@ -25,6 +25,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
+                <!--Filtre Semaine-->
                 <Border Grid.Row="0" Padding="15,10,15,10">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button Content="◀" Command="{Binding PrevCommand}" Background="Transparent" Foreground="White" BorderThickness="0" FontSize="16" Margin="0,0,15,0" Cursor="Hand"/>
@@ -34,6 +35,7 @@
                     </StackPanel>
                 </Border>
 
+                <!--"Header"-->
                 <Border Grid.Row="1" Background="#38658E" CornerRadius="10,10,0,0" Height="35" Padding="10,0,10,0">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -54,58 +56,75 @@
                     </Grid>
                 </Border>
 
-                <StackPanel Grid.Row="2">
+                <!--Tableau de Journee-->
+                <ScrollViewer Grid.Row="2">
+                    <StackPanel >
 
-                    <Border Background="#3F6B95" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1" Height="30" Padding="10,0,10,0">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="▷" Foreground="Black" Margin="0,0,5,0" FontWeight="Bold"/>
-                            <TextBlock Text="Lundi" Foreground="White" FontSize="12"/>
-                        </StackPanel>
-                    </Border>
+                        <Expander Background="#3F6B95" Foreground="White" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1">
+                            <Expander.Header>
+                                <TextBlock Text="Dimanche" FontSize="12" FontWeight="Bold" Margin="0,5,0,5"/>
+                            </Expander.Header>
+                            <StackPanel Background="#0A3663">
 
-                    <Border Background="#3F6B95" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1" Height="30" Padding="10,0,10,0">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="▷" Foreground="Black" Margin="0,0,5,0" FontWeight="Bold"/>
-                            <TextBlock Text="Mardi" Foreground="White" FontSize="12"/>
-                        </StackPanel>
-                    </Border>
+                            </StackPanel>
+                        </Expander>
 
-                    <Border Background="#3F6B95" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1" Height="30" Padding="10,0,10,0">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="▷" Foreground="Black" Margin="0,0,5,0" FontWeight="Bold"/>
-                            <TextBlock Text="Mercredi" Foreground="White" FontSize="12"/>
-                        </StackPanel>
-                    </Border>
+                        <Expander Background="#3F6B95" Foreground="White" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1">
+                            <Expander.Header>
+                                <TextBlock Text="Lundi" FontSize="12" FontWeight="Bold" Margin="0,5,0,5"/>
+                            </Expander.Header>
+                            <StackPanel Background="#0A3663">
 
-                    <Border Background="#3F6B95" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1" Height="30" Padding="10,0,10,0">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="▷" Foreground="Black" Margin="0,0,5,0" FontWeight="Bold"/>
-                            <TextBlock Text="Jeudi" Foreground="White" FontSize="12"/>
-                        </StackPanel>
-                    </Border>
+                            </StackPanel>
+                        </Expander>
 
-                    <Border Background="#3F6B95" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1" Height="30" Padding="10,0,10,0">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="▷" Foreground="Black" Margin="0,0,5,0" FontWeight="Bold"/>
-                            <TextBlock Text="Vendredi" Foreground="White" FontSize="12"/>
-                        </StackPanel>
-                    </Border>
+                        <Expander Background="#3F6B95" Foreground="White" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1">
+                            <Expander.Header>
+                                <TextBlock Text="Mardi" FontSize="12" FontWeight="Bold" Margin="0,5,0,5"/>
+                            </Expander.Header>
+                            <StackPanel Background="#0A3663">
 
-                    <Border Background="#3F6B95" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1" Height="30" Padding="10,0,10,0">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="▷" Foreground="Black" Margin="0,0,5,0" FontWeight="Bold"/>
-                            <TextBlock Text="Samedi" Foreground="White" FontSize="12"/>
-                        </StackPanel>
-                    </Border>
+                            </StackPanel>
+                        </Expander>
 
-                    <Border Background="#3F6B95" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1" Height="30" Padding="10,0,10,0">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="▷" Foreground="Black" Margin="0,0,5,0" FontWeight="Bold"/>
-                            <TextBlock Text="Dimanche" Foreground="White" FontSize="12"/>
-                        </StackPanel>
-                    </Border>
+                        <Expander Background="#3F6B95" Foreground="White" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1">
+                            <Expander.Header>
+                                <TextBlock Text="Mercredi" FontSize="12" FontWeight="Bold" Margin="0,5,0,5"/>
+                            </Expander.Header>
+                            <StackPanel Background="#0A3663">
 
-                </StackPanel>
+                            </StackPanel>
+                        </Expander>
+
+                        <Expander Background="#3F6B95" Foreground="White" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1">
+                            <Expander.Header>
+                                <TextBlock Text="Jeudi" FontSize="12" FontWeight="Bold" Margin="0,5,0,5"/>
+                            </Expander.Header>
+                            <StackPanel Background="#0A3663">
+
+                            </StackPanel>
+                        </Expander>
+
+                        <Expander Background="#3F6B95" Foreground="White" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1">
+                            <Expander.Header>
+                                <TextBlock Text="Vendredi" FontSize="12" FontWeight="Bold" Margin="0,5,0,5"/>
+                            </Expander.Header>
+                            <StackPanel Background="#0A3663">
+
+                            </StackPanel>
+                        </Expander>
+
+                        <Expander Background="#3F6B95" Foreground="White" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1">
+                            <Expander.Header>
+                                <TextBlock Text="Samedi" FontSize="12" FontWeight="Bold" Margin="0,5,0,5"/>
+                            </Expander.Header>
+                            <StackPanel Background="#0A3663">
+
+                            </StackPanel>
+                        </Expander>
+                        
+                    </StackPanel>
+                </ScrollViewer>
             </Grid>
         </Border>
         <ContentControl x:Name="Panel" Grid.Column="2"/>
