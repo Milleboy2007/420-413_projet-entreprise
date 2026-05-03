@@ -10,12 +10,14 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ScheduleFlow.ViewModels.Gerant
 {
     public class CreerQuartViewModel : INotifyPropertyChanged
     {
         private readonly IUtilisateurRepository _userRepo;
+        private readonly IQuartRepository _quartRepo;
         public ObservableCollection<TimeOnly> HeuresDispo { get; set; }
         public ObservableCollection<Utilisateur> AllEmployes { get; set; }
 
@@ -52,9 +54,10 @@ namespace ScheduleFlow.ViewModels.Gerant
             }
         }
 
-        public CreerQuartViewModel(IUtilisateurRepository repo)
+        public CreerQuartViewModel(IUtilisateurRepository userRepo, IQuartRepository quartRepo)
         {
-            _userRepo = repo;
+            _userRepo = userRepo;
+            _quartRepo = quartRepo;
             GenererHeuresDispo();
             GetEmployeDeLaDB();
 
@@ -74,6 +77,7 @@ namespace ScheduleFlow.ViewModels.Gerant
             };
 
             AllEmployes.Insert(0, optionPub);
+            _employeSelec = optionPub;
         }
 
         private void GenererHeuresDispo()
@@ -94,6 +98,21 @@ namespace ScheduleFlow.ViewModels.Gerant
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public async void CreerQuart(DateOnly date, TimeOnly heurDebut, TimeOnly heureFin, string poste, Utilisateur? assignation, string description)
+        {
+            Quart nouveauQuart = new Quart
+            {
+                Date = date,
+                Heure = [heurDebut, heureFin],
+                Post = poste,
+                UserId = assignation?.IdUtilisateur == -1? null: assignation?.IdUtilisateur,
+                Description = description,
+                IsPub = assignation?.IdUtilisateur == -1
+            };
+
+            await _quartRepo.CreateQuartAsync(nouveauQuart);
         }
     }
 }

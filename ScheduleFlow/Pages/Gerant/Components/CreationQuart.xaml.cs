@@ -29,7 +29,13 @@ namespace ScheduleFlow.Pages.Gerant.Components
         }
         public void BtnCreer(object sender, RoutedEventArgs e)
         {
-            var _date = date.SelectedDate;
+            var _dateTime = date.SelectedDate;
+            if (_dateTime == null)
+            {
+                MessageBox.Show("Veuillez sélectionner une date.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            var _dateOnly = DateOnly.FromDateTime(_dateTime.Value);
 
             TimeOnly _heureDebut;
             if (heureDebut.SelectedItem is TimeOnly itemDebut)
@@ -58,10 +64,33 @@ namespace ScheduleFlow.Pages.Gerant.Components
             }
 
             var _poste = poste.Text;
+            if (_poste == "")
+            {
+                MessageBox.Show("Un post doit être entrer!", "Erreur, création interrompu", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             var _assignation = assignation.SelectedItem as Utilisateur;
             var _description = description.Text;
+            if (_description == "")
+            {
+                MessageBox.Show("Il doit y avor une description!", "Erreur, création interrompu", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
 
+            if (this.DataContext is CreerQuartViewModel monView)
+            {
+                try
+                {
+                    monView.CreerQuart(_dateOnly, _heureDebut, _heureFin, _poste, _assignation, _description);
 
+                    MessageBox.Show("Le quart a été créé avec succès !", "Succès", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Une erreur est survenue lors de la sauvegarde : {ex.Message}", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
         }
     }
 }
