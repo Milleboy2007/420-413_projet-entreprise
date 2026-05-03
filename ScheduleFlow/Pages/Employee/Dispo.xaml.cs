@@ -1,4 +1,5 @@
 ﻿using Domaine.Context;
+using ScheduleFlow.ViewModels.Employe;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,9 +20,10 @@ namespace ScheduleFlow.Pages.Employee
     public partial class Dispo : UserControl
     {
         
-        public Dispo()
+        public Dispo(CreneauViewModel viewModel)
         {
             InitializeComponent();
+            this.DataContext = viewModel;
         }
 
         private void OpenPopup_Click(object sender, RoutedEventArgs e)
@@ -36,6 +38,11 @@ namespace ScheduleFlow.Pages.Employee
 
         private async void SaveDispo_Click(object sender, RoutedEventArgs e)
         {
+            if (this.DataContext is CreneauViewModel vm)
+            {
+                // Execute the RelayCommand
+                await vm.AjouterCreneauCommand.ExecuteAsync(null);
+            }
             PopupOverlay.Visibility = Visibility.Collapsed;
         }
     }

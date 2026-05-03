@@ -159,8 +159,8 @@
                     <StackPanel>
                         <TextBlock Text="Nouvelle Disponibilité" FontSize="20" FontWeight="Bold" Margin="0,0,0,20"/>
 
-                        <TextBlock Text="Jour de la semaine" Foreground="#7F8C8D" Margin="0,10,0,5"/>
-                        <ComboBox x:Name="DayComboBox" Margin="0,0,0,15">
+                        <TextBlock Text="Jour de la semaine" Foreground="#7F8C8D" Margin="0,10,0,5" />
+                        <ComboBox x:Name="DayComboBox" Margin="0,0,0,15" SelectedValuePath="Content" SelectedValue="{Binding Jour, UpdateSourceTrigger=PropertyChanged}">
                             <ComboBoxItem Content="Lundi"/>
                             <ComboBoxItem Content="Mardi"/>
                             <ComboBoxItem Content="Mercredi"/>
@@ -177,11 +177,11 @@
                             </Grid.ColumnDefinitions>
                             <StackPanel Margin="0,0,5,0">
                                 <TextBlock Text="Heure Début" Foreground="#7F8C8D" Margin="0,0,0,5"/>
-                                <TextBox x:Name="StartTimeBox" Text="08:00"/>
+                                <TextBox Text="{Binding HeureDebut, StringFormat='hh\\:mm', UpdateSourceTrigger=LostFocus}" />
                             </StackPanel>
                             <StackPanel Grid.Column="1" Margin="5,0,0,0">
                                 <TextBlock Text="Heure Fin" Foreground="#7F8C8D" Margin="0,0,0,5"/>
-                                <TextBox x:Name="EndTimeBox" Text="17:00"/>
+                                <TextBox Text="{Binding HeureFin, StringFormat='hh\\:mm', UpdateSourceTrigger=LostFocus}" />
                             </StackPanel>
                         </Grid>
 
@@ -194,10 +194,11 @@
                             Margin="0,0,20,0"
                             Cursor="Hand"/>
                             <Button Content="Enregistrer" 
-                        Click="SaveDispo_Click"
-                        Style="{StaticResource AddButtonStyle}" 
-                        Padding="20,10"
-                        Height="Auto"/>
+                            Command="{Binding AjouterCreneauCommand}"
+                            Click="SaveDispo_Click"
+                            Style="{StaticResource AddButtonStyle}" 
+                            Padding="20,10"
+                            Height="Auto"/>
                         </StackPanel>
                     </StackPanel>
                 </Border>
