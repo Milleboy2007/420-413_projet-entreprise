@@ -108,7 +108,6 @@ namespace ScheduleFlow.ViewModels.Global
 
                 MessageBox.Show("Utilisateur supprimé.");
 
-                // optional: clear UI
                 Nom = "";
                 Prenom = "";
                 Courriel = "";
