@@ -1,8 +1,7 @@
 ﻿using Domaine.Interface;
 using Microsoft.Extensions.DependencyInjection;
-using ScheduleFlow.ViewModels.Employe;
-using ScheduleFlow.ViewModels.Employeur;
 using System.Windows.Controls;
+using ScheduleFlow.ViewModels.Employeur;
 
 namespace ScheduleFlow.Pages.Employeur
 {
@@ -12,8 +11,7 @@ namespace ScheduleFlow.Pages.Employeur
         {
             InitializeComponent();
 
-            var repo = App.ServiceProvider.GetService<IUtilisateurRepository>();
-            DataContext = new CreationCompteParEmployeurViewModel(repo);
+            DataContext = App.ServiceProvider.GetService<CreationCompteParEmployeurViewModel>();
         }
     }
 }
