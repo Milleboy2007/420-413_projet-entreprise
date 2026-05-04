@@ -46,6 +46,7 @@ namespace Domaine.Repo
             if (quart != null)
             {
                 quart.UserId = idUser;
+                quart.IsPub = false;
                 await _db.SaveChangesAsync();
             }
         }
@@ -76,14 +77,19 @@ namespace Domaine.Repo
             return await _db.Quarts.Where(quart => quart.UserId == null).ToArrayAsync();
         }
 
-        public async Task<Quart[]> GetAllPubQuartAsync()
+        public async Task<Quart[]> GetAllPubQuartAsync(int idUser)
         {
-            return await _db.Quarts.Where(quart => quart.IsPub).ToArrayAsync();
+            return await _db.Quarts.Where(quart => quart.IsPub && quart.UserId != idUser).ToArrayAsync();
         }
 
         public async Task<Quart[]> GetAllQuartByDateAsync(DateOnly date)
         {
             return await _db.Quarts.Where(quart => quart.Date == date).ToArrayAsync();
+        }
+
+        public async Task<Quart[]> GetAllQuartOfOnePersonForAWeekAsync(int id, DateOnly debut, DateOnly fin)
+        {
+            return await _db.Quarts.Where(quart => quart.UserId == id && quart.Date >= debut && quart.Date <= fin).ToArrayAsync();
         }
     }
 }

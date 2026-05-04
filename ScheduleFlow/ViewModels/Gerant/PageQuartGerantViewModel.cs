@@ -129,7 +129,7 @@ namespace ScheduleFlow.ViewModels.Gerant
                 {
                     Date = q.Date,
                     Heures = q.Heures,
-                    Post = q.Post,
+                    Poste = q.Poste,
                     Status = q.UserId == null ? StatusQuart.NonAssigner: q.IsPub? StatusQuart.AttenteEchange: StatusQuart.Assigner,
                     Description = q.Description,
                     Nom = emp != null? emp.Nom: "N/A",

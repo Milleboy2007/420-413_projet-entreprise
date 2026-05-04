@@ -25,7 +25,6 @@ namespace ScheduleFlow.Pages.Gerant
             InitializeComponent();
 
             this.DataContext = monView;
-            //Panel.Content = App.ServiceProvider?.GetRequiredService<CreationQuart>();
         }
     }
 }

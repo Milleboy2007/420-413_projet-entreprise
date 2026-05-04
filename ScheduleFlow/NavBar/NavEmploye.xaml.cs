@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Extensions.DependencyInjection;
 using ScheduleFlow.Pages.Employee;
 using ScheduleFlow.Pages.Global;
 
@@ -21,7 +22,7 @@ namespace ScheduleFlow.NavBar
     {
         private AccueilEmploye accueilEmploye = new AccueilEmploye();
         private Dispo dispo = new Dispo();
-        private Page_Quart_Employee quart = new Page_Quart_Employee();
+        private Page_Quart_Employee quart = App.ServiceProvider.GetRequiredService<Page_Quart_Employee>();
         private PageDemandeConge conge = new PageDemandeConge();
         private PageProfil compte = new PageProfil();
 

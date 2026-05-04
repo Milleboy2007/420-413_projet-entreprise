@@ -23,8 +23,10 @@ namespace Domaine.Interface
 
         Task<Quart[]> GetAllUnassignateQuartsAsync();
 
-        Task<Quart[]> GetAllPubQuartAsync();
+        Task<Quart[]> GetAllPubQuartAsync(int idUser);
 
         Task<Quart[]> GetAllQuartByDateAsync(DateOnly date);
+
+        Task<Quart[]> GetAllQuartOfOnePersonForAWeekAsync(int id, DateOnly debut, DateOnly fin);
     }
 }

@@ -106,7 +106,7 @@ namespace ScheduleFlow.ViewModels.Gerant
             {
                 Date = date,
                 Heures = [heurDebut, heureFin],
-                Post = poste,
+                Poste = poste,
                 UserId = assignation?.IdUtilisateur == -1? null: assignation?.IdUtilisateur,
                 Description = description,
                 IsPub = assignation?.IdUtilisateur == -1

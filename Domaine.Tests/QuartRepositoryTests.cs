@@ -29,7 +29,7 @@ namespace Domaine.Tests
             {
                 Date = new DateOnly(2026, 5, 20),
                 Heures = [new TimeOnly(8, 0), new TimeOnly(16, 0)],
-                Post = "Post Test",
+                Poste = "Post Test",
                 Description = "Description Test"
                 
                 //---De base---

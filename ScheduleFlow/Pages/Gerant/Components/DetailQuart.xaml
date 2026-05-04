@@ -57,7 +57,7 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Poste:" Foreground="White" VerticalAlignment="Center"/>
                         <Border Grid.Column="1" Background="White" CornerRadius="8" Height="22">
-                            <TextBlock Text="{Binding QuartSelec.Post}" Background="Transparent" VerticalAlignment="Center" Padding="5,0,0,0"/>
+                            <TextBlock Text="{Binding QuartSelec.Poste}" Background="Transparent" VerticalAlignment="Center" Padding="5,0,0,0"/>
                         </Border>
                     </Grid>
 
