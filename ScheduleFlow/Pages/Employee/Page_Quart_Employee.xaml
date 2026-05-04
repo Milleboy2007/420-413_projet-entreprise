@@ -173,13 +173,13 @@
                                 <DataTemplate>
                                     <Border Background="#4CAF50" CornerRadius="5" Margin="2" Padding="5">
                                         <StackPanel>
-                                            <TextBlock Text="{Binding QuartOriginal.Poste}" FontWeight="Bold" Foreground="White" FontSize="11" TextWrapping="Wrap"/>
+                                            <TextBlock Text="{Binding Quart.Poste}" FontWeight="Bold" Foreground="White" FontSize="11" TextWrapping="Wrap"/>
                                             <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
-                                                <TextBlock Text="{Binding QuartOriginal.Heures[0], StringFormat=HH:mm}" Foreground="White" FontSize="10"/>
+                                                <TextBlock Text="{Binding Quart.Heures[0], StringFormat=HH:mm}" Foreground="White" FontSize="10"/>
                                                 <TextBlock Text=" - " Foreground="White" FontSize="10"/>
-                                                <TextBlock Text="{Binding QuartOriginal.Heures[1], StringFormat=HH:mm}" Foreground="White" FontSize="10"/>
+                                                <TextBlock Text="{Binding Quart.Heures[1], StringFormat=HH:mm}" Foreground="White" FontSize="10"/>
                                             </StackPanel>
-                                            <TextBlock Text="{Binding QuartOriginal.Description}" Foreground="White" FontSize="10"/>
+                                            <TextBlock Text="{Binding Quart.Description}" Foreground="White" FontSize="10"/>
                                         </StackPanel>
                                     </Border>
                                 </DataTemplate>

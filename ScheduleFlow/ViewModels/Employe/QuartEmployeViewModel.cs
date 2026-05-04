@@ -39,11 +39,10 @@ namespace ScheduleFlow.ViewModels.Employe
         {
             _quartRepo = quartRepo;
             TrouverSemaine(_dateFiltre);
-            ChargerQuarts();
-            ChargerMonHoraire();
+            ChargerQuartsDispo();
         }
 
-        private async void ChargerQuarts()
+        private async void ChargerQuartsDispo()
         {
             QuartsDisponibles = new ObservableCollection<Quart>(await _quartRepo.GetAllPubQuartAsync());
         }
@@ -78,7 +77,8 @@ namespace ScheduleFlow.ViewModels.Employe
         public async void PrendreQuart(Quart quart)
         {
             await _quartRepo.AssignerUserAsync(quart.Id, USERID);
-            ChargerQuarts();
+            ChargerQuartsDispo();
+            ChargerMonHoraire();
         }
 
         [RelayCommand]
