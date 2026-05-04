@@ -32,7 +32,7 @@
 
                     <TextBlock Grid.Column="2" Text="{Binding Heures[0], StringFormat=HH:mm}" Foreground="LightGray" VerticalAlignment="Center"/>
                     <TextBlock Grid.Column="3" Text="{Binding Heures[1], StringFormat=HH:mm}" Foreground="LightGray" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Column="4" Text="{Binding Post}" Foreground="LightGray" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="4" Text="{Binding Poste}" Foreground="LightGray" VerticalAlignment="Center"/>
                     <TextBlock Grid.Column="5" Foreground="LightGray" VerticalAlignment="Center">
                                                                 <Run Text="{Binding Nom}"/>
                                                                 <Run Text=", "/>

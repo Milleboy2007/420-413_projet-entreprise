@@ -16,7 +16,7 @@ namespace Domaine.dto
     {
         public DateOnly? Date { get; set; }
         public TimeOnly[] Heures { get; set; }
-        public string Post { get; set; }
+        public string Poste { get; set; }
         public StatusQuart Status { get; set; }
         public string Description { get; set; }
         public string Nom { get; set; }
