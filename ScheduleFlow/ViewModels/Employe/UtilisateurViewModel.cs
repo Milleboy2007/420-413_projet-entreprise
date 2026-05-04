@@ -99,15 +99,24 @@ namespace ScheduleFlow.ViewModels.Employe
             }
         }
 
-        //public DateTime? DateNaissance
-        //{
-        //    get => _utilisateurMetier.DateNaissance;
-        //    set
-        //    {
-        //        _utilisateurMetier.DateNaissance = value; 
-        //        OnPropertyChanged();
-        //    }
-        //}
+        public RoleUtilisateur Role {
+            get => _utilisateurMetier.Role;
+            set
+            {
+                _utilisateurMetier.Role = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string DateNaissance
+        {
+            get => _utilisateurMetier.DateNaissance;
+            set
+            {
+                _utilisateurMetier.DateNaissance = value;
+                OnPropertyChanged();
+            }
+        }
         public string Ville
         {
             get => _utilisateurMetier.Ville;
