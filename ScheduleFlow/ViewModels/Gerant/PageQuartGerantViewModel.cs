@@ -127,9 +127,11 @@ namespace ScheduleFlow.ViewModels.Gerant
 
                 listAAfficher.Add(new AffichageQuartGerant_DTO
                 {
+                    Date = q.Date,
                     Heures = q.Heures,
                     Post = q.Post,
                     Status = q.UserId == null ? StatusQuart.NonAssigner: q.IsPub? StatusQuart.AttenteEchange: StatusQuart.Assigner,
+                    Description = q.Description,
                     Nom = emp != null? emp.Nom: "N/A",
                     Prenom = emp != null ? emp.Prenom : "N/A"
                 });
