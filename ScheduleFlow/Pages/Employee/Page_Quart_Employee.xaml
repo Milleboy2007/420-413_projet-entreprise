@@ -189,7 +189,7 @@
                                             </StackPanel>
 
                                             <Button Grid.Row="1"
-                                                    Content="Publier"
+                                                    Content="{Binding TexteBtn}"
                                                     Background="#E53935"
                                                     Foreground="White"
                                                     FontSize="10"

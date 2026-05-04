@@ -85,7 +85,15 @@ namespace ScheduleFlow.ViewModels.Employe
         [RelayCommand]
         public async void PublierQuart(Quart quart)
         {
-            await _quartRepo.PublierQuartAsync(quart.Id);
+            if (quart.IsPub)
+            {
+                await _quartRepo.AssignerUserAsync(quart.Id, USERID);
+            }
+            else
+            {
+                await _quartRepo.PublierQuartAsync(quart.Id);
+            }
+
             ChargerMonHoraire();
         }
 
