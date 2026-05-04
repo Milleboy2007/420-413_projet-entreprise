@@ -28,9 +28,17 @@ namespace ScheduleFlow.ViewModels.Employe
         [ObservableProperty]
         private ObservableCollection<QuartEmploye_DTO> _mesQuarts;
 
+        [ObservableProperty]
+        private DateTime _dateFiltre = DateTime.Today;
+
+        [ObservableProperty]
+        private string _texteFiltre;
+        public DateOnly PremierJour { get; private set; }
+        public DateOnly DernierJour { get; private set; }
         public QuartEmployeViewModel(IQuartRepository quartRepo)
         {
             _quartRepo = quartRepo;
+            TrouverSemaine(_dateFiltre);
             ChargerQuarts();
             ChargerMonHoraire();
         }
@@ -42,7 +50,7 @@ namespace ScheduleFlow.ViewModels.Employe
 
         private async void ChargerMonHoraire()
         {
-            var mesQuart = await _quartRepo.GetAllQuartOfOnePersonAsync(USERID);
+            var mesQuart = await _quartRepo.GetAllQuartOfOnePersonForAWeekAsync(USERID, PremierJour, DernierJour);
             var listeAAfficher = new ObservableCollection<QuartEmploye_DTO>();
 
             foreach(var q in mesQuart)
@@ -69,8 +77,39 @@ namespace ScheduleFlow.ViewModels.Employe
         [RelayCommand]
         public async void PrendreQuart(Quart quart)
         {
-            await _quartRepo.AssignerUserAsync(quart.Id,USERID);
+            await _quartRepo.AssignerUserAsync(quart.Id, USERID);
             ChargerQuarts();
+        }
+
+        [RelayCommand]
+        public void Next()
+        {
+            DateFiltre = DateFiltre.AddDays(7);
+        }
+
+        [RelayCommand]
+        public void Prev()
+        {
+            DateFiltre = DateFiltre.AddDays(-7);
+        }
+
+        partial void OnDateFiltreChanged(DateTime value)
+        {
+            TrouverSemaine(value);
+        }
+
+        protected void TrouverSemaine(DateTime date)
+        {
+            int decalage = (int)date.DayOfWeek;
+
+            DateTime debut = date.AddDays(-decalage);
+            DateTime fin = debut.AddDays(6);
+
+            PremierJour = DateOnly.FromDateTime(debut);
+            DernierJour = DateOnly.FromDateTime(fin);
+
+            TexteFiltre = $"Semaine du {debut:d MMMM} au {fin:d MMMM}";
+            ChargerMonHoraire();
         }
     }
 }

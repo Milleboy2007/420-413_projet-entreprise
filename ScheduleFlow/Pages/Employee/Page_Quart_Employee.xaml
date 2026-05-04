@@ -17,16 +17,29 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
 
+            <!-- Mon Horaire -->
             <Border Grid.Column="0" Background="#0A3663" CornerRadius="10" Padding="15">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Text="Mon Horaire" FontSize="28" Margin="0,0,0,15" Foreground="White" />
+                    <TextBlock Grid.Row="0" Text="Mon Horaire" FontSize="28" Margin="0,0,0,10" Foreground="White" />
 
-                    <Grid Grid.Row="1" Margin="0,10,0,0">
+                    <!--Filtre-->
+                    <Border Grid.Row="1" Padding="15,0,15,15">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button Content="◀" Command="{Binding PrevCommand}" Background="Transparent" Foreground="White" BorderThickness="0" FontSize="16" Margin="0,0,15,0" Cursor="Hand"/>
+                            <TextBlock Text="{Binding TexteFiltre}" Foreground="White" VerticalAlignment="Center" FontSize="14" FontWeight="Bold"/>
+                            <Button Content="▶" Command="{Binding NextCommand}" Background="Transparent" Foreground="White" BorderThickness="0" FontSize="16" Margin="15,0,0,0" Cursor="Hand"/>
+                            <DatePicker SelectedDate="{Binding DateFiltre}" Width="25" Margin="10,0,0,0" BorderThickness="0" Background="Transparent"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!--Calendrier-->
+                    <Grid Grid.Row="2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="50"/>
                             <ColumnDefinition Width="*"/>
@@ -113,7 +126,7 @@
                         <TextBlock Grid.Row="14" Grid.Column="0" Text="21:00" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0" Foreground="White"/>
                         <TextBlock Grid.Row="15" Grid.Column="0" Text="22:00" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0" Foreground="White"/>
 
-                        <!--Grill d'horaire-->
+                        <!--Grille d'horaire-->
                         <ItemsControl ItemsSource="{Binding MesQuarts}"
                                       Grid.Row="1" Grid.RowSpan="15"
                                       Grid.Column="1" Grid.ColumnSpan="7">
@@ -160,13 +173,13 @@
                                 <DataTemplate>
                                     <Border Background="#4CAF50" CornerRadius="5" Margin="2" Padding="5">
                                         <StackPanel>
-                                            <TextBlock Text="{Binding Quart.Poste}" FontWeight="Bold" Foreground="White" FontSize="11" TextWrapping="Wrap"/>
+                                            <TextBlock Text="{Binding QuartOriginal.Poste}" FontWeight="Bold" Foreground="White" FontSize="11" TextWrapping="Wrap"/>
                                             <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
-                                                <TextBlock Text="{Binding Quart.Heures[0], StringFormat=HH:mm}" Foreground="White" FontSize="10"/>
+                                                <TextBlock Text="{Binding QuartOriginal.Heures[0], StringFormat=HH:mm}" Foreground="White" FontSize="10"/>
                                                 <TextBlock Text=" - " Foreground="White" FontSize="10"/>
-                                                <TextBlock Text="{Binding Quart.Heures[1], StringFormat=HH:mm}" Foreground="White" FontSize="10"/>
+                                                <TextBlock Text="{Binding QuartOriginal.Heures[1], StringFormat=HH:mm}" Foreground="White" FontSize="10"/>
                                             </StackPanel>
-                                            <TextBlock Text="{Binding Quart.Description}" Foreground="White" FontSize="10"/>
+                                            <TextBlock Text="{Binding QuartOriginal.Description}" Foreground="White" FontSize="10"/>
                                         </StackPanel>
                                     </Border>
                                 </DataTemplate>
@@ -176,6 +189,7 @@
                 </Grid>
             </Border>
 
+            <!-- PANNEAU DROITE -->
             <Border Grid.Column="2" Background="#0A3663" CornerRadius="10" Padding="15">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -242,7 +256,6 @@
                                                     CommandParameter="{Binding}"/>
                                         </Grid>
                                     </Border>
-
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
