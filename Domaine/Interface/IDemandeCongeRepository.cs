@@ -12,5 +12,11 @@ namespace Domaine.Interface
     {
         Task AjouterDemandeCongeAsync(DemandeConge demandeConge);
 
+        Task<DemandeConge> RechercherDemandeCongeAsync(DemandeConge demandeCongeID);
+
+        Task ModifierDemandeCongeAsync(DemandeConge demandeCongeID);
+
+        Task SupprimerDemandeCongeAsync(DemandeConge demandeCongeID);
+
     }
 }

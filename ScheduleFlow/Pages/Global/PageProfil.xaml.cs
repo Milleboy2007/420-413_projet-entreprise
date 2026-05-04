@@ -22,20 +22,25 @@ namespace ScheduleFlow.Pages.Global
     /// </summary>
     public partial class PageProfil : UserControl
     {
+        private UtilisateurViewModel utilisateurViewModel;
         public PageProfil()
         {
             InitializeComponent();
-            var userTest = new Utilisateur
-            {
-                Nom = "Doe",
-                Prenom = "Jane",
-                Genre = "Féminin",
-                Courriel = "jane.doe@example.com",
+
+            //utilisateurViewModel = new UtilisateurViewModel();
+            //this.DataContext = utilisateurViewModel;
+
+            //var userTest = new Utilisateur
+            //{
+            //    Nom = "Doe",
+            //    Prenom = "Jane",
+            //    Genre = "Féminin",
+            //    Courriel = "jane.doe@example.com",
 
 
-            };
+            //};
 
-            this.DataContext = new UtilisateurViewModel(userTest);
+
         }
     }
 }
