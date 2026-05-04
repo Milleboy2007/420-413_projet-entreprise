@@ -134,6 +134,7 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0" Grid.Column="0" Text="Filtrer:" VerticalAlignment="Center" Margin="0,0,5,5" Foreground="White"/>
@@ -145,7 +146,47 @@
                         <ComboBox Grid.Row="1" Grid.Column="1" SelectedIndex="0" Background="WhiteSmoke">
                             <ComboBoxItem Content="Aucun"/>
                         </ComboBox>
+
                     </Grid>
+
+                    <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" Margin="0,10,0,0">
+                        <ItemsControl ItemsSource="{Binding QuartsDisponibles}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Background="White" CornerRadius="8" Padding="10" Margin="0,0,0,10">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                                <TextBlock Text="{Binding Date, StringFormat=dd/MM/yyyy}" FontWeight="Bold" Foreground="#0A3663" FontSize="14"/>
+                                                <TextBlock Text="{Binding Poste}" Foreground="DimGray" Margin="0,2,0,2"/>
+
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text="{Binding Heures[0], StringFormat=HH:mm}" Foreground="Black"/>
+                                                    <TextBlock Text=" à " Foreground="Black"/>
+                                                    <TextBlock Text="{Binding Heures[1], StringFormat=HH:mm}" Foreground="Black"/>
+                                                </StackPanel>
+                                            </StackPanel>
+
+                                            <Button Grid.Column="1" 
+                                                    Content="Demander" 
+                                                    Background="#38658E" 
+                                                    Foreground="White" 
+                                                    Padding="10,5" 
+                                                    BorderThickness="0" 
+                                                    Cursor="Hand"
+                                                    Command="{Binding DataContext.DemanderQuartCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                                    CommandParameter="{Binding}"/>
+                                        </Grid>
+                                    </Border>
+
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
                 </Grid>
             </Border>
         </Grid>
