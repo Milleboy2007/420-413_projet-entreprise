@@ -12,6 +12,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ScheduleFlow.ViewModels.Employe
 {
@@ -75,11 +76,32 @@ namespace ScheduleFlow.ViewModels.Employe
         }
 
         [RelayCommand]
-        public async void PrendreQuart(Quart quart)
+        public async void PrendreQuart(Quart newQuart)
         {
-            await _quartRepo.AssignerUserAsync(quart.Id, USERID);
-            ChargerQuartsDispo();
-            ChargerMonHoraire();
+            bool isOk = true;
+            foreach(var q in MesQuarts)
+            {
+                if (newQuart.Date == q.Quart.Date)
+                {
+                    if (newQuart.Heures[0] <= q.Quart.Heures[1] && q.Quart.Heures[0] <= newQuart.Heures[1])
+                    {
+                        isOk = false;
+                        break;
+                    }
+                }
+            }
+
+            if (isOk)
+            {
+                await _quartRepo.AssignerUserAsync(newQuart.Id, USERID);
+                ChargerQuartsDispo();
+                ChargerMonHoraire();
+            }
+            else
+            {
+                MessageBox.Show("Un quart est déjas assigner a se moment la", "Erreur: Quart superposer", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+
         }
 
         [RelayCommand]
