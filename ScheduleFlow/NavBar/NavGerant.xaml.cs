@@ -30,9 +30,11 @@ namespace ScheduleFlow.NavBar
 
         private SolidColorBrush backColorCurPage = (SolidColorBrush)(new BrushConverter().ConvertFrom("#1561AF"));
         private SolidColorBrush backColorOtherPage = new SolidColorBrush(Colors.Transparent);
+        private readonly GestionnaireSession _session;
 
-        public NavGerant()
+        public NavGerant(GestionnaireSession session)
         {
+            _session = session;
             InitializeComponent();
             GerantArea.Content = accueilGerant;
             PageAccueil.Background = backColorCurPage;
@@ -94,6 +96,14 @@ namespace ScheduleFlow.NavBar
         private void PageNotifications_Click(Object sender, MouseButtonEventArgs e)
         {
 
+        }
+        private void BtnDeconnexion_Click(object sender, RoutedEventArgs e)
+        {
+            _session.Reinitialiser();
+
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            var connexion = App.ServiceProvider.GetRequiredService<Connexion>();
+            mainWindow.MainArea.Content = connexion;
         }
     }
 }

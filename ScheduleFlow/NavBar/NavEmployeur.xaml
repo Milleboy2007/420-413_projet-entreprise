@@ -7,6 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+
+        <Button x:Name="BtnDeconnexion" Grid.Column="1" Click="BtnDeconnexion_Click" Background="Transparent" Foreground="White" Padding="10" Cursor="Hand" ToolTip="Déconnexion" VerticalAlignment="Center" Margin="0,0,20,0">
+            <TextBlock Text="&#xE7E8;" FontFamily="Segoe MDL2 Assets" FontSize="18"/>
+        </Button>
+
     </Grid>
 </UserControl>

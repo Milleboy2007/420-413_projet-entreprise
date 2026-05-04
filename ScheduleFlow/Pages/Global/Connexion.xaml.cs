@@ -81,12 +81,11 @@ namespace ScheduleFlow.Pages.Global
                 MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
 
                 if (utilisateur.Role == RoleUtilisateur.Gerant)
-                    mainWindow.MainArea.Content = new NavGerant();
+                    mainWindow.MainArea.Content = new NavGerant(_session);
                 else if (utilisateur.Role == RoleUtilisateur.Employe)
-                    mainWindow.MainArea.Content = new NavEmploye();
+                    mainWindow.MainArea.Content = new NavEmploye(_session);
                 else if (utilisateur.Role == RoleUtilisateur.Employeur)
-                    mainWindow.MainArea.Content = new NavEmployeur();
-
+                    mainWindow.MainArea.Content = new NavEmployeur(_session);
                 MessageBox.Show($"Bienvenue, {_session.Prenom} {_session.Nom} !", "Succès", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 TxtEmail.Clear();
@@ -102,13 +101,13 @@ namespace ScheduleFlow.Pages.Global
         private void BtnEmploye_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-            mainWindow.MainArea.Content = new NavEmploye();
+            mainWindow.MainArea.Content = new NavEmploye(_session);
         }
 
         private void BtnGerant_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-            mainWindow.MainArea.Content = new NavGerant();
+            mainWindow.MainArea.Content = new NavGerant(_session);
         }
     }
 }
