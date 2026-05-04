@@ -7,6 +7,7 @@ using Domaine.Entity;
 using Domaine.Interface;
 using Domaine.Context;
 using Microsoft.EntityFrameworkCore;
+using Domaine.Enum;
 
 namespace Domaine.Repo
 {
