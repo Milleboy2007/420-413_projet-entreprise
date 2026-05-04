@@ -44,7 +44,7 @@ namespace ScheduleFlow.ViewModels.Employe
 
         private async void ChargerQuartsDispo()
         {
-            QuartsDisponibles = new ObservableCollection<Quart>(await _quartRepo.GetAllPubQuartAsync());
+            QuartsDisponibles = new ObservableCollection<Quart>(await _quartRepo.GetAllPubQuartAsync(USERID));
         }
 
         private async void ChargerMonHoraire()
@@ -63,6 +63,7 @@ namespace ScheduleFlow.ViewModels.Employe
                     listeAAfficher.Add(new QuartEmploye_DTO
                     {
                         Quart = q,
+                        Status = q.IsPub? StatusQuart.AttenteEchange: StatusQuart.Assigner,
                         ColonneGrid = col,
                         LigneGrid = ligne,
                         HauteurGrid = duree
@@ -78,6 +79,13 @@ namespace ScheduleFlow.ViewModels.Employe
         {
             await _quartRepo.AssignerUserAsync(quart.Id, USERID);
             ChargerQuartsDispo();
+            ChargerMonHoraire();
+        }
+
+        [RelayCommand]
+        public async void PublierQuart(Quart quart)
+        {
+            await _quartRepo.PublierQuartAsync(quart.Id);
             ChargerMonHoraire();
         }
 
