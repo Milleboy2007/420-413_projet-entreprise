@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScheduleFlow.ViewModels.Employe;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +21,16 @@ namespace ScheduleFlow.Pages.Employee
     /// </summary>
     public partial class PageDemandeConge : UserControl
     {
+        private DemandeCongeViewModel viewModel;
         public PageDemandeConge()
         {
             InitializeComponent();
+            this.DataContext = viewModel = new DemandeCongeViewModel();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }
