@@ -36,8 +36,10 @@
                         <TextBlock Text="Veuillez choisir votre portail : " FontSize="13" Foreground="Gray" TextWrapping="Wrap" Margin="0,0,0,15"/>
 
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
-                            <RadioButton x:Name="RbGerant" Content="Portail Gérant" GroupName="PortalType" IsChecked="True" Margin="0,0,20,0" Cursor="Hand"/>
-                            <RadioButton x:Name="RbEmploye" Content="Portail Employé" GroupName="PortalType" Cursor="Hand"/>
+                            <RadioButton x:Name="RbGerant" Content="Portail Gérant" GroupName="PortalType" Margin="0,0,10,0" Cursor="Hand"/>
+                            <RadioButton x:Name="RbEmploye" Content="Portail Employé" GroupName="PortalType" Margin="0,0,10,0" Cursor="Hand"/>
+                            <RadioButton x:Name="RbEmployeur" Content="Portail Employeur" GroupName="PortalType" Margin="0,0,0,0" Cursor="Hand"/>
+
                         </StackPanel>
 
                         <TextBlock Text="COURRIEL" FontSize="10" FontWeight="Bold" Foreground="#666" Margin="0,0,0,5"/>

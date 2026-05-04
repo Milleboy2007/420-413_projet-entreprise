@@ -27,6 +27,12 @@ namespace Domaine.Repo
             return _dbContext.Utilisateurs.ToList();
         }
 
+        public Utilisateur VerifierConnexion(string courrielEntreprise, string motDePasse)
+        {
+            {
+                return _dbContext.Utilisateurs.FirstOrDefault(u => u.CourrielEntreprise == courrielEntreprise && u.MotDePasse == motDePasse);
+            }
+        }
 
 
 

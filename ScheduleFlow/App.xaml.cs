@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ScheduleFlow.Pages.Gerant;
+using ScheduleFlow.Pages.Global;
 using System.Configuration;
 using System.Data;
 using System.Windows;
@@ -33,15 +34,19 @@ namespace ScheduleFlow
 
             //3 - Ajouter DBContext dans la collection de service
             //Utilise SQLLIte et il faut aller chercher le chemin dans appsettings en utilisant GetConnectionString
+            var connectionString = config.GetConnectionString("Default")
+                .Replace("{AppBasePath}", AppDomain.CurrentDomain.BaseDirectory);
+
             services.AddDbContext<ScheduleFlowDBContexte>(options =>
             {
-                options.UseSqlite(config.GetConnectionString("Default"));
+                options.UseSqlite(connectionString);
             });
 
 
             //4 - Ajouter les repository dans les services ainsi que son implémentation
             //Scoped ou Singleton ou Trascient?
             services.AddScoped<IUtilisateurRepository, UtilisateurRepository>();
+            services.AddSingleton<GestionnaireSession>();
             services.AddScoped<IQuartRepository, QuartRepository>();
             services.AddScoped<IDispoRepository, DispoRepository>();
             services.AddScoped<ICreneauRepository, CreneauRepository>();
@@ -54,6 +59,7 @@ namespace ScheduleFlow
             // 6 - Ajouter les vues repository dans les services
             //Scoped ou Singleton ou Trascient?
             services.AddTransient<MainWindow>();
+            services.AddTransient<Connexion>();
 
             // 7 - Construit le service provider avec la méthode BuildServiceProvider
             ServiceProvider = services.BuildServiceProvider();

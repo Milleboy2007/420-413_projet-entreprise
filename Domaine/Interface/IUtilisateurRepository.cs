@@ -11,5 +11,6 @@ namespace Domaine.Interface
     {
         void AjouterUtilisateur(Utilisateur nouvelUtilisateur);
         IEnumerable<Utilisateur> ObtenirUtilisateurs();
+        Utilisateur VerifierConnexion(string courrielEntreprise, string motDePasse);
     }
 }
