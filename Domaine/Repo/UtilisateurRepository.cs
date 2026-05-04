@@ -17,6 +17,12 @@ namespace Domaine.Repo
             _dbContext = contexte;
         }
 
+
+        public Utilisateur ObtenirUtilisateurParId(int id)
+        {
+            return _dbContext.Utilisateurs.FirstOrDefault(x => x.IdUtilisateur == id);
+        }
+
         public void AjouterUtilisateur(Utilisateur nouvelUtilisateur)
         {
             _dbContext.Utilisateurs.Add(nouvelUtilisateur);
