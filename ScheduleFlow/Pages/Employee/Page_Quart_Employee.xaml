@@ -172,13 +172,13 @@
                                             </StackPanel>
 
                                             <Button Grid.Column="1" 
-                                                    Content="Demander" 
+                                                    Content="Prendre" 
                                                     Background="#38658E" 
                                                     Foreground="White" 
                                                     Padding="10,5" 
                                                     BorderThickness="0" 
                                                     Cursor="Hand"
-                                                    Command="{Binding DataContext.DemanderQuartCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                                    Command="{Binding DataContext.PrendreQuartCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
                                                     CommandParameter="{Binding}"/>
                                         </Grid>
                                     </Border>

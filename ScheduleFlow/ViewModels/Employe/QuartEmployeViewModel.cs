@@ -18,6 +18,9 @@ namespace ScheduleFlow.ViewModels.Employe
     {
         private readonly IQuartRepository _quartRepo;
 
+        //SIMULATION
+        private int USERID = 1;
+
         [ObservableProperty]
         private ObservableCollection<Quart> _quartsDisponibles;
 
@@ -29,13 +32,14 @@ namespace ScheduleFlow.ViewModels.Employe
 
         private async void ChargerQuarts()
         {
-            QuartsDisponibles = new ObservableCollection<Quart>(await _quartRepo.GetAllQuartAsync());
+            QuartsDisponibles = new ObservableCollection<Quart>(await _quartRepo.GetAllPubQuartAsync());
         }
 
         [RelayCommand]
-        public void DemanderQuart()
+        public async void PrendreQuart(Quart quart)
         {
-
+            await _quartRepo.AssignerUserAsync(quart.Id,USERID);
+            ChargerQuarts();
         }
     }
 }
