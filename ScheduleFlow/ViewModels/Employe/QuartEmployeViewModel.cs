@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Domaine.dto;
 using Domaine.Entity;
 using Domaine.Interface;
 using System;
@@ -24,15 +25,45 @@ namespace ScheduleFlow.ViewModels.Employe
         [ObservableProperty]
         private ObservableCollection<Quart> _quartsDisponibles;
 
+        [ObservableProperty]
+        private ObservableCollection<QuartEmploye_DTO> _mesQuarts;
+
         public QuartEmployeViewModel(IQuartRepository quartRepo)
         {
             _quartRepo = quartRepo;
             ChargerQuarts();
+            ChargerMonHoraire();
         }
 
         private async void ChargerQuarts()
         {
             QuartsDisponibles = new ObservableCollection<Quart>(await _quartRepo.GetAllPubQuartAsync());
+        }
+
+        private async void ChargerMonHoraire()
+        {
+            var mesQuart = await _quartRepo.GetAllQuartOfOnePersonAsync(USERID);
+            var listeAAfficher = new ObservableCollection<QuartEmploye_DTO>();
+
+            foreach(var q in mesQuart)
+            {
+                int col = (int)q.Date.DayOfWeek;
+                int ligne = q.Heures[0].Hour - 8;
+                int duree = q.Heures[1].Hour - q.Heures[0].Hour;
+
+                if (ligne >= 0 && ligne + duree <= 15)
+                {
+                    listeAAfficher.Add(new QuartEmploye_DTO
+                    {
+                        Quart = q,
+                        ColonneGrid = col,
+                        LigneGrid = ligne,
+                        HauteurGrid = duree
+                    });
+                }
+            }
+
+            MesQuarts = listeAAfficher;
         }
 
         [RelayCommand]

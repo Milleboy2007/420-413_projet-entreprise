@@ -89,13 +89,13 @@
                         <Border Grid.Row="1" Grid.RowSpan="15" Grid.Column="6" BorderBrush="Black" BorderThickness="0,0,1,0"/>
                         <Border Grid.Row="1" Grid.RowSpan="15" Grid.Column="7" BorderBrush="Black" BorderThickness="0,0,1,0"/>
 
-                        <TextBlock Grid.Row="0" Grid.Column="1" Text="Lundi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
-                        <TextBlock Grid.Row="0" Grid.Column="2" Text="Mardi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
-                        <TextBlock Grid.Row="0" Grid.Column="3" Text="Mercredi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
-                        <TextBlock Grid.Row="0" Grid.Column="4" Text="Jeudi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
-                        <TextBlock Grid.Row="0" Grid.Column="5" Text="Vendredi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
-                        <TextBlock Grid.Row="0" Grid.Column="6" Text="Samedi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
-                        <TextBlock Grid.Row="0" Grid.Column="7" Text="Dimanche" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text="Dimanche" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                        <TextBlock Grid.Row="0" Grid.Column="2" Text="Lundi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                        <TextBlock Grid.Row="0" Grid.Column="3" Text="Mardi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                        <TextBlock Grid.Row="0" Grid.Column="4" Text="Mercredi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                        <TextBlock Grid.Row="0" Grid.Column="5" Text="Jeudi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                        <TextBlock Grid.Row="0" Grid.Column="6" Text="Vendredi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                        <TextBlock Grid.Row="0" Grid.Column="7" Text="Samedi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
 
                         <TextBlock Grid.Row="1" Grid.Column="0" Text="8:00" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0" Foreground="White"/>
                         <TextBlock Grid.Row="2" Grid.Column="0" Text="9:00" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0" Foreground="White"/>
@@ -112,6 +112,66 @@
                         <TextBlock Grid.Row="13" Grid.Column="0" Text="20:00" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0" Foreground="White"/>
                         <TextBlock Grid.Row="14" Grid.Column="0" Text="21:00" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0" Foreground="White"/>
                         <TextBlock Grid.Row="15" Grid.Column="0" Text="22:00" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0" Foreground="White"/>
+
+                        <!--Grill d'horaire-->
+                        <ItemsControl ItemsSource="{Binding MesQuarts}"
+                                      Grid.Row="1" Grid.RowSpan="15"
+                                      Grid.Column="1" Grid.ColumnSpan="7">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                    </Grid>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemContainerStyle>
+                                <Style TargetType="ContentPresenter">
+                                    <Setter Property="Grid.Column" Value="{Binding ColonneGrid}" />
+                                    <Setter Property="Grid.Row" Value="{Binding LigneGrid}" />
+                                    <Setter Property="Grid.RowSpan" Value="{Binding HauteurGrid}" />
+                                </Style>
+                            </ItemsControl.ItemContainerStyle>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Background="#4CAF50" CornerRadius="5" Margin="2" Padding="5">
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding Quart.Poste}" FontWeight="Bold" Foreground="White" FontSize="11" TextWrapping="Wrap"/>
+                                            <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
+                                                <TextBlock Text="{Binding Quart.Heures[0], StringFormat=HH:mm}" Foreground="White" FontSize="10"/>
+                                                <TextBlock Text=" - " Foreground="White" FontSize="10"/>
+                                                <TextBlock Text="{Binding Quart.Heures[1], StringFormat=HH:mm}" Foreground="White" FontSize="10"/>
+                                            </StackPanel>
+                                            <TextBlock Text="{Binding Quart.Description}" Foreground="White" FontSize="10"/>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
                     </Grid>
                 </Grid>
             </Border>
