@@ -10,5 +10,7 @@ namespace Domaine.Interface
     public interface IUtilisateurRepository
     {
         void AjouterUtilisateur(Utilisateur nouvelUtilisateur);
+        IEnumerable<Utilisateur> ObtenirEmploye();
+        Task<Utilisateur?> ObtenirParId(int id);
     }
 }

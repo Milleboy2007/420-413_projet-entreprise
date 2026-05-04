@@ -1,7 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using ScheduleFlow.Pages.Gerant.Components;
-using ScheduleFlow.ViewModels.Gerant;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,17 +12,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ScheduleFlow.ViewModels.Gerant;
 
-namespace ScheduleFlow.Pages.Gerant
+namespace ScheduleFlow.Pages.Gerant.Components
 {
-    public partial class Page_Quart_Gerant : UserControl
+    /// <summary>
+    /// Logique d'interaction pour DetailQuart.xaml
+    /// </summary>
+    public partial class DetailQuart : UserControl
     {
-        public Page_Quart_Gerant(PageQuartGerantViewModel monView)
+        public DetailQuart(DetailQuartViewModel monView)
         {
             InitializeComponent();
-
-            this.DataContext = monView;
-            //Panel.Content = App.ServiceProvider?.GetRequiredService<CreationQuart>();
+            DataContext = monView;
         }
     }
 }
