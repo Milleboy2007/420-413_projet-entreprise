@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domaine.Enum;
+using System.ComponentModel;
 
 namespace Domaine.Context
 {
@@ -36,8 +37,8 @@ namespace Domaine.Context
         [Required]
         public string TypeConge { get; set; }
 
-        
-        public DateTime DateCreation { get; set; }
+        [Required]
+        public DateTime DateCreation { get; private set; }
         public RoleUtilisateur Approbateur { get; set; }
 
 
