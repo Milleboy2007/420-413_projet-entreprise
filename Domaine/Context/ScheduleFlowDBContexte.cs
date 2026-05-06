@@ -15,6 +15,7 @@ namespace Domaine.Context
         internal DbSet<FeuilleDispo> FeuilleDispos { get; set; }
         internal DbSet<CreneauDispo> CreneauDispos { get; set; }
         public DbSet<DemandeConge> DemandeConges { get; set; }
+        public DbSet<Annonce> Annonces { get; set; }
 
         public ScheduleFlowDBContexte(DbContextOptions<ScheduleFlowDBContexte> options) : base(options)
         {

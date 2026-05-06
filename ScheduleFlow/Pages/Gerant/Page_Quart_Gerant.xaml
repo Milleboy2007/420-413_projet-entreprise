@@ -4,10 +4,47 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ScheduleFlow.Pages.Gerant"
+             xmlns:components="clr-namespace:ScheduleFlow.Pages.Gerant.Components"
+             xmlns:vm="clr-namespace:ScheduleFlow.ViewModels.Gerant"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Background="#424242">
+    
+    <!--Template Pour les Quarts-->
+    <UserControl.Resources>
+        <DataTemplate x:Key="JourneeQuartTemplate">
+            <Border Background="Transparent" Cursor="Hand">
+                <Border.InputBindings>
+                    <MouseBinding MouseAction="LeftClick"
+                                  Command="{Binding DataContext.SelecQuartCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                  CommandParameter="{Binding}"/>
+                </Border.InputBindings>
+                <Grid Margin="0,5,0,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
+                    <TextBlock Grid.Column="2" Text="{Binding Heures[0], StringFormat=HH:mm}" Foreground="LightGray" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="3" Text="{Binding Heures[1], StringFormat=HH:mm}" Foreground="LightGray" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="4" Text="{Binding Poste}" Foreground="LightGray" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="5" Foreground="LightGray" VerticalAlignment="Center">
+                                                                <Run Text="{Binding Nom}"/>
+                                                                <Run Text=", "/>
+                                                                <Run Text="{Binding Prenom}"/>
+                    </TextBlock>
+                    <TextBlock Grid.Column="6" Text="{Binding Status}" Foreground="LightGray" VerticalAlignment="Center"/>
+                </Grid>
+            </Border>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <!--Debut De la Page-->
     <Grid Margin="20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
@@ -23,7 +60,18 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Border Grid.Row="0" Background="#38658E" CornerRadius="10,10,0,0" Height="35" Padding="10,0,10,0">
+                <!--Filtre Semaine-->
+                <Border Grid.Row="0" Padding="15,10,15,10">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Content="◀" Command="{Binding PrevCommand}" Background="Transparent" Foreground="White" BorderThickness="0" FontSize="16" Margin="0,0,15,0" Cursor="Hand"/>
+                        <TextBlock Text="{Binding TexteFiltre}" Foreground="White" VerticalAlignment="Center" FontSize="14" FontWeight="Bold"/>
+                        <Button Content="▶" Command="{Binding NextCommand}" Background="Transparent" Foreground="White" BorderThickness="0" FontSize="16" Margin="15,0,0,0" Cursor="Hand"/>
+                        <DatePicker SelectedDate="{Binding DateFiltre}" Width="25" Margin="10,0,0,0" BorderThickness="0" Background="Transparent"/>
+                    </StackPanel>
+                </Border>
+
+                <!--"Header"-->
+                <Border Grid.Row="1" Background="#38658E" CornerRadius="10,10,0,0" Height="35" Padding="10,0,10,0">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="30"/>
@@ -43,133 +91,90 @@
                     </Grid>
                 </Border>
 
-                <StackPanel Grid.Row="1">
+                <!--Tableau de Journee-->
+                <ScrollViewer Grid.Row="2">
+                    <StackPanel >
 
-                    <Border Background="#3F6B95" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1" Height="30" Padding="10,0,10,0">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="▷" Foreground="Black" Margin="0,0,5,0" FontWeight="Bold"/>
-                            <TextBlock Text="Lundi" Foreground="White" FontSize="12"/>
-                        </StackPanel>
-                    </Border>
+                        <Expander Background="#3F6B95" Foreground="White" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1">
+                            <Expander.Header>
+                                <TextBlock Text="Dimanche" FontSize="12" FontWeight="Bold" Margin="0,5,0,5"/>
+                            </Expander.Header>
+                            <StackPanel Background="#0A3663">
+                                <ItemsControl ItemsSource="{Binding QuartsDimanche}"
+                                              ItemTemplate="{StaticResource JourneeQuartTemplate}"/>
+                            </StackPanel>
+                        </Expander>
 
-                    <Border Background="#3F6B95" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1" Height="30" Padding="10,0,10,0">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="▷" Foreground="Black" Margin="0,0,5,0" FontWeight="Bold"/>
-                            <TextBlock Text="Mardi" Foreground="White" FontSize="12"/>
-                        </StackPanel>
-                    </Border>
+                        <Expander Background="#3F6B95" Foreground="White" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1">
+                            <Expander.Header>
+                                <TextBlock Text="Lundi" FontSize="12" FontWeight="Bold" Margin="0,5,0,5"/>
+                            </Expander.Header>
+                            <StackPanel Background="#0A3663">
+                                <ItemsControl ItemsSource="{Binding QuartsLundi}"
+                                              ItemTemplate="{StaticResource JourneeQuartTemplate}">
+                                </ItemsControl>
+                            </StackPanel>
+                        </Expander>
 
-                    <Border Background="#3F6B95" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1" Height="30" Padding="10,0,10,0">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="▷" Foreground="Black" Margin="0,0,5,0" FontWeight="Bold"/>
-                            <TextBlock Text="Mercredi" Foreground="White" FontSize="12"/>
-                        </StackPanel>
-                    </Border>
+                        <Expander Background="#3F6B95" Foreground="White" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1">
+                            <Expander.Header>
+                                <TextBlock Text="Mardi" FontSize="12" FontWeight="Bold" Margin="0,5,0,5"/>
+                            </Expander.Header>
+                            <StackPanel Background="#0A3663">
+                                <ItemsControl ItemsSource="{Binding QuartsMardi}"
+                                              ItemTemplate="{StaticResource JourneeQuartTemplate}">
+                                </ItemsControl>
+                            </StackPanel>
+                        </Expander>
 
-                    <Border Background="#3F6B95" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1" Height="30" Padding="10,0,10,0">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="▷" Foreground="Black" Margin="0,0,5,0" FontWeight="Bold"/>
-                            <TextBlock Text="Jeudi" Foreground="White" FontSize="12"/>
-                        </StackPanel>
-                    </Border>
+                        <Expander Background="#3F6B95" Foreground="White" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1">
+                            <Expander.Header>
+                                <TextBlock Text="Mercredi" FontSize="12" FontWeight="Bold" Margin="0,5,0,5"/>
+                            </Expander.Header>
+                            <StackPanel Background="#0A3663">
+                                <ItemsControl ItemsSource="{Binding QuartsMercredi}"
+                                              ItemTemplate="{StaticResource JourneeQuartTemplate}">
+                                </ItemsControl>
+                            </StackPanel>
+                        </Expander>
 
-                    <Border Background="#3F6B95" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1" Height="30" Padding="10,0,10,0">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="▷" Foreground="Black" Margin="0,0,5,0" FontWeight="Bold"/>
-                            <TextBlock Text="Vendredi" Foreground="White" FontSize="12"/>
-                        </StackPanel>
-                    </Border>
+                        <Expander Background="#3F6B95" Foreground="White" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1">
+                            <Expander.Header>
+                                <TextBlock Text="Jeudi" FontSize="12" FontWeight="Bold" Margin="0,5,0,5"/>
+                            </Expander.Header>
+                            <StackPanel Background="#0A3663">
+                                <ItemsControl ItemsSource="{Binding QuartsJeudi}"
+                                              ItemTemplate="{StaticResource JourneeQuartTemplate}">
+                                </ItemsControl>
+                            </StackPanel>
+                        </Expander>
 
-                    <Border Background="#3F6B95" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1" Height="30" Padding="10,0,10,0">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="▷" Foreground="Black" Margin="0,0,5,0" FontWeight="Bold"/>
-                            <TextBlock Text="Samedi" Foreground="White" FontSize="12"/>
-                        </StackPanel>
-                    </Border>
+                        <Expander Background="#3F6B95" Foreground="White" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1">
+                            <Expander.Header>
+                                <TextBlock Text="Vendredi" FontSize="12" FontWeight="Bold" Margin="0,5,0,5"/>
+                            </Expander.Header>
+                            <StackPanel Background="#0A3663">
+                                <ItemsControl ItemsSource="{Binding QuartsVendredi}"
+                                              ItemTemplate="{StaticResource JourneeQuartTemplate}">
+                                </ItemsControl>
+                            </StackPanel>
+                        </Expander>
 
-                    <Border Background="#3F6B95" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1" Height="30" Padding="10,0,10,0">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="▷" Foreground="Black" Margin="0,0,5,0" FontWeight="Bold"/>
-                            <TextBlock Text="Dimanche" Foreground="White" FontSize="12"/>
-                        </StackPanel>
-                    </Border>
-
-                </StackPanel>
-            </Grid>
-        </Border>
-
-        <Border Grid.Column="2" Background="#0A3663" CornerRadius="10" Padding="15">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-
-                <TextBlock Text="Détails du Quart" FontSize="20" Margin="0,0,0,15" Foreground="White" />
-
-                <StackPanel Grid.Row="1">
-
-                    <Grid Margin="0,0,0,10">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="80"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Text="Date:" Foreground="White" VerticalAlignment="Center"/>
-                        <Border Grid.Column="1" Background="White" CornerRadius="8" Height="22" Padding="5,0,5,0">
-                            <DockPanel>
-                                <TextBlock Text="📅" DockPanel.Dock="Right" VerticalAlignment="Center" FontSize="10" Foreground="DimGray"/>
-                                <TextBox Background="Transparent" BorderThickness="0" VerticalContentAlignment="Center"/>
-                            </DockPanel>
-                        </Border>
-                    </Grid>
-
-                    <Grid Margin="0,0,0,10">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="80"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="5"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Text="Heure:" Foreground="White" VerticalAlignment="Center"/>
-                        <Border Grid.Column="1" Background="White" CornerRadius="8" Height="22">
-                            <TextBox Background="Transparent" BorderThickness="0" VerticalContentAlignment="Center" Padding="5,0,0,0"/>
-                        </Border>
-                        <Border Grid.Column="3" Background="White" CornerRadius="8" Height="22">
-                            <TextBox Background="Transparent" BorderThickness="0" VerticalContentAlignment="Center" Padding="5,0,0,0"/>
-                        </Border>
-                    </Grid>
-
-                    <Grid Margin="0,0,0,10">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="80"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Text="Poste:" Foreground="White" VerticalAlignment="Center"/>
-                        <Border Grid.Column="1" Background="White" CornerRadius="8" Height="22">
-                            <TextBox Background="Transparent" BorderThickness="0" VerticalContentAlignment="Center" Padding="5,0,0,0"/>
-                        </Border>
-                    </Grid>
-
-                    <Grid Margin="0,0,0,10">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="80"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Text="Assignation:" Foreground="White" VerticalAlignment="Center"/>
-                        <Border Grid.Column="1" Background="White" CornerRadius="8" Height="22">
-                            <TextBox Background="Transparent" BorderThickness="0" VerticalContentAlignment="Center" Padding="5,0,0,0"/>
-                        </Border>
-                    </Grid>
-
-                    <StackPanel Margin="0,5,0,0">
-                        <TextBlock Text="Description:" Foreground="White" Margin="0,0,0,5"/>
-                        <Border Background="White" CornerRadius="10" Height="150" Padding="5">
-                            <TextBox Background="Transparent" BorderThickness="0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
-                        </Border>
+                        <Expander Background="#3F6B95" Foreground="White" BorderBrush="#0A2A4A" BorderThickness="0,0,0,1">
+                            <Expander.Header>
+                                <TextBlock Text="Samedi" FontSize="12" FontWeight="Bold" Margin="0,5,0,5"/>
+                            </Expander.Header>
+                            <StackPanel Background="#0A3663">
+                                <ItemsControl ItemsSource="{Binding QuartsSamedi}"
+                                              ItemTemplate="{StaticResource JourneeQuartTemplate}">
+                                </ItemsControl>
+                            </StackPanel>
+                        </Expander>
+                        
                     </StackPanel>
-
-                </StackPanel>
+                </ScrollViewer>
             </Grid>
         </Border>
+        <ContentControl Content="{Binding Panel}" Grid.Column="2"/>
     </Grid>
 </UserControl>

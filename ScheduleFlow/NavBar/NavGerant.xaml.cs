@@ -24,15 +24,17 @@ namespace ScheduleFlow.NavBar
         private AccueilGerant accueilGerant = new AccueilGerant();
         private Conge conge = new Conge();
         private CreationCompteParGerant creationCompteParGerant = new CreationCompteParGerant(App.ServiceProvider.GetRequiredService<CreationCompteParGerantViewModel>());
-        private Page_Quart_Gerant quart = new Page_Quart_Gerant();
+        private Page_Quart_Gerant quart = App.ServiceProvider.GetRequiredService<Page_Quart_Gerant>();
         private PageProfil compte = new PageProfil();
         private PubAnnonceGerant pubAnnonce = new PubAnnonceGerant();
 
         private SolidColorBrush backColorCurPage = (SolidColorBrush)(new BrushConverter().ConvertFrom("#1561AF"));
         private SolidColorBrush backColorOtherPage = new SolidColorBrush(Colors.Transparent);
+        private readonly GestionnaireSession _session;
 
-        public NavGerant()
+        public NavGerant(GestionnaireSession session)
         {
+            _session = session;
             InitializeComponent();
             GerantArea.Content = accueilGerant;
             PageAccueil.Background = backColorCurPage;
@@ -94,6 +96,14 @@ namespace ScheduleFlow.NavBar
         private void PageNotifications_Click(Object sender, MouseButtonEventArgs e)
         {
 
+        }
+        private void BtnDeconnexion_Click(object sender, RoutedEventArgs e)
+        {
+            _session.Reinitialiser();
+
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            var connexion = App.ServiceProvider.GetRequiredService<Connexion>();
+            mainWindow.MainArea.Content = connexion;
         }
     }
 }

@@ -1,4 +1,14 @@
-﻿using System.Windows.Controls;
+﻿using Microsoft.Extensions.DependencyInjection;
+using ScheduleFlow.Pages.Global;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using ScheduleFlow.Pages.Employeur;
@@ -10,6 +20,8 @@ namespace ScheduleFlow.NavBar
 {
     public partial class NavEmployeur : UserControl
     {
+
+        private readonly GestionnaireSession _session;
         private AccueilGerant acceuil = new AccueilGerant();
         private PageProfil compte = new PageProfil();
         private CreationCompteParEmployeur creaCompte = new CreationCompteParEmployeur();
@@ -18,13 +30,24 @@ namespace ScheduleFlow.NavBar
         private SolidColorBrush backColorCurPage = (SolidColorBrush)(new BrushConverter().ConvertFrom("#1561AF"));
         private SolidColorBrush backColorOtherPage = new SolidColorBrush(Colors.Transparent);
 
-        public NavEmployeur()
+        public NavEmployeur(GestionnaireSession session)
         {
+            _session = session;
             InitializeComponent();
 
             EmployeurArea.Content = acceuil;
             PageAccueil.Background = backColorCurPage;
         }
+
+        private void BtnDeconnexion_Click(object sender, RoutedEventArgs e)
+        {
+            _session.Reinitialiser();
+
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            var connexion = App.ServiceProvider.GetRequiredService<Connexion>();
+            mainWindow.MainArea.Content = connexion;
+        }
+
 
         public void ResetColor()
         {

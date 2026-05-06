@@ -20,6 +20,7 @@ namespace ScheduleFlow.Pages.Global
 {
     public partial class PageProfil : UserControl
     {
+        private UtilisateurViewModel utilisateurViewModel;
         public PageProfil()
         {
             InitializeComponent();

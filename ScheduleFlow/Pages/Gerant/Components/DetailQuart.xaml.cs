@@ -1,5 +1,4 @@
-﻿using ScheduleFlow.ViewModels.Employe;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,24 +12,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ScheduleFlow.ViewModels.Gerant;
 
-namespace ScheduleFlow.Pages.Employee
+namespace ScheduleFlow.Pages.Gerant.Components
 {
     /// <summary>
-    /// Logique d'interaction pour PageDemandeConge.xaml
+    /// Logique d'interaction pour DetailQuart.xaml
     /// </summary>
-    public partial class PageDemandeConge : UserControl
+    public partial class DetailQuart : UserControl
     {
-        private DemandeCongeViewModel viewModel;
-        public PageDemandeConge()
+        public DetailQuart(DetailQuartViewModel monView)
         {
             InitializeComponent();
-            this.DataContext = viewModel = new DemandeCongeViewModel();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
+            DataContext = monView;
         }
     }
 }

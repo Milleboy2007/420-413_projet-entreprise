@@ -3,6 +3,7 @@ using System;
 using Domaine.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Domaine.Migrations
 {
     [DbContext(typeof(ScheduleFlowDBContexte))]
-    partial class ScheduleFlowDBContexteModelSnapshot : ModelSnapshot
+    [Migration("20260503030222_RenommerHeureEnHeures")]
+    partial class RenommerHeureEnHeures
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.25");
@@ -116,7 +119,7 @@ namespace Domaine.Migrations
                     b.Property<bool>("IsPub")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Poste")
+                    b.Property<string>("Post")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
