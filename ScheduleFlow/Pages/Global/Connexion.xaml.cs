@@ -17,6 +17,7 @@ using static System.Collections.Specialized.BitVector32;
 using Domaine.Interface;
 using Domaine.Entity;
 using Domaine.Repo;
+using Domaine.Enum;
 
 
 namespace ScheduleFlow.Pages.Global
@@ -112,7 +113,7 @@ namespace ScheduleFlow.Pages.Global
 
         private void BtnEmployeur_Click(object sender, RoutedEventArgs e) {
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-            mainWindow.MainArea.Content = new NavEmployeur();
+            mainWindow.MainArea.Content = new NavEmployeur(_session);
         }
     }
 }
