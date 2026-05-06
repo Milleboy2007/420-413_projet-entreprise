@@ -20,6 +20,12 @@
     <Compile Update="Pages\Gerant\AccueilGerant.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Gerant\Components\CreationQuart.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Gerant\Components\DetailQuart.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Gerant\Conge.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

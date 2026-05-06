@@ -7,24 +7,15 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domaine.Enum;
 
 namespace Domaine.Context
 {
-    public enum Role
-    {
-        Employeur,
-        Gerant
-    }
-    enum EtatStatut { 
-        EnAttente,
-        Approuve,
-        Refuse
-    }
     public class DemandeConge
     {
         [Key]
         [Required]
-        public int IdConge { get; set; }
+        public int DemandeCongeID { get; set; }
 
         [Required]
         public int IdUtilisateur { get; set; }
@@ -47,7 +38,7 @@ namespace Domaine.Context
 
         
         public DateTime DateCreation { get; set; }
-        public Role Approbateur { get; set; }
+        public RoleUtilisateur Approbateur { get; set; }
 
 
         public DemandeConge()

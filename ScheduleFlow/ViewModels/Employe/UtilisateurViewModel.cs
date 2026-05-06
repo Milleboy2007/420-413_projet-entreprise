@@ -1,4 +1,5 @@
 ﻿using Domaine.Entity;
+using Domaine.Interface;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,10 +13,12 @@ namespace ScheduleFlow.ViewModels.Employe
     internal class UtilisateurViewModel: INotifyPropertyChanged
     {
         private Utilisateur _utilisateurMetier;
+        private readonly IUtilisateurRepository _repository;
 
         public UtilisateurViewModel(Utilisateur utilisateurMetier)
         {
-           _utilisateurMetier = utilisateurMetier;
+            _utilisateurMetier = utilisateurMetier;
+            //_repository = repository;
         }
 
             public string Nom
@@ -186,6 +189,10 @@ namespace ScheduleFlow.ViewModels.Employe
             }
         }
 
+        private void AfficherDonneesUtilisateur(int id)
+        {
+            _utilisateurMetier = _repository.ObtenirUtilisateurParId(id);
+        }
         public event PropertyChangedEventHandler? PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string name = "null")
         => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ScheduleFlow.ViewModels.Employe;
 
 namespace ScheduleFlow.Pages.Employee
 {
@@ -20,9 +21,10 @@ namespace ScheduleFlow.Pages.Employee
     /// </summary>
     public partial class Page_Quart_Employee : UserControl
     {
-        public Page_Quart_Employee()
+        public Page_Quart_Employee(QuartEmployeViewModel monView)
         {
             InitializeComponent();
+            DataContext = monView;
         }
     }
 }

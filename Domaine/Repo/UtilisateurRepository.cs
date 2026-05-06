@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Domaine.Entity;
 using Domaine.Interface;
 using Domaine.Context;
+using Microsoft.EntityFrameworkCore;
+using Domaine.Enum;
 
 namespace Domaine.Repo
 {
@@ -15,6 +17,12 @@ namespace Domaine.Repo
         public UtilisateurRepository(ScheduleFlowDBContexte contexte)
         {
             _dbContext = contexte;
+        }
+
+
+        public Utilisateur ObtenirUtilisateurParId(int id)
+        {
+            return _dbContext.Utilisateurs.FirstOrDefault(x => x.IdUtilisateur == id);
         }
 
         public void AjouterUtilisateur(Utilisateur nouvelUtilisateur)
@@ -36,6 +44,12 @@ namespace Domaine.Repo
 
 
 
+        public IEnumerable<Utilisateur> ObtenirEmploye(){
+            return _dbContext.Utilisateurs.Where(u => u.Role == RoleUtilisateur.Employe);
+        }
 
+        public async Task<Utilisateur?> ObtenirParId(int id) {
+            return await _dbContext.Utilisateurs.FirstOrDefaultAsync(u => u.IdUtilisateur == id);
+        }
     }
 }
