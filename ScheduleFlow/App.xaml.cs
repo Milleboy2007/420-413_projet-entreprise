@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ScheduleFlow.Pages.Employee;
 using ScheduleFlow.Pages.Gerant;
+using ScheduleFlow.Pages.Global;
 using ScheduleFlow.Pages.Gerant.Components;
 using ScheduleFlow.ViewModels.Employe;
 using ScheduleFlow.ViewModels.Gerant;
@@ -37,15 +38,19 @@ namespace ScheduleFlow
 
             //3 - Ajouter DBContext dans la collection de service
             //Utilise SQLLIte et il faut aller chercher le chemin dans appsettings en utilisant GetConnectionString
+            var connectionString = config.GetConnectionString("Default")
+                .Replace("{AppBasePath}", AppDomain.CurrentDomain.BaseDirectory);
+
             services.AddDbContext<ScheduleFlowDBContexte>(options =>
             {
-                options.UseSqlite(config.GetConnectionString("Default"));
+                options.UseSqlite(connectionString);
             });
 
 
             //4 - Ajouter les repository dans les services ainsi que son implémentation
             //Scoped ou Singleton ou Trascient?
             services.AddScoped<IUtilisateurRepository, UtilisateurRepository>();
+            services.AddSingleton<GestionnaireSession>();
             services.AddScoped<IQuartRepository, QuartRepository>();
             services.AddScoped<IDispoRepository, DispoRepository>();
             services.AddScoped<ICreneauRepository, CreneauRepository>();
@@ -62,6 +67,7 @@ namespace ScheduleFlow
             // 6 - Ajouter les vues repository dans les services
             //Scoped ou Singleton ou Trascient?
             services.AddTransient<MainWindow>();
+            services.AddTransient<Connexion>();
             services.AddTransient<Page_Quart_Gerant>();
             services.AddTransient<CreationQuart>();
             services.AddTransient<DetailQuart>();

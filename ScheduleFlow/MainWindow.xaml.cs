@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using Microsoft.Extensions.DependencyInjection;
+using ScheduleFlow.Pages.Global;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,7 +21,9 @@ namespace ScheduleFlow
         public MainWindow()
         {
             InitializeComponent();
-            MainArea.Content = new Pages.Global.Connexion();
+            var connexion = App.ServiceProvider.GetRequiredService<Connexion>();
+            MainArea.Content = connexion;
+
         }
     }
 }

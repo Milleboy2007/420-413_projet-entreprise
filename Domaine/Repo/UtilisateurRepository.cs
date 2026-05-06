@@ -30,6 +30,19 @@ namespace Domaine.Repo
             _dbContext.Utilisateurs.Add(nouvelUtilisateur);
             _dbContext.SaveChanges();
         }
+        public IEnumerable<Utilisateur> ObtenirUtilisateurs()
+        {
+            return _dbContext.Utilisateurs.ToList();
+        }
+
+        public Utilisateur VerifierConnexion(string courrielEntreprise, string motDePasse)
+        {
+            {
+                return _dbContext.Utilisateurs.FirstOrDefault(u => u.CourrielEntreprise == courrielEntreprise && u.MotDePasse == motDePasse);
+            }
+        }
+
+
 
         public IEnumerable<Utilisateur> ObtenirEmploye(){
             return _dbContext.Utilisateurs.Where(u => u.Role == RoleUtilisateur.Employe);

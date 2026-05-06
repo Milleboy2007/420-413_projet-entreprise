@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using ScheduleFlow.Pages.Employee;
+using ScheduleFlow.Pages.Global;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +15,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Microsoft.Extensions.DependencyInjection;
-using ScheduleFlow.Pages.Employee;
-using ScheduleFlow.Pages.Global;
 
 namespace ScheduleFlow.NavBar
 {
@@ -28,10 +28,11 @@ namespace ScheduleFlow.NavBar
 
         private SolidColorBrush backColorCurPage = (SolidColorBrush)(new BrushConverter().ConvertFrom("#1561AF"));
         private SolidColorBrush backColorOtherPage = new SolidColorBrush(Colors.Transparent);
+        private readonly GestionnaireSession _session;
 
-
-        public NavEmploye()
+        public NavEmploye(GestionnaireSession session)
         {
+            _session = session;
             InitializeComponent();
             EmployeArea.Content = accueilEmploye;
             PageAccueil.Background = backColorCurPage;
@@ -85,5 +86,16 @@ namespace ScheduleFlow.NavBar
         {
 
         }
+
+        private void BtnDeconnexion_Click(object sender, RoutedEventArgs e)
+        {
+            _session.Reinitialiser();
+
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            var connexion = App.ServiceProvider.GetRequiredService<Connexion>();
+            mainWindow.MainArea.Content = connexion;
+        }
+
+
     }
 }
