@@ -4,6 +4,7 @@ using Domaine.Entity;
 using Domaine.Interface;
 using System.ComponentModel.DataAnnotations;
 using System.Windows;
+using Domaine.Enum;
 
 namespace ScheduleFlow.ViewModels.Employeur
 {

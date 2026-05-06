@@ -4,6 +4,7 @@ using Domaine.Entity;
 using Domaine.Interface;
 using System.Collections.ObjectModel;
 using System.Windows;
+using Domaine.Enum;
 
 namespace ScheduleFlow.ViewModels.Global
 {
