@@ -194,7 +194,7 @@ namespace Domaine.Tests
             await dbContext.Quarts.AddAsync(quartNonPublier);
             await dbContext.SaveChangesAsync();
 
-            var tabQuartPub = await repository.GetAllPubQuartAsync();
+            var tabQuartPub = await repository.GetAllPubQuartAsync(1);
 
             Assert.Single(tabQuartPub);
             Assert.True(tabQuartPub[0].IsPub);
