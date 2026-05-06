@@ -18,6 +18,8 @@ using Domaine.Interface;
 using Domaine.Entity;
 using Domaine.Repo;
 using Domaine.Enum;
+using Microsoft.Extensions.DependencyInjection;
+using ScheduleFlow.Pages.Employee;
 
 
 namespace ScheduleFlow.Pages.Global
@@ -102,7 +104,7 @@ namespace ScheduleFlow.Pages.Global
         private void BtnEmploye_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-            mainWindow.MainArea.Content = new NavEmploye(_session);
+            mainWindow.MainArea.Content = App.ServiceProvider.GetRequiredService<NavEmploye>();
         }
 
         private void BtnGerant_Click(object sender, RoutedEventArgs e)

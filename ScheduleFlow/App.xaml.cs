@@ -50,7 +50,6 @@ namespace ScheduleFlow
             //4 - Ajouter les repository dans les services ainsi que son implémentation
             //Scoped ou Singleton ou Trascient?
             services.AddScoped<IUtilisateurRepository, UtilisateurRepository>();
-            services.AddSingleton<GestionnaireSession>();
             services.AddScoped<IQuartRepository, QuartRepository>();
             services.AddScoped<IDispoRepository, DispoRepository>();
             services.AddScoped<ICreneauRepository, CreneauRepository>();
@@ -73,6 +72,8 @@ namespace ScheduleFlow
             services.AddTransient<DetailQuart>();
             services.AddTransient<Page_Quart_Employee>();
 
+            services.AddSingleton<GestionnaireSession>();
+            
             // 7 - Construit le service provider avec la méthode BuildServiceProvider
             ServiceProvider = services.BuildServiceProvider();
 
