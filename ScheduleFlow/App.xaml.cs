@@ -4,6 +4,9 @@ using Domaine.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ScheduleFlow.Pages.Employeur;
+using ScheduleFlow.Pages.Gerant;
+using ScheduleFlow.ViewModels.Employeur;
 using ScheduleFlow.Pages.Employee;
 using ScheduleFlow.Pages.Gerant;
 using ScheduleFlow.Pages.Global;
@@ -58,6 +61,7 @@ namespace ScheduleFlow
             // 5 - Ajouter les viewModels repository dans les services
             //Scoped ou Singleton ou Trascient?
             services.AddTransient<CreationCompteParGerantViewModel>();
+            services.AddTransient<CreationCompteParEmployeurViewModel>();
             services.AddTransient<PageQuartGerantViewModel>();
             services.AddTransient<CreerQuartViewModel>();
             services.AddTransient<DetailQuartViewModel>();
@@ -66,6 +70,8 @@ namespace ScheduleFlow
             // 6 - Ajouter les vues repository dans les services
             //Scoped ou Singleton ou Trascient?
             services.AddTransient<MainWindow>();
+            services.AddTransient<CreationCompteParEmployeur>();
+
             services.AddTransient<Connexion>();
             services.AddTransient<Page_Quart_Gerant>();
             services.AddTransient<CreationQuart>();

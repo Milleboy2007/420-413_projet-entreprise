@@ -1,4 +1,8 @@
 ﻿using Domaine.Entity;
+using Domaine.Interface;
+using Microsoft.Extensions.DependencyInjection;
+using ScheduleFlow.ViewModels.Employe;
+using ScheduleFlow.ViewModels.Global;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,19 +11,13 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using ScheduleFlow.ViewModels.Employe;
+using Domaine.Entity;
+using Domaine.Interface;
+using ScheduleFlow.ViewModels.Global;
+using System.Windows.Controls;
 
 namespace ScheduleFlow.Pages.Global
 {
-    /// <summary>
-    /// Logique d'interaction pour PageProfil.xaml
-    /// </summary>
     public partial class PageProfil : UserControl
     {
         private UtilisateurViewModel utilisateurViewModel;
@@ -27,20 +25,17 @@ namespace ScheduleFlow.Pages.Global
         {
             InitializeComponent();
 
-            //utilisateurViewModel = new UtilisateurViewModel();
-            //this.DataContext = utilisateurViewModel;
+            var repo = App.ServiceProvider.GetService<IUtilisateurRepository>();
 
-            //var userTest = new Utilisateur
-            //{
-            //    Nom = "Doe",
-            //    Prenom = "Jane",
-            //    Genre = "Féminin",
-            //    Courriel = "jane.doe@example.com",
+            var user = new Utilisateur
+            {
+                Nom = "Doe",
+                Prenom = "Jane",
+                Genre = "Féminin",
+                Courriel = "jane.doe@example.com"
+            };
 
-
-            //};
-
-
+            DataContext = new PageProfilViewModel(repo, user);
         }
     }
 }
