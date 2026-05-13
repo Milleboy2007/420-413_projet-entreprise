@@ -31,6 +31,9 @@
                         <ImageBrush ImageSource="pfp.png"/>
                     </Border.Background>
                 </Border>-->
+                <Button x:Name="BtnDeconnexion" Grid.Column="1" Click="BtnDeconnexion_Click" Background="Transparent" Foreground="White" Padding="10" Cursor="Hand" ToolTip="Déconnexion" VerticalAlignment="Center" Margin="0,0,20,0">
+                    <TextBlock Text="&#xE7E8;" FontFamily="Segoe MDL2 Assets" FontSize="18"/>
+                </Button>
             </Grid>
 
             <StackPanel Grid.Row="1" Orientation="Horizontal" Background="#1C5084" Height="35">

@@ -17,9 +17,34 @@ namespace Domaine.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.25");
 
+            modelBuilder.Entity("Domaine.Context.Annonce", b =>
+                {
+                    b.Property<int>("AnnonceId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Contenu")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Createur")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateOnly>("DatePublication")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Titre")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("AnnonceId");
+
+                    b.ToTable("Annonces");
+                });
+
             modelBuilder.Entity("Domaine.Context.DemandeConge", b =>
                 {
-                    b.Property<int>("IdConge")
+                    b.Property<int>("DemandeCongeID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -50,7 +75,7 @@ namespace Domaine.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("IdConge");
+                    b.HasKey("DemandeCongeID");
 
                     b.ToTable("DemandeConges");
                 });
@@ -108,14 +133,14 @@ namespace Domaine.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Heure")
+                    b.Property<string>("Heures")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("IsPub")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Post")
+                    b.Property<string>("Poste")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -210,6 +235,77 @@ namespace Domaine.Migrations
                     b.HasKey("IdUtilisateur");
 
                     b.ToTable("Utilisateurs");
+
+                    b.HasData(
+                        new
+                        {
+                            IdUtilisateur = 1,
+                            Adresse = "100 Rue de la Gauchetière",
+                            CodePostal = "H3B 2S2",
+                            Courriel = "Employeur@gmail.com",
+                            CourrielEntreprise = "Employeur@gmail.com",
+                            DateCreation = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateNaissance = "13 janvier 1999",
+                            Genre = "Mâle",
+                            LienParente = "N/A",
+                            MotDePasse = "1234",
+                            Nom = "Galvary",
+                            NomContactUrgence = "Durocher, Preta",
+                            NumeroTelephonePersonnel = "514-540-420",
+                            NumeroTelephoneProfessionnel = "514-555-0100",
+                            Pays = "Canada",
+                            Prenom = "Jean",
+                            RegionProvince = "Québec",
+                            Role = 1,
+                            TelephoneContactUrgence = "911",
+                            Ville = "Montréal"
+                        },
+                        new
+                        {
+                            IdUtilisateur = 2,
+                            Adresse = "100 Rue de la Gauchetière",
+                            CodePostal = "H3B 2S2",
+                            Courriel = "Gerant@gmail.com",
+                            CourrielEntreprise = "Gerant@gmail.com",
+                            DateCreation = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateNaissance = "13 janvier 1999",
+                            Genre = "Mâle",
+                            LienParente = "N/A",
+                            MotDePasse = "1234",
+                            Nom = "Dumets",
+                            NomContactUrgence = "Durocher, Preta",
+                            NumeroTelephonePersonnel = "514-540-420",
+                            NumeroTelephoneProfessionnel = "514-555-0100",
+                            Pays = "Canada",
+                            Prenom = "Bertrand",
+                            RegionProvince = "Québec",
+                            Role = 0,
+                            TelephoneContactUrgence = "911",
+                            Ville = "Montréal"
+                        },
+                        new
+                        {
+                            IdUtilisateur = 3,
+                            Adresse = "100 Rue de la Gauchetière",
+                            CodePostal = "H3B 2S2",
+                            Courriel = "Employe@gmail.com",
+                            CourrielEntreprise = "Employe@gmail.com",
+                            DateCreation = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateNaissance = "13 janvier 1999",
+                            Genre = "Mâle",
+                            LienParente = "N/A",
+                            MotDePasse = "1234",
+                            Nom = "Rognak",
+                            NomContactUrgence = "Durocher, Preta",
+                            NumeroTelephonePersonnel = "514-540-420",
+                            NumeroTelephoneProfessionnel = "514-555-0100",
+                            Pays = "Canada",
+                            Prenom = "Claude",
+                            RegionProvince = "Québec",
+                            Role = 2,
+                            TelephoneContactUrgence = "911",
+                            Ville = "Montréal"
+                        });
                 });
 
             modelBuilder.Entity("Domaine.Entity.CreneauDispo", b =>

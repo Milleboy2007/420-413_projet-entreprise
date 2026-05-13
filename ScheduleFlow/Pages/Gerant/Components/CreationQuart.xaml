@@ -1,0 +1,126 @@
+﻿<UserControl x:Class="ScheduleFlow.Pages.Gerant.Components.CreationQuart"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ScheduleFlow.Pages.Gerant.Components"
+             mc:Ignorable="d" 
+             >
+    <Grid>
+        <Border Background="#0A3663" CornerRadius="10" Padding="15">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Création d'un nouveau quart" FontSize="20" Margin="0,0,0,15" Foreground="White" />
+
+                <StackPanel Grid.Row="1">
+
+                    <Grid Margin="0,0,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="date:" Foreground="White" VerticalAlignment="Center"/>
+                        <Border Grid.Column="1" Background="White" CornerRadius="8" Height="22" Padding="5,0,5,0">
+                            <DatePicker x:Name="date" Background="Transparent" BorderThickness="0"/>
+                        </Border>
+                    </Grid>
+
+                    <Grid Margin="0,0,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="15"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Heure:" Foreground="White" VerticalAlignment="Center"/>
+                        <Border Grid.Column="1" Background="White" CornerRadius="8" Height="22">
+                            <ComboBox x:Name="heureDebut"
+                                      Background="Transparent"
+                                      BorderThickness="0"
+                                      IsEditable="True"
+                                      ItemsSource="{Binding HeuresDispo}"
+                                      ItemStringFormat="HH:mm"/>
+                        </Border>
+                        <TextBlock Grid.Column="2" Text="à" Foreground="white" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Border Grid.Column="3" Background="White" CornerRadius="8" Height="22">
+                            <ComboBox x:Name="heureFin"
+                                      Background="Transparent"
+                                      BorderThickness="0"
+                                      IsEditable="True"
+                                      ItemsSource="{Binding HeuresDispo}"
+                                      ItemStringFormat="HH:mm"/>
+                        </Border>
+                    </Grid>
+
+                    <Grid Margin="0,0,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Poste:" Foreground="White" VerticalAlignment="Center"/>
+                        <Border Grid.Column="1" Background="White" CornerRadius="8" Height="22">
+                            <TextBox x:Name="poste"
+                                     Background="Transparent"
+                                     BorderThickness="0"
+                                     VerticalContentAlignment="Center"
+                                     Padding="5,0,0,0"/>
+                        </Border>
+                    </Grid>
+
+                    <Grid Margin="0,0,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Assignation:" Foreground="White" VerticalAlignment="Center"/>
+                        <ComboBox Height="22"
+                                  Grid.Column="1"
+                                  x:Name="assignation"
+                                  Background="Transparent"
+                                  BorderThickness="0"
+                                  VerticalAlignment="Center"
+                                  ItemsSource="{Binding AllEmployes}"
+                                  SelectedItem="{Binding EmployeSelec}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock>
+                                        <Run Text="{Binding Nom}"/>
+                                        <Run Text=", "/>
+                                        <Run Text="{Binding Prenom}"/>
+                                    </TextBlock>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </Grid>
+
+                    <StackPanel Margin="0,5,0,0">
+                        <TextBlock Text="Description:" Foreground="White" Margin="0,0,0,5"/>
+                        <Border Background="White" CornerRadius="10" Height="150" Padding="5">
+                            <TextBox x:Name="description"
+                                     Background="Transparent"
+                                     BorderThickness="0"
+                                     AcceptsReturn="True"
+                                     TextWrapping="Wrap"
+                                     VerticalScrollBarVisibility="Auto"/>
+                        </Border>
+                    </StackPanel>
+
+                    <Button Margin="0, 5, 0, 0"
+                            Height="20"
+                            Width="100"
+                            Content="Créer"
+                            Background="green"
+                            Foreground="White"
+                            BorderThickness="0"
+                            x:Name="Creer"
+                            Click="BtnCreer"/>
+
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

@@ -17,16 +17,29 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
 
+            <!-- Mon Horaire -->
             <Border Grid.Column="0" Background="#0A3663" CornerRadius="10" Padding="15">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Text="Mon Horaire" FontSize="28" Margin="0,0,0,15" Foreground="White" />
+                    <TextBlock Grid.Row="0" Text="Mon Horaire" FontSize="28" Margin="0,0,0,10" Foreground="White" />
 
-                    <Grid Grid.Row="1" Margin="0,10,0,0">
+                    <!--Filtre-->
+                    <Border Grid.Row="1" Padding="15,0,15,15">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button Content="◀" Command="{Binding PrevCommand}" Background="Transparent" Foreground="White" BorderThickness="0" FontSize="16" Margin="0,0,15,0" Cursor="Hand"/>
+                            <TextBlock Text="{Binding TexteFiltre}" Foreground="White" VerticalAlignment="Center" FontSize="14" FontWeight="Bold"/>
+                            <Button Content="▶" Command="{Binding NextCommand}" Background="Transparent" Foreground="White" BorderThickness="0" FontSize="16" Margin="15,0,0,0" Cursor="Hand"/>
+                            <DatePicker SelectedDate="{Binding DateFiltre}" Width="25" Margin="10,0,0,0" BorderThickness="0" Background="Transparent"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!--Calendrier-->
+                    <Grid Grid.Row="2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="50"/>
                             <ColumnDefinition Width="*"/>
@@ -89,13 +102,13 @@
                         <Border Grid.Row="1" Grid.RowSpan="15" Grid.Column="6" BorderBrush="Black" BorderThickness="0,0,1,0"/>
                         <Border Grid.Row="1" Grid.RowSpan="15" Grid.Column="7" BorderBrush="Black" BorderThickness="0,0,1,0"/>
 
-                        <TextBlock Grid.Row="0" Grid.Column="1" Text="Lundi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
-                        <TextBlock Grid.Row="0" Grid.Column="2" Text="Mardi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
-                        <TextBlock Grid.Row="0" Grid.Column="3" Text="Mercredi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
-                        <TextBlock Grid.Row="0" Grid.Column="4" Text="Jeudi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
-                        <TextBlock Grid.Row="0" Grid.Column="5" Text="Vendredi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
-                        <TextBlock Grid.Row="0" Grid.Column="6" Text="Samedi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
-                        <TextBlock Grid.Row="0" Grid.Column="7" Text="Dimanche" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text="Dimanche" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                        <TextBlock Grid.Row="0" Grid.Column="2" Text="Lundi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                        <TextBlock Grid.Row="0" Grid.Column="3" Text="Mardi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                        <TextBlock Grid.Row="0" Grid.Column="4" Text="Mercredi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                        <TextBlock Grid.Row="0" Grid.Column="5" Text="Jeudi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                        <TextBlock Grid.Row="0" Grid.Column="6" Text="Vendredi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                        <TextBlock Grid.Row="0" Grid.Column="7" Text="Samedi" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
 
                         <TextBlock Grid.Row="1" Grid.Column="0" Text="8:00" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0" Foreground="White"/>
                         <TextBlock Grid.Row="2" Grid.Column="0" Text="9:00" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0" Foreground="White"/>
@@ -112,10 +125,88 @@
                         <TextBlock Grid.Row="13" Grid.Column="0" Text="20:00" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0" Foreground="White"/>
                         <TextBlock Grid.Row="14" Grid.Column="0" Text="21:00" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0" Foreground="White"/>
                         <TextBlock Grid.Row="15" Grid.Column="0" Text="22:00" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0" Foreground="White"/>
+
+                        <!--Grille d'horaire-->
+                        <ItemsControl ItemsSource="{Binding MesQuarts}"
+                                      Grid.Row="1" Grid.RowSpan="15"
+                                      Grid.Column="1" Grid.ColumnSpan="7">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                    </Grid>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemContainerStyle>
+                                <Style TargetType="ContentPresenter">
+                                    <Setter Property="Grid.Column" Value="{Binding ColonneGrid}" />
+                                    <Setter Property="Grid.Row" Value="{Binding LigneGrid}" />
+                                    <Setter Property="Grid.RowSpan" Value="{Binding HauteurGrid}" />
+                                </Style>
+                            </ItemsControl.ItemContainerStyle>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Background="#4CAF50" CornerRadius="5" Margin="2" Padding="5">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="auto"/>
+                                            </Grid.RowDefinitions>
+                                            <StackPanel Grid.Row="0">
+                                                <TextBlock Text="{Binding Quart.Poste}" FontWeight="Bold" Foreground="White" FontSize="11" TextWrapping="Wrap"/>
+                                                <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
+                                                    <TextBlock Text="{Binding Quart.Heures[0], StringFormat=HH:mm}" Foreground="White" FontSize="10"/>
+                                                    <TextBlock Text=" - " Foreground="White" FontSize="10"/>
+                                                    <TextBlock Text="{Binding Quart.Heures[1], StringFormat=HH:mm}" Foreground="White" FontSize="10"/>
+                                                </StackPanel>
+                                                <TextBlock Text="{Binding Status}" Foreground="White" FontSize="10"/>
+                                                <TextBlock Text="{Binding Quart.Description}" Foreground="White" FontSize="10"/>
+                                            </StackPanel>
+
+                                            <Button Grid.Row="1"
+                                                    Content="{Binding TexteBtn}"
+                                                    Background="#E53935"
+                                                    Foreground="White"
+                                                    FontSize="10"
+                                                    BorderThickness="0"
+                                                    Cursor="Hand"
+                                                    Command="{Binding DataContext.PublierQuartCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                                    CommandParameter="{Binding Quart}"/>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
                     </Grid>
                 </Grid>
             </Border>
 
+            <!-- PANNEAU DROITE -->
             <Border Grid.Column="2" Background="#0A3663" CornerRadius="10" Padding="15">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -134,6 +225,7 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0" Grid.Column="0" Text="Filtrer:" VerticalAlignment="Center" Margin="0,0,5,5" Foreground="White"/>
@@ -145,7 +237,46 @@
                         <ComboBox Grid.Row="1" Grid.Column="1" SelectedIndex="0" Background="WhiteSmoke">
                             <ComboBoxItem Content="Aucun"/>
                         </ComboBox>
+
                     </Grid>
+
+                    <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" Margin="0,10,0,0">
+                        <ItemsControl ItemsSource="{Binding QuartsDisponibles}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Background="White" CornerRadius="8" Padding="10" Margin="0,0,0,10">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                                <TextBlock Text="{Binding Date, StringFormat=dd/MM/yyyy}" FontWeight="Bold" Foreground="#0A3663" FontSize="14"/>
+                                                <TextBlock Text="{Binding Poste}" Foreground="DimGray" Margin="0,2,0,2"/>
+
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text="{Binding Heures[0], StringFormat=HH:mm}" Foreground="Black"/>
+                                                    <TextBlock Text=" à " Foreground="Black"/>
+                                                    <TextBlock Text="{Binding Heures[1], StringFormat=HH:mm}" Foreground="Black"/>
+                                                </StackPanel>
+                                            </StackPanel>
+
+                                            <Button Grid.Column="1" 
+                                                    Content="Prendre" 
+                                                    Background="#38658E" 
+                                                    Foreground="White" 
+                                                    Padding="10,5" 
+                                                    BorderThickness="0" 
+                                                    Cursor="Hand"
+                                                    Command="{Binding DataContext.PrendreQuartCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                                    CommandParameter="{Binding}"/>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
                 </Grid>
             </Border>
         </Grid>

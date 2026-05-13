@@ -14,9 +14,9 @@ namespace Domaine.Entity
 
         public required DateOnly Date { get; set; }
 
-        public required TimeOnly[] Heure { get; set; }
+        public required TimeOnly[] Heures { get; set; }
 
-        public required string Post { get; set; }
+        public required string Poste { get; set; }
         public int? UserId { get; set; } = null;
 
         public required string Description { get; set; }

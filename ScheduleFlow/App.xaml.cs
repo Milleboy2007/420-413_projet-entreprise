@@ -4,12 +4,20 @@ using Domaine.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ScheduleFlow.Pages.Employeur;
+using ScheduleFlow.Pages.Gerant;
+using ScheduleFlow.ViewModels.Employeur;
 using ScheduleFlow.Pages.Employee;
 using ScheduleFlow.Pages.Gerant;
+using ScheduleFlow.Pages.Global;
+using ScheduleFlow.Pages.Gerant.Components;
 using ScheduleFlow.ViewModels.Employe;
+using ScheduleFlow.ViewModels.Gerant;
 using System.Configuration;
 using System.Data;
 using System.Windows;
+using ScheduleFlow.ViewModels.Global;
+using ScheduleFlow.NavBar;
 
 namespace ScheduleFlow
 {
@@ -35,9 +43,12 @@ namespace ScheduleFlow
 
             //3 - Ajouter DBContext dans la collection de service
             //Utilise SQLLIte et il faut aller chercher le chemin dans appsettings en utilisant GetConnectionString
+            var connectionString = config.GetConnectionString("Default")
+                .Replace("{AppBasePath}", AppDomain.CurrentDomain.BaseDirectory);
+
             services.AddDbContext<ScheduleFlowDBContexte>(options =>
             {
-                options.UseSqlite(config.GetConnectionString("Default"));
+                options.UseSqlite(connectionString);
             });
 
 
@@ -48,17 +59,55 @@ namespace ScheduleFlow
             services.AddScoped<IDispoRepository, DispoRepository>();
             services.AddScoped<ICreneauRepository, CreneauRepository>();
             services.AddScoped<IDemandeCongeRepository, DemandeCongeRepository>();
+            services.AddScoped<IAnnonceRepository, AnnonceRepository>();
 
             // 5 - Ajouter les viewModels repository dans les services
             //Scoped ou Singleton ou Trascient?
             services.AddTransient<CreationCompteParGerantViewModel>();
+            services.AddTransient<CreationCompteParEmployeurViewModel>();
+            services.AddTransient<PageQuartGerantViewModel>();
+            services.AddTransient<CreerQuartViewModel>();
+            services.AddTransient<DetailQuartViewModel>();
+            services.AddTransient<QuartEmployeViewModel>();
+            services.AddTransient<DemandeCongeViewModel>();
+            services.AddTransient<UtilisateurViewModel>();
+            services.AddTransient<PageProfilViewModel>();
             services.AddTransient<CreneauViewModel>();
 
             // 6 - Ajouter les vues repository dans les services
             //Scoped ou Singleton ou Trascient?
-            services.AddTransient<MainWindow>();
-            services.AddTransient<Dispo>();
 
+            // --- NavBar ---
+            services.AddTransient<NavEmployeur>();
+            services.AddTransient<NavGerant>();
+            services.AddTransient<NavEmploye>();
+
+            // --- Page Global ---
+            services.AddTransient<MainWindow>();
+            services.AddTransient<Connexion>();
+            services.AddTransient<PageProfil>();
+
+            // --- Page Employe ---
+            services.AddTransient<AccueilEmploye>();
+            services.AddTransient<Dispo>();
+            services.AddTransient<Page_Quart_Employee>();
+            services.AddTransient<PageDemandeConge>();
+
+            // --- Page Employeur ---
+            services.AddTransient<CreationCompteParEmployeur>();
+
+            // --- Page Gerant ---
+            services.AddTransient<AccueilGerant>();
+            services.AddTransient<Conge>();
+            services.AddTransient<CreationCompteParGerant>();
+            services.AddTransient<Page_Quart_Gerant>();
+            services.AddTransient<CreationQuart>();
+            services.AddTransient<DetailQuart>();
+            services.AddTransient<PubAnnonceGerant>();
+
+            // --- Gestionnaire de Seesion ---
+            services.AddSingleton<GestionnaireSession>();
+            
             // 7 - Construit le service provider avec la méthode BuildServiceProvider
             ServiceProvider = services.BuildServiceProvider();
 

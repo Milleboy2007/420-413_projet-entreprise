@@ -1,4 +1,5 @@
 ﻿using Domaine.Entity;
+using Domaine.Interface;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,16 +8,19 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using Domaine.Enum;
 
 namespace ScheduleFlow.ViewModels.Employe
 {
     internal class UtilisateurViewModel: INotifyPropertyChanged
     {
         private Utilisateur _utilisateurMetier;
+        private readonly IUtilisateurRepository _repository;
 
         public UtilisateurViewModel(Utilisateur utilisateurMetier)
         {
-           _utilisateurMetier = utilisateurMetier;
+            _utilisateurMetier = utilisateurMetier;
+            //_repository = repository;
         }
 
             public string Nom
@@ -100,15 +104,24 @@ namespace ScheduleFlow.ViewModels.Employe
             }
         }
 
-        //public DateTime? DateNaissance
-        //{
-        //    get => _utilisateurMetier.DateNaissance;
-        //    set
-        //    {
-        //        _utilisateurMetier.DateNaissance = value; 
-        //        OnPropertyChanged();
-        //    }
-        //}
+        public RoleUtilisateur Role {
+            get => _utilisateurMetier.Role;
+            set
+            {
+                _utilisateurMetier.Role = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string DateNaissance
+        {
+            get => _utilisateurMetier.DateNaissance;
+            set
+            {
+                _utilisateurMetier.DateNaissance = value;
+                OnPropertyChanged();
+            }
+        }
         public string Ville
         {
             get => _utilisateurMetier.Ville;
@@ -178,6 +191,10 @@ namespace ScheduleFlow.ViewModels.Employe
             }
         }
 
+        private void AfficherDonneesUtilisateur(int id)
+        {
+            _utilisateurMetier = _repository.ObtenirUtilisateurParId(id);
+        }
         public event PropertyChangedEventHandler? PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string name = "null")
         => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

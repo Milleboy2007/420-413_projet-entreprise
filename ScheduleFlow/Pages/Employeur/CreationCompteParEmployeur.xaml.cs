@@ -1,48 +1,17 @@
-﻿
-using ScheduleFlow.ViewModels.Employeur;
-using System.Windows;
+﻿using Domaine.Interface;
+using Microsoft.Extensions.DependencyInjection;
 using System.Windows.Controls;
+using ScheduleFlow.ViewModels.Employeur;
 
 namespace ScheduleFlow.Pages.Employeur
 {
-    /// <summary>
-    /// Logique d'interaction pour CreationCompteParEmployeur.xaml
-    /// </summary>
     public partial class CreationCompteParEmployeur : UserControl
     {
-
-        private readonly EmployeurViewModel _vm;
-        public CreationCompteParEmployeur()
+        public CreationCompteParEmployeur(CreationCompteParEmployeurViewModel monView)
         {
             InitializeComponent();
-            string Prenom = prenom.Text;
-            string Nom = nom.Text;
-            string Email = email.Text;
-            string Pass = pass.Text;
-            string Tel = tel.Text;
-            string Naissance = naissance.Text;
-            string Poste = poste.Text;
-            string Depart = depart.Text;
-            string TypeContrat = typeContrat.Text;
-            string AdrPost = adrPost.Text;
-            string Pays = pays.Text;
-            string Prov = prov.Text;
-            string Ville = ville.Text;
-            string CodePost = codePost.Text;
-            string NomContUrg = nomContUrg.Text;
-            string NumContUrg = numContUrg.Text;
-            string LienContUrg = lienContUrg.Text;
-            string FormSupp = formSupp.Text;
-        }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnEnvoyer_Click(object sender, RoutedEventArgs e)
-        {
-
+            DataContext = monView;
         }
     }
 }

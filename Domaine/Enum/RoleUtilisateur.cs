@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ScheduleFlow.ViewModels.Employeur
+namespace Domaine.Enum
 {
-    internal class EmployeurViewModel
+    public enum RoleUtilisateur
     {
+        Gerant,
+        Employeur,
+        Employe
     }
 }
