@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Domaine.Repo
 {
-    internal class AnnonceRepository : IAnnonceRepository
+    public class AnnonceRepository : IAnnonceRepository
     {
         private readonly ScheduleFlowDBContexte _context;
 
