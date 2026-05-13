@@ -21,15 +21,16 @@ namespace ScheduleFlow.NavBar
     public partial class NavGerant : UserControl
     {
 
-        private AccueilGerant accueilGerant = new AccueilGerant();
-        private Conge conge = new Conge();
-        private CreationCompteParGerant creationCompteParGerant = new CreationCompteParGerant(App.ServiceProvider.GetRequiredService<CreationCompteParGerantViewModel>());
+        private AccueilGerant accueilGerant = App.ServiceProvider.GetRequiredService<AccueilGerant>();
+        private Conge conge = App.ServiceProvider.GetRequiredService<Conge>();
+        private CreationCompteParGerant creationCompteParGerant = App.ServiceProvider.GetRequiredService<CreationCompteParGerant>();
         private Page_Quart_Gerant quart = App.ServiceProvider.GetRequiredService<Page_Quart_Gerant>();
-        private PageProfil compte = new PageProfil();
-        private PubAnnonceGerant pubAnnonce = new PubAnnonceGerant();
+        private PageProfil compte = App.ServiceProvider.GetRequiredService<PageProfil>();
+        private PubAnnonceGerant pubAnnonce = App.ServiceProvider.GetRequiredService<PubAnnonceGerant>();
 
         private SolidColorBrush backColorCurPage = (SolidColorBrush)(new BrushConverter().ConvertFrom("#1561AF"));
         private SolidColorBrush backColorOtherPage = new SolidColorBrush(Colors.Transparent);
+
         private readonly GestionnaireSession _session;
 
         public NavGerant(GestionnaireSession session)
