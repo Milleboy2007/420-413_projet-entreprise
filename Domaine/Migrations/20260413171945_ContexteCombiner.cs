@@ -100,24 +100,24 @@ namespace Domaine.Migrations
                     IdCreneau = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     IdFeuille = table.Column<int>(type: "INTEGER", nullable: false),
-                    HeureDebut = table.Column<string>(type: "TEXT", nullable: false),
-                    HeureFin = table.Column<string>(type: "TEXT", nullable: false),
-                    FeuilleDispoIdFeuille = table.Column<int>(type: "INTEGER", nullable: true)
+                    Jour = table.Column<string>(type: "TEXT", nullable: false),
+                    HeureDebut = table.Column<TimeSpan>(type: "TEXT", nullable: false),
+                    HeureFin = table.Column<TimeSpan>(type: "TEXT", nullable: false),
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CreneauDispos", x => x.IdCreneau);
                     table.ForeignKey(
-                        name: "FK_CreneauDispos_FeuilleDispos_FeuilleDispoIdFeuille",
-                        column: x => x.FeuilleDispoIdFeuille,
+                        name: "FK_CreneauDispos_FeuilleDispos_IdFeuille",
+                        column: x => x.IdFeuille,
                         principalTable: "FeuilleDispos",
                         principalColumn: "IdFeuille");
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_CreneauDispos_FeuilleDispoIdFeuille",
+                name: "IX_CreneauDispos_IdFeuille",
                 table: "CreneauDispos",
-                column: "FeuilleDispoIdFeuille");
+                column: "IdFeuille");
         }
 
         /// <inheritdoc />
