@@ -16,6 +16,8 @@ using ScheduleFlow.ViewModels.Gerant;
 using System.Configuration;
 using System.Data;
 using System.Windows;
+using ScheduleFlow.ViewModels.Global;
+using ScheduleFlow.NavBar;
 
 namespace ScheduleFlow
 {
@@ -57,6 +59,7 @@ namespace ScheduleFlow
             services.AddScoped<IDispoRepository, DispoRepository>();
             services.AddScoped<ICreneauRepository, CreneauRepository>();
             services.AddScoped<IDemandeCongeRepository, DemandeCongeRepository>();
+            services.AddScoped<IAnnonceRepository, AnnonceRepository>();
 
             // 5 - Ajouter les viewModels repository dans les services
             //Scoped ou Singleton ou Trascient?
@@ -66,18 +69,42 @@ namespace ScheduleFlow
             services.AddTransient<CreerQuartViewModel>();
             services.AddTransient<DetailQuartViewModel>();
             services.AddTransient<QuartEmployeViewModel>();
+            services.AddTransient<DemandeCongeViewModel>();
+            services.AddTransient<UtilisateurViewModel>();
+            services.AddTransient<PageProfilViewModel>();
 
             // 6 - Ajouter les vues repository dans les services
             //Scoped ou Singleton ou Trascient?
+
+            // --- NavBar ---
+            services.AddTransient<NavEmployeur>();
+            services.AddTransient<NavGerant>();
+            services.AddTransient<NavEmploye>();
+
+            // --- Page Global ---
             services.AddTransient<MainWindow>();
+            services.AddTransient<Connexion>();
+            services.AddTransient<PageProfil>();
+
+            // --- Page Employe ---
+            services.AddTransient<AccueilEmploye>();
+            services.AddTransient<Dispo>();
+            services.AddTransient<Page_Quart_Employee>();
+            services.AddTransient<PageDemandeConge>();
+
+            // --- Page Employeur ---
             services.AddTransient<CreationCompteParEmployeur>();
 
-            services.AddTransient<Connexion>();
+            // --- Page Gerant ---
+            services.AddTransient<AccueilGerant>();
+            services.AddTransient<Conge>();
+            services.AddTransient<CreationCompteParGerant>();
             services.AddTransient<Page_Quart_Gerant>();
             services.AddTransient<CreationQuart>();
             services.AddTransient<DetailQuart>();
-            services.AddTransient<Page_Quart_Employee>();
+            services.AddTransient<PubAnnonceGerant>();
 
+            // --- Gestionnaire de Seesion ---
             services.AddSingleton<GestionnaireSession>();
             
             // 7 - Construit le service provider avec la méthode BuildServiceProvider
