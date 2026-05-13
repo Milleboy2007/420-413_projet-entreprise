@@ -22,10 +22,11 @@ namespace ScheduleFlow.NavBar
     {
 
         private readonly GestionnaireSession _session;
-        private AccueilGerant acceuil = new AccueilGerant();
-        private PageProfil compte = new PageProfil();
-        private CreationCompteParEmployeur creaCompte = new CreationCompteParEmployeur();
-        private PubAnnonceGerant annonce = new PubAnnonceGerant();
+
+        private AccueilGerant acceuil = App.ServiceProvider.GetRequiredService<AccueilGerant>();
+        private PageProfil compte = App.ServiceProvider.GetRequiredService<PageProfil>();
+        private CreationCompteParEmployeur creaCompte = App.ServiceProvider.GetRequiredService<CreationCompteParEmployeur>();
+        private PubAnnonceGerant annonce = App.ServiceProvider.GetRequiredService<PubAnnonceGerant>();
 
         private SolidColorBrush backColorCurPage = (SolidColorBrush)(new BrushConverter().ConvertFrom("#1561AF"));
         private SolidColorBrush backColorOtherPage = new SolidColorBrush(Colors.Transparent);
