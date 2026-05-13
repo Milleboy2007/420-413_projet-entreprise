@@ -84,11 +84,11 @@ namespace ScheduleFlow.Pages.Global
                 MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
 
                 if (utilisateur.Role == RoleUtilisateur.Gerant)
-                    mainWindow.MainArea.Content = new NavGerant(_session);
+                    mainWindow.MainArea.Content = App.ServiceProvider.GetRequiredService<NavGerant>();
                 else if (utilisateur.Role == RoleUtilisateur.Employe)
-                    mainWindow.MainArea.Content = new NavEmploye(_session);
+                    mainWindow.MainArea.Content = App.ServiceProvider.GetRequiredService<NavEmploye>();
                 else if (utilisateur.Role == RoleUtilisateur.Employeur)
-                    mainWindow.MainArea.Content = new NavEmployeur(_session);
+                    mainWindow.MainArea.Content = App.ServiceProvider.GetRequiredService<NavEmployeur>();
                 MessageBox.Show($"Bienvenue, {_session.Prenom} {_session.Nom} !", "Succès", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 TxtEmail.Clear();
