@@ -16,7 +16,7 @@ namespace ScheduleFlow.ViewModels.Employe
         private readonly ICreneauRepository _creneauRepository;
 
         [ObservableProperty]
-        private string jour;
+        private string jour = "Lundi";
 
         [ObservableProperty]
         private TimeSpan heureDebut = new TimeSpan(8, 0, 0);
@@ -40,10 +40,10 @@ namespace ScheduleFlow.ViewModels.Employe
 
             var creneau = new CreneauDispo
             {
+                IdFeuille = 1, // A changer, ne pas hardcode
                 Jour = this.Jour,
                 HeureDebut = this.HeureDebut,
-                HeureFin = this.HeureFin,
-                IdFeuille = 1 // A changer, ne pas hardcode
+                HeureFin = this.HeureFin
             };
 
             await _creneauRepository.AjouterCreneau(creneau);

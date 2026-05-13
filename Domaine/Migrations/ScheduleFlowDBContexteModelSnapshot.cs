@@ -61,23 +61,22 @@ namespace Domaine.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("FeuilleDispoIdFeuille")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("HeureDebut")
-                        .IsRequired()
+                    b.Property<TimeSpan>("HeureDebut")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("HeureFin")
-                        .IsRequired()
+                    b.Property<TimeSpan>("HeureFin")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("IdFeuille")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Jour")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.HasKey("IdCreneau");
 
-                    b.HasIndex("FeuilleDispoIdFeuille");
+                    b.HasIndex("IdFeuille");
 
                     b.ToTable("CreneauDispos");
                 });
@@ -215,14 +214,18 @@ namespace Domaine.Migrations
 
             modelBuilder.Entity("Domaine.Entity.CreneauDispo", b =>
                 {
-                    b.HasOne("Domaine.Entity.FeuilleDispo", null)
-                        .WithMany("creneauDispo")
-                        .HasForeignKey("FeuilleDispoIdFeuille");
+                    b.HasOne("Domaine.Entity.FeuilleDispo", "Feuille")
+                        .WithMany("Creneaux")
+                        .HasForeignKey("IdFeuille")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Feuille");
                 });
 
             modelBuilder.Entity("Domaine.Entity.FeuilleDispo", b =>
                 {
-                    b.Navigation("creneauDispo");
+                    b.Navigation("Creneaux");
                 });
 #pragma warning restore 612, 618
         }
