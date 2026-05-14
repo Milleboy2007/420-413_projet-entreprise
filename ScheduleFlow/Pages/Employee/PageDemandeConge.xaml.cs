@@ -21,8 +21,7 @@ namespace ScheduleFlow.Pages.Employee
     /// </summary>
     public partial class PageDemandeConge : UserControl
     {
-        private DemandeCongeViewModel viewModel;
-        public PageDemandeConge()
+        public PageDemandeConge(DemandeCongeViewModel viewModel)
         {
             InitializeComponent();
             this.DataContext = viewModel = new DemandeCongeViewModel();

@@ -20,14 +20,15 @@ namespace ScheduleFlow.NavBar
 {
     public partial class NavEmploye : UserControl
     {
-        private AccueilEmploye accueilEmploye = new AccueilEmploye();
-        private Dispo dispo = new Dispo();
+        private AccueilEmploye accueilEmploye = App.ServiceProvider.GetRequiredService<AccueilEmploye>();
+        private Dispo dispo = App.ServiceProvider.GetRequiredService<Dispo>();
         private Page_Quart_Employee quart = App.ServiceProvider.GetRequiredService<Page_Quart_Employee>();
-        private PageDemandeConge conge = new PageDemandeConge();
-        private PageProfil compte = new PageProfil();
+        private PageDemandeConge conge = App.ServiceProvider.GetRequiredService<PageDemandeConge>();
+        private PageProfil compte = App.ServiceProvider.GetRequiredService<PageProfil>();
 
         private SolidColorBrush backColorCurPage = (SolidColorBrush)(new BrushConverter().ConvertFrom("#1561AF"));
         private SolidColorBrush backColorOtherPage = new SolidColorBrush(Colors.Transparent);
+
         private readonly GestionnaireSession _session;
 
         public NavEmploye(GestionnaireSession session)

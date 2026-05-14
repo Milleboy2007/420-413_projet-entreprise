@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ScheduleFlow.ViewModels.Employe
 {
-    internal class DemandeCongeViewModel
+    public class DemandeCongeViewModel
     {
     }
 }
