@@ -9,6 +9,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Domaine.Enum;
+using ScheduleFlow.Pages.Global;
 
 namespace ScheduleFlow.ViewModels.Employe
 {
@@ -17,10 +18,11 @@ namespace ScheduleFlow.ViewModels.Employe
         private Utilisateur _utilisateurMetier;
         private readonly IUtilisateurRepository _repository;
 
-        public UtilisateurViewModel(Utilisateur utilisateurMetier)
+        public UtilisateurViewModel(GestionnaireSession session, IUtilisateurRepository repository)
         {
-            _utilisateurMetier = utilisateurMetier;
-            //_repository = repository;
+            _repository = repository;
+            int idSession = session.IdUtilisateur;
+            _utilisateurMetier = _repository.ObtenirUtilisateurParId(idSession);
         }
 
             public string Nom

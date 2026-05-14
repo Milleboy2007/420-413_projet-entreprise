@@ -25,17 +25,7 @@ namespace ScheduleFlow.Pages.Global
         {
             InitializeComponent();
 
-            var repo = App.ServiceProvider.GetService<IUtilisateurRepository>();
-
-            var user = new Utilisateur
-            {
-                Nom = "Doe",
-                Prenom = "Jane",
-                Genre = "Féminin",
-                Courriel = "jane.doe@example.com"
-            };
-
-            DataContext = new PageProfilViewModel(repo, user);
+            DataContext = App.ServiceProvider.GetService<UtilisateurViewModel>();
         }
     }
 }
