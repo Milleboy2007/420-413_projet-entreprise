@@ -11,11 +11,13 @@ namespace ScheduleFlow.ViewModels.Global
     public partial class PageProfilViewModel : ObservableObject
     {
         private readonly IUtilisateurRepository _repo;
-
-        public PageProfilViewModel(IUtilisateurRepository repo, Utilisateur user)
+        public Utilisateur user;
+        
+        public PageProfilViewModel(IUtilisateurRepository repo)
         {
             _repo = repo ?? throw new Exception("Repository not registered");
 
+            user = new Utilisateur();
             Nom = user.Nom;
             Prenom = user.Prenom;
             Genre = user.Genre;

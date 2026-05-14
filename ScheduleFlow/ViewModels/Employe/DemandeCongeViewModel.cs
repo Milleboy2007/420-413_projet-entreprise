@@ -6,24 +6,37 @@ using System.Threading.Tasks;
 using Domaine.Context;
 using Domaine.Interface;
 using ScheduleFlow.Pages.Global;
+using Domaine.Enum;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Windows;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ScheduleFlow.ViewModels.Employe
 {
-    public class DemandeCongeViewModel
+    public class DemandeCongeViewModel: INotifyPropertyChanged
     {
         private readonly IDemandeCongeRepository _repository;
         private DemandeConge _demandeMetier;
+        private int USERID = App.ServiceProvider.GetRequiredService<GestionnaireSession>().IdUtilisateur;
 
 
         public DemandeCongeViewModel(IDemandeCongeRepository repository, GestionnaireSession session)
         {
             _repository = repository;
+            _demandeMetier = new DemandeConge();
 
-            idSession = session.IdUtilisateur;
-            demande = repository.RechercherDemandeCongeAsync(idSession);
+            _demandeMetier.IdUtilisateur = session.IdUtilisateur;
+
+            DateOnly today = DateOnly.FromDateTime(DateTime.Today);
+            _demandeMetier.DateDebut = today;
+            _demandeMetier.DateFin = today;
+
+            //_demandeMetier = repository.GetDemandesParUtilisateurAsync(USERID);
+            //demande = repository.RechercherDemandeCongeAsync(idSession);
             //ChargerDemande();
-        }
 
+        }
         public int DemandeCongeID
         {
             get => _demandeMetier.DemandeCongeID;
@@ -63,23 +76,29 @@ namespace ScheduleFlow.ViewModels.Employe
             }
         }
 
-        public DateOnly DateDebut
+        public DateTime? DateDebut
         {
-            get => _demandeMetier.DateDebut;
+            get => _demandeMetier.DateDebut.ToDateTime(TimeOnly.MaxValue);
             set
             {
-                _demandeMetier.DateDebut = value;
-                OnPropertyChanged();
+                if (value.HasValue) 
+                {
+                    _demandeMetier.DateDebut = DateOnly.FromDateTime(value.Value);
+                    OnPropertyChanged();
+                }
             }
         }
 
-        public DateOnly DateFin
+        public DateTime? DateFin
         {
-            get => _demandeMetier.DateFin;
+            get => _demandeMetier.DateFin.ToDateTime(TimeOnly.MaxValue);
             set
             {
-                _demandeMetier.DateFin = value;
-                OnPropertyChanged();
+                if (value.HasValue)
+                {
+                    _demandeMetier.DateFin = DateOnly.FromDateTime(value.Value);
+                    OnPropertyChanged();
+                }
             }
         }
 
@@ -103,15 +122,72 @@ namespace ScheduleFlow.ViewModels.Employe
             }
         }
 
-        public void ChargerDemande(int id)
+        public async Task EnvoyerDemandeAsync()
         {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(TypeConge))
+                {
+                    MessageBox.Show("Veuillez spécifier le type de congé (ex: Maladie, Vacances).", "Champ manquant");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(Raison))
+                {
+                    MessageBox.Show("Veuillez entrez une raison pour votre demande.", "Champ manquant");
+                    return;
+                }
+
+                if (_demandeMetier.DateDebut == default || _demandeMetier.DateFin == default)
+                {
+                    MessageBox.Show("Veuillez sélectionner une date de début et de fin.", "Dates manquantes");
+                    return;
+                }
+
+                if (DateDebut > DateFin)
+                {
+                    MessageBox.Show("La date de début doit être avant la date de fin.");
+                    return;
+                }
+                if (DateDebut == DateFin)
+                {
+                    MessageBox.Show("La date de début ne doit pas être la même que la date de fin.");
+                    return;
+                }
+
+                await _repository.AjouterDemandeCongeAsync(_demandeMetier);
+
+                MessageBox.Show("Demande envoyée avec succès !");
+                ReinitialiserChamps();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erreur lors de l'envoi : {ex.Message}");
+            }
+;
+            
+        }
+
+
+
+        private void ReinitialiserChamps()
+        {
+            int idUser = _demandeMetier.IdUtilisateur;
+            _demandeMetier.IdUtilisateur = idUser;
+
+            _demandeMetier = new DemandeConge();
+            _demandeMetier.IdUtilisateur = idUser;
+            DateTime today = DateTime.Today;
+            DateDebut = today;
+            DateFin = today;
+
             OnPropertyChanged(nameof(TypeConge));
             OnPropertyChanged(nameof(DateDebut));
             OnPropertyChanged(nameof(DateFin));
             OnPropertyChanged(nameof(Raison));
             OnPropertyChanged(nameof(Statut));
         }
-
+            
         public event PropertyChangedEventHandler? PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string name = "null")
         => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

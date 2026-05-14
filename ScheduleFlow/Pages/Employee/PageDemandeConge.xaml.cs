@@ -24,12 +24,24 @@ namespace ScheduleFlow.Pages.Employee
         public PageDemandeConge(DemandeCongeViewModel viewModel)
         {
             InitializeComponent();
-            this.DataContext = viewModel = new DemandeCongeViewModel();
+
+            this.DataContext = viewModel;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            //var _dateDebut = date.SelectedDate;
+            //if (_dateDebut == null) 
+            //{
+            //    MessageBox.Show("Veillez sélectionner une date de début.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
+            //    return;
+            //}
+
+            //var
+            if (this.DataContext is DemandeCongeViewModel vm)
+            {
+                await vm.EnvoyerDemandeAsync();
+            }
         }
     }
 }
