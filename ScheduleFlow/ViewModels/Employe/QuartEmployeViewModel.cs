@@ -3,6 +3,8 @@ using CommunityToolkit.Mvvm.Input;
 using Domaine.dto;
 using Domaine.Entity;
 using Domaine.Interface;
+using Microsoft.Extensions.DependencyInjection;
+using ScheduleFlow.Pages.Global;
 using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
@@ -20,8 +22,7 @@ namespace ScheduleFlow.ViewModels.Employe
     {
         private readonly IQuartRepository _quartRepo;
 
-        //SIMULATION
-        private int USERID = 1;
+        private int USERID = App.ServiceProvider.GetRequiredService<GestionnaireSession>().IdUtilisateur;
 
         [ObservableProperty]
         private ObservableCollection<Quart> _quartsDisponibles;

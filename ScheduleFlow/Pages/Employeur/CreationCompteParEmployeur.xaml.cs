@@ -7,11 +7,11 @@ namespace ScheduleFlow.Pages.Employeur
 {
     public partial class CreationCompteParEmployeur : UserControl
     {
-        public CreationCompteParEmployeur()
+        public CreationCompteParEmployeur(CreationCompteParEmployeurViewModel monView)
         {
             InitializeComponent();
 
-            DataContext = App.ServiceProvider.GetService<CreationCompteParEmployeurViewModel>();
+            DataContext = monView;
         }
     }
 }

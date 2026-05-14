@@ -3,6 +3,7 @@ using System;
 using Domaine.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Domaine.Migrations
 {
     [DbContext(typeof(ScheduleFlowDBContexte))]
-    partial class ScheduleFlowDBContexteModelSnapshot : ModelSnapshot
+    [Migration("20260513195644_SeedUser")]
+    partial class SeedUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.25");
@@ -86,22 +89,23 @@ namespace Domaine.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<TimeSpan>("HeureDebut")
+                    b.Property<int?>("FeuilleDispoIdFeuille")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("HeureDebut")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<TimeSpan>("HeureFin")
+                    b.Property<string>("HeureFin")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("IdFeuille")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Jour")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.HasKey("IdCreneau");
 
-                    b.HasIndex("IdFeuille");
+                    b.HasIndex("FeuilleDispoIdFeuille");
 
                     b.ToTable("CreneauDispos");
                 });
@@ -310,18 +314,14 @@ namespace Domaine.Migrations
 
             modelBuilder.Entity("Domaine.Entity.CreneauDispo", b =>
                 {
-                    b.HasOne("Domaine.Entity.FeuilleDispo", "Feuille")
-                        .WithMany("Creneaux")
-                        .HasForeignKey("IdFeuille")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Feuille");
+                    b.HasOne("Domaine.Entity.FeuilleDispo", null)
+                        .WithMany("creneauDispo")
+                        .HasForeignKey("FeuilleDispoIdFeuille");
                 });
 
             modelBuilder.Entity("Domaine.Entity.FeuilleDispo", b =>
                 {
-                    b.Navigation("Creneaux");
+                    b.Navigation("creneauDispo");
                 });
 #pragma warning restore 612, 618
         }
