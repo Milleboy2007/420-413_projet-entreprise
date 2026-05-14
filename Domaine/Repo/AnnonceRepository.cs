@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Domaine.Repo
 {
@@ -30,20 +31,25 @@ namespace Domaine.Repo
             await _context.SaveChangesAsync();
         }
 
-        public async Task<Annonce> RechercherAnnonce(Annonce annonceId)
+        public async Task<Annonce?> RechercherAnnonce(int annonceId)
         {
             return await _context.Annonces.FindAsync(annonceId);
         }
 
-        public async Task SupprimerAnnonce(Annonce annonceID)
+        public async Task SupprimerAnnonce(int annonceID)
         {
-            var annonce = _context.Annonces.FindAsync(annonceID);
+            var annonce = await _context.Annonces.FindAsync(annonceID);
 
             if(annonce != null)
             {
-                _context.Annonces.Remove(annonceID);
+                _context.Annonces.Remove(annonce);
                 await _context.SaveChangesAsync();
             }
+        }
+
+        public async Task<Annonce[]> GetAllAnonceAsync()
+        {
+            return await _context.Annonces.ToArrayAsync();
         }
     }
 }

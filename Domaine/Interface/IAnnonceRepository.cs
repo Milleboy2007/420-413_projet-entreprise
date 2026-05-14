@@ -13,12 +13,14 @@ namespace Domaine.Interface
     public interface IAnnonceRepository 
     {
 
-        Task PublierAnnonce(Annonce annonceId);
+        Task PublierAnnonce(Annonce annonce);
 
-        Task<Annonce> RechercherAnnonce(Annonce annonceId);
+        Task<Annonce?> RechercherAnnonce(int annonceId);
 
         Task ModifierAnnonce(Annonce annonce);
 
-        Task SupprimerAnnonce(Annonce annonceID);
+        Task SupprimerAnnonce(int annonceID);
+
+        Task<Annonce[]> GetAllAnonceAsync();
     }
 }
