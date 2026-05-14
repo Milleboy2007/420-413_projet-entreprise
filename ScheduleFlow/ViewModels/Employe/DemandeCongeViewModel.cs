@@ -3,17 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domaine.Context;
+using Domaine.Interface;
+using ScheduleFlow.Pages.Global;
 
 namespace ScheduleFlow.ViewModels.Employe
 {
     public class DemandeCongeViewModel
     {
+        private readonly IDemandeCongeRepository _repository;
         private DemandeConge _demandeMetier;
 
 
-        public DemandeCongeViewModel(DemandeConge demande)
+        public DemandeCongeViewModel(IDemandeCongeRepository repository, GestionnaireSession session)
         {
-            _demandeMetier = demande;
+            _repository = repository;
+
+            idSession = session.IdUtilisateur;
+            demande = repository.RechercherDemandeCongeAsync(idSession);
             //ChargerDemande();
         }
 
