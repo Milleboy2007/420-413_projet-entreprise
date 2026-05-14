@@ -31,6 +31,13 @@ namespace Domaine.Context
                 CreerBaseInfo(2, "Dumets", "Bertrand", "Gerant@gmail.com", RoleUtilisateur.Gerant),
                 CreerBaseInfo(3, "Rognak", "Claude", "Employe@gmail.com", RoleUtilisateur.Employe)
             );
+            modelBuilder.Entity<FeuilleDispo>().HasData(
+                new FeuilleDispo
+                {
+                    IdEmploye = 3,
+                    IdFeuille = 1
+                }
+                );
         }
 
         private Utilisateur CreerBaseInfo(int id, string nom, string prenom, string courriel, RoleUtilisateur role) {
@@ -58,5 +65,7 @@ namespace Domaine.Context
                 DateCreation = new DateTime(2026, 1, 1)
             };
         }
+        
+            
     }
 }
