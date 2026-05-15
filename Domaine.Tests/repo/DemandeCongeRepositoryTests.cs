@@ -25,10 +25,10 @@ namespace Domaine.Tests.repo
         {
             return new DemandeConge
             {
-                IdUtilisateur = 1,
+                IdEmployee = 1,
                 DateDebut = new DateOnly(2026, 6, 1),
                 DateFin = new DateOnly(2026, 6, 15),
-                Raison = "Vacances annuelles",
+                Motif = "Vacances annuelles",
                 TypeConge = "Vacances",
                 Approbateur = RoleUtilisateur.Employeur
 
@@ -53,8 +53,8 @@ namespace Domaine.Tests.repo
 
             var demandeEnBase = await dbContext.DemandeConges.FirstOrDefaultAsync();
             Assert.NotNull(demandeEnBase);
-            Assert.Equal("Vacances annuelles", demandeEnBase.Raison);
-            Assert.Equal(1, demandeEnBase.IdUtilisateur);
+            Assert.Equal("Vacances annuelles", demandeEnBase.Motif);
+            Assert.Equal(1, demandeEnBase.IdEmployee);
             Assert.Equal(EtatStatut.EnAttente.ToString(), demandeEnBase.Statut);
         }
 
@@ -71,13 +71,13 @@ namespace Domaine.Tests.repo
             await dbContext.DemandeConges.AddAsync(demande);
             await dbContext.SaveChangesAsync();
 
-            demande.Raison = "Raison Modifiée";
+            demande.Motif = "Raison Modifiée";
             demande.Statut = EtatStatut.Approuve.ToString();
             await repository.ModifierDemandeCongeAsync(demande);
 
-            var demandeModifiee = await dbContext.DemandeConges.FindAsync(demande.DemandeCongeID);
+            var demandeModifiee = await dbContext.DemandeConges.FindAsync(demande.IDDemandeConge);
             Assert.NotNull(demandeModifiee);
-            Assert.Equal("Raison Modifiée", demandeModifiee.Raison);
+            Assert.Equal("Raison Modifiée", demandeModifiee.Motif);
             Assert.Equal(EtatStatut.Approuve.ToString(), demandeModifiee.Statut);
         }
 
@@ -91,14 +91,14 @@ namespace Domaine.Tests.repo
             var repository = new DemandeCongeRepository(dbContext);
 
             var demande = GetValideDemandeConge();
-            demande.Raison = "Demande Cible";
+            demande.Motif = "Demande Cible";
             await dbContext.DemandeConges.AddAsync(demande);
             await dbContext.SaveChangesAsync();
 
-            var demandeTrouvee = await repository.RechercherParIdAsync(demande.DemandeCongeID);
+            var demandeTrouvee = await repository.RechercherParIdAsync(demande.IDDemandeConge);
 
             Assert.NotNull(demandeTrouvee);
-            Assert.Equal("Demande Cible", demandeTrouvee.Raison);
+            Assert.Equal("Demande Cible", demandeTrouvee.Motif);
         }
 
         /*
@@ -114,9 +114,9 @@ namespace Domaine.Tests.repo
             await dbContext.DemandeConges.AddAsync(demande);
             await dbContext.SaveChangesAsync();
 
-            await repository.SupprimerDemandeCongeAsync(demande.DemandeCongeID);
+            await repository.SupprimerDemandeCongeAsync(demande.IDDemandeConge);
 
-            var demandeDB = await dbContext.DemandeConges.FindAsync(demande.DemandeCongeID);
+            var demandeDB = await dbContext.DemandeConges.FindAsync(demande.IDDemandeConge);
             Assert.Null(demandeDB);
         }
     }
