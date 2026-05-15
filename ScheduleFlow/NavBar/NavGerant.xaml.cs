@@ -27,6 +27,7 @@ namespace ScheduleFlow.NavBar
         private Page_Quart_Gerant quart = App.ServiceProvider.GetRequiredService<Page_Quart_Gerant>();
         private PageProfil compte = App.ServiceProvider.GetRequiredService<PageProfil>();
         private PubAnnonceGerant pubAnnonce = App.ServiceProvider.GetRequiredService<PubAnnonceGerant>();
+        private Notification notif = App.ServiceProvider.GetRequiredService<Notification>();
 
         private SolidColorBrush backColorCurPage = (SolidColorBrush)(new BrushConverter().ConvertFrom("#1561AF"));
         private SolidColorBrush backColorOtherPage = new SolidColorBrush(Colors.Transparent);
@@ -96,7 +97,9 @@ namespace ScheduleFlow.NavBar
         
         private void PageNotifications_Click(Object sender, MouseButtonEventArgs e)
         {
-
+            GerantArea.Content = notif;
+            ResetColor();
+            PageNotifications.Background = backColorCurPage;
         }
         private void BtnDeconnexion_Click(object sender, RoutedEventArgs e)
         {
