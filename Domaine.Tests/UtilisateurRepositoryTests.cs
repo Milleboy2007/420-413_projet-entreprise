@@ -52,7 +52,7 @@ namespace Domaine.Tests
          * Test qu'un utilisateur est bien créé
          */
         [Fact]
-        public async Task Test_AjouterUtilisateur()
+        public async Task AjouterUtilisateur_CreerNouveauUtilisateur_NouveauUtilisateurDansDB()
         {
             var dbContext = await GetDbContextAsync();
             var repository = new UtilisateurRepository(dbContext);
@@ -70,7 +70,7 @@ namespace Domaine.Tests
          * Test l'obtention de la liste des utilisateurs
          */
         [Fact]
-        public async Task Test_ObtenirUtilisateurs()
+        public async Task ObtenirUtilisateurs_RecupererListeUtilisateurs_RetourneTousLesUtilisateursDansDB()
         {
             var dbContext = await GetDbContextAsync();
             var repository = new UtilisateurRepository(dbContext);
@@ -92,7 +92,7 @@ namespace Domaine.Tests
          * Test qu'une connexion est validée avec des identifiants exacts
          */
         [Fact]
-        public async Task Test_VerifierConnexion_Succes()
+        public async Task VerifierConnexion_IdentifiantsValides_RetourneLUtilisateurCorrespondant()
         {
             var dbContext = await GetDbContextAsync();
             var repository = new UtilisateurRepository(dbContext);
@@ -110,7 +110,7 @@ namespace Domaine.Tests
          * Test qu'une connexion est refusée avec de mauvais identifiants
          */
         [Fact]
-        public async Task Test_VerifierConnexion_Echec()
+        public async Task VerifierConnexion_MotDePasseInvalide_RetourneNull()
         {
             var dbContext = await GetDbContextAsync();
             var repository = new UtilisateurRepository(dbContext);
