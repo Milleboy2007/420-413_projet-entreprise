@@ -79,6 +79,7 @@ namespace ScheduleFlow.Pages.Global
                 _session.Prenom = utilisateur.Prenom;
                 _session.CourrielEntreprise = utilisateur.CourrielEntreprise;
                 _session.Role = utilisateur.Role;
+                _session.IdFeuille = utilisateur.IdFeuille;
                 _session.DateConnexion = DateTime.Now;
 
                 MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;

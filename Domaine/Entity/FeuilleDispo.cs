@@ -12,6 +12,6 @@ namespace Domaine.Entity
         [Key]
         public int IdFeuille { get; set; }
         public int IdEmploye { get; set; }
-        public virtual ICollection<CreneauDispo> Creneaux { get; set; } = new List<CreneauDispo>();
+        public virtual ICollection<CreneauDispo> Creneau { get; set; } = new List<CreneauDispo>();
     }
 }

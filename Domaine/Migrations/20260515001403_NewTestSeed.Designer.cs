@@ -3,6 +3,7 @@ using System;
 using Domaine.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Domaine.Migrations
 {
     [DbContext(typeof(ScheduleFlowDBContexte))]
-    partial class ScheduleFlowDBContexteModelSnapshot : ModelSnapshot
+    [Migration("20260515001403_NewTestSeed")]
+    partial class NewTestSeed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.25");
@@ -188,6 +191,9 @@ namespace Domaine.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<int?>("FeuilleIdFeuille")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Genre")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -243,6 +249,8 @@ namespace Domaine.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("IdUtilisateur");
+
+                    b.HasIndex("FeuilleIdFeuille");
 
                     b.HasIndex("IdFeuille")
                         .IsUnique();
@@ -337,9 +345,15 @@ namespace Domaine.Migrations
 
             modelBuilder.Entity("Domaine.Entity.Utilisateur", b =>
                 {
+                    b.HasOne("Domaine.Entity.FeuilleDispo", "Feuille")
+                        .WithMany()
+                        .HasForeignKey("FeuilleIdFeuille");
+
                     b.HasOne("Domaine.Entity.FeuilleDispo", null)
                         .WithOne()
                         .HasForeignKey("Domaine.Entity.Utilisateur", "IdFeuille");
+
+                    b.Navigation("Feuille");
                 });
 
             modelBuilder.Entity("Domaine.Entity.FeuilleDispo", b =>

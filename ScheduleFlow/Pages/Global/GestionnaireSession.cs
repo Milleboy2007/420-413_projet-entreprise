@@ -12,6 +12,7 @@ namespace ScheduleFlow.Pages.Global
         public string CourrielEntreprise { get; set; }
         public RoleUtilisateur Role { get; set; }
         public DateTime DateConnexion { get; set; }
+        public int IdFeuille { get; set; }
 
         public bool EstConnecte => !string.IsNullOrEmpty(CourrielEntreprise);
 
@@ -22,6 +23,7 @@ namespace ScheduleFlow.Pages.Global
             Prenom = null;
             CourrielEntreprise = null;
             Role = default;
+            IdFeuille = -1;
             DateConnexion = DateTime.MinValue;
         }
     }

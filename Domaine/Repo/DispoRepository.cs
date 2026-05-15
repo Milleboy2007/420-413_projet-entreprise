@@ -30,7 +30,6 @@ namespace Domaine.Repo
             await _db.SaveChangesAsync();
         }
 
-        /* Modifie aussi creneau (doit trouver comment) */
         public async Task ModifierDispo(FeuilleDispo feuilleDispo)
         {
             _db.FeuilleDispos.Update(feuilleDispo);
