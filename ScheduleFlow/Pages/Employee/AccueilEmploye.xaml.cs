@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Domaine.Interface;
+using Microsoft.Extensions.DependencyInjection;
+using ScheduleFlow.ViewModels.Employe;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +26,7 @@ namespace ScheduleFlow.Pages.Employee
         public AccueilEmploye()
         {
             InitializeComponent();
+            this.DataContext = App.ServiceProvider.GetRequiredService<AccueilViewModel>();
         }
     }
 }
