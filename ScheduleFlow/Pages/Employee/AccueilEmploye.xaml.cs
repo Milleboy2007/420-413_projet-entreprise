@@ -23,6 +23,8 @@ namespace ScheduleFlow.Pages.Employee
             InitializeComponent();
             this.DataContext = App.ServiceProvider.GetRequiredService<AccueilViewModel>();
 
+            _session = App.ServiceProvider.GetService<GestionnaireSession>();
+
             this.Loaded += AccueilEmploye_Loaded;
         }
 
@@ -33,13 +35,6 @@ namespace ScheduleFlow.Pages.Employee
                 await vm.ChargerDemandesAsync();
             }
 
-            ChargerDonnees();
-        }
-
-        public AccueilEmploye(GestionnaireSession session)
-        {
-            InitializeComponent();
-            _session = session;
             ChargerDonnees();
         }
 
