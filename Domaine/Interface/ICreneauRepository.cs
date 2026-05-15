@@ -13,5 +13,6 @@ namespace Domaine.Interface
         Task AjouterCreneau(CreneauDispo creneauDispo);
         Task ModifierCreneau(CreneauDispo creneauDispo);
         Task SupprimerCreneau(int idCreneau);
+        Task<List<CreneauDispo>> GetCreneauxByFeuilleId(int idFeuille);
     }
 }

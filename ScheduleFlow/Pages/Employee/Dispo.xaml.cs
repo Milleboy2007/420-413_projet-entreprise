@@ -24,6 +24,7 @@ namespace ScheduleFlow.Pages.Employee
         {
             InitializeComponent();
             this.DataContext = viewModel;
+            Loaded += async (s, e) => await viewModel.LoadCreneaux();
         }
 
         private void OpenPopup_Click(object sender, RoutedEventArgs e)
@@ -38,11 +39,6 @@ namespace ScheduleFlow.Pages.Employee
 
         private async void SaveDispo_Click(object sender, RoutedEventArgs e)
         {
-            if (this.DataContext is CreneauViewModel vm)
-            {
-                // Execute the RelayCommand
-                await vm.AjouterCreneauCommand.ExecuteAsync(null);
-            }
             PopupOverlay.Visibility = Visibility.Collapsed;
         }
     }

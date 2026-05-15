@@ -1,6 +1,7 @@
 ﻿using Domaine.Context;
 using Domaine.Entity;
 using Domaine.Interface;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,12 @@ namespace Domaine.Repo
                 _db.CreneauDispos.Remove(creneauDispo);
                 await _db.SaveChangesAsync();
             }
+        }
+        public async Task<List<CreneauDispo>> GetCreneauxByFeuilleId(int idFeuille)
+        {
+            return await _db.CreneauDispos
+                .Where(c => c.IdFeuille == idFeuille)
+                .ToListAsync();
         }
     }
 }

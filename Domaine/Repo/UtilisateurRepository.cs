@@ -27,6 +27,11 @@ namespace Domaine.Repo
 
         public void AjouterUtilisateur(Utilisateur nouvelUtilisateur)
         {
+            FeuilleDispo newFeuille = new FeuilleDispo();
+            _dbContext.FeuilleDispos.Add(newFeuille);
+            _dbContext.SaveChanges();
+            nouvelUtilisateur.IdFeuille = newFeuille.IdFeuille;
+            newFeuille.IdEmploye = nouvelUtilisateur.IdUtilisateur;
             _dbContext.Utilisateurs.Add(nouvelUtilisateur);
             _dbContext.SaveChanges();
         }

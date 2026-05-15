@@ -57,33 +57,22 @@
                            Margin="0,0,0,10"/>
 
                 <TextBlock Text="Date Début"/>
-                <DatePicker Margin="0,5"/>
+                <DatePicker Margin="0,5" IsEnabled="False" SelectedDate="{Binding DateDebut}"/>
 
                 <TextBlock Text="Date Fin"/>
-                <DatePicker Margin="0,5"/>
+                <DatePicker Margin="0,5" IsEnabled="False" SelectedDate="{Binding DateFin}"/>
 
                 <TextBlock Text="Employé"/>
-                <ComboBox Margin="0,5"/>
+                <TextBox Margin="0,5" IsEnabled="False" IsReadOnly="True" Text="{Binding NomEmployee}"/>
 
                 <TextBlock Text="Type Abs."/>
-                <StackPanel Orientation="Horizontal">
-                    <ComboBox Width="100" Margin="0,5">
-                        <ComboBoxItem Content="Congé"/>
-                    </ComboBox>
-                    <ComboBox Width="70" Margin="5,5">
-                        <ComboBoxItem Content="Maladie"/>
-                    </ComboBox>
-                </StackPanel>
+                <TextBox Margin="0,5" IsReadOnly="True" Text="{Binding TypeAbsent}"/>
 
                 <TextBlock Text="Motif/Notes"/>
-                <TextBox Height="46" Margin="0,5"/>
+                <TextBox Height="46" Margin="0,5" IsReadOnly="True" Text="{Binding Motif}"/>
 
                 <TextBlock Text="Status"/>
-                <ComboBox Margin="0,5">
-                    <ComboBoxItem Content="En attente"/>
-                    <ComboBoxItem Content="Approuvé"/>
-                    <ComboBoxItem Content="Refusé"/>
-                </ComboBox>
+                <TextBox Margin="0,5" IsReadOnly="True" Text="{Binding StatusConge}"/>
 
                 <Button Content="Mettre à jour"
                         Background="#28A745"
