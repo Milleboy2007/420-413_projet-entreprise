@@ -86,6 +86,7 @@ namespace ScheduleFlow
             services.AddTransient<MainWindow>();
             services.AddTransient<Connexion>();
             services.AddTransient<PageProfil>();
+            services.AddTransient<Notification>();
 
             // --- Page Employe ---
             services.AddTransient<AccueilEmploye>();

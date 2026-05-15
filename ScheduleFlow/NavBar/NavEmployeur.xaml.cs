@@ -27,6 +27,7 @@ namespace ScheduleFlow.NavBar
         private PageProfil compte = App.ServiceProvider.GetRequiredService<PageProfil>();
         private CreationCompteParEmployeur creaCompte = App.ServiceProvider.GetRequiredService<CreationCompteParEmployeur>();
         private PubAnnonceGerant annonce = App.ServiceProvider.GetRequiredService<PubAnnonceGerant>();
+        private Notification notif = App.ServiceProvider.GetRequiredService<Notification>();
 
         private SolidColorBrush backColorCurPage = (SolidColorBrush)(new BrushConverter().ConvertFrom("#1561AF"));
         private SolidColorBrush backColorOtherPage = new SolidColorBrush(Colors.Transparent);
@@ -56,6 +57,7 @@ namespace ScheduleFlow.NavBar
             PageCompte.Background = backColorOtherPage;
             PageCreaCompte.Background = backColorOtherPage;
             PageAnnonces.Background = backColorOtherPage;
+            PageNotifications.Background = backColorOtherPage;
         }
 
         public void PageAccueil_Click(Object sender, MouseButtonEventArgs e)
@@ -85,7 +87,9 @@ namespace ScheduleFlow.NavBar
 
         public void PageNotifications_Click(Object sender, MouseButtonEventArgs e)
         {
-
+            EmployeurArea.Content = notif;
+            ResetColor();
+            PageNotifications.Background = backColorCurPage;
         }
 
     }
