@@ -10,6 +10,7 @@ namespace Domaine.Enum
     {
         Gerant,
         Employeur,
-        Employe
+        Employe,
+        Personne
     }
 }
