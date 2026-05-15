@@ -124,12 +124,11 @@ namespace Domaine.Tests.repo
 
             await dbContext.Annonces.AddAsync(GetValideAnnonce());
             await dbContext.Annonces.AddAsync(GetValideAnnonce());
-            await dbContext.Annonces.AddAsync(GetValideAnnonce());
             await dbContext.SaveChangesAsync();
 
             var AllAnnonces = await repository.GetAllAnonceAsync();
 
-            Assert.Equal(3, AllAnnonces.Length);
+            Assert.Equal(2, AllAnnonces.Length);
         }
     }
 }

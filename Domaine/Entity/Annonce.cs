@@ -31,7 +31,6 @@ namespace Domaine.Entity
 
         public Annonce()
         {
-            AnnonceId += 1;
             Titre = "Annonce";
             Contenu = "Remplacer le contenu...";
             Createur = RoleUtilisateur.Employeur;
