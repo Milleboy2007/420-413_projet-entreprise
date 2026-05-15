@@ -1,4 +1,6 @@
-﻿using ScheduleFlow.ViewModels.Employe;
+﻿using Domaine.Interface;
+using Microsoft.Extensions.DependencyInjection;
+using ScheduleFlow.ViewModels.Employe;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,15 +23,26 @@ namespace ScheduleFlow.Pages.Employee
     /// </summary>
     public partial class PageDemandeConge : UserControl
     {
-        public PageDemandeConge(DemandeCongeViewModel viewModel)
+        public PageDemandeConge()
         {
             InitializeComponent();
-            this.DataContext = viewModel = new DemandeCongeViewModel();
+
+            this.DataContext = App.ServiceProvider.GetRequiredService<DemandeCongeViewModel>();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (this.DataContext is DemandeCongeViewModel vm)
+            {
+                try
+                {
+                    await vm.EnvoyerDemandeAsync();
+                }
+                catch (Exception ex) { 
+                
+                    MessageBox.Show($"Une erreur est survenue {ex.Message}");
+                }
+            }
         }
     }
 }

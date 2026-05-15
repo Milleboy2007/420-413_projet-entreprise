@@ -1,3 +1,11 @@
+using Domaine.Interface;
+using Microsoft.Extensions.DependencyInjection;
+using ScheduleFlow.ViewModels.Employe;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 ﻿using Domaine.Entity;
 using ScheduleFlow.Pages.Global;
 using System;
@@ -13,6 +21,17 @@ namespace ScheduleFlow.Pages.Employee
         public AccueilEmploye()
         {
             InitializeComponent();
+            this.DataContext = App.ServiceProvider.GetRequiredService<AccueilViewModel>();
+
+            this.Loaded += AccueilEmploye_Loaded;
+        }
+
+        private async void AccueilEmploye_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (this.DataContext is AccueilViewModel vm)
+            {
+                await vm.ChargerDemandesAsync();
+            }
 
             ChargerDonnees();
         }
