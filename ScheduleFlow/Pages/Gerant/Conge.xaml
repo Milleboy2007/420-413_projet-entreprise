@@ -73,14 +73,13 @@
                 <TextBox Margin="0,5" IsEnabled="False" IsReadOnly="True" Text="{Binding utilisateur.Nom}"/>
 
                 <TextBlock Text="Type Abs."/>
-                    <TextBox Margin="0,5" IsReadOnly="True" Text="{Binding TypeAbsent}"/>
+                <TextBox Margin="0,5" IsReadOnly="True" Text="{Binding TypeConge}"/>
 
-                    <TextBlock Text="Motif/Notes"/>
-                    <TextBox Height="46" Margin="0,5" IsReadOnly="True" Text="{Binding Motif}"/>
-                    <TextBlock Text="Statut"/>
-                        <TextBox Margin="0,5" IsReadOnly="True" Text="{Binding Statut}"/>
-                        <TextBlock Text="Status"/>
-                <TextBox Margin="0,5" IsReadOnly="True" Text="{Binding StatusConge}"/>
+                <TextBlock Text="Motif/Notes"/>
+                <TextBox Height="46" Margin="0,5" IsReadOnly="True" Text="{Binding Motif}"/>
+                
+                <TextBlock Text="Statut"/>
+                <TextBox Margin="0,5" IsReadOnly="True" Text="{Binding Statut}"/>
 
                 <Button Content="Refuser"
                         Background="#DC3545"
