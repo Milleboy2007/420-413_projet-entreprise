@@ -14,7 +14,8 @@ namespace ScheduleFlow.ViewModels.Global
         private readonly IUtilisateurRepository _repo;
         private int _id;
         private Utilisateur _user;
-        
+        public List<RoleUtilisateur> Roles { get; } = Enum.GetValues(typeof(RoleUtilisateur)).Cast<RoleUtilisateur>().ToList();
+
         public PageProfilViewModel(IUtilisateurRepository repo, GestionnaireSession session)
         {
             _repo = repo ?? throw new Exception("Repository not registered");
@@ -35,7 +36,13 @@ namespace ScheduleFlow.ViewModels.Global
                 Ville = utilisateur.Ville;
                 TelephonePersonnel = utilisateur.NumeroTelephonePersonnel;
                 TelephoneProfessionnel = utilisateur.NumeroTelephoneProfessionnel;
-                Role = utilisateur.Role.ToString();
+                Role = utilisateur.Role;
+                CodePostal = utilisateur.CodePostal;
+                RegionProvince = utilisateur.RegionProvince;
+                Pays = utilisateur.Pays;
+                NomContactUrgence = utilisateur.NomContactUrgence;
+                TelephoneContactUrgence = utilisateur.TelephoneContactUrgence;
+                LienParente = utilisateur.LienParente;
             }
             _user = _repo.ObtenirUtilisateurParId(_id);
         }
@@ -59,10 +66,14 @@ namespace ScheduleFlow.ViewModels.Global
         [ObservableProperty] private string telephonePersonnel;
         [ObservableProperty] private string telephoneProfessionnel;
 
-        [ObservableProperty] private string role;
+        [ObservableProperty] private string nomContactUrgence;
+        [ObservableProperty] private string telephoneContactUrgence;
+        [ObservableProperty] private string lienParente;
+
+        [ObservableProperty] private RoleUtilisateur role;
 
         public string NomComplet => $"{Prenom} {Nom}";
-
+        
 
         [ObservableProperty] private ProfilChamp elementSelectionne;
         [ObservableProperty] private string nouvelleValeur;
@@ -75,21 +86,28 @@ namespace ScheduleFlow.ViewModels.Global
                 ProfilChamp.Genre,
                 ProfilChamp.DateNaissance,
                 ProfilChamp.TelephonePersonnel,
+                ProfilChamp.CourrielPersonnel,
+                ProfilChamp.Role,
                 ProfilChamp.Adresse,
                 ProfilChamp.Ville,
                 ProfilChamp.CodePostal,
                 ProfilChamp.RegionProvince,
                 ProfilChamp.Pays,
-                ProfilChamp.CourrielPersonnel,
                 ProfilChamp.TelephoneProfessionnel,
                 ProfilChamp.CourrielEntreprise,
                 ProfilChamp.NomContactUrgence,
                 ProfilChamp.TelephoneContactUrgence,
-                ProfilChamp.LienParente,
-                ProfilChamp.Employeur,
-                ProfilChamp.Poste
+                ProfilChamp.LienParente
             };
 
+        public bool IsRoleSelectionActive => ElementSelectionne == ProfilChamp.Role;
+        public bool IsTextEntryActive => !IsRoleSelectionActive;
+
+        partial void OnElementSelectionneChanged(ProfilChamp value)
+        {
+            OnPropertyChanged(nameof(IsRoleSelectionActive));
+            OnPropertyChanged(nameof(IsTextEntryActive));
+        }
         [RelayCommand]
         private void SupprimerCompte()
         {
@@ -134,7 +152,8 @@ namespace ScheduleFlow.ViewModels.Global
                 TelephonePersonnel = "";
                 TelephoneProfessionnel = "";
                 CourrielEntreprise = "";
-                Role = "";
+                Role = RoleUtilisateur.Personne;
+                OnPropertyChanged(nameof(NomComplet));
             }
             catch (Exception ex)
             {
@@ -163,73 +182,93 @@ namespace ScheduleFlow.ViewModels.Global
                 {
                     case ProfilChamp.Prenom:
                         _user.Prenom = NouvelleValeur;
+                        Prenom = NouvelleValeur;
                         break;
 
                     case ProfilChamp.Nom:
+                        _user.Nom = NouvelleValeur;
                         Nom = NouvelleValeur;
                         break;
 
                     case ProfilChamp.Genre:
-                        Genre = NouvelleValeur;
+                        _user.Genre = NouvelleValeur;
+                        Genre = NouvelleValeur; 
                         break;
 
                     case ProfilChamp.DateNaissance:
+                        _user.DateNaissance = NouvelleValeur;
                         DateNaissance = NouvelleValeur;
                         break;
 
                     case ProfilChamp.TelephonePersonnel:
+                        _user.NumeroTelephonePersonnel = NouvelleValeur;
                         TelephonePersonnel = NouvelleValeur;
+                        break;
+                    
+                    case ProfilChamp.Role:
+                        _user.Role = role;  
                         break;
 
                     case ProfilChamp.Adresse:
+                        _user.Adresse = NouvelleValeur;
                         Adresse = NouvelleValeur;
-                        break;
+                        break;  
 
                     case ProfilChamp.CourrielPersonnel:
+                        _user.Courriel = NouvelleValeur;
                         Courriel = NouvelleValeur;
                         break;
 
                     case ProfilChamp.TelephoneProfessionnel:
+                        _user.NumeroTelephoneProfessionnel = NouvelleValeur;
                         TelephoneProfessionnel = NouvelleValeur;
                         break;
 
                     case ProfilChamp.CourrielEntreprise:
+                        _user.CourrielEntreprise = NouvelleValeur;
                         CourrielEntreprise = NouvelleValeur;
                         break;
 
-                    case ProfilChamp.Employeur:
-                        Role = NouvelleValeur;
-                        break;
-
-                    case ProfilChamp.Poste:
+                    case ProfilChamp.Ville:
+                        _user.Ville = NouvelleValeur;   
                         Ville = NouvelleValeur;
+                        break;  
+                    case ProfilChamp.CodePostal:
+                        _user.CodePostal = NouvelleValeur;
+                        CodePostal = NouvelleValeur;
                         break;
 
+                    case ProfilChamp.RegionProvince:
+                        _user.RegionProvince = NouvelleValeur;
+                        RegionProvince = NouvelleValeur;
+                        break;
+
+                    case ProfilChamp.Pays:
+                        _user.Pays = NouvelleValeur;
+                        Pays = NouvelleValeur;
+                        break;
+
+                    case ProfilChamp.NomContactUrgence:
+                        _user.NomContactUrgence = NouvelleValeur;
+                        NomContactUrgence = NouvelleValeur;
+                        break;
+
+                    case ProfilChamp.TelephoneContactUrgence:
+                        _user.TelephoneContactUrgence = NouvelleValeur;
+                        TelephoneContactUrgence = NouvelleValeur;   
+                        break;
+
+                    case ProfilChamp.LienParente:
+                        _user.LienParente = NouvelleValeur;
+                        LienParente = NouvelleValeur;
+                        break;
                 }
+
                 _repo.ModifierUtilisateur(_user);
-                var updated = new Utilisateur
-                {
-                    IdUtilisateur = _id,
-                    Nom = Nom,
-                    Prenom = Prenom,
-                    Genre = Genre,
-                    Courriel = Courriel,
-                    CourrielEntreprise = CourrielEntreprise
-                };
-                    
-
-
                 
-                if (updated == null)
-                {
-                    MessageBox.Show("Updated is null (impossible but ok)");
-                    return;
-                }
-
-                _repo.ModifierUtilisateur(updated);
-
-                MessageBox.Show("Profil mis à jour.");
+                MessageBox.Show("Profil mis à jour avec succès.");
                 NouvelleValeur = string.Empty;
+                OnPropertyChanged(nameof(NomComplet));
             }
             catch (Exception ex)
             {
@@ -245,18 +284,17 @@ namespace ScheduleFlow.ViewModels.Global
         Genre,
         DateNaissance,
         TelephonePersonnel,
+        CourrielPersonnel,
+        Role,
         Adresse,
         Ville,
         CodePostal,
         RegionProvince,
         Pays,
-        CourrielPersonnel,
         TelephoneProfessionnel,
         CourrielEntreprise,
         NomContactUrgence,
         TelephoneContactUrgence,
-        LienParente,
-        Employeur,
-        Poste
+        LienParente
     }
 }
