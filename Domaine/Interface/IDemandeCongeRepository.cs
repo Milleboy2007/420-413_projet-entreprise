@@ -17,6 +17,7 @@ namespace Domaine.Interface
         Task ModifierDemandeCongeAsync(DemandeConge demandeCongeID);
 
         Task SupprimerDemandeCongeAsync(DemandeConge demandeCongeID);
+        Task<List<DemandeConge>> ObtenirToutesLesDemandesAsync();
 
     }
 }

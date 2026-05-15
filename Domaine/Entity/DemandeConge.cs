@@ -1,14 +1,15 @@
 ﻿using Domaine.Entity;
+using Domaine.Enum;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Domaine.Enum;
-using System.ComponentModel;
 
 namespace Domaine.Context
 {
@@ -16,11 +17,12 @@ namespace Domaine.Context
     {
         [Key]
         [Required]
-        public int DemandeCongeID { get; set; }
+        public int IDDemandeConge { get; set; }
 
-        [Required]
-        public int IdUtilisateur { get; set; }
-  
+        [ForeignKey("utilisateur")]
+        public int IdEmployee { get; set; }
+        public virtual Utilisateur utilisateur { get; set; }
+
         [Required]
         [DataType(DataType.Date)]
         public DateOnly DateDebut { get; set; }
@@ -30,7 +32,7 @@ namespace Domaine.Context
         public DateOnly DateFin { get; set; }
 
         [Required]
-        public string Raison { get; set; }
+        public string Motif { get; set; }
 
         public string Statut { get; set; }
 
@@ -46,8 +48,22 @@ namespace Domaine.Context
         {
             DateCreation = DateTime.Now;
             Statut = EtatStatut.EnAttente.ToString();
-            Raison = string.Empty;
+            Motif = string.Empty;
             TypeConge = string.Empty;
+        }
+
+        [NotMapped]
+        public DateTime DateDebutDateTime
+        {
+            get => DateDebut.ToDateTime(TimeOnly.MinValue);
+            set => DateDebut = DateOnly.FromDateTime(value);
+        }
+
+        [NotMapped]
+        public DateTime DateFinDateTime
+        {
+            get => DateFin.ToDateTime(TimeOnly.MinValue);
+            set => DateFin = DateOnly.FromDateTime(value);
         }
     }
 }

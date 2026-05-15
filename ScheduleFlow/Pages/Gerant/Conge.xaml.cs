@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Domaine.Context;
+using Domaine.Repo;
+using ScheduleFlow.ViewModels.Gerant;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +23,10 @@ namespace ScheduleFlow.Pages.Gerant
     /// </summary>
     public partial class Conge : UserControl
     {
-        public Conge()
+        public Conge(DemandeCongeParGerantViewModel viewModel)
         {
             InitializeComponent();
+            this.DataContext = viewModel;
         }
     }
 }

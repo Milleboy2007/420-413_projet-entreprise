@@ -70,6 +70,7 @@ namespace ScheduleFlow
             services.AddTransient<DetailQuartViewModel>();
             services.AddTransient<QuartEmployeViewModel>();
             services.AddTransient<DemandeCongeViewModel>();
+            services.AddTransient<DemandeCongeParGerantViewModel>();
             services.AddTransient<UtilisateurViewModel>();
             services.AddTransient<PageProfilViewModel>();
             services.AddTransient<CreneauViewModel>();

@@ -1,10 +1,11 @@
 ﻿using Domaine.Context;
+using Domaine.Interface;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Domaine.Interface;
 
 namespace Domaine.Repo
 {
@@ -44,6 +45,13 @@ namespace Domaine.Repo
                 _db.DemandeConges.Remove(demande);
                 await _db.SaveChangesAsync();
             }
+        }
+
+        public async Task<List<DemandeConge>> ObtenirToutesLesDemandesAsync()
+        {
+            return await _db.DemandeConges
+                           .Include(d => d.utilisateur) 
+                           .ToListAsync();
         }
     }
 }
