@@ -18,8 +18,6 @@ namespace Domaine.Interface
         Task<List<DemandeConge>> GetDemandesParUtilisateurAsync(int userId);
 
         Task ModifierDemandeCongeAsync(DemandeConge demandeConge);
-
-        Task SupprimerDemandeCongeAsync(DemandeConge demandeCongeID);
         Task<List<DemandeConge>> ObtenirToutesLesDemandesAsync();
         Task SupprimerDemandeCongeAsync(int demandeCongeID);
 
