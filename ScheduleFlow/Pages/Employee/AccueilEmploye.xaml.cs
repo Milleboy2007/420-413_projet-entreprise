@@ -27,6 +27,16 @@ namespace ScheduleFlow.Pages.Employee
         {
             InitializeComponent();
             this.DataContext = App.ServiceProvider.GetRequiredService<AccueilViewModel>();
+
+            this.Loaded += AccueilEmploye_Loaded;
+        }
+
+        private async void AccueilEmploye_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (this.DataContext is AccueilViewModel vm)
+            {
+                await vm.ChargerDemandesAsync();
+            }
         }
     }
 }

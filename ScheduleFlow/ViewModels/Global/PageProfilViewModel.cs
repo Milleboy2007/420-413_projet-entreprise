@@ -5,37 +5,37 @@ using Domaine.Interface;
 using System.Collections.ObjectModel;
 using System.Windows;
 using Domaine.Enum;
+using ScheduleFlow.Pages.Global;
 
 namespace ScheduleFlow.ViewModels.Global
 {
     public partial class PageProfilViewModel : ObservableObject
     {
         private readonly IUtilisateurRepository _repo;
-        public Utilisateur user;
+        private int _id;
         
-        public PageProfilViewModel(IUtilisateurRepository repo)
+        public PageProfilViewModel(IUtilisateurRepository repo, GestionnaireSession session)
         {
             _repo = repo ?? throw new Exception("Repository not registered");
+            _id = session.IdUtilisateur;
 
-            user = new Utilisateur();
-            Nom = user.Nom;
-            Prenom = user.Prenom;
-            Genre = user.Genre;
-            DateNaissance = user.DateNaissance;
+            var utilisateur = _repo.ObtenirUtilisateurParId(session.IdUtilisateur);
 
-            Courriel = user.Courriel;
-            CourrielEntreprise = user.CourrielEntreprise;
+            if (utilisateur != null)
+            {
+                Nom = utilisateur.Nom;
+                Prenom = utilisateur.Prenom;
+                Genre = utilisateur.Genre;
+                DateNaissance = utilisateur.DateNaissance;
+                Courriel = utilisateur.Courriel;
+                CourrielEntreprise = utilisateur.CourrielEntreprise;
+                Adresse = utilisateur.Adresse;
+                Ville = utilisateur.Ville;
+                TelephonePersonnel = utilisateur.NumeroTelephonePersonnel;
+                TelephoneProfessionnel = utilisateur.NumeroTelephoneProfessionnel;
+                Role = utilisateur.Role.ToString();
+            }
 
-            Adresse = user.Adresse;
-            Ville = user.Ville;
-            RegionProvince = user.RegionProvince;
-            CodePostal = user.CodePostal;
-            Pays = user.Pays;
-
-            TelephonePersonnel = user.NumeroTelephonePersonnel;
-            TelephoneProfessionnel = user.NumeroTelephoneProfessionnel;
-
-            Role = user.Role.ToString();
         }
 
 
@@ -73,9 +73,16 @@ namespace ScheduleFlow.ViewModels.Global
                 ProfilChamp.DateNaissance,
                 ProfilChamp.TelephonePersonnel,
                 ProfilChamp.Adresse,
+                ProfilChamp.Ville,
+                ProfilChamp.CodePostal,
+                ProfilChamp.RegionProvince,
+                ProfilChamp.Pays,
                 ProfilChamp.CourrielPersonnel,
                 ProfilChamp.TelephoneProfessionnel,
                 ProfilChamp.CourrielEntreprise,
+                ProfilChamp.NomContactUrgence,
+                ProfilChamp.TelephoneContactUrgence,
+                ProfilChamp.LienParente,
                 ProfilChamp.Employeur,
                 ProfilChamp.Poste
             };
@@ -194,26 +201,22 @@ namespace ScheduleFlow.ViewModels.Global
                     case ProfilChamp.Poste:
                         Ville = NouvelleValeur;
                         break;
+
                 }
 
                 var updated = new Utilisateur
                 {
+                    IdUtilisateur = _id,
                     Nom = Nom,
                     Prenom = Prenom,
                     Genre = Genre,
-                    DateNaissance = DateNaissance,
                     Courriel = Courriel,
-                    CourrielEntreprise = CourrielEntreprise,
-                    Adresse = Adresse,
-                    Ville = Ville,
-                    RegionProvince = RegionProvince,
-                    CodePostal = CodePostal,
-                    Pays = Pays,
-                    NumeroTelephonePersonnel = TelephonePersonnel,
-                    NumeroTelephoneProfessionnel = TelephoneProfessionnel,
-                    Role = RoleUtilisateur.Employe
+                    CourrielEntreprise = CourrielEntreprise
                 };
+                    
 
+
+                
                 if (updated == null)
                 {
                     MessageBox.Show("Updated is null (impossible but ok)");
@@ -240,9 +243,16 @@ namespace ScheduleFlow.ViewModels.Global
         DateNaissance,
         TelephonePersonnel,
         Adresse,
+        Ville,
+        CodePostal,
+        RegionProvince,
+        Pays,
         CourrielPersonnel,
         TelephoneProfessionnel,
         CourrielEntreprise,
+        NomContactUrgence,
+        TelephoneContactUrgence,
+        LienParente,
         Employeur,
         Poste
     }

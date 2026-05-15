@@ -79,8 +79,8 @@
                             </StackPanel>
                         </ScrollViewer>
                     </Border>
-                        
-                    <TextBlock Grid.Row="2" Text="Mes demandes de congé" FontWeight="Bold" Margin="5,0,0,5" Foreground="#333"/>
+
+                    <TextBlock Grid.Row="2" Text="Mes demandes de congé" FontSize="14" FontWeight="Bold" Margin="5,0,0,5" Foreground="#333"/>
                     <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto">
                         <ItemsControl ItemsSource="{Binding ListeDemandes}">
                             <ItemsControl.ItemTemplate>

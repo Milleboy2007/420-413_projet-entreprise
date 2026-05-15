@@ -48,7 +48,12 @@ namespace ScheduleFlow.ViewModels.Employe
 
                 if (demandes != null)
                 {
-                    ListeDemandes = new ObservableCollection<DemandeConge>(demandes);
+                    ListeDemandes.Clear();
+                    foreach (var demande in demandes)
+                    {
+                        ListeDemandes.Add(demande);
+                    }
+                    //ListeDemandes = new ObservableCollection<DemandeConge>(demandes);
                 }
             }
             catch (Exception ex)

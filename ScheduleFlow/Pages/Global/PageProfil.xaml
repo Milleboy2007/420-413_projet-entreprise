@@ -39,6 +39,15 @@
 
                     <TextBlock Text="Courriel" Foreground="LightGray"/>
                     <TextBlock Text="{Binding Courriel}" Foreground="White"/>
+
+                    <TextBlock Text="Code Postal" Foreground="LightGray"/>
+                    <TextBlock Text="{Binding CodePostal}" Foreground="White" Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Province / Région" Foreground="LightGray"/>
+                    <TextBlock Text="{Binding RegionProvince}" Foreground="White" Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Pays" Foreground="LightGray"/>
+                    <TextBlock Text="{Binding Pays}" Foreground="White" Margin="0,0,0,10"/>
                 </StackPanel>
             </Border>
 
@@ -62,6 +71,21 @@
 
                     <TextBlock Text="Ville" Foreground="LightGray"/>
                     <TextBlock Text="{Binding Ville}" Foreground="White"/>
+                </StackPanel>
+            </Border>
+
+            <Border Margin="271,228,0,0" Padding="15" CornerRadius="10" Background="#0F4A86" Grid.ColumnSpan="2">
+                <StackPanel>
+                    <TextBlock Text="Contact d'urgence" FontSize="16" FontWeight="Bold" Foreground="White" Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Nom" Foreground="LightGray"/>
+                    <TextBlock Text="{Binding NomContactUrgence}" Foreground="White" Margin="0,0,0,5"/>
+
+                    <TextBlock Text="Relation" Foreground="LightGray"/>
+                    <TextBlock Text="{Binding LienParente}" Foreground="White" Margin="0,0,0,5"/>
+
+                    <TextBlock Text="Téléphone" Foreground="LightGray"/>
+                    <TextBlock Text="{Binding TelephoneContactUrgence}" Foreground="White"/>
                 </StackPanel>
             </Border>
 
