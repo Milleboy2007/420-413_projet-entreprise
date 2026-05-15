@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using Domaine.Enum;
 using System.ComponentModel;
 
-namespace Domaine.Context
+namespace Domaine.Entity
 {
     public class DemandeConge
     {

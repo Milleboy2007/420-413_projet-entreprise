@@ -13,8 +13,8 @@ namespace Domaine.Context
     {
         public DbSet<Utilisateur> Utilisateurs { get; set; }
         public DbSet<Quart> Quarts { get; set; }
-        internal DbSet<FeuilleDispo> FeuilleDispos { get; set; }
-        internal DbSet<CreneauDispo> CreneauDispos { get; set; }
+        public DbSet<FeuilleDispo> FeuilleDispos { get; set; }
+        public DbSet<CreneauDispo> CreneauDispos { get; set; }
         public DbSet<DemandeConge> DemandeConges { get; set; }
         public DbSet<Annonce> Annonces { get; set; }
 
