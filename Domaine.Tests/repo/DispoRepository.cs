@@ -62,9 +62,9 @@ namespace Domaine.Tests.repo
             var dbContext = await GetDbContextAsync();
             var repository = new DispoRepository(dbContext);
 
-            var idInexistant = 999;
+            var fakeId = 999;
 
-            var existe = repository.FeuilleDispoExiste(idInexistant);
+            var existe = repository.FeuilleDispoExiste(fakeId);
 
             Assert.False(existe);
         }
