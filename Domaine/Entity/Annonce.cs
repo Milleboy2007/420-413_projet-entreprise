@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Domaine.Enum;
 
-namespace Domaine.Context
+namespace Domaine.Entity
 {
     public class Annonce
     {
