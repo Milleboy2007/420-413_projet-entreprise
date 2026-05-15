@@ -1,7 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using Xunit;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Domaine.Context;
 using Domaine.Entity;
 using Domaine.Repo;

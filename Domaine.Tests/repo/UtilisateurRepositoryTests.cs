@@ -3,10 +3,6 @@ using Domaine.Entity;
 using Domaine.Enum;
 using Domaine.Repo;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
-using Xunit;
 
 namespace Domaine.Tests.repo
 {

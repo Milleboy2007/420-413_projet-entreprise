@@ -2,11 +2,6 @@
 using Domaine.Entity;
 using Domaine.Interface;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Domaine.Enum;
 
 namespace Domaine.Repo
