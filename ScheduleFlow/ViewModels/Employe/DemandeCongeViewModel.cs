@@ -11,6 +11,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
+using Domaine.Entity;
 
 namespace ScheduleFlow.ViewModels.Employe
 {

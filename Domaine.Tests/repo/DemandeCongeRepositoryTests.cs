@@ -88,7 +88,7 @@ namespace Domaine.Tests.repo
          * Test la recherche d'une demande de congé existante par son ID
          */
         [Fact]
-        public async Task RechercherDemandeCongeAsync_ChercherDemandeExistanteParId_DemandeDemanderRetourner()
+        public async Task RechercherParIdAsync_ChercherDemandeExistanteParId_DemandeDemanderRetourner()
         {
             var dbContext = await GetDbContextAsync();
             var repository = new DemandeCongeRepository(dbContext);
@@ -98,7 +98,7 @@ namespace Domaine.Tests.repo
             await dbContext.DemandeConges.AddAsync(demande);
             await dbContext.SaveChangesAsync();
 
-            var demandeTrouvee = await repository.RechercherDemandeCongeAsync(demande.DemandeCongeID);
+            var demandeTrouvee = await repository.RechercherParIdAsync(demande.DemandeCongeID);
 
             Assert.NotNull(demandeTrouvee);
             Assert.Equal("Demande Cible", demandeTrouvee.Raison);

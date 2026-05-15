@@ -33,7 +33,7 @@ namespace Domaine.Repo
         }
 
         //public async Task<DemandeConge?> RechercherDemandeCongeAsync(int demandeCongeID)
-        public async Task<DemandeConge> RechercherParIdAsync(int demandeID)
+        public async Task<DemandeConge?> RechercherParIdAsync(int demandeID)
         {
             return await _db.DemandeConges.FindAsync(demandeID);
         }
