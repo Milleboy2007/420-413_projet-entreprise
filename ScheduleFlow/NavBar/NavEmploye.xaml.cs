@@ -47,6 +47,7 @@ namespace ScheduleFlow.NavBar
             PageQuart.Background = backColorOtherPage;
             PageConge.Background = backColorOtherPage;
             PageCompte.Background = backColorOtherPage;
+            PageNotif.Background = backColorOtherPage;
         }
 
         private void PageAccueil_Click(Object sender, MouseButtonEventArgs e)
