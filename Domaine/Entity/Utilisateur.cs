@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Domaine.Enum;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
-using Domaine.Enum;
 
 namespace Domaine.Entity
 {
@@ -50,6 +51,7 @@ namespace Domaine.Entity
         public string LienParente { get; set; }
 
         public DateTime DateCreation { get; set; }
+        public int IdFeuille { get; set; }
 
 
 

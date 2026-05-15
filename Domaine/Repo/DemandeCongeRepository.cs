@@ -6,6 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domaine.Interface;
+using Domaine.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace Domaine.Repo
 {
@@ -25,18 +28,34 @@ namespace Domaine.Repo
             await _db.SaveChangesAsync();
         }
 
-        public async Task ModifierDemandeCongeAsync(DemandeConge demandeCongeID)
+        public async Task ModifierDemandeCongeAsync(DemandeConge demandeConge)
         {
-            _db.DemandeConges.Update(demandeCongeID);
+            _db.DemandeConges.Update(demandeConge);
             await _db.SaveChangesAsync();
         }
 
-        public async Task<DemandeConge> RechercherDemandeCongeAsync(DemandeConge demandeCongeID)
+        //public async Task<DemandeConge?> RechercherDemandeCongeAsync(int demandeCongeID)
+        public async Task<DemandeConge?> RechercherParIdAsync(int demandeID)
         {
-            return await _db.DemandeConges.FindAsync(demandeCongeID);
+            return await _db.DemandeConges.FindAsync(demandeID);
         }
 
-        public async Task SupprimerDemandeCongeAsync(DemandeConge demandeCongeID)
+        public async Task<List<DemandeConge>> GetDemandesParUtilisateurAsync(int userId)
+        {
+            if(userId != 0)
+            {
+                return await _db.DemandeConges
+                        .Where(u => u.IdUtilisateur == userId)
+                        .ToListAsync();
+            }
+            else
+            {
+                return null;
+            }
+            
+        }
+
+        public async Task SupprimerDemandeCongeAsync(int demandeCongeID)
         {
             var demande = await _db.DemandeConges.FindAsync(demandeCongeID);
 

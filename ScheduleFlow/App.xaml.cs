@@ -74,6 +74,7 @@ namespace ScheduleFlow
             services.AddTransient<UtilisateurViewModel>();
             services.AddTransient<PageProfilViewModel>();
             services.AddTransient<CreneauViewModel>();
+            services.AddTransient<AccueilViewModel>();
 
             // 6 - Ajouter les vues repository dans les services
             //Scoped ou Singleton ou Trascient?
@@ -87,6 +88,7 @@ namespace ScheduleFlow
             services.AddTransient<MainWindow>();
             services.AddTransient<Connexion>();
             services.AddTransient<PageProfil>();
+            services.AddTransient<Notification>();
 
             // --- Page Employe ---
             services.AddTransient<AccueilEmploye>();

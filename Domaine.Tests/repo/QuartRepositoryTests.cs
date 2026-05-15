@@ -6,7 +6,7 @@ using Domaine.Context;
 using Domaine.Entity;
 using Domaine.Repo;
 
-namespace Domaine.Tests
+namespace Domaine.Tests.repo
 {
     public class QuartRepositoryTests
     {

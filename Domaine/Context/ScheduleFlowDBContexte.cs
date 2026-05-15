@@ -13,8 +13,8 @@ namespace Domaine.Context
     {
         public DbSet<Utilisateur> Utilisateurs { get; set; }
         public DbSet<Quart> Quarts { get; set; }
-        internal DbSet<FeuilleDispo> FeuilleDispos { get; set; }
-        internal DbSet<CreneauDispo> CreneauDispos { get; set; }
+        public DbSet<FeuilleDispo> FeuilleDispos { get; set; }
+        public DbSet<CreneauDispo> CreneauDispos { get; set; }
         public DbSet<DemandeConge> DemandeConges { get; set; }
         public DbSet<Annonce> Annonces { get; set; }
 
@@ -26,10 +26,16 @@ namespace Domaine.Context
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<Utilisateur>()
+                        .HasOne<FeuilleDispo>()
+                        .WithOne()
+                        .HasForeignKey<Utilisateur>(u => u.IdFeuille)
+                        .IsRequired(false);
+
             modelBuilder.Entity<Utilisateur>().HasData(
-                CreerBaseInfo(1, "Galvary", "Jean", "Employeur@gmail.com", RoleUtilisateur.Employeur),
-                CreerBaseInfo(2, "Dumets", "Bertrand", "Gerant@gmail.com", RoleUtilisateur.Gerant),
-                CreerBaseInfo(3, "Rognak", "Claude", "Employe@gmail.com", RoleUtilisateur.Employe)
+                CreerBaseInfo(1, "Galvary", "Jean", "Employeur@gmail.com", RoleUtilisateur.Employeur, -1),
+                CreerBaseInfo(2, "Dumets", "Bertrand", "Gerant@gmail.com", RoleUtilisateur.Gerant, 0),
+                CreerBaseInfo(3, "Rognak", "Claude", "Employe@gmail.com", RoleUtilisateur.Employe, 1)
             );
             modelBuilder.Entity<FeuilleDispo>().HasData(
                 new FeuilleDispo
@@ -52,7 +58,7 @@ namespace Domaine.Context
             );
         }
 
-        private Utilisateur CreerBaseInfo(int id, string nom, string prenom, string courriel, RoleUtilisateur role) {
+        private Utilisateur CreerBaseInfo(int id, string nom, string prenom, string courriel, RoleUtilisateur role, int feuilleId) {
             return new Utilisateur
             {
                 IdUtilisateur = id,
@@ -74,6 +80,7 @@ namespace Domaine.Context
                 NomContactUrgence = "Durocher, Preta",
                 TelephoneContactUrgence = "911",
                 LienParente = "N/A",
+                IdFeuille = feuilleId,
                 DateCreation = new DateTime(2026, 1, 1)
             };
         }

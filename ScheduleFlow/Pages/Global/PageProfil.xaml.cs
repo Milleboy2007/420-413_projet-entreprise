@@ -20,22 +20,11 @@ namespace ScheduleFlow.Pages.Global
 {
     public partial class PageProfil : UserControl
     {
-        private UtilisateurViewModel utilisateurViewModel;
         public PageProfil()
         {
             InitializeComponent();
 
-            var repo = App.ServiceProvider.GetService<IUtilisateurRepository>();
-
-            var user = new Utilisateur
-            {
-                Nom = "Doe",
-                Prenom = "Jane",
-                Genre = "Féminin",
-                Courriel = "jane.doe@example.com"
-            };
-
-            DataContext = new PageProfilViewModel(repo, user);
+            this.DataContext = App.ServiceProvider.GetService<PageProfilViewModel>();
         }
     }
 }

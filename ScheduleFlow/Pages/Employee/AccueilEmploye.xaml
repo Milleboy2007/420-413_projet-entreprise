@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ScheduleFlow.Pages.Employee"
+      xmlns:enums="clr-namespace:Domaine.Enum;assembly=Domaine"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Background="#FFF0F0F0">
@@ -16,7 +17,8 @@
 
         <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
             <Ellipse Width="60" Height="60" Fill="LightGray"/>
-            <TextBlock Text="Bonjour Billy Umma"
+            <TextBlock x:Name="txtBonjour"
+                       Text="Bonjour Billy Umma"
                        FontSize="24"
                        FontWeight="Bold"
                        VerticalAlignment="Center"
@@ -32,7 +34,11 @@
 
             <Border Grid.Column="0" CornerRadius="15" Background="LightGray" Padding="10" Margin="5">
                 <StackPanel>
-                    <TextBlock Text="Publications" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <TextBlock Text="Publications"
+                               HorizontalAlignment="Center"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               Margin="0,0,0,10"/>
 
                     <Border CornerRadius="15" Background="White" Padding="10">
                         <ScrollViewer VerticalScrollBarVisibility="Auto">
@@ -42,14 +48,16 @@
                                     <StackPanel>
                                         <TextBlock Text="Ted Thibeault" FontWeight="Bold" FontSize="14"/>
                                         <TextBlock Text="À: B.U. + 15 others..." FontSize="12"/>
-                                        <TextBlock Text="Sujet: Quarts disponible entrepôt" FontSize="12" FontStyle="Italic"/>
+                                        <TextBlock Text="Sujet: Quarts disponible entrepôt"
+                                                   FontSize="12"
+                                                   FontStyle="Italic"/>
                                     </StackPanel>
                                 </StackPanel>
 
                                 <TextBlock TextWrapping="Wrap" Margin="0,10,0,5">
-Bonjour tout le monde,
-Je viens de rendre les quarts disponibles de cette semaine. Veuillez vous diriger vers votre horaire pour les regarder.
-Beau travail tout le monde !
+                                    Bonjour tout le monde,
+                                    Je viens de rendre les quarts disponibles de cette semaine. Veuillez vous diriger vers votre horaire pour les regarder.
+                                    Beau travail tout le monde !
                                 </TextBlock>
 
                                 <TextBlock Text="Envoyé le: 27 février à 18h32"
@@ -58,6 +66,7 @@ Beau travail tout le monde !
                                            HorizontalAlignment="Right"/>
 
                                 <Button Content="Afficher publications"
+                                        Click="BtnAfficherPublications_Click"
                                         HorizontalAlignment="Right"
                                         Margin="0,10,0,0"
                                         Padding="8,2"
@@ -78,33 +87,120 @@ Beau travail tout le monde !
                             </StackPanel>
                         </ScrollViewer>
                     </Border>
+
+                    <TextBlock Grid.Row="2" Text="Mes demandes de congé" FontSize="14" FontWeight="Bold" Margin="5,0,0,5" Foreground="#333"/>
+                    <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto">
+                        <ItemsControl ItemsSource="{Binding ListeDemandes}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Background="White"
+                                            CornerRadius="10"
+                                            Padding="12,8"
+                                            Margin="0,0,0,8"
+                                            BorderBrush="#DDD"
+                                            BorderThickness="1">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <StackPanel Grid.Column="0">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text="{Binding TypeConge}" FontWeight="Bold" Foreground="#093C71"/>
+                                                    <TextBlock Text=" . " Foreground="Gray"/>
+                                                    <TextBlock Text="{Binding Raison}" FontSize="11" Foreground="#555" MaxWidth="200" TextTrimming="CharacterEllipsis"/>
+                                                </StackPanel>
+                                                <TextBlock FontSize="10" Foreground="Gray">
+                                            <Run Text="Du "/>
+                                            <Run Text="{Binding DateDebut, StringFormat=d}"/>
+                                            <Run Text="au "/>
+                                            <Run Text="{Binding DateFin, StringFormat=d}"/>
+                                                </TextBlock>
+                                            </StackPanel>
+
+                                            <Border Grid.Column="1"
+                                            CornerRadius="5"
+                                            Padding="6,2"
+                                            VerticalAlignment="Center">
+                                                <Border.Style>
+                                                    <Style TargetType="Border">
+                                                        <Setter Property="Background" Value="#EEE"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Statut}" Value="{x:Static enums:EtatStatut.Approuve}">
+                                                                <Setter Property="Background" Value="#D4EDDA" />
+                                                            </DataTrigger>
+
+                                                            <DataTrigger Binding="{Binding Statut}" Value="{x:Static enums:EtatStatut.EnAttente}">
+                                                                <Setter Property="Background" Value="#FFF3CD"/>
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding Statut}" Value="{x:Static enums:EtatStatut.Refuse}">
+                                                                <Setter Property="Background" Value="#F8D7DA"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Border.Style>
+                                                <TextBlock Text="{Binding Statut}" FontSize="10" FontWeight="Bold"/>
+                                            </Border>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
                 </StackPanel>
             </Border>
 
             <Border Grid.Column="1" CornerRadius="15" Background="White" Padding="15" Margin="5">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <StackPanel>
-                        <TextBlock Text="Tableau de bord" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="Tableau de bord"
+                                   HorizontalAlignment="Center"
+                                   FontSize="16"
+                                   FontWeight="Bold"/>
 
-                        <TextBlock Text="Détails du poste" FontWeight="Bold" Margin="0,10,0,0"/>
-                        <TextBlock Text="Poste occupé: Commis d'entrepot"/>
-                        <TextBlock Text="Depuis: Janvier 2026"/>
-                        <TextBlock Text="Nombre d'heures travaillées: 79h"/>
-                        <TextBlock Text="Argent reçu: 1296 $"/>
-                        <TextBlock Text="Argent dû: 126 $"/>
+                        <TextBlock Text="Détails du poste"
+                                   FontWeight="Bold"
+                                   Margin="0,10,0,0"/>
 
-                        <TextBlock Text="Détails de quarts" FontWeight="Bold" Margin="0,10,0,0"/>
+                        <TextBlock x:Name="txtPoste"
+                                   Text="Poste occupé: Commis d'entrepôt"/>
+
+                        <TextBlock x:Name="txtDepuis"
+                                   Text="Depuis: Janvier 2026"/>
+
+                        <TextBlock x:Name="txtHeures"
+                                   Text="Nombre d'heures travaillées: 79h"/>
+
+                        <TextBlock x:Name="txtArgentRecu"
+                                   Text="Argent reçu: 1296 $"/>
+
+                        <TextBlock x:Name="txtArgentDu"
+                                   Text="Argent dû: 126 $"/>
+
+                        <TextBlock Text="Détails de quarts"
+                                   FontWeight="Bold"
+                                   Margin="0,10,0,0"/>
+
                         <TextBlock Text="Mon prochain quart:"/>
 
-                        <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,5,0,0">
-                            <TextBlock Text="Mar 24 mars, 9h-17h Entrepot"/>
+                        <Border Background="#FFD3D3D3"
+                                CornerRadius="5"
+                                Padding="5"
+                                Margin="0,5,0,0">
+                            <TextBlock x:Name="txtProchainQuart"
+                                       Text="Mar 24 mars, 9h-17h Entrepôt"/>
                         </Border>
 
                         <TextBlock Text="Mes quarts complétés:"/>
 
-                        <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,5,0,0">
+                        <Border Background="#FFD3D3D3"
+                                CornerRadius="5"
+                                Padding="5"
+                                Margin="0,5,0,0">
                             <StackPanel>
-                                <TextBlock Text="Mar 24 mars, 9h-17h Entrepot"/>
+                                <TextBlock x:Name="txtQuartComplete"
+                                           Text="Mar 24 mars, 9h-17h Entrepôt"/>
                             </StackPanel>
                         </Border>
                     </StackPanel>
@@ -114,7 +210,10 @@ Beau travail tout le monde !
             <Border Grid.Column="2" CornerRadius="15" Background="White" Padding="15" Margin="5">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <StackPanel>
-                        <TextBlock Text="Mes quarts de travail" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="Mes quarts de travail"
+                                   HorizontalAlignment="Center"
+                                   FontSize="16"
+                                   FontWeight="Bold"/>
 
                         <TextBlock Text="Filtré:"/>
                         <ComboBox IsEnabled="False" Margin="0,0,0,5"/>
@@ -124,7 +223,7 @@ Beau travail tout le monde !
 
                         <StackPanel>
                             <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,0,0,5">
-                                <TextBlock Text="Mar 24 mars, 9h-17 Entrepot"/>
+                                <TextBlock Text="Mar 24 mars, 9h-17 Entrepôt"/>
                             </Border>
                             <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,0,0,5">
                                 <TextBlock Text="Mar 31 mars, 8h-18 Vente"/>
@@ -133,7 +232,7 @@ Beau travail tout le monde !
                                 <TextBlock Text="Ven 27 mars, 13h-19 Caisse"/>
                             </Border>
                             <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5" Margin="0,0,0,5">
-                                <TextBlock Text="Mer 1 avril, 8h-20 Entrepot"/>
+                                <TextBlock Text="Mer 1 avril, 8h-20 Entrepôt"/>
                             </Border>
                             <Border Background="#FFD3D3D3" CornerRadius="5" Padding="5">
                                 <TextBlock Text="Mer 30 mars, 14h-20 Section informatique"/>
@@ -142,7 +241,6 @@ Beau travail tout le monde !
                     </StackPanel>
                 </ScrollViewer>
             </Border>
-
         </Grid>
     </Grid>
 </UserControl>

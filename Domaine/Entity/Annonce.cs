@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Domaine.Enum;
 
-namespace Domaine.Context
+namespace Domaine.Entity
 {
     public class Annonce
     {
@@ -31,7 +31,6 @@ namespace Domaine.Context
 
         public Annonce()
         {
-            AnnonceId += 1;
             Titre = "Annonce";
             Contenu = "Remplacer le contenu...";
             Createur = RoleUtilisateur.Employeur;

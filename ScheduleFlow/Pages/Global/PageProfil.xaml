@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              Background="#093C71">
 
+
+
     <ScrollViewer VerticalScrollBarVisibility="Auto">
 
         <Grid Margin="30">
@@ -65,6 +67,20 @@
                 </StackPanel>
             </Border>
 
+            <Border Margin="10,232,10,10" Padding="15" CornerRadius="10" Background="#0F4A86" Grid.Column="1">
+                <StackPanel>
+                    <TextBlock Text="Contact d'urgence" TextAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="White" Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Nom" Foreground="LightGray"/>
+                    <TextBlock Text="{Binding NomContactUrgence}" Foreground="White" Margin="0,0,0,5"/>
+
+                    <TextBlock Text="Relation" Foreground="LightGray"/>
+                    <TextBlock Text="{Binding LienParente}" Foreground="White" Margin="0,0,0,5"/>
+
+                    <TextBlock Text="Téléphone" Foreground="LightGray"/>
+                    <TextBlock Text="{Binding TelephoneContactUrgence}" Foreground="White"/>
+                </StackPanel>
+            </Border>
             <!-- Colonne 3 : Modifier mon profil -->
             <Border Grid.Column="2" Margin="10" Padding="20" CornerRadius="10" Background="#123E6B">
                 <StackPanel>

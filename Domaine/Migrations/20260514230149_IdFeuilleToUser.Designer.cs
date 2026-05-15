@@ -3,6 +3,7 @@ using System;
 using Domaine.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Domaine.Migrations
 {
     [DbContext(typeof(ScheduleFlowDBContexte))]
-    partial class ScheduleFlowDBContexteModelSnapshot : ModelSnapshot
+    [Migration("20260514230149_IdFeuilleToUser")]
+    partial class IdFeuilleToUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.25");
@@ -44,7 +47,7 @@ namespace Domaine.Migrations
 
             modelBuilder.Entity("Domaine.Context.DemandeConge", b =>
                 {
-                    b.Property<int>("IDDemandeConge")
+                    b.Property<int>("DemandeCongeID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -60,10 +63,10 @@ namespace Domaine.Migrations
                     b.Property<DateOnly>("DateFin")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("IdEmployee")
+                    b.Property<int>("IdUtilisateur")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Motif")
+                    b.Property<string>("Raison")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -75,25 +78,9 @@ namespace Domaine.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("IDDemandeConge");
-
-                    b.HasIndex("IdEmployee");
+                    b.HasKey("DemandeCongeID");
 
                     b.ToTable("DemandeConges");
-
-                    b.HasData(
-                        new
-                        {
-                            IDDemandeConge = 1,
-                            Approbateur = 0,
-                            DateCreation = new DateTime(2026, 5, 15, 0, 2, 44, 934, DateTimeKind.Local).AddTicks(6084),
-                            DateDebut = new DateOnly(2026, 6, 12),
-                            DateFin = new DateOnly(2026, 6, 15),
-                            IdEmployee = 3,
-                            Motif = "test",
-                            Statut = "EnAttente",
-                            TypeConge = ""
-                        });
                 });
 
             modelBuilder.Entity("Domaine.Entity.CreneauDispo", b =>
@@ -260,9 +247,6 @@ namespace Domaine.Migrations
 
                     b.HasKey("IdUtilisateur");
 
-                    b.HasIndex("IdFeuille")
-                        .IsUnique();
-
                     b.ToTable("Utilisateurs");
 
                     b.HasData(
@@ -276,7 +260,7 @@ namespace Domaine.Migrations
                             DateCreation = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DateNaissance = "13 janvier 1999",
                             Genre = "Mâle",
-                            IdFeuille = -1,
+                            IdFeuille = 0,
                             LienParente = "N/A",
                             MotDePasse = "1234",
                             Nom = "Galvary",
@@ -324,7 +308,7 @@ namespace Domaine.Migrations
                             DateCreation = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DateNaissance = "13 janvier 1999",
                             Genre = "Mâle",
-                            IdFeuille = 1,
+                            IdFeuille = 0,
                             LienParente = "N/A",
                             MotDePasse = "1234",
                             Nom = "Rognak",
@@ -340,21 +324,10 @@ namespace Domaine.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Domaine.Context.DemandeConge", b =>
-                {
-                    b.HasOne("Domaine.Entity.Utilisateur", "utilisateur")
-                        .WithMany()
-                        .HasForeignKey("IdEmployee")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("utilisateur");
-                });
-
             modelBuilder.Entity("Domaine.Entity.CreneauDispo", b =>
                 {
                     b.HasOne("Domaine.Entity.FeuilleDispo", "Feuille")
-                        .WithMany("Creneau")
+                        .WithMany("Creneaux")
                         .HasForeignKey("IdFeuille")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -362,16 +335,9 @@ namespace Domaine.Migrations
                     b.Navigation("Feuille");
                 });
 
-            modelBuilder.Entity("Domaine.Entity.Utilisateur", b =>
-                {
-                    b.HasOne("Domaine.Entity.FeuilleDispo", null)
-                        .WithOne()
-                        .HasForeignKey("Domaine.Entity.Utilisateur", "IdFeuille");
-                });
-
             modelBuilder.Entity("Domaine.Entity.FeuilleDispo", b =>
                 {
-                    b.Navigation("Creneau");
+                    b.Navigation("Creneaux");
                 });
 #pragma warning restore 612, 618
         }
