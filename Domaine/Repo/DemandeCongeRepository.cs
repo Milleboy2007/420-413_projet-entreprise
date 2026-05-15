@@ -1,4 +1,6 @@
 ﻿using Domaine.Context;
+using Domaine.Interface;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,7 +45,7 @@ namespace Domaine.Repo
             if(userId != 0)
             {
                 return await _db.DemandeConges
-                        .Where(u => u.IdUtilisateur == userId)
+                        .Where(u => u.IdEmployee == userId)
                         .ToListAsync();
             }
             else
@@ -62,6 +64,13 @@ namespace Domaine.Repo
                 _db.DemandeConges.Remove(demande);
                 await _db.SaveChangesAsync();
             }
+        }
+
+        public async Task<List<DemandeConge>> ObtenirToutesLesDemandesAsync()
+        {
+            return await _db.DemandeConges
+                           .Include(d => d.utilisateur) 
+                           .ToListAsync();
         }
     }
 }

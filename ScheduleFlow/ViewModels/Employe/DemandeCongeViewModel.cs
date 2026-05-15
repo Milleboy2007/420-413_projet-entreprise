@@ -27,7 +27,7 @@ namespace ScheduleFlow.ViewModels.Employe
             _repository = repository;
             _demandeMetier = new DemandeConge();
 
-            _demandeMetier.IdUtilisateur = session.IdUtilisateur;
+            _demandeMetier.IdEmployee = session.IdUtilisateur;
 
             DateOnly today = DateOnly.FromDateTime(DateTime.Today);
             _demandeMetier.DateDebut = today;
@@ -40,20 +40,20 @@ namespace ScheduleFlow.ViewModels.Employe
         }
         public int DemandeCongeID
         {
-            get => _demandeMetier.DemandeCongeID;
+            get => _demandeMetier.IDDemandeConge;
             set
             {
-                _demandeMetier.DemandeCongeID = value;
+                _demandeMetier.IDDemandeConge = value;
                 OnPropertyChanged();
             }
         }
 
         public int IdUtilisateur
         {
-            get => _demandeMetier.IdUtilisateur;
+            get => _demandeMetier.IdEmployee;
             set
             {
-                _demandeMetier.IdUtilisateur = value;
+                _demandeMetier.IdEmployee = value;
                 OnPropertyChanged();
             }
         }
@@ -105,10 +105,10 @@ namespace ScheduleFlow.ViewModels.Employe
 
         public string Raison
         {
-            get => _demandeMetier.Raison;
+            get => _demandeMetier.Motif;
             set
             {
-                _demandeMetier.Raison = value;
+                _demandeMetier.Motif = value;
                 OnPropertyChanged();
             }
         }
@@ -173,11 +173,11 @@ namespace ScheduleFlow.ViewModels.Employe
 
         private void ReinitialiserChamps()
         {
-            int idUser = _demandeMetier.IdUtilisateur;
-            _demandeMetier.IdUtilisateur = idUser;
+            int idUser = _demandeMetier.IdEmployee;
+            _demandeMetier.IdEmployee = idUser;
 
             _demandeMetier = new DemandeConge();
-            _demandeMetier.IdUtilisateur = idUser;
+            _demandeMetier.IdEmployee = idUser;
             DateTime today = DateTime.Today;
             DateDebut = today;
             DateFin = today;

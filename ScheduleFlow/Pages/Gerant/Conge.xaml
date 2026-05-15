@@ -26,25 +26,32 @@
                     <ComboBoxItem Content="Type Absence"/>
                 </ComboBox>
             </StackPanel>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                <DataGrid ItemsSource="{Binding ListeDemandes}" 
+                          SelectedItem="{Binding SelectDemande}"
+                          AutoGenerateColumns="False" 
+                          IsReadOnly="True"
+                          Height="Auto">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Employé" Binding="{Binding utilisateur.Nom}" Width="*"/>
+                        <DataGridTextColumn Header="Prénom" Binding="{Binding utilisateur.Prenom}" Width="*"/>
 
-            <DataGrid Height="337">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Employé" Width="*"/>
-                    <DataGridTextColumn Header="Poste" Width="*"/>
-                    <DataGridTextColumn Header="Date Début" Width="*"/>
-                    <DataGridTextColumn Header="Date Fin" Width="*"/>
-                    <DataGridTextColumn Header="Nbre Jours" Width="*"/>
-                    <DataGridTextColumn Header="Type Abs." Width="*"/>
-                    <DataGridTextColumn Header="Motif/Notes" Width="2*"/>
-                    <DataGridTextColumn Header="Status" Width="*"/>
+                        <DataGridTextColumn Header="Poste" Binding="{Binding utilisateur.Role}" Width="*"/>
 
-                    <DataGridTemplateColumn Header="Actions" Width="2*">
-                    </DataGridTemplateColumn>
-                </DataGrid.Columns>
-            </DataGrid>
+                        <DataGridTextColumn Header="Date Début" Binding="{Binding DateDebut}" Width="*"/>
+                        <DataGridTextColumn Header="Date Fin" Binding="{Binding DateFin}" Width="*"/>
+
+                        <DataGridTextColumn Header="Type Abs." Binding="{Binding TypeConge}" Width="*"/>
+
+                        <DataGridTextColumn Header="Motif/Notes" Binding="{Binding Motif}" Width="2*"/>
+                        <DataGridTextColumn Header="Status" Binding="{Binding Statut}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </ScrollViewer>
         </StackPanel>
 
         <Border Grid.Column="1"
+                DataContext="{Binding SelectDemande}"
                 Background="White"
                 Margin="10"
                 Padding="10"
@@ -57,40 +64,34 @@
                            Margin="0,0,0,10"/>
 
                 <TextBlock Text="Date Début"/>
-                <DatePicker Margin="0,5" IsEnabled="False" SelectedDate="{Binding DateDebut}"/>
+                <DatePicker Margin="0,5" IsEnabled="False" SelectedDate="{Binding DateDebutDateTime}"/>
 
                 <TextBlock Text="Date Fin"/>
-                <DatePicker Margin="0,5" IsEnabled="False" SelectedDate="{Binding DateFin}"/>
+                <DatePicker Margin="0,5" IsEnabled="False" SelectedDate="{Binding DateFinDateTime}"/>
 
                 <TextBlock Text="Employé"/>
-                <TextBox Margin="0,5" IsEnabled="False" IsReadOnly="True" Text="{Binding NomEmployee}"/>
+                <TextBox Margin="0,5" IsEnabled="False" IsReadOnly="True" Text="{Binding utilisateur.Nom}"/>
 
                 <TextBlock Text="Type Abs."/>
-                <TextBox Margin="0,5" IsReadOnly="True" Text="{Binding TypeAbsent}"/>
+                <TextBox Margin="0,5" IsReadOnly="True" Text="{Binding TypeConge}"/>
 
                 <TextBlock Text="Motif/Notes"/>
                 <TextBox Height="46" Margin="0,5" IsReadOnly="True" Text="{Binding Motif}"/>
-
-                <TextBlock Text="Status"/>
-                <TextBox Margin="0,5" IsReadOnly="True" Text="{Binding StatusConge}"/>
-
-                <Button Content="Mettre à jour"
-                        Background="#28A745"
-                        Foreground="White"
-                        Margin="0,10,0,5"/>
+                
+                <TextBlock Text="Statut"/>
+                <TextBox Margin="0,5" IsReadOnly="True" Text="{Binding Statut}"/>
 
                 <Button Content="Refuser"
                         Background="#DC3545"
                         Foreground="White"
-                        Margin="0,5"/>
+                        Margin="0,5"
+                        Command="{Binding DataContext.RefuserCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
 
                 <Button Content="Approuver"
                         Background="#28A745"
                         Foreground="White"
-                        Margin="0,5"/>
-
-                <Button Content="Annuler"
-                        Margin="0,10,0,0"/>
+                        Margin="0,5"
+                        Command="{Binding DataContext.ApprouverCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
             </StackPanel>
         </Border>
     </Grid>

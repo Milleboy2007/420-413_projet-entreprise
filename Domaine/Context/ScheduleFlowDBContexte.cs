@@ -43,7 +43,19 @@ namespace Domaine.Context
                     IdEmploye = 3,
                     IdFeuille = 1
                 }
-                );
+            );
+            modelBuilder.Entity<DemandeConge>().HasData(
+                new DemandeConge
+                {
+                    IDDemandeConge = 1,
+                    IdEmployee = 3,
+                    DateDebut = new DateOnly(2026,06,12),
+                    DateFin = new DateOnly(2026,06,15),
+                    Motif = "test",
+                    TypeConge = "Maladie",
+                    Statut = "EnAttente"
+                }
+            );
         }
 
         private Utilisateur CreerBaseInfo(int id, string nom, string prenom, string courriel, RoleUtilisateur role, int feuilleId) {
