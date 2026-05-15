@@ -15,13 +15,13 @@ using System.Windows.Shapes;
 using Microsoft.Extensions.DependencyInjection;
 using ScheduleFlow.Pages.Gerant;
 using ScheduleFlow.Pages.Global;
+using Domaine.Context;
 
 namespace ScheduleFlow.NavBar
 {
     public partial class NavGerant : UserControl
     {
-
-        private AccueilGerant accueilGerant = new AccueilGerant();
+        private AccueilGerant accueilGerant;
         private Conge conge = new Conge();
         private CreationCompteParGerant creationCompteParGerant = new CreationCompteParGerant(App.ServiceProvider.GetRequiredService<CreationCompteParGerantViewModel>());
         private Page_Quart_Gerant quart = new Page_Quart_Gerant();
@@ -36,6 +36,13 @@ namespace ScheduleFlow.NavBar
         {
             _session = session;
             InitializeComponent();
+
+            accueilGerant = new AccueilGerant();
+            accueilGerant.ChargerDonnees(
+                App.ServiceProvider.GetRequiredService<ScheduleFlowDBContexte>(),
+                session
+            );
+
             GerantArea.Content = accueilGerant;
             PageAccueil.Background = backColorCurPage;
         }
@@ -64,39 +71,40 @@ namespace ScheduleFlow.NavBar
             ResetColor();
             PageCompte.Background = backColorCurPage;
         }
-        
+
         private void PageCreaCompte_Click(Object sender, MouseButtonEventArgs e)
         {
             GerantArea.Content = creationCompteParGerant;
             ResetColor();
             PageCreaCompte.Background = backColorCurPage;
         }
-        
+
         private void PageQuart_Click(Object sender, MouseButtonEventArgs e)
         {
             GerantArea.Content = quart;
             ResetColor();
             PageQuart.Background = backColorCurPage;
         }
-        
+
         private void PageConge_Click(Object sender, MouseButtonEventArgs e)
         {
             GerantArea.Content = conge;
             ResetColor();
             PageConge.Background = backColorCurPage;
         }
-        
+
         private void PageAnnonces_Click(Object sender, MouseButtonEventArgs e)
         {
             GerantArea.Content = pubAnnonce;
             ResetColor();
             PageAnnonces.Background = backColorCurPage;
         }
-        
+
         private void PageNotifications_Click(Object sender, MouseButtonEventArgs e)
         {
 
         }
+
         private void BtnDeconnexion_Click(object sender, RoutedEventArgs e)
         {
             _session.Reinitialiser();
