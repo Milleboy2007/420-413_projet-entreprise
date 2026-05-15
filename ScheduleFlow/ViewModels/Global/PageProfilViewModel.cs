@@ -13,12 +13,14 @@ namespace ScheduleFlow.ViewModels.Global
     {
         private readonly IUtilisateurRepository _repo;
         private int _id;
+        private Utilisateur _user;
         
         public PageProfilViewModel(IUtilisateurRepository repo, GestionnaireSession session)
         {
             _repo = repo ?? throw new Exception("Repository not registered");
             _id = session.IdUtilisateur;
 
+            var userBD = _repo.ObtenirUtilisateurParId(_id);
             var utilisateur = _repo.ObtenirUtilisateurParId(session.IdUtilisateur);
 
             if (utilisateur != null)
@@ -35,9 +37,10 @@ namespace ScheduleFlow.ViewModels.Global
                 TelephoneProfessionnel = utilisateur.NumeroTelephoneProfessionnel;
                 Role = utilisateur.Role.ToString();
             }
-
+            _user = _repo.ObtenirUtilisateurParId(_id);
         }
 
+        
 
         [ObservableProperty] private string nom;
         [ObservableProperty] private string prenom;
@@ -159,7 +162,7 @@ namespace ScheduleFlow.ViewModels.Global
                 switch (ElementSelectionne)
                 {
                     case ProfilChamp.Prenom:
-                        Prenom = NouvelleValeur;
+                        _user.Prenom = NouvelleValeur;
                         break;
 
                     case ProfilChamp.Nom:
@@ -203,7 +206,7 @@ namespace ScheduleFlow.ViewModels.Global
                         break;
 
                 }
-
+                _repo.ModifierUtilisateur(_user);
                 var updated = new Utilisateur
                 {
                     IdUtilisateur = _id,
