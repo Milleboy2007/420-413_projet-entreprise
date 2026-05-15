@@ -12,34 +12,32 @@
         <Border Padding="30">
             <StackPanel VerticalAlignment="Top">
                 <TextBlock x:Name="TxtNomUtilisateur" Text="Bienvenue !" FontSize="24" FontWeight="Bold" Margin="0,0,0,10" Foreground="#333333"/>
-                <TextBlock Text="Voici un aperçu de vos activités aujourd'hui" FontSize="14" Foreground="#666666" Width="268" Margin="0,0,0,30"/>
+                <TextBlock Text="Voici un aperçu de vos activités aujourd'hui" FontSize="14" Foreground="#666666" Margin="0,0,0,30"/>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Border Background="White" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="8" Padding="20" Margin="0,0,20,0" Width="200" Height="168">
                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                             <TextBlock Text="👥" FontSize="40" HorizontalAlignment="Center" Margin="0,0,0,10"/>
-                            <TextBlock Text="24" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#333333"/>
-                            <TextBlock x:Name="TxtNombreUtilisateurs" Text="24" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#333333"/>
+                            <TextBlock x:Name="TxtNombreUtilisateurs" Text="0" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#333333"/>
+                            <TextBlock Text="Membres de l'équipe" FontSize="12" HorizontalAlignment="Center" Foreground="#666666"/>
                         </StackPanel>
                     </Border>
 
                     <Border Background="White" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="8" Padding="20" Margin="0,0,20,0" Width="210" Height="169">
                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                             <TextBlock Text="✓" FontSize="40" HorizontalAlignment="Center" Margin="0,0,0,10"/>
-                            <TextBlock Text="5" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#333333"/>
-                            <TextBlock x:Name="TxtNombreDemandesConge" Text="5" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#333333"/>
+                            <TextBlock x:Name="TxtNombreDemandesConge" Text="0" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#333333"/>
+                            <TextBlock Text="Demandes d'approbation" FontSize="12" HorizontalAlignment="Center" Foreground="#666666"/>
                         </StackPanel>
                     </Border>
 
                     <Border Background="White" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="8" Padding="20" Width="200" Height="168">
                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                             <TextBlock Text="📢" FontSize="40" HorizontalAlignment="Center" Margin="0,0,0,10"/>
-                            <TextBlock x:Name="TxtNombreAnnonces" Text="3" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#333333"/>
+                            <TextBlock x:Name="TxtNombreAnnonces" Text="0" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#333333"/>
                             <TextBlock Text="Annonces" FontSize="12" HorizontalAlignment="Center" Foreground="#666666"/>
                         </StackPanel>
                     </Border>
-
-
                 </StackPanel>
             </StackPanel>
         </Border>
