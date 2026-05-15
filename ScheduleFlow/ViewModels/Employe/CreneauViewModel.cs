@@ -4,12 +4,7 @@ using Domaine.Entity;
 using Domaine.Interface;
 using Microsoft.Extensions.DependencyInjection;
 using ScheduleFlow.Pages.Global;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace ScheduleFlow.ViewModels.Employe

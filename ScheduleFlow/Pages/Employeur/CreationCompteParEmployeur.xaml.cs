@@ -1,6 +1,4 @@
-﻿using Domaine.Interface;
-using Microsoft.Extensions.DependencyInjection;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using ScheduleFlow.ViewModels.Employeur;
 
 namespace ScheduleFlow.Pages.Employeur
