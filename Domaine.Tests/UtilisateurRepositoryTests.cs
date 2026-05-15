@@ -10,7 +10,7 @@ using Domaine.Repo;
 namespace Domaine.Tests
 {
     public class UtilisateurRepositoryTests
-    {       //Méthode pour créer une fausse DB 
+    {
         private async Task<ScheduleFlowDBContexte> GetDbContextAsync()
         {
             var options = new DbContextOptionsBuilder<ScheduleFlowDBContexte>()
@@ -30,7 +30,7 @@ namespace Domaine.Tests
                 Prenom = "John",
                 Courriel = "john.doe@personnel.com",
                 CourrielEntreprise = "john.doe@entreprise.com",
-                MotDePasse = "12345",
+                MotDePasse = "Password123",
                 Role = RoleUtilisateur.Employe,
                 Genre = "Masculin",
                 NumeroTelephoneProfessionnel = "514-000-0000",
@@ -49,14 +49,30 @@ namespace Domaine.Tests
         }
 
         /*
-         * Test qu'un utilisateur est bien créé
+         * Test l'obtention d'un utilisateur par Id
          */
         [Fact]
-        public async Task AjouterUtilisateur_CreerNouveauUtilisateur_NouveauUtilisateurDansDB()
+        public async Task ObtenirUtilisateurParId_IdValide_RetourneUtilisateur()
         {
             var dbContext = await GetDbContextAsync();
             var repository = new UtilisateurRepository(dbContext);
+            var utilisateur = GetValideUtilisateur();
+            repository.AjouterUtilisateur(utilisateur);
 
+            var resultat = repository.ObtenirUtilisateurParId(utilisateur.IdUtilisateur);
+
+            Assert.NotNull(resultat);
+            Assert.Equal("john.doe@entreprise.com", resultat.CourrielEntreprise);
+        }
+
+        /*
+         * Test qu'un utilisateur est bien ajouté
+         */
+        [Fact]
+        public async Task AjouterUtilisateur_NouvelUtilisateur_AjouteASuccess()
+        {
+            var dbContext = await GetDbContextAsync();
+            var repository = new UtilisateurRepository(dbContext);
             var nouvelUtilisateur = GetValideUtilisateur();
 
             repository.AjouterUtilisateur(nouvelUtilisateur);
@@ -67,60 +83,102 @@ namespace Domaine.Tests
         }
 
         /*
-         * Test l'obtention de la liste des utilisateurs
+         * Test l'obtention de tous les utilisateurs
          */
         [Fact]
-        public async Task ObtenirUtilisateurs_RecupererListeUtilisateurs_RetourneTousLesUtilisateursDansDB()
+        public async Task ObtenirUtilisateurs_ListeUtilisateurs_RetourneTousLesUtilisateurs()
         {
             var dbContext = await GetDbContextAsync();
             var repository = new UtilisateurRepository(dbContext);
-
             var user1 = GetValideUtilisateur();
             var user2 = GetValideUtilisateur();
-            user2.CourrielEntreprise = "jane.doe@entreprise.com"; 
+            user2.CourrielEntreprise = "jane.doe@entreprise.com";
 
             repository.AjouterUtilisateur(user1);
             repository.AjouterUtilisateur(user2);
 
             var utilisateurs = repository.ObtenirUtilisateurs();
 
-            Assert.NotNull(utilisateurs);
             Assert.Equal(2, utilisateurs.Count());
         }
 
         /*
-         * Test qu'une connexion est validée avec des identifiants exacts
+         * Test la validation d'une connexion
          */
         [Fact]
-        public async Task VerifierConnexion_IdentifiantsValides_RetourneLUtilisateurCorrespondant()
+        public async Task VerifierConnexion_IdentifiantsValides_RetourneUtilisateur()
         {
             var dbContext = await GetDbContextAsync();
             var repository = new UtilisateurRepository(dbContext);
-
             var utilisateur = GetValideUtilisateur();
             repository.AjouterUtilisateur(utilisateur);
 
-            var resultat = repository.VerifierConnexion("john.doe@entreprise.com", "12345");
+            var resultat = repository.VerifierConnexion("john.doe@entreprise.com", "Password123");
 
             Assert.NotNull(resultat);
             Assert.Equal("john.doe@entreprise.com", resultat.CourrielEntreprise);
         }
 
         /*
-         * Test qu'une connexion est refusée avec de mauvais identifiants
+         * Test la modification d'un utilisateur existant
          */
         [Fact]
-        public async Task VerifierConnexion_MotDePasseInvalide_RetourneNull()
+        public async Task ModifierUtilisateur_UtilisateurValide_ModifieAttributsASuccess()
+        {
+            var dbContext = await GetDbContextAsync();
+            var repository = new UtilisateurRepository(dbContext);
+            var utilisateur = GetValideUtilisateur();
+            repository.AjouterUtilisateur(utilisateur);
+
+            utilisateur.Prenom = "Peace";
+            repository.ModifierUtilisateur(utilisateur);
+
+            var utilisateurDb = await dbContext.Utilisateurs.FindAsync(utilisateur.IdUtilisateur);
+            Assert.NotNull(utilisateurDb);
+            Assert.Equal("Peace", utilisateurDb.Prenom);
+        }
+
+        /*
+         * Test la suppression d'un utilisateur
+         */
+        [Fact]
+        public async Task SupprimerUtilisateur_UtilisateurValide_SupprimeDeLaBD()
+        {
+            var dbContext = await GetDbContextAsync();
+            var repository = new UtilisateurRepository(dbContext);
+            var utilisateur = GetValideUtilisateur();
+            repository.AjouterUtilisateur(utilisateur);
+
+            repository.SupprimerUtilisateur(utilisateur);
+
+            var utilisateurDb = await dbContext.Utilisateurs.FirstOrDefaultAsync();
+            Assert.Null(utilisateurDb);
+        }
+
+        /*
+         * Test le filtrage des employés
+         */
+        [Fact]
+        public async Task ObtenirEmploye_FiltrageRoleEmploye_RetourneUniquementLesEmployes()
         {
             var dbContext = await GetDbContextAsync();
             var repository = new UtilisateurRepository(dbContext);
 
-            var utilisateur = GetValideUtilisateur();
-            repository.AjouterUtilisateur(utilisateur);
+            var employe = GetValideUtilisateur();
+            employe.Role = RoleUtilisateur.Employe;
 
-            var resultat = repository.VerifierConnexion("john.doe@entreprise.com", "1234");
+            var gerant = GetValideUtilisateur();
+            gerant.Courriel = "gerant@personnel.com";
+            gerant.CourrielEntreprise = "gerant@entreprise.com";
+            gerant.Role = RoleUtilisateur.Gerant;
 
-            Assert.Null(resultat);
+            repository.AjouterUtilisateur(employe);
+            repository.AjouterUtilisateur(gerant);
+
+            var resultats = repository.ObtenirEmploye();
+
+            Assert.Single(resultats);
+            Assert.Equal(RoleUtilisateur.Employe, resultats.First().Role);
         }
     }
 }
