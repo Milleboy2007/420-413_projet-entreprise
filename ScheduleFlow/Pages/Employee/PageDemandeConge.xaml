@@ -6,14 +6,11 @@
              xmlns:local="clr-namespace:ScheduleFlow.Pages.Employee"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             Background="#ffffff">
+             Background="White">
     <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <Grid Margin="20,20,20,10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+        <Grid Margin="20" VerticalAlignment="Center">
 
-            <Border CornerRadius="10" Background="#1561AF">
+            <Border CornerRadius="15" Background="#093C71" MaxWidth="800" Padding="40">
                 <StackPanel Grid.Column="1" Margin="0,0,10,0">
                     <TextBlock Text="Demande de Congé" 
                            FontSize="18" 
@@ -23,75 +20,82 @@
                            HorizontalAlignment="Center"/>
 
                     <StackPanel>
-                        <StackPanel Margin="20,0,20,10" >
+                        <StackPanel Margin="20,0,20,15" >
                             <TextBlock Text="Type de congé" 
                                    Foreground="LightGray" 
                                    FontSize="12"/>
-                            <TextBox Text="{Binding TypeConge}" 
+                            <TextBox Text="{Binding TypeConge, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                                     Foreground="Black" 
-                                    FontSize="15" 
+                                    FontSize="16" 
                                     FontWeight="SemiBold"
-                                    Height="25"
+                                    VerticalContentAlignment="Center"
+                                    Height="35"
                                     Margin=" 0,5,0,0"/>
                         </StackPanel>
 
-                        <StackPanel Margin="20,0,20,10">
+                        <StackPanel Margin="20,0,20,15">
                             <TextBlock Text="Date du début du congé" 
                                    Foreground="LightGray" 
                                    FontSize="12"/>
-                            <DatePicker SelectedDate="{Binding DateDebutConge}" 
+                            <DatePicker SelectedDate="{Binding DateDebut, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged }" 
                                     Foreground="Black" 
-                                    FontSize="15" 
-                                    FontWeight="SemiBold"/>
+                                    FontSize="16" 
+                                    FontWeight="SemiBold"
+                                    VerticalContentAlignment="Center"
+                                    Height="35"/>
                         </StackPanel>
 
-                        <StackPanel Margin="20,0,20,10">
+                        <StackPanel Margin="20,0,20,15">
                             <TextBlock Text="Date de la fin du congé" 
                                    Foreground="LightGray" 
                                    FontSize="12"/>
-                            <DatePicker SelectedDate="{Binding DateFinConge}" 
+                            <DatePicker SelectedDate="{Binding DateFin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                                     Foreground="Black" 
-                                    FontSize="15" 
-                                    FontWeight="SemiBold"/>
+                                    FontSize="16" 
+                                    FontWeight="SemiBold"
+                                    VerticalContentAlignment="Center"
+                                    Height="35"/>
                         </StackPanel>
 
-                        <StackPanel Margin="20,0,20,10">
+                        <StackPanel Margin="20,0,20,15">
                             <TextBlock Text="Raison du congé" 
                                    Foreground="LightGray" 
                                    FontSize="12"/>
-                            <TextBox Text="{Binding RaisonConge}" 
+                            <TextBox Text="{Binding Raison, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                                    Foreground="Black"
-                                   FontSize="15" 
+                                   FontSize="16" 
                                    FontWeight="SemiBold"
-                                   Height="25"
+                                   VerticalContentAlignment="Center"
+                                   Height="35"
                                    Margin=" 0,5,0,0"/>
                         </StackPanel>
 
-                        <StackPanel Margin="20,0,20,10">
+                        <StackPanel Margin="20,0,20,15">
                             <TextBlock Text="Statut" 
-                            Foreground="LightGray" 
-                            FontSize="12"/>
-                            <TextBlock Text="{Binding Statut}" 
-                            Foreground="Black"
-                            Background="White"
-                            FontSize="15" 
-                            FontWeight="SemiBold"
-                            Height="25"
-                            Margin=" 0,5,0,0"/>
+                                    Foreground="LightGray" 
+                                    FontSize="12"/> 
+                            <TextBlock Text="{Binding Statut, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                    Foreground="Black"
+                                    Background="White"
+                                    FontSize="16" 
+                                    FontWeight="SemiBold"
+                                    Height="35"
+                                    Margin=" 0,5,0,0"/>
                         </StackPanel>
                     </StackPanel>
-                    <Button Background="Transparent" BorderThickness="0" Margin="0,15,0,0">
-                        <Border BorderThickness="0,1,0,0" 
-                                CornerRadius="10"
-                                Background="#093C71"
-                                Width="262"
-                                Height="45">
-                            <TextBlock Text="Soumettre la demande" 
-                                       Foreground="White" 
-                                       VerticalAlignment="Center" 
-                                       HorizontalAlignment="Center" 
-                                       FontWeight="Bold"/>
-                        </Border>
+                    <Button Click="Button_Click" 
+                            Background="#1561AF" 
+                            Foreground="White" 
+                            Height="50" 
+                            FontSize="15"
+                            FontWeight="Bold"
+                            BorderThickness="0" Width="250">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="8"/>
+                            </Style>
+                        </Button.Resources>
+                        Soumettre la demande
                     </Button>
                 </StackPanel>
             </Border>

@@ -25,6 +25,7 @@ namespace ScheduleFlow.NavBar
         private Page_Quart_Employee quart = App.ServiceProvider.GetRequiredService<Page_Quart_Employee>();
         private PageDemandeConge conge = App.ServiceProvider.GetRequiredService<PageDemandeConge>();
         private PageProfil compte = App.ServiceProvider.GetRequiredService<PageProfil>();
+        private Notification notif = App.ServiceProvider.GetRequiredService<Notification>();
 
         private SolidColorBrush backColorCurPage = (SolidColorBrush)(new BrushConverter().ConvertFrom("#1561AF"));
         private SolidColorBrush backColorOtherPage = new SolidColorBrush(Colors.Transparent);
@@ -46,6 +47,7 @@ namespace ScheduleFlow.NavBar
             PageQuart.Background = backColorOtherPage;
             PageConge.Background = backColorOtherPage;
             PageCompte.Background = backColorOtherPage;
+            PageNotif.Background = backColorOtherPage;
         }
 
         private void PageAccueil_Click(Object sender, MouseButtonEventArgs e)
@@ -85,7 +87,9 @@ namespace ScheduleFlow.NavBar
         
         private void PageNotif_Click(Object sender, MouseButtonEventArgs e)
         {
-
+            EmployeArea.Content = notif;
+            ResetColor();
+            PageNotif.Background = backColorCurPage;
         }
 
         private void BtnDeconnexion_Click(object sender, RoutedEventArgs e)

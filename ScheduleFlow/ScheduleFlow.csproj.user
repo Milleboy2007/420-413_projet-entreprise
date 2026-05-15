@@ -53,5 +53,8 @@
     <Compile Update="Pages\Gerant\Page_Quart_Gerant.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Global\Notification.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

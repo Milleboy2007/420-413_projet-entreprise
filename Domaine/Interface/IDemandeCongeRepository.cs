@@ -14,6 +14,9 @@ namespace Domaine.Interface
         Task AjouterDemandeCongeAsync(DemandeConge demandeConge);
 
         Task<DemandeConge?> RechercherDemandeCongeAsync(int demandeCongeID);
+        Task<DemandeConge> RechercherParIdAsync(int demandeID);
+
+        Task<List<DemandeConge>> GetDemandesParUtilisateurAsync(int userId);
 
         Task ModifierDemandeCongeAsync(DemandeConge demandeConge);
 
