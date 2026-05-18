@@ -27,10 +27,6 @@ namespace ScheduleFlow.ViewModels.Employe
             _demandeMetier.DateDebut = today;
             _demandeMetier.DateFin = today;
 
-            //_demandeMetier = repository.GetDemandesParUtilisateurAsync(USERID);
-            //demande = repository.RechercherDemandeCongeAsync(idSession);
-            //ChargerDemande();
-
         }
         public int DemandeCongeID
         {
