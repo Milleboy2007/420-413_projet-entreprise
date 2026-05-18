@@ -13,7 +13,7 @@ namespace ScheduleFlow.ViewModels.Employe
     {
         private readonly IDemandeCongeRepository _repository;
         private DemandeConge _demandeMetier;
-        private int USERID = App.ServiceProvider.GetRequiredService<GestionnaireSession>().IdUtilisateur;
+        private int USERID;
 
 
         public DemandeCongeViewModel(IDemandeCongeRepository repository, GestionnaireSession session)
@@ -22,6 +22,7 @@ namespace ScheduleFlow.ViewModels.Employe
             _demandeMetier = new DemandeConge();
 
             _demandeMetier.IdEmployee = session.IdUtilisateur;
+            USERID = session.IdUtilisateur;
 
             DateOnly today = DateOnly.FromDateTime(DateTime.Today);
             _demandeMetier.DateDebut = today;
